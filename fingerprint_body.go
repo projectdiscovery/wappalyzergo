@@ -7,12 +7,12 @@ import (
 	"golang.org/x/net/html"
 )
 
+// checkBody checks for fingerprints in the HTML body
 func (s *Wappalyze) checkBody(body []byte) []string {
 	var technologies []string
 
 	bodyString := unsafeToString(body)
 
-	// Check for fingerprints in the HTML body
 	technologies = append(
 		technologies,
 		s.fingerprints.matchString(bodyString, htmlPart)...,
