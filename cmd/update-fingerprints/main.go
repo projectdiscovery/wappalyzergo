@@ -27,13 +27,14 @@ type Fingerprints struct {
 
 // Fingerprint is a single piece of information about a tech
 type Fingerprint struct {
-	Cookies map[string]string `json:"cookies"`
-	JS      map[string]string `json:"js"`
-	Headers map[string]string `json:"headers"`
-	HTML    interface{}       `json:"html"`
-	Script  interface{}       `json:"script"`
-	Meta    map[string]string `json:"meta"`
-	Implies interface{}       `json:"implies"`
+	CSS     interface{}            `json:"css"`
+	Cookies map[string]string      `json:"cookies"`
+	JS      map[string]string      `json:"js"`
+	Headers map[string]string      `json:"headers"`
+	HTML    interface{}            `json:"html"`
+	Script  interface{}            `json:"script"`
+	Meta    map[string]interface{} `json:"meta"`
+	Implies interface{}            `json:"implies"`
 }
 
 // OutputFingerprints contains a map of fingerprints for tech detection
@@ -45,13 +46,14 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
-	Cookies map[string]string `json:"cookies"`
-	JS      []string          `json:"js"`
-	Headers map[string]string `json:"headers"`
-	HTML    []string          `json:"html"`
-	Script  []string          `json:"script"`
-	Meta    map[string]string `json:"meta"`
-	Implies []string          `json:"implies"`
+	Cookies map[string]string   `json:"cookies"`
+	JS      []string            `json:"js"`
+	Headers map[string]string   `json:"headers"`
+	HTML    []string            `json:"html"`
+	Script  []string            `json:"script"`
+	CSS     []string            `json:"css"`
+	Meta    map[string][]string `json:"meta"`
+	Implies []string            `json:"implies"`
 }
 
 func main() {
@@ -96,7 +98,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		output := OutputFingerprint{
 			Cookies: make(map[string]string),
 			Headers: make(map[string]string),
-			Meta:    make(map[string]string),
+			Meta:    make(map[string][]string),
 		}
 		valid := false
 
@@ -143,6 +145,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		// Use a reflect type swtich for determining html tag type
 		if fingerprint.HTML != nil {
 			v := reflect.ValueOf(fingerprint.HTML)
+
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
@@ -172,6 +175,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		// Use a reflect type swtich for determining script tag type
 		if fingerprint.Script != nil {
 			v := reflect.ValueOf(fingerprint.Script)
+
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
@@ -199,24 +203,46 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		}
 
 		for header, pattern := range fingerprint.Meta {
-			if pattern == "" {
-				valid = true
-				output.Meta[strings.ToLower(header)] = pattern
-				break
-			}
+			v := reflect.ValueOf(pattern)
 
-			pattern = sanitizeValue(pattern)
+			switch v.Kind() {
+			case reflect.String:
+				data := strings.ToLower(v.Interface().(string))
 
-			_, err := regexp.Compile(pattern)
-			if err == nil {
-				valid = true
-				output.Meta[strings.ToLower(header)] = strings.ToLower(pattern)
+				if data == "" {
+					valid = true
+					output.Meta[strings.ToLower(header)] = []string{}
+				} else {
+					data = sanitizeValue(data)
+
+					_, err := regexp.Compile(data)
+					if err == nil {
+						valid = true
+						output.Meta[strings.ToLower(header)] = []string{data}
+					}
+				}
+			case reflect.Slice:
+				data := v.Interface().([]interface{})
+
+				final := []string{}
+				for _, pattern := range data {
+					pat := pattern.(string)
+					pat = sanitizeValue(pat)
+
+					_, err := regexp.Compile(pat)
+					if err == nil {
+						valid = true
+						final = append(final, strings.ToLower(pat))
+					}
+				}
+				output.Meta[strings.ToLower(header)] = final
 			}
 		}
 
 		// Use a reflect type swtich for determining implies tag type
 		if fingerprint.Implies != nil {
 			v := reflect.ValueOf(fingerprint.Implies)
+
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
@@ -227,6 +253,24 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 				for _, pattern := range data {
 					pat := pattern.(string)
 					output.Implies = append(output.Implies, sanitizeValue(pat))
+				}
+			}
+		}
+
+		// Use a reflect type swtich for determining implies tag type
+		if fingerprint.CSS != nil {
+			v := reflect.ValueOf(fingerprint.CSS)
+
+			switch v.Kind() {
+			case reflect.String:
+				data := v.Interface().(string)
+				output.CSS = append(output.CSS, sanitizeValue(data))
+			case reflect.Slice:
+				data := v.Interface().([]interface{})
+
+				for _, pattern := range data {
+					pat := pattern.(string)
+					output.CSS = append(output.CSS, sanitizeValue(pat))
 				}
 			}
 		}

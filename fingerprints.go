@@ -10,13 +10,14 @@ type Fingerprints struct {
 
 // Fingerprint is a single piece of information about a tech validated and normalized
 type Fingerprint struct {
-	Cookies map[string]string `json:"cookies"`
-	JS      []string          `json:"js"`
-	Headers map[string]string `json:"headers"`
-	HTML    []string          `json:"html"`
-	Script  []string          `json:"script"`
-	Meta    map[string]string `json:"meta"`
-	Implies []string          `json:"implies"`
+	Cookies map[string]string   `json:"cookies"`
+	JS      []string            `json:"js"`
+	Headers map[string]string   `json:"headers"`
+	HTML    []string            `json:"html"`
+	CSS     []string            `json:"css"`
+	Script  []string            `json:"script"`
+	Meta    map[string][]string `json:"meta"`
+	Implies []string            `json:"implies"`
 }
 
 // CompiledFingerprints contains a map of fingerprints for tech detection
@@ -40,7 +41,7 @@ type CompiledFingerprint struct {
 	// script contains fingerprints for script tags
 	script []*regexp.Regexp
 	// meta contains fingerprints for meta tags
-	meta map[string]*regexp.Regexp
+	meta map[string][]*regexp.Regexp
 }
 
 // part is the part of the fingerprint to match
@@ -65,7 +66,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		headers: make(map[string]*regexp.Regexp),
 		html:    make([]*regexp.Regexp, 0, len(fingerprint.HTML)),
 		script:  make([]*regexp.Regexp, 0, len(fingerprint.Script)),
-		meta:    make(map[string]*regexp.Regexp),
+		meta:    make(map[string][]*regexp.Regexp),
 	}
 
 	for header, pattern := range fingerprint.Cookies {
@@ -108,12 +109,17 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		compiled.script = append(compiled.script, fingerprint)
 	}
 
-	for meta, pattern := range fingerprint.Meta {
-		fingerprint, err := regexp.Compile(pattern)
-		if err != nil {
-			continue
+	for meta, patterns := range fingerprint.Meta {
+		var compiledList []*regexp.Regexp
+
+		for _, pattern := range patterns {
+			fingerprint, err := regexp.Compile(pattern)
+			if err != nil {
+				continue
+			}
+			compiledList = append(compiledList, fingerprint)
 		}
-		compiled.meta[meta] = fingerprint
+		compiled.meta[meta] = compiledList
 	}
 	return compiled
 }
@@ -190,14 +196,16 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				}
 			}
 		case metaPart:
-			for data, pattern := range fingerprint.meta {
+			for data, patterns := range fingerprint.meta {
 				if data != key {
 					continue
 				}
 
-				if pattern.MatchString(value) {
-					matched = true
-					break
+				for _, pattern := range patterns {
+					if pattern.MatchString(value) {
+						matched = true
+						break
+					}
 				}
 			}
 		}
@@ -249,15 +257,16 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				}
 			}
 		case metaPart:
-			for data, pattern := range fingerprint.meta {
+			for data, patterns := range fingerprint.meta {
 				value, ok := keyValue[data]
 				if !ok {
 					continue
 				}
-
-				if pattern.MatchString(value) {
-					matched = true
-					break
+				for _, pattern := range patterns {
+					if pattern.MatchString(value) {
+						matched = true
+						break
+					}
 				}
 			}
 		}

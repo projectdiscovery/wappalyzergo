@@ -46,13 +46,15 @@ func (s *Wappalyze) checkBody(body []byte) []string {
 				if tokenType := tokenizer.Next(); tokenType != html.TextToken {
 					continue
 				}
-				// Check for fingerprints in the scripts that are loaded on the server
-				// and the js content of the page.
-				data := tokenizer.Token().Data
-				technologies = append(
-					technologies,
-					s.fingerprints.matchString(data, jsPart)...,
-				)
+
+				// TODO: JS requires a running VM, for checking properties. Only
+				// possible with headless for now :(
+
+				// data := tokenizer.Token().Data
+				// technologies = append(
+				// 	technologies,
+				// 	s.fingerprints.matchString(data, jsPart)...,
+				// )
 			case "meta":
 				// For meta tag, we are only intrested in name and content attributes.
 				name, content, found := getMetaNameAndContent(token)
