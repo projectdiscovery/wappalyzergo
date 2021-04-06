@@ -1,24 +1,3 @@
-# wappalyzergo
-
-A high performance port of the Wappalyzer Technology Detection Library to Go. Inspired by https://github.com/rverton/webanalyze.
-
-## Features
-
-- Very simple and easy to use, with clear code base.
-- Normalized regexes + auto-updating database of wappalyzer fingerprints.
-- Optimized for performance, parsing html manually for best speed.
-### Using *go get*
-
-```
-$ go get github.com/projectdiscovery/wappalyzergo
-```
-
-After this command *wappalyzergo* library source will be in your current go.mod.
-
-## Example
-Usage Example:
-
-``` go
 package main
 
 import (
@@ -43,4 +22,3 @@ func main() {
 
 	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
 }
-```

@@ -10,8 +10,8 @@ func TestCookiesDetect(t *testing.T) {
 	wappalyzer, err := New()
 	require.Nil(t, err, "could not create wappalyzer")
 
-	matches := wappalyzer.Fingerprint(map[string]string{
-		"Set-Cookie": "_uetsid=ABCDEF",
+	matches := wappalyzer.Fingerprint(map[string][]string{
+		"Set-Cookie": []string{"_uetsid=ABCDEF"},
 	}, []byte(""))
 
 	require.Contains(t, matches, "Microsoft Advertising", "Could not get correct match")
@@ -21,8 +21,8 @@ func TestHeadersDetect(t *testing.T) {
 	wappalyzer, err := New()
 	require.Nil(t, err, "could not create wappalyzer")
 
-	matches := wappalyzer.Fingerprint(map[string]string{
-		"Server": "now",
+	matches := wappalyzer.Fingerprint(map[string][]string{
+		"Server": []string{"now"},
 	}, []byte(""))
 
 	require.Contains(t, matches, "Vercel", "Could not get correct match")
@@ -33,7 +33,7 @@ func TestBodyDetect(t *testing.T) {
 	require.Nil(t, err, "could not create wappalyzer")
 
 	t.Run("meta", func(t *testing.T) {
-		matches := wappalyzer.Fingerprint(map[string]string{}, []byte(`<html>
+		matches := wappalyzer.Fingerprint(map[string][]string{}, []byte(`<html>
 <head>
 <meta name="generator" content="mura cms 1.2.0">
 </head>
@@ -42,7 +42,7 @@ func TestBodyDetect(t *testing.T) {
 	})
 
 	t.Run("html-implied", func(t *testing.T) {
-		matches := wappalyzer.Fingerprint(map[string]string{}, []byte(`<html data-ng-app="rbschangeapp">
+		matches := wappalyzer.Fingerprint(map[string][]string{}, []byte(`<html data-ng-app="rbschangeapp">
 <head>
 </head>
 <body>

@@ -45,7 +45,7 @@ func (s *Wappalyze) loadFingerprints() error {
 //
 // Body should not be mutated while this function is being called or it may
 // lead to unexpected things.
-func (s *Wappalyze) Fingerprint(headers map[string]string, body []byte) map[string]struct{} {
+func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[string]struct{} {
 	uniqueFingerprints := make(map[string]struct{})
 
 	// Lowercase everything that we have recieved to check
@@ -85,7 +85,7 @@ func (s *Wappalyze) Fingerprint(headers map[string]string, body []byte) map[stri
 //
 // Body should not be mutated while this function is being called or it may
 // lead to unexpected things.
-func (s *Wappalyze) FingerprintWithTitle(headers map[string]string, body []byte) (map[string]struct{}, string) {
+func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byte) (map[string]struct{}, string) {
 	uniqueFingerprints := make(map[string]struct{})
 
 	// Lowercase everything that we have recieved to check
