@@ -71,14 +71,11 @@ func (s *Wappalyze) Fingerprint(headers map[string]string, body []byte) map[stri
 	}
 
 	// Check for stuff in the body finally
-	if strings.Contains(normalizedHeaders["content-type"], "text/html") {
-		bodyTech := s.checkBody(normalizedBody)
-		for _, application := range bodyTech {
-			if _, ok := uniqueFingerprints[application]; !ok {
-				uniqueFingerprints[application] = struct{}{}
-			}
+	bodyTech := s.checkBody(normalizedBody)
+	for _, application := range bodyTech {
+		if _, ok := uniqueFingerprints[application]; !ok {
+			uniqueFingerprints[application] = struct{}{}
 		}
-		return uniqueFingerprints
 	}
 	return uniqueFingerprints
 }

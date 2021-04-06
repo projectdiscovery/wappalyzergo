@@ -46,14 +46,14 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
-	Cookies map[string]string   `json:"cookies"`
-	JS      []string            `json:"js"`
-	Headers map[string]string   `json:"headers"`
-	HTML    []string            `json:"html"`
-	Script  []string            `json:"script"`
-	CSS     []string            `json:"css"`
-	Meta    map[string][]string `json:"meta"`
-	Implies []string            `json:"implies"`
+	Cookies map[string]string   `json:"cookies,omitempty"`
+	JS      []string            `json:"js,omitempty"`
+	Headers map[string]string   `json:"headers,omitempty"`
+	HTML    []string            `json:"html,omitempty"`
+	Script  []string            `json:"script,omitempty"`
+	CSS     []string            `json:"css,omitempty"`
+	Meta    map[string][]string `json:"meta,omitempty"`
+	Implies []string            `json:"implies,omitempty"`
 }
 
 func main() {
@@ -87,7 +87,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not marshal fingerprints: %s\n", err)
 	}
-	fingerprintsFile.WriteString(fmt.Sprintf("package wappalyze\n\nvar fingerprints = `%s`", string(data)))
+	fingerprintsFile.WriteString(fmt.Sprintf("package wappalyzer\n\nvar fingerprints = `%s`", string(data)))
 	fingerprintsFile.Close()
 }
 
