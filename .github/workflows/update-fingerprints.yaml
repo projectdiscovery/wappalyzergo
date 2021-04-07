@@ -1,0 +1,43 @@
+name: fingerprints-updates
+
+on:
+    schedule:
+      - cron: '0 0 * * 0'
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+
+      - name: Setup golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+
+      - name: Installing update-fingerprints
+        run: |
+          GO111MODULE=on go get github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
+        shell: bash
+
+      - name: Downloading latest changes
+        run: |
+          update-fingerprints -fingerprints fingerprints_data.go
+        shell: bash
+
+      - name: Create local changes
+        run: |
+          git add fingerprints_data.go
+
+      - name: Commit files
+        run: |
+          git config --global user.email "sandeep@projectdiscovery.io"
+          git config --global user.name "projectdiscovery"
+          git commit -m "Weekly fingerprints updates" -a --allow-empty
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}

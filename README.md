@@ -10,7 +10,7 @@ A high performance port of the Wappalyzer Technology Detection Library to Go. In
 ### Using *go get*
 
 ```
-$ go get github.com/projectdiscovery/wappalyzergo
+$ GO111MODULE=on go get github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
 ```
 
 After this command *wappalyzergo* library source will be in your current go.mod.
