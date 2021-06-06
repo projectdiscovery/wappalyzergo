@@ -1,4 +1,5 @@
-name: Bump version
+name: 🔖 Release Tag
+
 on:
   push:
     branches:
@@ -8,7 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Bump version and push tag
+        with:
+          persist-credentials: false
+
+      - name: Create release and tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v5.5
         with:
