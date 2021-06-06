@@ -1,4 +1,4 @@
-name: fingerprints-updates
+name: 💡 Wappalyzer Fingerprints Updates
 
 on:
     schedule:
@@ -10,19 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@master
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Setup golang
         uses: actions/setup-go@v2
         with:
           go-version: 1.15
 
-      - name: Installing update-fingerprints
+      - name: Installing Update binary
         run: |
           GO111MODULE=on go get github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
         shell: bash
 
-      - name: Downloading latest changes
+      - name: Downloading latest wappalyzer changes
         run: |
           update-fingerprints -fingerprints fingerprints_data.go
         shell: bash
