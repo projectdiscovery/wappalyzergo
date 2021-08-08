@@ -1,9 +1,10 @@
 name: 🔖 Release Tag
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+  schedule:
+    - cron: '5 0 * * 0'
+
 jobs:
   build:
     runs-on: ubuntu-latest

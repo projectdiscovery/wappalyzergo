@@ -1,9 +1,9 @@
 name: 💡 Wappalyzer Fingerprints Updates
 
 on:
-    schedule:
-      - cron: '0 0 * * 0'
-    workflow_dispatch:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
 
 jobs:
   build:
@@ -35,9 +35,10 @@ jobs:
 
       - name: Commit files
         run: |
-          git config --global user.email "sandeep@projectdiscovery.io"
-          git config --global user.name "projectdiscovery"
-          git commit -m "Weekly fingerprints updates" -a --allow-empty
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Weekly fingerprints update [$(date)] :robot:" -a --allow-empty
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
