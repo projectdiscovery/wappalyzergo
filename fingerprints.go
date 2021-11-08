@@ -15,7 +15,7 @@ type Fingerprint struct {
 	Headers map[string]string   `json:"headers"`
 	HTML    []string            `json:"html"`
 	CSS     []string            `json:"css"`
-	Script  []string            `json:"script"`
+	Script  []string            `json:"scripts"`
 	Meta    map[string][]string `json:"meta"`
 	Implies []string            `json:"implies"`
 }
