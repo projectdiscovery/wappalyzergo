@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -16,8 +18,6 @@ import (
 var (
 	fingerprints = flag.String("fingerprints", "../../fingerprints_data.go", "File to write wappalyzer fingerprints to")
 )
-
-const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies.json"
 
 // Fingerprints contains a map of fingerprints for tech detection
 type Fingerprints struct {
@@ -56,20 +56,31 @@ type OutputFingerprint struct {
 	Implies []string            `json:"implies,omitempty"`
 }
 
+const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies/%s.json"
+
+func makeFingerprintURLs() []string {
+	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
+
+	var fingerprints []string
+	for _, item := range files {
+		fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
+	}
+	return fingerprints
+}
+
 func main() {
 	flag.Parse()
 
-	resp, err := http.Get(fingerprintURL)
-	if err != nil {
-		log.Fatalf("Could not download fingerprints: %s\n", err)
-	}
+	fingerprintURLs := makeFingerprintURLs()
 
-	fingerprintsOld := &Fingerprints{}
-	err = jsoniter.NewDecoder(resp.Body).Decode(fingerprintsOld)
-	if err != nil {
-		log.Fatalf("Could not read fingerprints: %s\n", err)
+	fingerprintsOld := &Fingerprints{
+		Apps: make(map[string]Fingerprint),
 	}
-	resp.Body.Close()
+	for _, fingerprintItem := range fingerprintURLs {
+		if err := gatherFingerprintsFromURL(fingerprintItem, fingerprintsOld); err != nil {
+			log.Fatalf("Could not gather fingerprints %s: %v\n", fingerprintItem, err)
+		}
+	}
 
 	log.Printf("Read fingerprints from the server\n")
 	log.Printf("Starting normalizing of %d fingerprints...\n", len(fingerprintsOld.Apps))
@@ -89,6 +100,35 @@ func main() {
 	}
 	fingerprintsFile.WriteString(fmt.Sprintf("package wappalyzer\n\nvar fingerprints = `%s`", string(data)))
 	fingerprintsFile.Close()
+}
+
+func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
+	req, err := http.NewRequest(http.MethodGet, URL, nil)
+	if err != nil {
+		return err
+	}
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+
+	data, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return err
+	}
+
+	fingerprintsOld := &Fingerprints{}
+	err = jsoniter.NewDecoder(bytes.NewReader(data)).Decode(&fingerprintsOld.Apps)
+	if err != nil {
+		return err
+	}
+
+	for k, v := range fingerprintsOld.Apps {
+		fingerprints.Apps[k] = v
+	}
+	return nil
 }
 
 func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
@@ -280,7 +320,6 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			outputFingerprints.Apps[app] = output
 		}
 	}
-
 	return outputFingerprints
 }
 
