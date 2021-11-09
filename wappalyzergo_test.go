@@ -15,6 +15,20 @@ func TestCookiesDetect(t *testing.T) {
 	}, []byte(""))
 
 	require.Contains(t, matches, "Microsoft Advertising", "Could not get correct match")
+
+	t.Run("position", func(t *testing.T) {
+		wappalyzerClient, _ := New()
+
+		fingerprints := wappalyzerClient.Fingerprint(map[string][]string{
+			"Set-Cookie": []string{"path=/; jsessionid=111; path=/, jsessionid=111;"},
+		}, []byte(""))
+		fingerprints1 := wappalyzerClient.Fingerprint(map[string][]string{
+			"Set-Cookie": []string{"jsessionid=111; path=/;"},
+		}, []byte(""))
+
+		require.Equal(t, map[string]struct{}{"Java": {}}, fingerprints, "could not get correct fingerprints")
+		require.Equal(t, map[string]struct{}{"Java": {}}, fingerprints1, "could not get correct fingerprints")
+	})
 }
 
 func TestHeadersDetect(t *testing.T) {

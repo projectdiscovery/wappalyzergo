@@ -22,7 +22,7 @@ func (s *Wappalyze) normalizeCookies(cookies []string) map[string]string {
 	normalized := make(map[string]string)
 
 	for _, part := range cookies {
-		parts := strings.SplitN(part, "=", keyValuePairLength)
+		parts := strings.SplitN(strings.Trim(part, " "), "=", keyValuePairLength)
 		if len(parts) < keyValuePairLength {
 			continue
 		}
