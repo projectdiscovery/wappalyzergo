@@ -1,4 +1,4 @@
-name: 💡 Wappalyzer Fingerprints Updates
+name: 💡Fingerprints Update
 
 on:
   workflow_dispatch:
@@ -17,11 +17,11 @@ jobs:
       - name: Setup golang
         uses: actions/setup-go@v2
         with:
-          go-version: 1.15
+          go-version: 1.17
 
       - name: Installing Update binary
         run: |
-          GO111MODULE=on go get github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
+          go install github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
         shell: bash
 
       - name: Downloading latest wappalyzer changes

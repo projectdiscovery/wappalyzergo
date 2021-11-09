@@ -1,9 +1,11 @@
 name: 🔖 Release Tag
 
 on:
+  workflow_run:
+    workflows: ["💡Fingerprints Update"]
+    types:
+      - completed
   workflow_dispatch:
-  schedule:
-    - cron: '5 0 * * 0'
 
 jobs:
   build:

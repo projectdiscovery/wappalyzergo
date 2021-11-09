@@ -1,16 +1,17 @@
-# wappalyzergo
+# Wappalyzergo
 
-A high performance port of the Wappalyzer Technology Detection Library to Go. Inspired by https://github.com/rverton/webanalyze.
+A high performance port of the Wappalyzer Technology Detection Library to Go. Inspired by [Webanalyze](https://github.com/rverton/webanalyze).
 
 ## Features
 
 - Very simple and easy to use, with clear code base.
 - Normalized regexes + auto-updating database of wappalyzer fingerprints.
 - Optimized for performance, parsing html manually for best speed.
-### Using *go get*
+
+### Using *go install*
 
 ```
-$ GO111MODULE=on go get github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
+go install github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
 ```
 
 After this command *wappalyzergo* library source will be in your current go.mod.
