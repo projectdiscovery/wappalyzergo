@@ -2,6 +2,8 @@
 
 A high performance port of the Wappalyzer Technology Detection Library to Go. Inspired by [Webanalyze](https://github.com/rverton/webanalyze).
 
+Uses data from https://github.com/AliasIO/wappalyzer
+
 ## Features
 
 - Very simple and easy to use, with clear code base.
