@@ -38,6 +38,18 @@ func (s *Wappalyze) findSetCookie(headers map[string]string) []string {
 		return nil
 	}
 
-	cookies := strings.Split(value, ";")
-	return cookies
+	var values []string
+	for _, v := range strings.Split(value, " ") {
+		if v == "" {
+			continue
+		}
+		if strings.Contains(v, ",") {
+			values = append(values, strings.Split(v, ",")...)
+		} else if strings.Contains(v, ";") {
+			values = append(values, strings.Split(v, ";")...)
+		} else {
+			values = append(values, v)
+		}
+	}
+	return values
 }
