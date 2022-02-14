@@ -23,11 +23,11 @@ func TestCookiesDetect(t *testing.T) {
 			"Set-Cookie": []string{"path=/; jsessionid=111; path=/, jsessionid=111;"},
 		}, []byte(""))
 		fingerprints1 := wappalyzerClient.Fingerprint(map[string][]string{
-			"Set-Cookie": []string{"jsessionid=111; path=/;"},
+			"Set-Cookie": []string{"jsessionid=111; path=/, XSRF-TOKEN=; expires=test, path=/ laravel_session=eyJ*"},
 		}, []byte(""))
 
 		require.Equal(t, map[string]struct{}{"Java": {}}, fingerprints, "could not get correct fingerprints")
-		require.Equal(t, map[string]struct{}{"Java": {}}, fingerprints1, "could not get correct fingerprints")
+		require.Equal(t, map[string]struct{}{"Java": {}, "Laravel": {}, "PHP": struct{}{}}, fingerprints1, "could not get correct fingerprints")
 	})
 }
 
