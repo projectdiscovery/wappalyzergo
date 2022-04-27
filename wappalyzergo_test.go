@@ -49,10 +49,10 @@ func TestBodyDetect(t *testing.T) {
 	t.Run("meta", func(t *testing.T) {
 		matches := wappalyzer.Fingerprint(map[string][]string{}, []byte(`<html>
 <head>
-<meta name="generator" content="mura cms 1.2.0">
+<meta name="generator" content="mura cms 1">
 </head>
 </html>`))
-		require.Contains(t, matches, "Mura CMS", "Could not get correct match")
+		require.Contains(t, matches, "Mura CMS:1", "Could not get correct match")
 	})
 
 	t.Run("html-implied", func(t *testing.T) {
