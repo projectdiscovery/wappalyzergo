@@ -90,10 +90,27 @@ func (u uniqueFingerprints) getValues() map[string]struct{} {
 
 const versionSeparator = ":"
 
+// separateAppVersion returns app name and version
+func separateAppVersion(value string) (string, string) {
+	if strings.Contains(value, versionSeparator) {
+		if parts := strings.Split(value, versionSeparator); len(parts) == 2 {
+			return parts[0], parts[1]
+		}
+	}
+	return value, ""
+}
+
 func (u uniqueFingerprints) setIfNotExists(value string) {
-	if _, ok := u.values[value]; ok {
+	app, version := separateAppVersion(value)
+	if _, ok := u.values[app]; ok {
+		// Handles case when we get additional version information next
+		if version != "" {
+			delete(u.values, app)
+			u.values[strings.Join([]string{app, version}, versionSeparator)] = struct{}{}
+		}
 		return
 	}
+
 	// Handle duplication for : based values
 	for k := range u.values {
 		if strings.Contains(k, versionSeparator) {
