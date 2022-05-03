@@ -2,7 +2,6 @@ package wappalyzer
 
 import (
 	"fmt"
-	"io"
 	"regexp"
 	"strconv"
 	"strings"
@@ -51,8 +50,9 @@ type CompiledFingerprint struct {
 }
 
 type versionRegex struct {
-	regex *regexp.Regexp
-	group int
+	regex     *regexp.Regexp
+	skipRegex bool
+	group     int
 }
 
 const versionPrefix = "version:\\"
@@ -62,14 +62,15 @@ const versionPrefix = "version:\\"
 func newVersionRegex(value string) (*versionRegex, error) {
 	splitted := strings.Split(value, "\\;")
 	if len(splitted) == 0 {
-		return nil, io.EOF
+		return nil, nil
 	}
 
 	compiled, err := regexp.Compile(splitted[0])
 	if err != nil {
 		return nil, err
 	}
-	regex := &versionRegex{regex: compiled}
+	skipRegex := splitted[0] == ""
+	regex := &versionRegex{regex: compiled, skipRegex: skipRegex}
 	for _, part := range splitted {
 		if strings.HasPrefix(part, versionPrefix) {
 			group := strings.TrimPrefix(part, versionPrefix)
@@ -84,6 +85,9 @@ func newVersionRegex(value string) (*versionRegex, error) {
 // MatchString returns true if a version regex matched.
 // The found version is also returned if any.
 func (v *versionRegex) MatchString(value string) (bool, string) {
+	if v.skipRegex {
+		return true, ""
+	}
 	matches := v.regex.FindAllStringSubmatch(value, -1)
 	if len(matches) == 0 {
 		return false, ""
@@ -310,7 +314,9 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				if !ok {
 					continue
 				}
-
+				if pattern == nil {
+					matched = true
+				}
 				if valid, versionString := pattern.MatchString(value); valid {
 					matched = true
 					version = versionString

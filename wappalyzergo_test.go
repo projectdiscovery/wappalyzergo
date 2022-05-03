@@ -67,3 +67,15 @@ func TestBodyDetect(t *testing.T) {
 		require.Contains(t, matches, "Proximis Unified Commerce", "Could not get correct match")
 	})
 }
+
+func TestUniqueFingerprints(t *testing.T) {
+	fingerprints := newUniqueFingerprints()
+	fingerprints.setIfNotExists("test")
+	require.Equal(t, map[string]struct{}{"test": {}}, fingerprints.getValues(), "could not get correct values")
+
+	fingerprints.setIfNotExists("new:2.3.5")
+	require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+
+	fingerprints.setIfNotExists("new")
+	require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+}
