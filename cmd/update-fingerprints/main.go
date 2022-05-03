@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 	"reflect"
-	"regexp"
 	"strings"
 
 	jsoniter "github.com/json-iterator/go"
@@ -140,46 +139,15 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			Headers: make(map[string]string),
 			Meta:    make(map[string][]string),
 		}
-		valid := false
 
 		for cookie, value := range fingerprint.Cookies {
-			if value == "" {
-				valid = true
-				output.Cookies[strings.ToLower(cookie)] = value
-				break
-			}
-			value = sanitizeValue(value)
-
-			_, err := regexp.Compile(value)
-			if err == nil {
-				valid = true
-				output.Cookies[strings.ToLower(cookie)] = strings.ToLower(value)
-			}
+			output.Cookies[strings.ToLower(cookie)] = strings.ToLower(value)
 		}
-
 		for js := range fingerprint.JS {
-			js = sanitizeValue(js)
-
-			_, err := regexp.Compile(js)
-			if err == nil {
-				valid = true
-				output.JS = append(output.JS, strings.ToLower(js))
-			}
+			output.JS = append(output.JS, strings.ToLower(js))
 		}
-
 		for header, pattern := range fingerprint.Headers {
-			if pattern == "" {
-				valid = true
-				output.Headers[strings.ToLower(header)] = pattern
-				break
-			}
-			pattern = sanitizeValue(pattern)
-
-			_, err := regexp.Compile(pattern)
-			if err == nil {
-				valid = true
-				output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
-			}
+			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
 		}
 
 		// Use a reflect type swtich for determining html tag type
@@ -189,25 +157,13 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
-				data = sanitizeValue(data)
-
-				_, err := regexp.Compile(data)
-				if err == nil {
-					valid = true
-					output.HTML = append(output.HTML, strings.ToLower(data))
-				}
+				output.HTML = append(output.HTML, strings.ToLower(data))
 			case reflect.Slice:
 				data := v.Interface().([]interface{})
 
 				for _, pattern := range data {
 					pat := pattern.(string)
-					pat = sanitizeValue(pat)
-
-					_, err := regexp.Compile(pat)
-					if err == nil {
-						valid = true
-						output.HTML = append(output.HTML, strings.ToLower(pat))
-					}
+					output.HTML = append(output.HTML, strings.ToLower(pat))
 				}
 			}
 		}
@@ -219,25 +175,12 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
-				data = sanitizeValue(data)
-
-				_, err := regexp.Compile(data)
-				if err == nil {
-					valid = true
-					output.Script = append(output.Script, strings.ToLower(data))
-				}
+				output.Script = append(output.Script, strings.ToLower(data))
 			case reflect.Slice:
 				data := v.Interface().([]interface{})
-
 				for _, pattern := range data {
 					pat := pattern.(string)
-					pat = sanitizeValue(pat)
-
-					_, err := regexp.Compile(pat)
-					if err == nil {
-						valid = true
-						output.Script = append(output.Script, strings.ToLower(pat))
-					}
+					output.Script = append(output.Script, strings.ToLower(pat))
 				}
 			}
 		}
@@ -248,18 +191,10 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			switch v.Kind() {
 			case reflect.String:
 				data := strings.ToLower(v.Interface().(string))
-
 				if data == "" {
-					valid = true
 					output.Meta[strings.ToLower(header)] = []string{}
 				} else {
-					data = sanitizeValue(data)
-
-					_, err := regexp.Compile(data)
-					if err == nil {
-						valid = true
-						output.Meta[strings.ToLower(header)] = []string{data}
-					}
+					output.Meta[strings.ToLower(header)] = []string{data}
 				}
 			case reflect.Slice:
 				data := v.Interface().([]interface{})
@@ -267,13 +202,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 				final := []string{}
 				for _, pattern := range data {
 					pat := pattern.(string)
-					pat = sanitizeValue(pat)
-
-					_, err := regexp.Compile(pat)
-					if err == nil {
-						valid = true
-						final = append(final, strings.ToLower(pat))
-					}
+					final = append(final, strings.ToLower(pat))
 				}
 				output.Meta[strings.ToLower(header)] = final
 			}
@@ -286,13 +215,12 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
-				output.Implies = append(output.Implies, sanitizeValue(data))
+				output.Implies = append(output.Implies, data)
 			case reflect.Slice:
 				data := v.Interface().([]interface{})
-
 				for _, pattern := range data {
 					pat := pattern.(string)
-					output.Implies = append(output.Implies, sanitizeValue(pat))
+					output.Implies = append(output.Implies, pat)
 				}
 			}
 		}
@@ -304,30 +232,17 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			switch v.Kind() {
 			case reflect.String:
 				data := v.Interface().(string)
-				output.CSS = append(output.CSS, sanitizeValue(data))
+				output.CSS = append(output.CSS, data)
 			case reflect.Slice:
 				data := v.Interface().([]interface{})
-
 				for _, pattern := range data {
 					pat := pattern.(string)
-					output.CSS = append(output.CSS, sanitizeValue(pat))
+					output.CSS = append(output.CSS, pat)
 				}
 			}
 		}
-
 		// Only add if the fingerprint is valid
-		if valid {
-			outputFingerprints.Apps[app] = output
-		}
+		outputFingerprints.Apps[app] = output
 	}
 	return outputFingerprints
-}
-
-// sanitizeValue sanitizes the value and removes version info setc
-func sanitizeValue(value string) string {
-	index := strings.Index(value, "\\;")
-	if index == -1 {
-		return value
-	}
-	return value[:index]
 }

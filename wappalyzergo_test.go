@@ -49,10 +49,10 @@ func TestBodyDetect(t *testing.T) {
 	t.Run("meta", func(t *testing.T) {
 		matches := wappalyzer.Fingerprint(map[string][]string{}, []byte(`<html>
 <head>
-<meta name="generator" content="mura cms 1.2.0">
+<meta name="generator" content="mura cms 1">
 </head>
 </html>`))
-		require.Contains(t, matches, "Mura CMS", "Could not get correct match")
+		require.Contains(t, matches, "Mura CMS:1", "Could not get correct match")
 	})
 
 	t.Run("html-implied", func(t *testing.T) {
@@ -65,5 +65,27 @@ func TestBodyDetect(t *testing.T) {
 		require.Contains(t, matches, "AngularJS", "Could not get correct implied match")
 		require.Contains(t, matches, "PHP", "Could not get correct implied match")
 		require.Contains(t, matches, "Proximis Unified Commerce", "Could not get correct match")
+	})
+}
+
+func TestUniqueFingerprints(t *testing.T) {
+	fingerprints := newUniqueFingerprints()
+	fingerprints.setIfNotExists("test")
+	require.Equal(t, map[string]struct{}{"test": {}}, fingerprints.getValues(), "could not get correct values")
+
+	t.Run("linear", func(t *testing.T) {
+		fingerprints.setIfNotExists("new:2.3.5")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+
+		fingerprints.setIfNotExists("new")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+	})
+
+	t.Run("opposite", func(t *testing.T) {
+		fingerprints.setIfNotExists("another")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another": {}}, fingerprints.getValues(), "could not get correct values")
+
+		fingerprints.setIfNotExists("another:2.3.5")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
 	})
 }
