@@ -97,7 +97,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not marshal fingerprints: %s\n", err)
 	}
-	fingerprintsFile.WriteString(fmt.Sprintf("package wappalyzer\n\nvar fingerprints = `%s`", string(data)))
+	_, _ = fingerprintsFile.WriteString(fmt.Sprintf("package wappalyzer\n\nvar fingerprints = `%s`", string(data)))
 	fingerprintsFile.Close()
 }
 
