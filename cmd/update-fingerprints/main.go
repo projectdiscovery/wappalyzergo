@@ -15,7 +15,7 @@ import (
 )
 
 var (
-	fingerprints = flag.String("fingerprints", "../../fingerprints_data.go", "File to write wappalyzer fingerprints to")
+	fingerprints = flag.String("fingerprints", "../../fingerprints_data.json", "File to write wappalyzer fingerprints to")
 )
 
 // Fingerprints contains a map of fingerprints for tech detection
@@ -97,7 +97,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not marshal fingerprints: %s\n", err)
 	}
-	_, _ = fingerprintsFile.WriteString(fmt.Sprintf("package wappalyzer\n\nvar fingerprints = `%s`", string(data)))
+	_, _ = fingerprintsFile.WriteString(fmt.Sprintf("%s", string(data)))
 	fingerprintsFile.Close()
 }
 
