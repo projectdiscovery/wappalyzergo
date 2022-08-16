@@ -150,7 +150,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
 		}
 
-		// Use a reflect type swtich for determining html tag type
+		// Use reflection type switch for determining HTML tag type
 		if fingerprint.HTML != nil {
 			v := reflect.ValueOf(fingerprint.HTML)
 
@@ -168,7 +168,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			}
 		}
 
-		// Use a reflect type swtich for determining script tag type
+		// Use reflection type switch for determining Script tag type
 		if fingerprint.Script != nil {
 			v := reflect.ValueOf(fingerprint.Script)
 
@@ -208,7 +208,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			}
 		}
 
-		// Use a reflect type swtich for determining implies tag type
+		// Use reflection type switch for determining "Implies" tag type
 		if fingerprint.Implies != nil {
 			v := reflect.ValueOf(fingerprint.Implies)
 
@@ -225,7 +225,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			}
 		}
 
-		// Use a reflect type swtich for determining implies tag type
+		// Use reflection type switch for determining CSS tag type
 		if fingerprint.CSS != nil {
 			v := reflect.ValueOf(fingerprint.CSS)
 
