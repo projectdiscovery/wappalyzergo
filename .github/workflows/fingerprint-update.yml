@@ -26,12 +26,12 @@ jobs:
 
       - name: Downloading latest wappalyzer changes
         run: |
-          update-fingerprints -fingerprints fingerprints_data.go
+          update-fingerprints -fingerprints fingerprints_data.json
         shell: bash
 
       - name: Create local changes
         run: |
-          git add fingerprints_data.go
+          git add fingerprints_data.json
 
       - name: Commit files
         run: |
