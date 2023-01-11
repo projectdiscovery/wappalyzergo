@@ -14,9 +14,7 @@ import (
 	jsoniter "github.com/json-iterator/go"
 )
 
-var (
-	fingerprints = flag.String("fingerprints", "../../fingerprints_data.json", "File to write wappalyzer fingerprints to")
-)
+var fingerprints = flag.String("fingerprints", "../../fingerprints_data.json", "File to write wappalyzer fingerprints to")
 
 // Fingerprints contains a map of fingerprints for tech detection
 type Fingerprints struct {
@@ -26,14 +24,16 @@ type Fingerprints struct {
 
 // Fingerprint is a single piece of information about a tech
 type Fingerprint struct {
-	CSS     interface{}            `json:"css"`
-	Cookies map[string]string      `json:"cookies"`
-	JS      map[string]string      `json:"js"`
-	Headers map[string]string      `json:"headers"`
-	HTML    interface{}            `json:"html"`
-	Script  interface{}            `json:"script"`
-	Meta    map[string]interface{} `json:"meta"`
-	Implies interface{}            `json:"implies"`
+	CSS         interface{}            `json:"css"`
+	Cookies     map[string]string      `json:"cookies"`
+	JS          map[string]string      `json:"js"`
+	Headers     map[string]string      `json:"headers"`
+	HTML        interface{}            `json:"html"`
+	Script      interface{}            `json:"script"`
+	Meta        map[string]interface{} `json:"meta"`
+	Implies     interface{}            `json:"implies"`
+	Description string                 `json:"description"`
+	Website     string                 `json:"website"`
 }
 
 // OutputFingerprints contains a map of fingerprints for tech detection
@@ -45,14 +45,16 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
-	Cookies map[string]string   `json:"cookies,omitempty"`
-	JS      []string            `json:"js,omitempty"`
-	Headers map[string]string   `json:"headers,omitempty"`
-	HTML    []string            `json:"html,omitempty"`
-	Script  []string            `json:"script,omitempty"`
-	CSS     []string            `json:"css,omitempty"`
-	Meta    map[string][]string `json:"meta,omitempty"`
-	Implies []string            `json:"implies,omitempty"`
+	Cookies     map[string]string   `json:"cookies,omitempty"`
+	JS          []string            `json:"js,omitempty"`
+	Headers     map[string]string   `json:"headers,omitempty"`
+	HTML        []string            `json:"html,omitempty"`
+	Script      []string            `json:"script,omitempty"`
+	CSS         []string            `json:"css,omitempty"`
+	Meta        map[string][]string `json:"meta,omitempty"`
+	Implies     []string            `json:"implies,omitempty"`
+	Description string              `json:"description,omitempty"`
+	Website     string              `json:"website,omitempty"`
 }
 
 const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies/%s.json"
@@ -60,7 +62,7 @@ const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/mas
 func makeFingerprintURLs() []string {
 	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
 
-	var fingerprints []string
+	fingerprints := make([]string, 0, len(files))
 	for _, item := range files {
 		fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
 	}
@@ -88,7 +90,7 @@ func main() {
 
 	log.Printf("Got %d valid fingerprints\n", len(outputFingerprints.Apps))
 
-	fingerprintsFile, err := os.OpenFile(*fingerprints, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0666)
+	fingerprintsFile, err := os.OpenFile(*fingerprints, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0o666)
 	if err != nil {
 		log.Fatalf("Could not open fingerprints file %s: %s\n", *fingerprints, err)
 	}
@@ -135,9 +137,11 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 
 	for app, fingerprint := range fingerprints.Apps {
 		output := OutputFingerprint{
-			Cookies: make(map[string]string),
-			Headers: make(map[string]string),
-			Meta:    make(map[string][]string),
+			Cookies:     make(map[string]string),
+			Headers:     make(map[string]string),
+			Meta:        make(map[string][]string),
+			Description: fingerprint.Description,
+			Website:     fingerprint.Website,
 		}
 
 		for cookie, value := range fingerprint.Cookies {
