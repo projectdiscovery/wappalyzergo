@@ -99,8 +99,14 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not marshal fingerprints: %s\n", err)
 	}
-	_, _ = fingerprintsFile.Write(data)
-	fingerprintsFile.Close()
+	_, err = fingerprintsFile.Write(data)
+	if err != nil {
+		log.Fatalf("Could not write fingerprints file: %s\n", err)
+	}
+	err = fingerprintsFile.Close()
+	if err != nil {
+		log.Fatalf("Could not close fingerprints file: %s\n", err)
+	}
 }
 
 func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
