@@ -47,3 +47,4 @@ func main() {
 	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
 }
 ```
+/Volumes/Macintosh Hd/Users/Shared/GitHub/Orgs/TheBoatyMcBoatFace/wappalyzergo/wappalyzergo_test.go

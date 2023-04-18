@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	resp, err := http.DefaultClient.Get("https://www.hackerone.com")
+	resp, err := http.DefaultClient.Get("https://civicactions.com")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -20,5 +20,5 @@ func main() {
 	fingerprints := wappalyzerClient.Fingerprint(resp.Header, data)
 	fmt.Printf("%v\n", fingerprints)
 
-	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
+
 }

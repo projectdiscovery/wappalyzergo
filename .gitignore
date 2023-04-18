@@ -1,2 +1,4 @@
 
 cmd/update-fingerprints/update-fingerprints
+.DS_Store
+.nova

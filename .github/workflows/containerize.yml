@@ -1,0 +1,47 @@
+name: 🏗️📤 Build and publish 🐳 images
+
+on:
+  push:
+   # branches: ["main"]    # Triggers the workflow when a push event is detected on any branch.
+
+env:
+  REGISTRY: ghcr.io    # Sets the container registry where the image will be published.
+  IMAGE_NAME: ${{ github.repository }}    # Sets the name of the GitHub repository.
+
+jobs:
+  build-and-push-image:
+    name: 🏗️📤 Build and push 🐳 image    # Names the job.
+    runs-on: ubuntu-latest    # Specifies the operating system for the job.
+    permissions:
+      contents: read    # Gives the job read access to the repository contents.
+      packages: write    # Gives the job write access to packages.
+
+    steps:
+      - name: 👀📦 Checkout repository.    # Names the first step.
+        uses: actions/checkout@v3    # Uses the "checkout" GitHub Action to check out the repository.
+
+      - name: 🔑📦 Login to container registry    # Names the second step.
+        uses: docker/login-action@v2.1.0    # Uses the "login-action" GitHub Action to log into the container registry.
+        with:
+          registry: ${{ env.REGISTRY }}    # Specifies the container registry.
+          username: ${{ github.actor }}    # Specifies the username.
+          password: ${{ secrets.GITHUB_TOKEN }}    # Specifies the password.
+
+      - name: 🔍📝 Extract metadata (🏷️, 🏷️) for 🐳    # Names the third step.
+        id: meta    # Assigns an ID to the step.
+        uses: docker/metadata-action@v4.3.0    # Uses the "metadata-action" GitHub Action to extract metadata for the Docker image.
+        with:
+          flavor: |    # Defines the flavor.
+            latest=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}    # Sets the latest tag based on whether the push event is for the default branch.
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}    # Specifies the image name.
+          tags: |    # Defines the tags.
+            type=raw,value=latest,priority=100,enable=${{ github.ref == format('refs/heads/{0}', github.event.repository.default_branch) }}    # Sets the "latest" tag and enables it based on whether the push event is for the default branch.
+            type=sha,enable=true,prefix={{branch}}-,suffix=,format=short    # Sets a tag with the branch name and a short commit hash.
+
+      - name: 🏗️📤 Build and push 🐳 image    # Names the fourth step.
+        uses: docker/build-push-action@v4.0.0    # Uses the "build-push-action" GitHub Action to build and push the Docker image.
+        with:
+          context: .    # Specifies the build context as the current directory.
+          push: true    # Specifies that the image should be pushed to the container registry.
+          tags: ${{ steps.meta.outputs.tags }}    # Uses the tags output from the previous step.
+          labels: ${{ steps.meta.outputs.labels }}    # Uses the labels output from the previous step.
