@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"io/ioutil"
@@ -10,8 +11,6 @@ import (
 	"os"
 	"reflect"
 	"strings"
-
-	jsoniter "github.com/json-iterator/go"
 )
 
 var fingerprints = flag.String("fingerprints", "../../fingerprints_data.json", "File to write wappalyzer fingerprints to")
@@ -95,12 +94,20 @@ func main() {
 		log.Fatalf("Could not open fingerprints file %s: %s\n", *fingerprints, err)
 	}
 
-	data, err := jsoniter.Marshal(outputFingerprints)
+	// sort map keys and pretty print the json to make git diffs useful
+
+	data, err := json.MarshalIndent(outputFingerprints, "", "    ")
 	if err != nil {
 		log.Fatalf("Could not marshal fingerprints: %s\n", err)
 	}
-	_, _ = fingerprintsFile.Write(data)
-	fingerprintsFile.Close()
+	_, err = fingerprintsFile.Write(data)
+	if err != nil {
+		log.Fatalf("Could not write fingerprints file: %s\n", err)
+	}
+	err = fingerprintsFile.Close()
+	if err != nil {
+		log.Fatalf("Could not close fingerprints file: %s\n", err)
+	}
 }
 
 func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
@@ -121,7 +128,7 @@ func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
 	}
 
 	fingerprintsOld := &Fingerprints{}
-	err = jsoniter.NewDecoder(bytes.NewReader(data)).Decode(&fingerprintsOld.Apps)
+	err = json.NewDecoder(bytes.NewReader(data)).Decode(&fingerprintsOld.Apps)
 	if err != nil {
 		return err
 	}
