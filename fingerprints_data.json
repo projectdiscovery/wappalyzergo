@@ -99,18 +99,18 @@
         },
         "A8.net": {
             "js": [
+                "a8salescookierepository",
                 "a8sales",
-                "map_a8",
-                "a8salescookierepository"
+                "map_a8"
             ],
             "description": " A8.net is an affiliate marketing network.",
             "website": "https://www.a8.net"
         },
         "AB Tasty": {
             "js": [
+                "abtasty",
                 "_abtasty",
-                "loadabtasty",
-                "abtasty"
+                "loadabtasty"
             ],
             "description": "AB Tasty is a customer experience optimisation company. AB Tasty offers AI-driven experimentation, personalisation, and product optimisation platforms for user testing.",
             "website": "https://www.abtasty.com"
@@ -148,11 +148,11 @@
         },
         "ADFOX": {
             "js": [
+                "adfox_getcodescript",
                 "site.adfoxparams",
                 "adfoxparams",
                 "adfoxasyncparams",
-                "adfoxbiddersmap",
-                "adfox_getcodescript"
+                "adfoxbiddersmap"
             ],
             "description": "ADFOX is an advertising management platform for media publishers.",
             "website": "https://adfox.yandex.ru"
@@ -210,8 +210,8 @@
         },
         "ASP.NET Boilerplate": {
             "js": [
-                "abp.aspnetboilerplate.version",
-                "abp.timing.utcclockprovider"
+                "abp.timing.utcclockprovider",
+                "abp.aspnetboilerplate.version"
             ],
             "implies": [
                 "Microsoft ASP.NET"
@@ -305,8 +305,8 @@
         },
         "AccessiBe": {
             "js": [
-                "acsbjs",
-                "acsb"
+                "acsb",
+                "acsbjs"
             ],
             "description": "AccessiBe is an accessibility overlay which claims to provide ADA and WCAG compliance. The system scans and analyzes a website, and applies adjustments which they claim make your website ADA and WCAG 2.1 compliant.",
             "website": "https://accessibe.com"
@@ -358,9 +358,9 @@
         },
         "Acoustic Experience Analytics": {
             "js": [
+                "tealeaf",
                 "tlt.config.core.modules.tlcookie",
-                "tlt_version",
-                "tealeaf"
+                "tlt_version"
             ],
             "description": "Acoustic Experience Analytics (Tealeaf), formerly known as IBM Tealeaf Customer Experience on Cloud, is a SaaS-based analytics solution that delivers Tealeaf core capabilities in an managed cloud environment. Tealeaf captures and manages each visitor interaction on your website and mobile applications.",
             "website": "https://acoustic.com/tealeaf"
@@ -418,9 +418,9 @@
         },
         "Acquia Customer Data Platform": {
             "js": [
+                "agiloneobject",
                 "$a1",
-                "$a1config",
-                "agiloneobject"
+                "$a1config"
             ],
             "description": "Acquia Customer Data Platform (formerly AgilOne) is a customer data platform for Drupal.",
             "website": "https://www.acquia.com/products/marketing-cloud/customer-data-platform"
@@ -445,9 +445,9 @@
         },
         "Acquire Cobrowse": {
             "js": [
-                "acquirecobrowsertc",
                 "acquirecobrowsesettings",
-                "acquireconfignodeserver"
+                "acquireconfignodeserver",
+                "acquirecobrowsertc"
             ],
             "description": "Acquire Cobrowse is a safe and secure method of interacting with a customer's browser without downloading any additional software.",
             "website": "https://acquire.io/co-browsing"
@@ -472,8 +472,8 @@
                 "smartfocus": ""
             },
             "js": [
-                "_actgoal",
-                "smartfocus"
+                "smartfocus",
+                "_actgoal"
             ],
             "description": "Actito is an agile SaaS marketing automation platform.",
             "website": "https://www.actito.com"
@@ -530,8 +530,8 @@
         },
         "AdOpt": {
             "js": [
-                "adoptapp.domain",
-                "adopt_website_code"
+                "adopt_website_code",
+                "adoptapp.domain"
             ],
             "description": "AdOpt is a consent tool that prioritises privacy and usability towards the LGPD.",
             "website": "https://goadopt.io"
@@ -545,27 +545,27 @@
         },
         "AdRiver": {
             "js": [
+                "adrivercounter",
                 "adriverprebid",
                 "adfoxbiddersmap.adriver",
-                "adriver",
-                "adrivercounter"
+                "adriver"
             ],
             "description": "AdRiver is a company which provide internet advertising management and audit software.",
             "website": "http://adriver.ru"
         },
         "AdRoll": {
             "js": [
+                "adroll_version",
                 "adroll_adv_id",
-                "adroll_pix_id",
-                "adroll_version"
+                "adroll_pix_id"
             ],
             "description": "AdRoll is a digital marketing technology platform that specializes in retargeting.",
             "website": "http://adroll.com"
         },
         "AdRoll CMP System": {
             "js": [
-                "__adroll_consent",
-                "__adroll_consent_is_gdpr"
+                "__adroll_consent_is_gdpr",
+                "__adroll_consent"
             ],
             "description": "AdRoll CMP System is a consent management solution.",
             "website": "https://www.adroll.com/features/consent-management"
@@ -624,13 +624,13 @@
         },
         "Adcash": {
             "js": [
+                "suloaded",
+                "suurl",
+                "ac_bgclick_url",
                 "ct_nopp",
                 "ct_nsuurl",
                 "ct_siteunder",
-                "ct_tag",
-                "suloaded",
-                "suurl",
-                "ac_bgclick_url"
+                "ct_tag"
             ],
             "website": "http://adcash.com"
         },
@@ -717,8 +717,8 @@
         },
         "Admixer": {
             "js": [
-                "admixerml",
-                "admixerads"
+                "admixerads",
+                "admixerml"
             ],
             "description": "Admixer is an independent adtech company developing an ecosystem of full-stack programmatic solutions.",
             "website": "https://admixer.com"
@@ -740,18 +740,18 @@
         },
         "Adobe Analytics": {
             "js": [
-                "s_c_il.0._c",
-                "s_c_il.1._c",
-                "s_c_il.3._c",
-                "s_c_il.3.constructor.name",
-                "s_c_il.4.constructor.name",
-                "s_c_il.5._c",
-                "s_c_il.0.constructor.name",
                 "s_c_il.1.constructor.name",
                 "s_c_il.2._c",
                 "s_c_il.2.constructor.name",
+                "s_c_il.3.constructor.name",
                 "s_c_il.4._c",
-                "s_c_il.5.constructor.name"
+                "s_c_il.5.constructor.name",
+                "s_c_il.1._c",
+                "s_c_il.0.constructor.name",
+                "s_c_il.3._c",
+                "s_c_il.4.constructor.name",
+                "s_c_il.5._c",
+                "s_c_il.0._c"
             ],
             "description": "Adobe Analytics is a web analytics, marketing and cross-channel analytics application.",
             "website": "https://www.adobe.com/analytics/adobe-analytics.html"
@@ -814,12 +814,12 @@
         },
         "Adobe Experience Platform Identity Service": {
             "js": [
-                "s_c_il.4._c",
-                "s_c_il.5._c",
                 "s_c_il.0._c",
                 "s_c_il.1._c",
                 "s_c_il.2._c",
-                "s_c_il.3._c"
+                "s_c_il.3._c",
+                "s_c_il.4._c",
+                "s_c_il.5._c"
             ],
             "description": "Adobe Experience Platform Identity Service creates identity graphs that hold customer profiles and the known identifiers that belong to individual consumers.",
             "website": "https://docs.adobe.com/content/help/en/id-service/using/home.html"
@@ -855,11 +855,11 @@
         },
         "Adobe RoboHelp": {
             "js": [
-                "gbwhver",
                 "gbwhlang",
                 "gbwhmsg",
                 "gbwhproxy",
-                "gbwhutil"
+                "gbwhutil",
+                "gbwhver"
             ],
             "meta": {
                 "generator": [
@@ -871,8 +871,8 @@
         },
         "Adobe Target": {
             "js": [
-                "adobe.target.version",
-                "adobe.target"
+                "adobe.target",
+                "adobe.target.version"
             ],
             "description": "Adobe Target is an A/B testing, multi-variate testing, personalisation, and optimisation application",
             "website": "https://www.adobe.com/marketing/target.html"
@@ -997,13 +997,13 @@
         },
         "Afterpay": {
             "js": [
-                "afterpay",
                 "afterpay.version",
                 "afterpayattractwidget",
                 "afterpaygenericerrorhtml",
                 "afterpaywidgethtml",
                 "afterpay_product",
-                "checkout.enabledpayments.afterpay"
+                "checkout.enabledpayments.afterpay",
+                "afterpay"
             ],
             "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
             "website": "https://www.afterpay.com/"
@@ -1197,12 +1197,12 @@
                 "_algolia": ""
             },
             "js": [
+                "__algolia",
                 "algoliasearch.version",
                 "algolia_insights_src",
                 "algoliasearch",
                 "__global__.algolia",
-                "__next_data__.props.pageprops.appsettings.algolia_app_id",
-                "__algolia"
+                "__next_data__.props.pageprops.appsettings.algolia_app_id"
             ],
             "headers": {
                 "content-security-policy": "\\.algolia"
@@ -1351,10 +1351,10 @@
         },
         "Amazon CloudWatch RUM": {
             "js": [
-                "awsrumconfig",
                 "awsrum",
                 "awsrumclient",
-                "awsrumclient.v"
+                "awsrumclient.v",
+                "awsrumconfig"
             ],
             "description": "Amazon CloudWatch RUM is a real-user monitoring capability that helps you identify and debug issues in the client-side on web applications and enhance end user's digital experience.",
             "website": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM.html"
@@ -1519,9 +1519,9 @@
         },
         "Amplitude": {
             "js": [
+                "amplitudeclient",
                 "amplitude_key",
-                "__amplitude__",
-                "amplitudeclient"
+                "__amplitude__"
             ],
             "description": "Amplitude is a web and mobile analytics solution with cross-platform user journey tracking, user behavior analysis and segmentation capabilities.",
             "website": "https://amplitude.com"
@@ -1655,8 +1655,8 @@
         },
         "AntV G2": {
             "js": [
-                "g2.chart",
-                "g2.version"
+                "g2.version",
+                "g2.chart"
             ],
             "description": "AntV G2 is a highly interactive data-driven visualisation grammar for statistical charts.",
             "website": "https://g2plot.antv.vision"
@@ -1840,9 +1840,9 @@
         "Appian": {
             "js": [
                 "appian",
+                "appian",
                 "_appian_proxies_initialized",
-                "webpackjsonpappian",
-                "appian"
+                "webpackjsonpappian"
             ],
             "description": "Appian is an enterprise low-code application platform.",
             "website": "https://www.appian.com"
@@ -1866,12 +1866,12 @@
         },
         "Apple Pay": {
             "js": [
-                "enableapplepay",
                 "applepay",
                 "applepaybuttonclicked",
                 "braintree.applepay",
                 "checkout.enabledpayments.applepay",
-                "dw.applepay"
+                "dw.applepay",
+                "enableapplepay"
             ],
             "description": "Apple Pay is a mobile payment and digital wallet service by Apple that allows users to make payments in person, in iOS apps, and on the web.",
             "website": "https://www.apple.com/apple-pay"
@@ -1970,8 +1970,8 @@
         },
         "Arc": {
             "js": [
-                "arcwidgetjsonp",
-                "arc.p2pclient"
+                "arc.p2pclient",
+                "arcwidgetjsonp"
             ],
             "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
             "website": "https://arc.io"
@@ -2076,8 +2076,8 @@
         },
         "Asciinema": {
             "js": [
-                "asciinema",
-                "asciinemaplayer"
+                "asciinemaplayer",
+                "asciinema"
             ],
             "html": [
                 "\u003casciinema-player"
@@ -2343,9 +2343,9 @@
         },
         "Avangate": {
             "js": [
-                "avaslugify",
                 "avacart.version",
-                "__avng8_callbacks"
+                "__avng8_callbacks",
+                "avaslugify"
             ],
             "implies": [
                 "Verifone 2Checkout"
@@ -2355,9 +2355,9 @@
         },
         "Avanser": {
             "js": [
-                "avanseroptions",
                 "avanserjs",
-                "avansercore"
+                "avansercore",
+                "avanseroptions"
             ],
             "description": "Avanser allow you to track every call and enable your business to make better-informed decisions based on your phone calls.",
             "website": "https://www.avanser.com"
@@ -2537,9 +2537,9 @@
                 "bsmartstate": ""
             },
             "js": [
-                "bsmartconfirmwindow",
                 "bsgetbsmartstock",
-                "bsmartpricelist"
+                "bsmartpricelist",
+                "bsmartconfirmwindow"
             ],
             "description": "BSmart is an ecommerce platform, programmed by Microline.",
             "website": "https://www.bsmart.co.il/?utm_source=wappalyzer\u0026utm_medium=referral"
@@ -2608,8 +2608,8 @@
         },
         "Baidu Maps": {
             "js": [
-                "bmap_api_version",
-                "bmap.version"
+                "bmap.version",
+                "bmap_api_version"
             ],
             "description": "Baidu Maps is a desktop and mobile web mapping service application and technology provided by Baidu, offering satellite imagery, street maps, street view and indoor view perspectives, as well as functions such as a route planner for traveling by foot, car, or with public transportation.",
             "website": "https://map.baidu.com"
@@ -2816,9 +2816,9 @@
                 "beyable-cartd": ""
             },
             "js": [
+                "beyable",
                 "beyabledomain",
-                "beyablekey",
-                "beyable"
+                "beyablekey"
             ],
             "description": "Beyable is a suite of tools that analyze website traffic to understand visitors' behaviors in real-time, through multi-channel in order to optimise conversion rate.",
             "website": "https://beyable.com"
@@ -2863,10 +2863,10 @@
         },
         "Bigin": {
             "js": [
+                "bigincafe24disableoptions",
                 "bigin_search",
                 "bigin_sdk_api",
-                "bigin._checkdatasize",
-                "bigincafe24disableoptions"
+                "bigin._checkdatasize"
             ],
             "description": "Bigin is a cloud-based customer relationship management (CRM) software.",
             "website": "https://en.bigin.io"
@@ -2913,9 +2913,9 @@
         },
         "Bitrix24": {
             "js": [
-                "bitrix24formloader",
                 "bitrix24formobject",
-                "b24tracker"
+                "b24tracker",
+                "bitrix24formloader"
             ],
             "description": "Bitrix24 is a set of tools for the organization and management of business processes.",
             "website": "https://www.bitrix24.com"
@@ -2934,8 +2934,8 @@
         },
         "Blackbaud CRM": {
             "js": [
-                "don_premium_map",
-                "blackbaud"
+                "blackbaud",
+                "don_premium_map"
             ],
             "description": "Blackbaud CRM gathers fundraising, online applications, actionable prospect research and analytics, and multichannel direct marketing into one platform.",
             "website": "https://www.blackbaud.com"
@@ -3054,10 +3054,10 @@
         },
         "BlueConic": {
             "js": [
-                "blueconicengagement",
-                "blueconicclient",
                 "blueconicprelisteners",
-                "loadvaluesfromblueconic"
+                "loadvaluesfromblueconic",
+                "blueconicengagement",
+                "blueconicclient"
             ],
             "description": "BlueConic is the advanced customer data platform that liberates companies' first-party data from disparate systems.",
             "website": "https://www.blueconic.com"
@@ -3136,10 +3136,10 @@
         },
         "Bokun": {
             "js": [
-                "bokunwidgetembedder",
-                "__bokunwidgets",
                 "bokunbookingchanneluuid",
-                "bokunsessionid"
+                "bokunsessionid",
+                "bokunwidgetembedder",
+                "__bokunwidgets"
             ],
             "description": "Bokun is a cloud-based booking management solution which enables small to large travel and tourism businesses manage reservations, products content, images, categorisation, pricing, inventory, and payments.",
             "website": "https://www.bokun.io"
@@ -3364,9 +3364,9 @@
         },
         "Boomerang": {
             "js": [
+                "boomr",
                 "boomr_lstart",
-                "boomr_mq",
-                "boomr"
+                "boomr_mq"
             ],
             "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
             "website": "https://akamai.github.io/boomerang"
@@ -3426,8 +3426,8 @@
                 "bfx.loglevel": "^\\w+$"
             },
             "js": [
-                "bfx._brand",
-                "bfx._apikey"
+                "bfx._apikey",
+                "bfx._brand"
             ],
             "description": "Borderfree is an cross-border ecommerce solutions provider.",
             "website": "https://www.borderfree.com"
@@ -3540,9 +3540,9 @@
         },
         "Breakdance": {
             "js": [
+                "breakdancefrontend",
                 "breakdanceheaderbuilder",
-                "breakdanceswiper",
-                "breakdancefrontend"
+                "breakdanceswiper"
             ],
             "description": "Breakdance is a page builder that features a drag-and-drop interface for users to create pages using full site editing functionality.",
             "website": "https://breakdance.com"
@@ -3581,9 +3581,9 @@
         },
         "BrightInfo": {
             "js": [
+                "_bi_",
                 "_biq",
-                "bijsurl",
-                "_bi_"
+                "bijsurl"
             ],
             "description": "BrightInfo is an automated content personalisation solution.",
             "website": "https://www.brightinfo.com"
@@ -3610,9 +3610,9 @@
         },
         "Bronto": {
             "js": [
-                "brontoshopify",
                 "bronto.versions.sca",
-                "brontocookieconsent"
+                "brontocookieconsent",
+                "brontoshopify"
             ],
             "description": "Bronto is a cloud-based email marketing automation software.",
             "website": "https://bronto.com"
@@ -3673,10 +3673,10 @@
         },
         "Bubble": {
             "js": [
-                "bubble_version",
                 "_bubble_page_load_data",
                 "bubble_environment",
-                "bubble_hostname_modifier"
+                "bubble_hostname_modifier",
+                "bubble_version"
             ],
             "headers": {
                 "x-bubble-capacity-limit": "",
@@ -3706,9 +3706,9 @@
         },
         "BugSnag": {
             "js": [
+                "bugsnagclient",
                 "bugsnag",
-                "bugsnag",
-                "bugsnagclient"
+                "bugsnag"
             ],
             "description": "Bugsnag is a cross-platform error monitoring, reporting, and resolution software.",
             "website": "https://bugsnag.com"
@@ -3790,10 +3790,10 @@
         },
         "BuySellAds": {
             "js": [
-                "_bsa",
-                "_bsapro",
                 "_bsap",
-                "_bsap_serving_callback"
+                "_bsap_serving_callback",
+                "_bsa",
+                "_bsapro"
             ],
             "website": "http://buysellads.com"
         },
@@ -3854,10 +3854,10 @@
         },
         "CKEditor": {
             "js": [
+                "apex.libversions.ckeditor5",
                 "ckeditor",
                 "ckeditor.version",
-                "ckeditor_basepath",
-                "apex.libversions.ckeditor5"
+                "ckeditor_basepath"
             ],
             "description": "CKEditor is a WYSIWYG rich text editor which enables writing content directly inside of web pages or online applications. Its core code is written in JavaScript and it is developed by CKSource. CKEditor is available under open-source and commercial licenses.",
             "website": "http://ckeditor.com"
@@ -3926,9 +3926,9 @@
         },
         "CS Cart": {
             "js": [
-                "fn_compare_strings",
                 "fn_buy_together_apply_discount",
-                "fn_calculate_total_shipping"
+                "fn_calculate_total_shipping",
+                "fn_compare_strings"
             ],
             "implies": [
                 "PHP"
@@ -4302,8 +4302,8 @@
         },
         "Chameleon": {
             "js": [
-                "chmln.snippet.urls.fast",
-                "chmlndata.organizationattributes"
+                "chmlndata.organizationattributes",
+                "chmln.snippet.urls.fast"
             ],
             "description": "Chameleon is a sophisticated no-code platform for product success, empowering SaaS teams to build self-service user onboarding, feature adoption, and feedback collection.",
             "website": "https://www.trychameleon.com"
@@ -4388,8 +4388,8 @@
         },
         "ChatStack": {
             "js": [
-                "chatstack.server",
-                "chatstack.chatstate"
+                "chatstack.chatstate",
+                "chatstack.server"
             ],
             "description": "ChatStack is a self-hosted live chat software for websites.",
             "website": "https://www.chatstack.com"
@@ -4521,9 +4521,9 @@
                 "chorus_preferences": ""
             },
             "js": [
-                "chorus.addscript",
                 "chorusads.beforeadsrequested",
-                "choruscampaigns.recordclickurl"
+                "choruscampaigns.recordclickurl",
+                "chorus.addscript"
             ],
             "description": "Chorus is the only all-in-one publishing, audience, and revenue platform built for modern media companies.",
             "website": "https://getchorus.voxmedia.com"
@@ -4595,9 +4595,9 @@
         },
         "Clarip": {
             "js": [
+                "pagedata.claripconsentjsurl",
                 "claripcdnhost",
-                "clariphost",
-                "pagedata.claripconsentjsurl"
+                "clariphost"
             ],
             "description": "Clarip is an enterprise data privacy and risk management platform.",
             "website": "https://www.clarip.com"
@@ -4720,10 +4720,10 @@
         },
         "ClickTale": {
             "js": [
-                "clicktaleglobal",
-                "clicktalestarteventsignal",
                 "clicktale",
-                "clicktaleevent"
+                "clicktaleevent",
+                "clicktaleglobal",
+                "clicktalestarteventsignal"
             ],
             "description": "ClickTale is a SaaS solution enabling organisations to gain visual in-page analytics.",
             "website": "http://www.clicktale.com"
@@ -5116,8 +5116,8 @@
         },
         "Comeet": {
             "js": [
-                "comeet",
-                "comeetinit"
+                "comeetinit",
+                "comeet"
             ],
             "description": "Comeet is an Collaborative Recruiting, and Applicant Tracking System.",
             "website": "https://www.comeet.com"
@@ -5186,8 +5186,8 @@
                 "concrete5": ""
             },
             "js": [
-                "concrete",
-                "ccm_image_path"
+                "ccm_image_path",
+                "concrete"
             ],
             "meta": {
                 "generator": [
@@ -5226,16 +5226,16 @@
         },
         "Connectif": {
             "js": [
-                "connectif.version",
-                "connectifinfo.store"
+                "connectifinfo.store",
+                "connectif.version"
             ],
             "description": "Connectif is a marketing automation and personalisation data-first action platform, powered by AI.",
             "website": "https://connectif.ai"
         },
         "Constant Contact": {
             "js": [
-                "ctctonloadcallback",
-                "_ctct_m"
+                "_ctct_m",
+                "ctctonloadcallback"
             ],
             "description": "Constant Contact is a marketing automation and email marketing solution.",
             "website": "https://www.constantcontact.com"
@@ -5359,9 +5359,9 @@
         },
         "Convert": {
             "js": [
-                "convert_temp",
                 "convert",
-                "convertdata"
+                "convertdata",
+                "convert_temp"
             ],
             "description": "Convert Experiences is an enterprise A/B testing and personalisation solution for conversion optimisation and data-driven decisions in high-traffic websites.",
             "website": "https://www.convert.com"
@@ -5412,9 +5412,9 @@
         },
         "Conviva": {
             "js": [
-                "conviva.client.version",
                 "conviva",
-                "conviva.client"
+                "conviva.client",
+                "conviva.client.version"
             ],
             "description": "Conviva is a census, continuous measurement and engagement platform for streaming media.",
             "website": "https://www.conviva.com"
@@ -5654,9 +5654,9 @@
         },
         "Criteo": {
             "js": [
-                "criteo",
                 "criteo_pubtag",
-                "criteo_q"
+                "criteo_q",
+                "criteo"
             ],
             "description": "Criteo provides personalised retargeting that works with Internet retailers to serve personalised online display advertisements to consumers who have previously visited the advertiser's website.",
             "website": "http://criteo.com"
@@ -5922,8 +5922,8 @@
         },
         "Daily Deals": {
             "js": [
-                "ddaddtoorder",
-                "ddaddtocheckout"
+                "ddaddtocheckout",
+                "ddaddtoorder"
             ],
             "description": "Daily Deals is a flash sale, limited-time discounts, countdown timers, and sales analytics solution.",
             "website": "https://dailydeals.ai"
@@ -6104,8 +6104,8 @@
         },
         "Delacon": {
             "js": [
-                "dela_247_call",
-                "delaconphonenums"
+                "delaconphonenums",
+                "dela_247_call"
             ],
             "description": "Delacon provides Australian businesses with Call Tracking, Call Management and Speech Analytics solutions.",
             "website": "https://www.delacon.com.au"
@@ -6465,8 +6465,8 @@
                 "dokuwiki": ""
             },
             "js": [
-                "doku_edit_text_content",
-                "doku_tpl"
+                "doku_tpl",
+                "doku_edit_text_content"
             ],
             "meta": {
                 "generator": [
@@ -6494,8 +6494,8 @@
         "Donorbox": {
             "js": [
                 "donorbox",
-                "donorbox",
-                "donorbox_check_donation_period"
+                "donorbox_check_donation_period",
+                "donorbox"
             ],
             "description": "Donorbox is a US-based technology company. It offers an online fundraising software that allows individuals and nonprofit organisations to receive donations over the Internet.",
             "website": "https://donorbox.org"
@@ -6536,9 +6536,9 @@
         },
         "Dotdigital": {
             "js": [
+                "dmtrackingobjectname",
                 "dmpt",
-                "dm_insight_id",
-                "dmtrackingobjectname"
+                "dm_insight_id"
             ],
             "description": "Dotdigital is an all-in-one cloud-based customer engagement multichannel marketing platform.",
             "website": "https://dotdigital.com"
@@ -6594,8 +6594,8 @@
         },
         "Download Monitor": {
             "js": [
-                "dlmxhr.prevent_duplicates",
-                "dlm_xhr_download"
+                "dlm_xhr_download",
+                "dlmxhr.prevent_duplicates"
             ],
             "meta": {
                 "dlm-version": [
@@ -6661,9 +6661,9 @@
         },
         "DreamWeaver": {
             "js": [
+                "mm_showmenu",
                 "mm_preloadimages",
-                "mm_showhidelayers",
-                "mm_showmenu"
+                "mm_showhidelayers"
             ],
             "html": [
                 "\u003c!--[^\u003e]*(?:instancebegineditable|dreamweaver([^\u003e]+)target|dwlayoutdefaulttable)\\;version:\\1",
@@ -6682,8 +6682,8 @@
         },
         "Drift": {
             "js": [
-                "drift",
-                "driftt"
+                "driftt",
+                "drift"
             ],
             "description": "Drift is a conversational marketing platform.",
             "website": "https://www.drift.com/"
@@ -6926,8 +6926,8 @@
         },
         "ERPNext": {
             "js": [
-                "erpnext.subscribe_to_newsletter",
-                "erpnext.shopping_cart"
+                "erpnext.shopping_cart",
+                "erpnext.subscribe_to_newsletter"
             ],
             "implies": [
                 "Frappe"
@@ -6952,9 +6952,9 @@
         },
         "EX.CO": {
             "js": [
+                "__exco",
                 "__exco_integration_type",
-                "excopixelurl",
-                "__exco"
+                "excopixelurl"
             ],
             "description": "EX.CO (formerly Playbuzz) is an online publishing platform for publishers, brand agencies, and individual content creators to create content in interactive formats such as polls, quizzes, lists, video snippets, slideshows, and countdowns.",
             "website": "https://ex.co"
@@ -7053,8 +7053,8 @@
         },
         "Ecwid": {
             "js": [
-                "ecwid",
-                "ecwidcart"
+                "ecwidcart",
+                "ecwid"
             ],
             "description": "Ecwid is a shopping cart plugin that turns any existing website into an online store.",
             "website": "https://www.ecwid.com/"
@@ -7309,15 +7309,15 @@
                 "eloqua": ""
             },
             "js": [
-                "eloqcontactdata",
-                "eloquaactionsettings",
-                "elqsiteid",
                 "_elq",
+                "_elqq",
                 "elqcookievalue",
-                "elqcuresite",
                 "elqload",
                 "elq_global",
-                "_elqq"
+                "eloqcontactdata",
+                "eloquaactionsettings",
+                "elqcuresite",
+                "elqsiteid"
             ],
             "description": "Eloqua is a Software-as-a-Service (SaaS) platform for marketing automation offered that aims to help B2B marketers and organisations manage marketing campaigns and sales lead generation.",
             "website": "http://eloqua.com"
@@ -7353,8 +7353,8 @@
         },
         "EmbedSocial": {
             "js": [
-                "embedsocialiframelightbox",
-                "embedsocialhashtag"
+                "embedsocialhashtag",
+                "embedsocialiframelightbox"
             ],
             "description": "EmbedSocial is a social media management platform.",
             "website": "https://embedsocial.com"
@@ -7374,9 +7374,9 @@
         },
         "Ember.js": {
             "js": [
+                "ember",
                 "ember.version",
-                "emberenv",
-                "ember"
+                "emberenv"
             ],
             "website": "http://emberjs.com"
         },
@@ -7653,16 +7653,16 @@
         },
         "Evidon": {
             "js": [
-                "eb.evidonconsent",
-                "evidon"
+                "evidon",
+                "eb.evidonconsent"
             ],
             "description": "Evidon is a transparency company that helps organizations educate consumers on how and why data is collected, as well as provide consumers with the ability to give and withdraw consent to their data being used.",
             "website": "https://www.evidon.com"
         },
         "ExactMetrics": {
             "js": [
-                "exactmetrics_frontend",
-                "exactmetrics"
+                "exactmetrics",
+                "exactmetrics_frontend"
             ],
             "description": "ExactMetrics (formerly Google Analytics Dashboard for WP) plugin helps you properly setup all the powerful Google Analytics tracking features without writing any code or hiring a developer.",
             "website": "https://www.exactmetrics.com"
@@ -7687,9 +7687,9 @@
         },
         "ExitIntel": {
             "js": [
+                "exitintelconfig",
                 "exitintel.version",
-                "exitintelaccount",
-                "exitintelconfig"
+                "exitintelaccount"
             ],
             "description": "ExitIntel is a full service conversion optimisation agency that focuses on ecommerce companies.",
             "website": "https://exitintelligence.com"
@@ -7776,10 +7776,10 @@
         },
         "ExtendThemes Mesmerize": {
             "js": [
+                "mesmerizemenusticky",
                 "mesmerizekube",
                 "mesmerizedomready",
-                "mesmerizefooterparalax",
-                "mesmerizemenusticky"
+                "mesmerizefooterparalax"
             ],
             "description": "ExtendThemes Mesmerize is an flexible, multipurpose WordPress theme.",
             "website": "https://extendthemes.com/mesmerize"
@@ -7793,9 +7793,9 @@
         },
         "Ezoic": {
             "js": [
-                "ezoica",
                 "ezoicbanger",
-                "ezoictestactive"
+                "ezoictestactive",
+                "ezoica"
             ],
             "description": "Ezoic is a website optimisation platform for digital publishers and website owners powered by machine learning.",
             "website": "https://www.ezoic.com"
@@ -7909,26 +7909,26 @@
         },
         "FameThemes OnePress": {
             "js": [
-                "onepress_js_settings",
                 "onepress_plus",
-                "onepressismobile"
+                "onepressismobile",
+                "onepress_js_settings"
             ],
             "description": "FameThemes OnePress is a free portfolio one page WordPress theme suited for an individual or digital agency.",
             "website": "https://www.famethemes.com/themes/onepress"
         },
         "FameThemes Screenr": {
             "js": [
-                "screenr.autoplay",
-                "screenr_plus"
+                "screenr_plus",
+                "screenr.autoplay"
             ],
             "description": "FameThemes Screenr is a fullscreen parallax WordPress theme suited for business, portfolio, digital agency, freelancers.",
             "website": "https://www.famethemes.com/themes/screenr"
         },
         "FancyBox": {
             "js": [
+                "$.fancybox.version",
                 "fancybox.version",
-                "jquery.fancybox.version",
-                "$.fancybox.version"
+                "jquery.fancybox.version"
             ],
             "implies": [
                 "jQuery"
@@ -8122,8 +8122,8 @@
         },
         "Findify": {
             "js": [
-                "findifyanalytics",
-                "findify"
+                "findify",
+                "findifyanalytics"
             ],
             "description": "Findify is an intelligent ecommerce search, navigation and personalisation solution.",
             "website": "https://www.findify.io"
@@ -8156,8 +8156,8 @@
         },
         "FintechOS": {
             "js": [
-                "ftos.core.getb2cculture",
-                "ftoschat"
+                "ftoschat",
+                "ftos.core.getb2cculture"
             ],
             "meta": {
                 "ftos-app-version": [
@@ -8216,8 +8216,8 @@
         },
         "Fit Analytics": {
             "js": [
-                "_fitanalytics",
-                "fitanalyticswidget"
+                "fitanalyticswidget",
+                "_fitanalytics"
             ],
             "description": "Fit Analytics is a platform that provides clothing size recommendations for online customers by measuring individual dimensions via webcams.",
             "website": "https://www.fitanalytics.com"
@@ -8231,8 +8231,8 @@
         },
         "Flarum": {
             "js": [
-                "app.forum.freshness",
-                "app.cache.discussionlist"
+                "app.cache.discussionlist",
+                "app.forum.freshness"
             ],
             "html": [
                 "\u003cdiv id=\"flarum-loading\""
@@ -8264,8 +8264,8 @@
         },
         "Flazio": {
             "js": [
-                "_exaudiflazio",
-                "flazio_global_conversion"
+                "flazio_global_conversion",
+                "_exaudiflazio"
             ],
             "description": "Flazio is an Italian website builder.",
             "website": "https://flazio.com"
@@ -8334,9 +8334,9 @@
         },
         "Flow": {
             "js": [
-                "flow_cart_localize",
                 "flow.cart",
-                "flow.countrypicker"
+                "flow.countrypicker",
+                "flow_cart_localize"
             ],
             "description": "Flow is an ecommerce platform that enables brands and retailers to sell their merchandise to customers internationally by creating localized shopping experiences.",
             "website": "https://www.flow.io/"
@@ -8450,8 +8450,8 @@
         },
         "Font Awesome": {
             "js": [
-                "___font_awesome___",
-                "fontawesomecdnconfig"
+                "fontawesomecdnconfig",
+                "___font_awesome___"
             ],
             "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
             "website": "https://fontawesome.com/"
@@ -8473,10 +8473,10 @@
         },
         "Food-Ordering.co.uk": {
             "js": [
-                "getorderacceptfor",
                 "storetoc",
                 "disablecollection",
-                "disabledelivery"
+                "disabledelivery",
+                "getorderacceptfor"
             ],
             "description": "Food-Ordering.co.uk is a multi-lingual food ordering system for several hospitality scenarios including online ordering for delivery/takeout, in-store ordering (order at table, room service, self ordering kiosk), telephone ordering with callerID, and table booking.",
             "website": "https://www.food-ordering.co.uk"
@@ -8630,10 +8630,10 @@
         },
         "Framer Sites": {
             "js": [
-                "framer.version",
-                "__framer_importfrompackage",
                 "framer",
-                "framer.animatable"
+                "framer.animatable",
+                "framer.version",
+                "__framer_importfrompackage"
             ],
             "implies": [
                 "React"
@@ -8667,9 +8667,9 @@
         },
         "FreakOut": {
             "js": [
+                "fout",
                 "_fout_jsurl",
-                "_fout_queue",
-                "fout"
+                "_fout_queue"
             ],
             "description": "FreakOut is a marketing technology company with programmatic solutions (DSP,SSP) that delivers in-feed display and video formats across global publishers.",
             "website": "https://www.fout.co.jp"
@@ -8730,8 +8730,8 @@
         },
         "Freshop": {
             "js": [
-                "freshop",
-                "freshopinitialized"
+                "freshopinitialized",
+                "freshop"
             ],
             "meta": {
                 "author": [
@@ -8756,8 +8756,8 @@
         },
         "Friendbuy": {
             "js": [
-                "friendbuyapi.merchantid",
-                "friendbuy"
+                "friendbuy",
+                "friendbuyapi.merchantid"
             ],
             "description": "Friendbuy is a cloud-based referral marketing solution designed to help ecommerce businesses of all sizes.",
             "website": "https://www.friendbuy.com"
@@ -8917,9 +8917,9 @@
         },
         "FusionCharts": {
             "js": [
+                "fusioncharts",
                 "fusionchartsdataformats",
-                "fusionmaps",
-                "fusioncharts"
+                "fusionmaps"
             ],
             "description": "FusionCharts is a comprehensive charting solution for websites.",
             "website": "https://www.fusioncharts.com/charts"
@@ -9122,10 +9122,10 @@
         },
         "Gemius": {
             "js": [
-                "gemius_pending",
-                "pp_gemius_hit",
                 "gemius_hit",
-                "gemius_init"
+                "gemius_init",
+                "gemius_pending",
+                "pp_gemius_hit"
             ],
             "html": [
                 "\u003ca [^\u003e]*onclick=\"gemius_hit"
@@ -9147,8 +9147,8 @@
         },
         "GeneratePress": {
             "js": [
-                "generatepressnavsearch",
-                "generatepressmenu"
+                "generatepressmenu",
+                "generatepressnavsearch"
             ],
             "description": "GeneratePress is a lightweight WordPress theme that focuses on speed, stability, and accessibility",
             "website": "https://generatepress.com"
@@ -9229,8 +9229,8 @@
         },
         "GetMeAShop": {
             "js": [
-                "search_api_base_uri",
-                "gmas_base_url"
+                "gmas_base_url",
+                "search_api_base_uri"
             ],
             "description": "GetMeAShop is a cloud-based ecommerce solution for small and midsize businesses across industries such as retail and manufacturing.",
             "website": "https://www.getmeashop.com"
@@ -9294,9 +9294,9 @@
         },
         "GitBook": {
             "js": [
+                "__gitbook_initial_props__",
                 "__gitbook_initial_state__",
-                "__gitbook_lazy_modules__",
-                "__gitbook_initial_props__"
+                "__gitbook_lazy_modules__"
             ],
             "meta": {
                 "generator": [
@@ -9420,8 +9420,8 @@
         },
         "Glassbox": {
             "js": [
-                "sessioncamconfiguration",
-                "sessioncamrecorder"
+                "sessioncamrecorder",
+                "sessioncamconfiguration"
             ],
             "description": "Glassbox is an Israeli software company. It sells session-replay analytics software and services.",
             "website": "https://www.glassbox.com"
@@ -9456,8 +9456,8 @@
         },
         "GlobalShopex": {
             "js": [
-                "gsxpreviewcheckout",
-                "gsxminicheckout"
+                "gsxminicheckout",
+                "gsxpreviewcheckout"
             ],
             "description": "GlobalShopex offers a logistics ecommerce solution easy to integrate, which helps online businesses to sell in over 200 countries.",
             "website": "http://www.globalshopex.com"
@@ -9499,8 +9499,8 @@
         },
         "GloriaFood": {
             "js": [
-                "glfwidget",
-                "glfbindbuttons"
+                "glfbindbuttons",
+                "glfwidget"
             ],
             "description": "GloriaFood is an online ordering and food delivery platform that helps restaurant owners manage orders and streamline point-of-sale operations.",
             "website": "https://www.gloriafood.com"
@@ -9531,8 +9531,8 @@
         },
         "Go Instore": {
             "js": [
-                "gisapplib.postrobot",
-                "gisapp.videojsctrl"
+                "gisapp.videojsctrl",
+                "gisapplib.postrobot"
             ],
             "headers": {
                 "content-security-policy": "\\.goinstore\\.com"
@@ -9639,20 +9639,20 @@
         },
         "GoKwik": {
             "js": [
+                "gokwiksdk",
                 "gokwikbuynow",
-                "gokwikcheckoutapp",
-                "gokwiksdk"
+                "gokwikcheckoutapp"
             ],
             "description": "GoKwik is a platform for solving shopping experience problems on ecommerce websites on the internet.",
             "website": "https://www.gokwik.co"
         },
         "GoMage": {
             "js": [
-                "gomagenavigationclass",
                 "gomagespinnermodal",
                 "gomage_navigation_loadinfo_text",
                 "gomage_navigation_urlhash",
-                "gomagenavigation"
+                "gomagenavigation",
+                "gomagenavigationclass"
             ],
             "implies": [
                 "PWA",
@@ -9675,10 +9675,10 @@
         },
         "Goftino": {
             "js": [
-                "goftinoremoveload",
-                "goftino_1",
                 "goftino_geturl",
-                "goftino.setwidget"
+                "goftino.setwidget",
+                "goftinoremoveload",
+                "goftino_1"
             ],
             "description": "Goftino is an online chat service for web users.",
             "website": "https://www.goftino.com"
@@ -9777,8 +9777,8 @@
         },
         "Google Charts": {
             "js": [
-                "__googlevisualizationabstractrendererelementscount__",
-                "__gvizguard__"
+                "__gvizguard__",
+                "__googlevisualizationabstractrendererelementscount__"
             ],
             "description": "Google Charts is an interactive web service that creates graphical charts from user-supplied information.",
             "website": "http://developers.google.com/chart/"
@@ -9912,12 +9912,12 @@
         },
         "Google Web Toolkit": {
             "js": [
+                "__gwt_activemodules",
+                "__gwt_getmetaproperty",
                 "__gwt_isknownpropertyvalue",
                 "__gwt_stylesloaded",
                 "__gwtlistener",
-                "__gwt_",
-                "__gwt_activemodules",
-                "__gwt_getmetaproperty"
+                "__gwt_"
             ],
             "meta": {
                 "gwt:property": []
@@ -10049,9 +10049,9 @@
         },
         "Grasp": {
             "js": [
+                "casengoupdatewidget",
                 "casengo.widget",
-                "casengo_inline_cookie",
-                "casengoupdatewidget"
+                "casengo_inline_cookie"
             ],
             "description": "Grasp is a customer support software company that offers a cloud-based helpdesk and live chat solution for businesses of all sizes.",
             "website": "https://www.getgrasp.com"
@@ -10079,8 +10079,8 @@
         },
         "Gravitec": {
             "js": [
-                "gravitecwebpackjsonp",
-                "gravitec"
+                "gravitec",
+                "gravitecwebpackjsonp"
             ],
             "description": "Gravitec is a push notification tool.",
             "website": "https://gravitec.net"
@@ -10382,9 +10382,9 @@
         },
         "Haptik": {
             "js": [
-                "haptiksdk",
                 "haptik",
-                "haptikinitsettings"
+                "haptikinitsettings",
+                "haptiksdk"
             ],
             "description": "Haptik is an Indian enterprise conversational AI platform founded in August 2013, and acquired by Reliance Industries Limited in 2019.",
             "website": "https://www.haptik.ai"
@@ -10505,9 +10505,9 @@
         },
         "HelpDocs": {
             "js": [
+                "hd_instant_search",
                 "hdanalytics",
-                "hdutils",
-                "hd_instant_search"
+                "hdutils"
             ],
             "description": "HelpDocs is an knowledge management system.",
             "website": "https://www.helpdocs.io"
@@ -10788,9 +10788,9 @@
         },
         "Hotjar": {
             "js": [
-                "hotleadfactory",
                 "hotleadcontroller",
-                "hj.apiurlbase"
+                "hj.apiurlbase",
+                "hotleadfactory"
             ],
             "description": "Hotjar is a suite of analytic tools to assist in the gathering of qualitative data, providing feedback through tools such as heatmaps, session recordings, and surveys.",
             "website": "https://www.hotjar.com"
@@ -10888,8 +10888,8 @@
         },
         "Huddle": {
             "js": [
-                "huddleuser",
-                "huddleevent"
+                "huddleevent",
+                "huddleuser"
             ],
             "description": "Huddle is a digital product agency based in Amsterdam, Netherlands, specialising in developing and designing custom software solutions for startups and enterprises, including e-learning products, community platforms, and mobile applications.",
             "website": "https://www.thehuddle.nl"
@@ -11057,8 +11057,8 @@
         },
         "INFOnline": {
             "js": [
-                "iam_data",
-                "szmvars"
+                "szmvars",
+                "iam_data"
             ],
             "website": "https://www.infonline.de"
         },
@@ -11186,9 +11186,9 @@
         },
         "Imber": {
             "js": [
-                "imber_socket",
                 "$imber.getvisitor",
-                "imber_id"
+                "imber_id",
+                "imber_socket"
             ],
             "description": "Imber is an all-in-one marketing automation platform built for customer support (live chat), sales, and marketing.",
             "website": "https://imber.live"
@@ -11199,8 +11199,8 @@
         },
         "Immutable.js": {
             "js": [
-                "immutable",
-                "immutable.version"
+                "immutable.version",
+                "immutable"
             ],
             "website": "https://facebook.github.io/immutable-js/"
         },
@@ -11367,8 +11367,8 @@
         },
         "Infoset": {
             "js": [
-                "infosetchat",
-                "infosetroot"
+                "infosetroot",
+                "infosetchat"
             ],
             "description": "Infoset is an advanced communication and support solutions.",
             "website": "https://infoset.app"
@@ -11407,8 +11407,8 @@
         },
         "Instamojo": {
             "js": [
-                "initial_state.seller.avatar",
-                "instamojo"
+                "instamojo",
+                "initial_state.seller.avatar"
             ],
             "description": "Instamojo is a Bangalore-based company that provides a platform for selling digital goods and collecting payment online.",
             "website": "https://www.instamojo.com/"
@@ -11585,8 +11585,8 @@
         },
         "Isotope": {
             "js": [
-                "isotope",
-                "init_isotope"
+                "init_isotope",
+                "isotope"
             ],
             "description": "Isotope.js is a JavaScript library that makes it easy to sort, filter, and add Masonry layouts to items on a webpage.",
             "website": "https://isotope.metafizzy.co"
@@ -11688,8 +11688,8 @@
         },
         "JShop": {
             "js": [
-                "jss_1stepdeliverytype",
-                "jss_1stepfillshipping"
+                "jss_1stepfillshipping",
+                "jss_1stepdeliverytype"
             ],
             "description": "JShop is the ecommerce database solution marketed by Whorl Ltd. worldwide.",
             "website": "http://www.whorl.co.uk"
@@ -11710,10 +11710,10 @@
         },
         "JW Player": {
             "js": [
-                "jwdefaults",
-                "jwplayer",
                 "jwplayerapiurl",
-                "webpackjsonpjwplayer"
+                "webpackjsonpjwplayer",
+                "jwdefaults",
+                "jwplayer"
             ],
             "description": "JW Player is a online video player with video engagement analytics, custom video player skins, and live video streaming capability.",
             "website": "https://www.jwplayer.com"
@@ -12125,8 +12125,8 @@
         },
         "KaTeX": {
             "js": [
-                "katex.version",
-                "katex"
+                "katex",
+                "katex.version"
             ],
             "description": "KaTeX is a cross-browser JavaScript library that displays mathematical notation in web browsers.",
             "website": "https://katex.org/"
@@ -12140,8 +12140,8 @@
         },
         "Kadence WP Kadence": {
             "js": [
-                "kadence",
-                "kadenceconfig"
+                "kadenceconfig",
+                "kadence"
             ],
             "description": "Kadence WP Kadence is a multipurpose WordPress theme that is available for free download and also offers a pro version.",
             "website": "https://www.kadencewp.com/kadence-theme"
@@ -12172,11 +12172,11 @@
         },
         "Kaltura": {
             "js": [
+                "kalturaiframeembed",
+                "restorekalturakdpcallback",
                 "kplayer",
                 "kgetkalturaembedsettings",
-                "kgetkalturaplayerlist",
-                "kalturaiframeembed",
-                "restorekalturakdpcallback"
+                "kgetkalturaplayerlist"
             ],
             "description": "Kaltura is a video content management platform that allows users to upload, manage, share, publish, and stream videos.",
             "website": "https://corp.kaltura.com"
@@ -12186,9 +12186,9 @@
                 "kameleoonvisitorcode": ""
             },
             "js": [
+                "kameleoons",
                 "kameleoon.gatherer.script_version",
-                "kameleoonendloadtime",
-                "kameleoons"
+                "kameleoonendloadtime"
             ],
             "description": "Kameleoon is a personalisation technology platform for real-time omnichannel optimisation and conversion.",
             "website": "https://kameleoon.com/"
@@ -12206,8 +12206,8 @@
         },
         "Kapix Studio": {
             "js": [
-                "__initial_state__",
-                "kapixversion"
+                "kapixversion",
+                "__initial_state__"
             ],
             "implies": [
                 "Vite",
@@ -12361,13 +12361,13 @@
         },
         "Kibo Personalization": {
             "js": [
-                "monetateq",
-                "monetatet",
                 "baynoteapi",
                 "baynotejsversion",
                 "certona.recommendations",
                 "certonarecommendations",
-                "monetate"
+                "monetate",
+                "monetateq",
+                "monetatet"
             ],
             "description": "Kibo Personalization is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
             "website": "https://kibocommerce.com/personalization-software"
@@ -12461,10 +12461,10 @@
         },
         "Klevu": {
             "js": [
-                "klevu.version",
                 "klevu_apikey",
                 "klevu_layout",
-                "klevu_sessionid"
+                "klevu_sessionid",
+                "klevu.version"
             ],
             "description": "Klevu is a highly advanced AI-Powered search solution for ecommerce platforms.",
             "website": "https://www.klevu.com"
@@ -12736,10 +12736,10 @@
         },
         "LKQD": {
             "js": [
-                "lkqdcall",
-                "lkqderrorcount",
                 "lkqdsettings",
-                "lkqd_http_response"
+                "lkqd_http_response",
+                "lkqdcall",
+                "lkqderrorcount"
             ],
             "description": "LKQD is a video advertising platform that enables publishers to serve video ads across multiple devices and formats.",
             "website": "https://wiki.lkqd.com"
@@ -12822,8 +12822,8 @@
         },
         "LaunchDarkly": {
             "js": [
-                "launchdarkly",
-                "ddc.ws.state"
+                "ddc.ws.state",
+                "launchdarkly"
             ],
             "description": "LaunchDarkly is a continuous delivery and feature flags as a service platform that integrates into a company's current development cycle.",
             "website": "https://launchdarkly.com"
@@ -12831,21 +12831,21 @@
         "Launchrock": {
             "js": [
                 "lrignition",
+                "lrignition",
                 "lrloadedjs",
                 "lrsiterenderingdata.apiendpoint",
-                "lrsitesettingasboolean",
-                "lrignition"
+                "lrsitesettingasboolean"
             ],
             "description": "Launchrock is an online tool designed to help capture email addresses and create online product launching events.",
             "website": "https://www.launchrock.com"
         },
         "LayBuy": {
             "js": [
+                "laybuyhelper",
+                "checkout.enabledpayments.laybuy",
                 "laybuyenablecart",
                 "laybuymoneyoverides",
-                "wc_ga_pro.available_gateways.laybuy",
-                "laybuyhelper",
-                "checkout.enabledpayments.laybuy"
+                "wc_ga_pro.available_gateways.laybuy"
             ],
             "description": "Laybuy is a payment service that lets you receive your purchase now and spread the total cost over 6 weekly automatic payments interest free.",
             "website": "https://www.laybuy.com"
@@ -12905,18 +12905,18 @@
         },
         "Leadster": {
             "js": [
-                "neuroleadlanguage",
                 "neurolead.convoscript",
-                "neurolead.elchatbot"
+                "neurolead.elchatbot",
+                "neuroleadlanguage"
             ],
             "description": "Leadster is a conversation marketing plataform based on chatbot.",
             "website": "https://leadster.com.br"
         },
         "Leaflet": {
             "js": [
+                "l.version",
                 "l.distancegrid",
-                "l.posanimation",
-                "l.version"
+                "l.posanimation"
             ],
             "description": "Leaflet is the open-source JavaScript library for mobile-friendly interactive maps.",
             "website": "http://leafletjs.com"
@@ -12937,8 +12937,8 @@
         },
         "LearnWorlds": {
             "js": [
-                "lwsettings.deactive_components",
-                "lwclient.ebooks"
+                "lwclient.ebooks",
+                "lwsettings.deactive_components"
             ],
             "description": "LearnWorlds is a powerful yet lightweight, user-friendly, white-labeled cloud-based LMS ideal for versatile employee training.",
             "website": "https://www.learnworlds.com"
@@ -13109,8 +13109,8 @@
         },
         "Limepay": {
             "js": [
-                "wc_ga_pro.available_gateways.limepay",
-                "limepayidentity"
+                "limepayidentity",
+                "wc_ga_pro.available_gateways.limepay"
             ],
             "description": "Limepay is a buy now, pay later platform that's fully integrated with the merchant's payment platform.",
             "website": "https://www.limepay.com.au"
@@ -13121,9 +13121,9 @@
         },
         "LinkSmart": {
             "js": [
-                "ls_json",
                 "linksmart",
-                "_mb_site_guid"
+                "_mb_site_guid",
+                "ls_json"
             ],
             "website": "http://linksmart.com"
         },
@@ -13165,9 +13165,9 @@
         },
         "Linx Impulse": {
             "js": [
-                "linximpulseinitialized",
                 "linx.banner",
-                "linximpulse.config"
+                "linximpulse.config",
+                "linximpulseinitialized"
             ],
             "description": "Linx Impulse is a personalisation, media and retargeting solutions built by Linx.",
             "website": "https://www.linx.com.br/linx-impulse"
@@ -13328,10 +13328,10 @@
         },
         "Livefyre": {
             "js": [
-                "lf.commentcount",
-                "fyre",
                 "fyreloader",
-                "l.version"
+                "l.version",
+                "lf.commentcount",
+                "fyre"
             ],
             "html": [
                 "\u003c[^\u003e]+(?:id|class)=\"livefyre"
@@ -13714,8 +13714,8 @@
         },
         "MODX": {
             "js": [
-                "modx_media_path",
-                "modx"
+                "modx",
+                "modx_media_path"
             ],
             "headers": {
                 "x-powered-by": "^modx"
@@ -13813,8 +13813,8 @@
                 "x-magento-vary": ""
             },
             "js": [
-                "varienform",
-                "mage"
+                "mage",
+                "varienform"
             ],
             "implies": [
                 "PHP",
@@ -13929,8 +13929,8 @@
         },
         "MakeShopKorea": {
             "js": [
-                "makeshop",
-                "makeshoploguniqueid"
+                "makeshoploguniqueid",
+                "makeshop"
             ],
             "description": "MakeShopKorea is a Korean hosting brand that focuses on building ecommerce stores.",
             "website": "https://www.makeshop.co.kr"
@@ -13983,9 +13983,9 @@
         },
         "MapLibre GL JS": {
             "js": [
+                "rmap2.maplibreglcompare",
                 "apex.libversions.maplibre",
-                "maplibregl",
-                "rmap2.maplibreglcompare"
+                "maplibregl"
             ],
             "description": "MapLibre GL JS is an open-source library for publishing maps on your websites.",
             "website": "https://github.com/maplibre/maplibre-gl-js"
@@ -13999,16 +13999,16 @@
         },
         "Mapp": {
             "js": [
-                "webtrekkv3",
                 "webtrekkheatmapobjects",
                 "webtrekklinktrackobjects",
                 "webtrekkunloadobjects",
                 "webtrekkv3",
                 "wtsmart",
-                "wt_tt",
+                "wt_ttv2",
+                "webtrekkv3",
                 "webtrekk",
                 "webtrekkconfig",
-                "wt_ttv2"
+                "wt_tt"
             ],
             "description": "Mapp is designed specifically to help consumer-facing brands run highly personalised, cross-channel marketing campaigns powered by real-time customer data and generated insights.",
             "website": "https://mapp.com"
@@ -14092,9 +14092,9 @@
         },
         "Marko": {
             "js": [
-                "markocomponent",
                 "markosections",
-                "markovars"
+                "markovars",
+                "markocomponent"
             ],
             "implies": [
                 "Node.js"
@@ -14201,10 +14201,10 @@
         },
         "Mattermost": {
             "js": [
-                "mm_current_user_id",
-                "mm_license",
                 "mm_user",
-                "mm_config"
+                "mm_config",
+                "mm_current_user_id",
+                "mm_license"
             ],
             "html": [
                 "\u003cnoscript\u003e to use mattermost, please enable javascript\\. \u003c/noscript\u003e"
@@ -14224,8 +14224,8 @@
         },
         "Mavo": {
             "js": [
-                "mavo.version",
-                "mavo"
+                "mavo",
+                "mavo.version"
             ],
             "description": "Mavo is a JavaScript library that enables web developers to turn regular HTML into reactive web applications without the need for writing custom JavaScript.",
             "website": "https://mavo.io"
@@ -14304,9 +14304,9 @@
         },
         "MediaWiki": {
             "js": [
+                "wgversion",
                 "mw.util.toggletoc",
-                "wgtitle",
-                "wgversion"
+                "wgtitle"
             ],
             "html": [
                 "\u003cbody[^\u003e]+class=\"mediawiki\"",
@@ -14363,11 +14363,11 @@
         },
         "Meilisearch": {
             "js": [
+                "meilisearch",
+                "meilisearchapierror",
                 "meilisearchtimeouterror",
                 "ac_apsulis_meilisearch",
-                "instantmeilisearch",
-                "meilisearch",
-                "meilisearchapierror"
+                "instantmeilisearch"
             ],
             "description": "Meilisearch is a search engine created by Meili, a software development company based in France.",
             "website": "https://www.meilisearch.com"
@@ -14551,9 +14551,9 @@
         },
         "Microsoft Authentication": {
             "js": [
+                "msalconfig.auth",
                 "msal.authority",
-                "msal.authorityinstance",
-                "msalconfig.auth"
+                "msal.authorityinstance"
             ],
             "description": "The Microsoft Authentication Library for JavaScript enables both client-side and server-side JavaScript applications to authenticate users using Azure AD for work and school accounts (AAD), Microsoft personal accounts (MSA), and social identity providers like Facebook, Google, LinkedIn, Microsoft accounts, etc. through Azure AD B2C service.",
             "website": "https://github.com/AzureAD/microsoft-authentication-library-for-js"
@@ -14710,9 +14710,9 @@
         },
         "Mindbox": {
             "js": [
+                "mindboxendpointsettings",
                 "mindbox",
-                "mindboxbatchedmodulesinitialized",
-                "mindboxendpointsettings"
+                "mindboxbatchedmodulesinitialized"
             ],
             "description": "Mindbox is a marketing automation platform.",
             "website": "https://mindbox.ru"
@@ -14816,10 +14816,10 @@
         },
         "MoEngage": {
             "js": [
+                "moengage_object",
                 "moengage_api_key",
                 "moengage",
-                "downloadmoengage",
-                "moengage_object"
+                "downloadmoengage"
             ],
             "description": "MoEngage is an intelligent customer engagement platform for the customer-obsessed marketer.",
             "website": "https://www.moengage.com"
@@ -14830,9 +14830,9 @@
         },
         "MobX": {
             "js": [
+                "__mobxinstancecount",
                 "__mobxglobal",
-                "__mobxglobals",
-                "__mobxinstancecount"
+                "__mobxglobals"
             ],
             "website": "https://mobx.js.org"
         },
@@ -15055,8 +15055,8 @@
         },
         "MonsterInsights": {
             "js": [
-                "monsterinsights",
-                "monsterinsights_frontend"
+                "monsterinsights_frontend",
+                "monsterinsights"
             ],
             "description": "MonsterInsights is the most popular Google Analytics plugin for WordPress.",
             "website": "https://www.monsterinsights.com"
@@ -15074,8 +15074,8 @@
                 "moodlesession": ""
             },
             "js": [
-                "y.moodle",
-                "m.core"
+                "m.core",
+                "y.moodle"
             ],
             "html": [
                 "\u003cimg[^\u003e]+moodlelogo"
@@ -15400,9 +15400,9 @@
         },
         "NagishLi": {
             "js": [
+                "$nagishli",
                 "initnagishli",
-                "nagishli_commons.version",
-                "$nagishli"
+                "nagishli_commons.version"
             ],
             "description": "NagishLi is a free accessibility plugin from Localize*, created to provide an equal oppurtunity for webmasters to make their website accessible and make the internet more accessible for people with disability.",
             "website": "https://www.nagish.li"
@@ -15439,8 +15439,8 @@
         },
         "NationBuilder": {
             "js": [
-                "nb.liquid",
-                "nb.fbappid"
+                "nb.fbappid",
+                "nb.liquid"
             ],
             "description": "NationBuilder is a Los Angeles based technology start-up that develops content management and customer relationship management (CRM) software.",
             "website": "https://nationbuilder.com"
@@ -15532,9 +15532,9 @@
         },
         "Netdeal": {
             "js": [
-                "netdealbuildnumber",
                 "netdealjs.paywall",
-                "netdealstartsession"
+                "netdealstartsession",
+                "netdealbuildnumber"
             ],
             "description": "Netdeal is a marketing automation platform.",
             "website": "https://www.netdeal.com.br"
@@ -15890,8 +15890,8 @@
         },
         "Nuvemshop": {
             "js": [
-                "nuvemshopidproduct",
-                "ls.store.url"
+                "ls.store.url",
+                "nuvemshopidproduct"
             ],
             "description": "Nuvemshop is a website builder with customizable layouts, product, shipping and payment management, marketing tools and a mobile app.",
             "website": "https://www.nuvemshop.com.br"
@@ -15938,12 +15938,12 @@
                 "sid_key": "oxid"
             },
             "js": [
-                "oxcookienote",
-                "oxinputvalidator",
-                "oxloginbox",
                 "oxminibasket",
                 "oxmodalpopup",
-                "oxtopmenu"
+                "oxtopmenu",
+                "oxcookienote",
+                "oxinputvalidator",
+                "oxloginbox"
             ],
             "implies": [
                 "PHP"
@@ -16122,11 +16122,11 @@
         },
         "Okta": {
             "js": [
-                "oktacurrentsessionurl",
                 "oktaauth",
                 "isoktaenabled",
                 "okta.cdnurlhostname",
-                "okta.locale"
+                "okta.locale",
+                "oktacurrentsessionurl"
             ],
             "description": "Okta is a platform in the Identity-as-a-Service (IDaaS) category. Okta features include Provisioning, Single Sign-On (SSO), Active Directory (AD) and LDAP integration, the centralized de-provisioning of users, multi-factor authentication (MFA), mobile identity management.",
             "website": "https://developer.okta.com"
@@ -16487,8 +16487,8 @@
         },
         "OpenLayers": {
             "js": [
-                "openlayers.version_number",
-                "ol.canvasmap"
+                "ol.canvasmap",
+                "openlayers.version_number"
             ],
             "description": "OpenLayers is an open-source JavaScript library for displaying map data in web browser.",
             "website": "https://openlayers.org"
@@ -16922,9 +16922,9 @@
         },
         "PCRecruiter": {
             "js": [
-                "pcrframeoptions",
                 "pcrbaseurl",
-                "pcrdialog"
+                "pcrdialog",
+                "pcrframeoptions"
             ],
             "description": "PCRecruiter is an ATS/CRM hybrid SaaS solution for recruiting and sourcing professionals.",
             "website": "https://www.pcrecruiter.net"
@@ -16991,9 +16991,9 @@
         },
         "PIXIjs": {
             "js": [
-                "pixi_webworker_url",
                 "pixi",
-                "pixi.version"
+                "pixi.version",
+                "pixi_webworker_url"
             ],
             "description": "PIXIjs is a free open-source 2D engine used to make animated websites and HTML5 games.",
             "website": "https://www.pixijs.com"
@@ -17019,18 +17019,18 @@
         },
         "PWA Studio": {
             "js": [
-                "fetchrootcomponent",
-                "__fetchlocaledata__"
+                "__fetchlocaledata__",
+                "fetchrootcomponent"
             ],
             "description": "PWA Studio is a collection of tools that lets developers build complex Progressive Web Applications on top of Magento 2 or Adobe Commerce stores.",
             "website": "https://developer.adobe.com/commerce/pwa-studio/"
         },
         "Pace": {
             "js": [
-                "pacepay",
-                "rely_month_installment",
                 "rely_shop_currency",
-                "rely_shop_money_format"
+                "rely_shop_money_format",
+                "pacepay",
+                "rely_month_installment"
             ],
             "description": "PacePay offers a BNPL (Buy now pay later) solution for merchants.",
             "website": "https://pacenow.co/"
@@ -17044,16 +17044,16 @@
         },
         "Paddle": {
             "js": [
-                "paddlescriptlocation",
-                "paddle.checkout"
+                "paddle.checkout",
+                "paddlescriptlocation"
             ],
             "description": "Paddle is a billing and payment gateway for B2B SaaS companies.",
             "website": "https://paddle.com/"
         },
         "PagSeguro": {
             "js": [
-                "_pagsegurodirectpayment",
-                "pagsegurodirectpayment"
+                "pagsegurodirectpayment",
+                "_pagsegurodirectpayment"
             ],
             "description": "PagSeguro is an online or mobile payment-based ecommerce service for commercial operations.",
             "website": "https://pagseguro.uol.com.br"
@@ -17272,14 +17272,14 @@
         },
         "PayPal": {
             "js": [
+                "checkout.enabledpayments.paypal",
+                "enablepaypal",
                 "paypal",
                 "paypalclientid",
                 "paypaljs",
                 "wc_ga_pro.available_gateways.paypal",
                 "paypal",
-                "__paypal_global__",
-                "checkout.enabledpayments.paypal",
-                "enablepaypal"
+                "__paypal_global__"
             ],
             "headers": {
                 "content-security-policy": "\\.paypal\\.com"
@@ -17357,9 +17357,9 @@
         },
         "Peek": {
             "js": [
-                "_peekconfig",
                 "peek",
-                "peekjsapi"
+                "peekjsapi",
+                "_peekconfig"
             ],
             "description": "Peek is a online booking system for tour and activity providers.",
             "website": "https://www.peek.com/"
@@ -17406,8 +17406,8 @@
         },
         "Pepperjam": {
             "js": [
-                "pepperjam",
-                "pepperjamtracking"
+                "pepperjamtracking",
+                "pepperjam"
             ],
             "description": "Pepperjam is an affiliate marketing solutions provider.",
             "website": "https://www.pepperjam.com"
@@ -17646,8 +17646,8 @@
         },
         "Piano": {
             "js": [
-                "pianoespconfig",
-                "gcidatapiano"
+                "gcidatapiano",
+                "pianoespconfig"
             ],
             "description": "Piano is a enterprise SaaS company which specializing in advanced media business processes and ecommerce optimisation.",
             "website": "https://piano.io"
@@ -17778,9 +17778,9 @@
         },
         "PixelYourSite": {
             "js": [
+                "pys_generate_token",
                 "pys.facebook",
-                "pysoptions",
-                "pys_generate_token"
+                "pysoptions"
             ],
             "description": "PixelyourSite is now probably the most complex tracking tool for WordPress, managing the Facebook Pixel, Google Analytics, Google Ads Remarketing, Pinterest Tag, Bing Tag, and virtually any other script.",
             "website": "https://www.pixelyoursite.com"
@@ -17987,8 +17987,8 @@
         },
         "Podium": {
             "js": [
-                "podiumwebchat",
-                "podiumwebsitewidgetloaded"
+                "podiumwebsitewidgetloaded",
+                "podiumwebchat"
             ],
             "description": "Podium is a customer communication platform for businesses who interact with customers on a local level.",
             "website": "https://www.podium.com"
@@ -18048,9 +18048,9 @@
         },
         "Popper": {
             "js": [
+                "popper.defaults",
                 "popper.applystyles",
-                "createpopper",
-                "popper.defaults"
+                "createpopper"
             ],
             "description": "Popper is a positioning engine, its purpose is to calculate the position of an element to make it possible to position it near a given reference element.",
             "website": "https://popper.js.org"
@@ -18186,8 +18186,8 @@
         },
         "Premio Chaty": {
             "js": [
-                "chaty_settings.chaty_widgets",
-                "chaty_settings.object_settings"
+                "chaty_settings.object_settings",
+                "chaty_settings.chaty_widgets"
             ],
             "description": "Chat with your website visitors via their favorite channels with Chaty by Premio.",
             "website": "https://premio.io/downloads/chaty"
@@ -18227,11 +18227,11 @@
                 "prestashop": ""
             },
             "js": [
+                "pricedisplayprecision",
+                "rcanalyticsevents.eventprestashopcheckout",
                 "freeproducttranslation",
                 "prestashop",
-                "pricedisplaymethod",
-                "pricedisplayprecision",
-                "rcanalyticsevents.eventprestashopcheckout"
+                "pricedisplaymethod"
             ],
             "headers": {
                 "powered-by": "^prestashop$"
@@ -18287,9 +18287,9 @@
         },
         "Primis": {
             "js": [
+                "sekindoflowingplayeron",
                 "sekindonativeskinapi",
-                "sekindodisplayedplacement",
-                "sekindoflowingplayeron"
+                "sekindodisplayedplacement"
             ],
             "description": "Primis is a video discovery platform for publishers.",
             "website": "https://www.primis.tech"
@@ -18628,9 +18628,9 @@
         },
         "Qstomizer": {
             "js": [
+                "qstomizer_script",
                 "jqueryqsmz",
-                "loadscript_qsmz",
-                "qstomizer_script"
+                "loadscript_qsmz"
             ],
             "description": "Qstomizer app is the app for Shopify and Woocomerce that allows you to add a visual custom product designer to your shop.",
             "website": "https://www.qstomizer.com"
@@ -18706,8 +18706,8 @@
         },
         "Queue-it": {
             "js": [
-                "queueit_clientside_config",
-                "queueit.javascript.version"
+                "queueit.javascript.version",
+                "queueit_clientside_config"
             ],
             "description": "Queue-it is a virtual waiting room platform designed to protect your website and mobile app from slowdowns or crashes during end-user peaks.",
             "website": "https://queue-it.com"
@@ -18909,8 +18909,8 @@
                 "rakuten-source": ""
             },
             "js": [
-                "rakutenranmid",
-                "rakutensource"
+                "rakutensource",
+                "rakutenranmid"
             ],
             "description": "Rakuten (formerly Ebates) allows you to earn cash-back rewards.",
             "website": "https://www.rakuten.com/"
@@ -18956,9 +18956,9 @@
         },
         "Raptor": {
             "js": [
-                "raptor",
                 "onraptorloaded",
-                "raptorbase64"
+                "raptorbase64",
+                "raptor"
             ],
             "description": "Raptor is a personalisation engine based on machine learning that analyses and learns about the user's behavior and unique browser history.",
             "website": "https://raptorsmartadvisor.com"
@@ -18996,9 +18996,9 @@
         },
         "Raygun": {
             "js": [
+                "raygunfactory",
                 "raygun",
-                "raygunenabled",
-                "raygunfactory"
+                "raygunenabled"
             ],
             "description": "Raygun is a cloud-based networking monitoring and bug tracking application.",
             "website": "https://raygun.com"
@@ -19364,10 +19364,10 @@
         },
         "Reevoo": {
             "js": [
+                "reevooapi",
                 "reevooaccesscode",
                 "reevooloader.tracking",
-                "reevoourl",
-                "reevooapi"
+                "reevoourl"
             ],
             "description": "Reevoo is a provider of UGC solutions like reviews.",
             "website": "https://www.reevoo.com"
@@ -19411,8 +19411,8 @@
         },
         "Relewise": {
             "js": [
-                "relewisetracking",
-                "relewiseconfig"
+                "relewiseconfig",
+                "relewisetracking"
             ],
             "description": "Relewise is a platform that uses personalisation technology to provide customised online experiences through personalised search and recommendations.",
             "website": "https://relewise.com"
@@ -19530,9 +19530,9 @@
         },
         "Responsive Lightbox \u0026 Gallery": {
             "js": [
-                "rlargs.activegalleries",
                 "rl_hide_image",
-                "rl_view_image"
+                "rl_view_image",
+                "rlargs.activegalleries"
             ],
             "description": "Responsive Lightbox \u0026 Gallery plugin is a lightweight WordPress gallery plugin by Digital Factory.",
             "website": "https://dfactory.eu/products/responsive-lightbox-gallery-extensions/"
@@ -19557,11 +19557,11 @@
                 "rrpvid": "^\\d+$"
             },
             "js": [
-                "retailrocket",
-                "rraddtobasket",
                 "rrapionready",
                 "rrlibrary",
-                "rrpartnerid"
+                "rrpartnerid",
+                "retailrocket",
+                "rraddtobasket"
             ],
             "description": "Retail Rocket is a big data-based personalisation platform for ecommerce websites.",
             "website": "https://retailrocket.net"
@@ -19580,8 +19580,8 @@
         },
         "Returnly": {
             "js": [
-                "returnly.internaleventtracker",
-                "returnly.containerswitcher"
+                "returnly.containerswitcher",
+                "returnly.internaleventtracker"
             ],
             "description": "Returnly is the provider of digital return experiences for direct-to-consumer brands.",
             "website": "https://returnly.com"
@@ -19653,8 +19653,8 @@
         },
         "Reviews.io": {
             "js": [
-                "reviewsio_sharelink",
-                "reviewsio_hasvoted"
+                "reviewsio_hasvoted",
+                "reviewsio_sharelink"
             ],
             "description": "Reviews.io is a review collection tool for companies to collect merchant (company) \u0026 product reviews from genuine customers, then share these on Google.",
             "website": "https://www.reviews.io"
@@ -19672,9 +19672,9 @@
         },
         "Revy": {
             "js": [
-                "revyapp",
                 "revybundle",
-                "revyupsell"
+                "revyupsell",
+                "revyapp"
             ],
             "description": "Revy is dedicated to build Shopify Apps to generate more sales for merchants.",
             "website": "https://revy.io"
@@ -19704,9 +19704,9 @@
         },
         "Richpanel": {
             "js": [
+                "richpanelappproxy",
                 "richpanel_messenger_url",
-                "richpanel.plugin_api_url",
-                "richpanelappproxy"
+                "richpanel.plugin_api_url"
             ],
             "description": "Richpanel is a purpose-built CRM and customer support platform for ecommerce and DTC brands.",
             "website": "https://www.richpanel.com"
@@ -19814,9 +19814,9 @@
         },
         "Robin": {
             "js": [
-                "_robin_getrobinjs",
                 "robin_settings",
-                "robin_storage_settings"
+                "robin_storage_settings",
+                "_robin_getrobinjs"
             ],
             "website": "http://www.robinhq.com"
         },
@@ -19961,8 +19961,8 @@
         },
         "Rumble": {
             "js": [
-                "rumble.gdpr",
-                "rumble.resize"
+                "rumble.resize",
+                "rumble.gdpr"
             ],
             "description": "Rumble is a Canadian video-streaming platform that presents itself as an alternative to YouTube.",
             "website": "https://rumble.com"
@@ -19973,8 +19973,8 @@
         },
         "RxJS": {
             "js": [
-                "rx.compositedisposable",
-                "rx.symbol"
+                "rx.symbol",
+                "rx.compositedisposable"
             ],
             "description": "RxJS is a reactive library used to implement reactive programming to deal with async implementation, callbacks, and event-based programs.",
             "website": "http://reactivex.io"
@@ -20004,14 +20004,14 @@
                 "_hybris": ""
             },
             "js": [
-                "hybrisid",
-                "passlgdatatohybris",
-                "smartedit",
                 "acc.config.commonresourcepath",
                 "acc.config.rootpath",
                 "acc.config.themeresourcepath",
                 "getproductattrfromhybris",
-                "getproductavailabilityhybris"
+                "getproductavailabilityhybris",
+                "hybrisid",
+                "passlgdatatohybris",
+                "smartedit"
             ],
             "html": [
                 "\u003c[^\u003e]+/(?:sys_master|hybr|_ui/(?:.*responsive/)?(?:desktop|common(?:/images|/img|/css|ico)?))/",
@@ -20193,10 +20193,10 @@
         },
         "SabaVision": {
             "js": [
+                "sabavisionwebsiteid",
                 "sabavisionwebsitepage",
                 "sabavisionelement",
-                "__sabavision_get_add_timeout",
-                "sabavisionwebsiteid"
+                "__sabavision_get_add_timeout"
             ],
             "meta": {
                 "sabavision_zone": []
@@ -20316,8 +20316,8 @@
         },
         "Salesforce Audience Studio": {
             "js": [
-                "updatekruxcookie",
-                "krux"
+                "krux",
+                "updatekruxcookie"
             ],
             "description": "Salesforce Audience Studio is a customer data marketplace that only other platform users can access.",
             "website": "https://www.salesforce.com/products/marketing-cloud/data-management"
@@ -20353,11 +20353,11 @@
         },
         "Salesforce Marketing Cloud Account Engagement": {
             "js": [
-                "pitracker",
                 "piaid",
                 "picid",
                 "pihostname",
-                "piprotocol"
+                "piprotocol",
+                "pitracker"
             ],
             "headers": {
                 "x-pardot-lb": "",
@@ -20569,8 +20569,8 @@
         },
         "ScrollMagic": {
             "js": [
-                "scrollmagic",
-                "scrollmagic.version"
+                "scrollmagic.version",
+                "scrollmagic"
             ],
             "implies": [
                 "jQuery",
@@ -20596,9 +20596,9 @@
         },
         "SeQura": {
             "js": [
-                "sequraproducts",
                 "sequra",
-                "sequraconfiguration"
+                "sequraconfiguration",
+                "sequraproducts"
             ],
             "description": "SeQura is a FinTech company based in Barcelona, providing digital flexible payment solutions, with a geographical focus on Southern Europe and Latin America.",
             "website": "https://www.sequra.es"
@@ -20652,9 +20652,9 @@
         },
         "Searchspring": {
             "js": [
-                "searchspringinit",
                 "searchspring",
-                "searchspringconf"
+                "searchspringconf",
+                "searchspringinit"
             ],
             "description": "Searchspring is a site search and merchandising platform designed to help ecommerce.",
             "website": "https://searchspring.com"
@@ -20698,8 +20698,8 @@
         },
         "Segmanta": {
             "js": [
-                "segmanta__dynamic_embed_config",
-                "segmanta__user_metadata"
+                "segmanta__user_metadata",
+                "segmanta__dynamic_embed_config"
             ],
             "description": "Segmanta is a mobile-first survey platform designed for product feedback, brand awareness and concept testing research.",
             "website": "https://segmanta.com"
@@ -20862,11 +20862,11 @@
         },
         "Sentry": {
             "js": [
+                "sentry",
+                "sentry.sdk_version",
                 "__sentry__",
                 "ravenoptions.whitelisturls",
-                "raven.config",
-                "sentry",
-                "sentry.sdk_version"
+                "raven.config"
             ],
             "html": [
                 "\u003cscript[^\u003e]*\u003e\\s*raven\\.config\\('[^']*', \\{\\s+release: '([0-9\\.]+)'\\;version:\\1",
@@ -21246,10 +21246,10 @@
                 "_shopify_y": ""
             },
             "js": [
-                "shopifyapi",
-                "shopifycustomer",
                 "shopify_api_base_url",
-                "shopify"
+                "shopify",
+                "shopifyapi",
+                "shopifycustomer"
             ],
             "headers": {
                 "x-shopid": "\\;confidence:50",
@@ -21351,8 +21351,8 @@
         },
         "ShoppingFeeder": {
             "js": [
-                "sfdrorderdata",
-                "sfdruniqid"
+                "sfdruniqid",
+                "sfdrorderdata"
             ],
             "description": "ShoppingFeeder is a feed management solution for online retailers.",
             "website": "https://sfdr.co"
@@ -21627,8 +21627,8 @@
         },
         "Sirdata": {
             "js": [
-                "sddan.cmploaded",
-                "sddan.cmp"
+                "sddan.cmp",
+                "sddan.cmploaded"
             ],
             "description": "Sirdata is a self-service, third party data-collecting platform that specialises in the collection of behavioural data, predictive targeting and selling of audience segments.",
             "website": "https://www.sirdata.com"
@@ -21654,10 +21654,10 @@
         },
         "Site24x7": {
             "js": [
-                "s247rumqueueimpl",
                 "s247rum",
                 "site24x7rumerror",
-                "site24x7rum"
+                "site24x7rum",
+                "s247rumqueueimpl"
             ],
             "description": "Site24x7 is a cloud-based website and server monitoring platform.",
             "website": "https://www.site24x7.com"
@@ -21923,10 +21923,10 @@
         },
         "Sleeknote": {
             "js": [
-                "sleeknote.sleeknotes",
                 "sleeknotemarketingconsent",
                 "sleeknotescripttag",
-                "sleeknotesitedata"
+                "sleeknotesitedata",
+                "sleeknote.sleeknotes"
             ],
             "description": "Sleeknote is a cloud-based software that helps online businesses reach conversion goals through website popups.",
             "website": "https://sleeknote.com"
@@ -21966,13 +21966,13 @@
         },
         "Slider Revolution": {
             "js": [
-                "revapi4",
-                "revapi5",
                 "revslider_showdoublejqueryerror",
                 "rs_modules.main.version",
                 "revapi1",
                 "revapi2",
-                "revapi3"
+                "revapi3",
+                "revapi4",
+                "revapi5"
             ],
             "meta": {
                 "generator": [
@@ -22145,8 +22145,8 @@
         },
         "Snap Pixel": {
             "js": [
-                "snaptr.pixelidlist",
-                "__snappixel"
+                "__snappixel",
+                "snaptr.pixelidlist"
             ],
             "description": "Snap Pixel is a piece of JavaScript code that helps advertisers measure the cross-device impact of campaigns.",
             "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
@@ -22338,9 +22338,9 @@
         },
         "Solvemate": {
             "js": [
-                "solvemateconfig",
                 "solvemate.config.solvematecdn",
-                "solvematecli"
+                "solvematecli",
+                "solvemateconfig"
             ],
             "description": "Solvemate is a customer service automation platform that enables brands to deliver quality customer service through meaningful conversations via chatbots.",
             "website": "https://www.solvemate.com"
@@ -22424,9 +22424,9 @@
         },
         "SoundManager": {
             "js": [
+                "soundmanager.version",
                 "baconplayer",
-                "soundmanager",
-                "soundmanager.version"
+                "soundmanager"
             ],
             "website": "http://www.schillmania.com/projects/soundmanager2"
         },
@@ -22620,9 +22620,9 @@
         },
         "Spotify Web API": {
             "js": [
-                "spotifyme",
                 "getspotifydata",
-                "spotify_tracks"
+                "spotify_tracks",
+                "spotifyme"
             ],
             "description": "Spotify Web API endpoints return JSON metadata about music artists, albums, and tracks, directly from the Spotify Data Catalogue.",
             "website": "https://developer.spotify.com/documentation/web-api"
@@ -22783,8 +22783,8 @@
         },
         "Squarespace": {
             "js": [
-                "static.squarespace_context.templateversion",
-                "squarespace"
+                "squarespace",
+                "static.squarespace_context.templateversion"
             ],
             "headers": {
                 "server": "squarespace"
@@ -22861,8 +22861,8 @@
         },
         "Stackable": {
             "js": [
-                "stackableanimations",
-                "stackable.resturl"
+                "stackable.resturl",
+                "stackableanimations"
             ],
             "implies": [
                 "Gutenberg"
@@ -22936,9 +22936,9 @@
         },
         "Statcounter": {
             "js": [
+                "_statcounter",
                 "sc_project",
-                "sc_security",
-                "_statcounter"
+                "sc_security"
             ],
             "website": "http://www.statcounter.com"
         },
@@ -22955,9 +22955,9 @@
         },
         "Statsig": {
             "js": [
+                "statsigwww",
                 "statsig",
-                "statsiginitialized",
-                "statsigwww"
+                "statsiginitialized"
             ],
             "headers": {
                 "x-statsig-region": ""
@@ -23073,8 +23073,8 @@
         },
         "Storyblok": {
             "js": [
-                "storyblokregisterevent",
-                "storyblokbridge"
+                "storyblokbridge",
+                "storyblokregisterevent"
             ],
             "headers": {
                 "content-security-policy": "app\\.storyblok\\.com",
@@ -23598,8 +23598,8 @@
         },
         "TVSquared": {
             "js": [
-                "tv2track",
-                "_tvq"
+                "_tvq",
+                "tv2track"
             ],
             "description": "TVSquared is a cross-platform TV ad measurement, analytics and optimisation platform.",
             "website": "https://www.tvsquared.com"
@@ -23643,8 +23643,8 @@
         },
         "Tabby": {
             "js": [
-                "tabby",
-                "tabbypromo"
+                "tabbypromo",
+                "tabby"
             ],
             "description": "Tabby is a Buy now pay later solution from Middle East.",
             "website": "https://tabby.ai/"
@@ -23663,9 +23663,9 @@
         },
         "Taboola": {
             "js": [
+                "_taboola",
                 "_taboolanetworkmode",
-                "taboola_view_id",
-                "_taboola"
+                "taboola_view_id"
             ],
             "description": "Taboola is a content discovery \u0026 native advertising platform for publishers and advertisers.",
             "website": "https://www.taboola.com"
@@ -23826,9 +23826,9 @@
                 "_gat_teachabletracker": "\\d+"
             },
             "js": [
-                "isteachable",
                 "teachableicons",
-                "trackteachablegaevent"
+                "trackteachablegaevent",
+                "isteachable"
             ],
             "meta": {
                 "asset_host": [
@@ -24074,8 +24074,8 @@
         },
         "Theme Vision Agama": {
             "js": [
-                "agama",
-                "agama_pro"
+                "agama_pro",
+                "agama"
             ],
             "description": "Agama is a free multi-purpose WordPress theme by Theme Vision.",
             "website": "https://theme-vision.com/agama"
@@ -24199,8 +24199,8 @@
         },
         "Thesis": {
             "js": [
-                "thix.t",
-                "thix.history"
+                "thix.history",
+                "thix.t"
             ],
             "description": "Thesis is a conversion rate optimisation company.",
             "website": "https://www.thesistesting.com"
@@ -24380,10 +24380,10 @@
         },
         "Tiledesk": {
             "js": [
+                "tiledesksettings",
                 "tiledesk",
                 "tiledeskasyncinit",
-                "tiledesk",
-                "tiledesksettings"
+                "tiledesk"
             ],
             "description": "Tiledesk is the full-stack open-source Live Chat with built-in Chatbots, written in Node.js and Angular.",
             "website": "https://tiledesk.com"
@@ -24477,8 +24477,8 @@
         },
         "Totango": {
             "js": [
-                "totango",
-                "totangoloader"
+                "totangoloader",
+                "totango"
             ],
             "description": "Totango is a customer success platform that helps recurring revenue businesses simplify the complexities of customer success by connecting the dots of customer data, actively monitoring customer health changes, and driving proactive engagements.",
             "website": "https://www.totango.com"
@@ -24564,9 +24564,9 @@
         },
         "Transcy": {
             "js": [
-                "_transcy",
                 "transcy_apiuri",
-                "transcy_shopifylocales"
+                "transcy_shopifylocales",
+                "_transcy"
             ],
             "implies": [
                 "Shopify"
@@ -24632,8 +24632,8 @@
         },
         "Trinity Audio": {
             "js": [
-                "trinity_player",
-                "trinity_display"
+                "trinity_display",
+                "trinity_player"
             ],
             "description": "Trinity Audio's AI-driven solutions help publishers and content creators create a world of smart audio experiences for their audiences, covering every stage of the audio journey from creation to distribution.",
             "website": "https://www.trinityaudio.ai"
@@ -24698,9 +24698,9 @@
         },
         "Trumba": {
             "js": [
-                "trumba",
                 "$trumba",
-                "$trumba.version"
+                "$trumba.version",
+                "trumba"
             ],
             "description": "Trumba offers web-hosted event calendar software for publishing online, interactive, calendars of events.",
             "website": "https://www.trumba.com"
@@ -24741,12 +24741,12 @@
         },
         "Trustvox": {
             "js": [
-                "trustvoxrateswidget",
-                "_trustvox",
-                "_trustvox_colt",
                 "_trustvox_shelf_rate",
                 "trustvox_id",
-                "trustvoxcertificatewidget"
+                "trustvoxcertificatewidget",
+                "trustvoxrateswidget",
+                "_trustvox",
+                "_trustvox_colt"
             ],
             "description": "Trustvox collects reviews from customers who purchased ecommerce products and publishes them on product pages with Sincerity Seals.",
             "website": "https://site.trustvox.com.br"
@@ -25246,10 +25246,10 @@
         },
         "UpSellit": {
             "js": [
-                "usi_commons",
-                "usi_cookies",
                 "usi_analytics",
-                "usi_app"
+                "usi_app",
+                "usi_commons",
+                "usi_cookies"
             ],
             "description": "UpSellit is a performance based lead and cart abandonment recovery solutions.",
             "website": "https://us.upsellit.com"
@@ -25370,9 +25370,9 @@
         },
         "Userpilot": {
             "js": [
+                "userpilotpako",
                 "userpilot.triggerbyid",
-                "userpilotinitiatorsdk",
-                "userpilotpako"
+                "userpilotinitiatorsdk"
             ],
             "description": "Userpilot is a cloud-based product experience platform designed for customer success and product teams to onboard users and increase product adoption through behavior-triggered experiences.",
             "website": "https://userpilot.com"
@@ -25464,10 +25464,10 @@
         },
         "VWO": {
             "js": [
-                "vwo",
                 "__vwo",
                 "_vwo_code",
-                "_vwo_settings_timer"
+                "_vwo_settings_timer",
+                "vwo"
             ],
             "description": "VWO is a website testing and conversion optimisation platform.",
             "website": "https://vwo.com"
@@ -25603,9 +25603,9 @@
         },
         "VerifyPass": {
             "js": [
+                "verifypass_popup",
                 "verifypass_api_instantiator",
-                "verifypass_is_loaded",
-                "verifypass_popup"
+                "verifypass_is_loaded"
             ],
             "description": "VerifyPass is a company which provide secure identity proofing, authentication, and group affiliation verification for teachers and students.",
             "website": "https://verifypass.com"
@@ -25627,8 +25627,8 @@
         },
         "Vev": {
             "js": [
-                "vev.default_app_state",
-                "vev.app.compare"
+                "vev.app.compare",
+                "vev.default_app_state"
             ],
             "description": "Vev is a cloud-based design and publishing platform that enables users to create interactive digital content without coding, using a drag-and-drop interface and built-in templates and integrations.",
             "website": "https://www.vev.design"
@@ -25643,9 +25643,9 @@
         },
         "Viafoura": {
             "js": [
-                "viafoura.core",
                 "dfm_viafoura_options",
-                "viafoura.bootstrap"
+                "viafoura.bootstrap",
+                "viafoura.core"
             ],
             "description": "Viafoura is an audience engagement and social monetisation platform.",
             "website": "https://viafoura.com"
@@ -25744,9 +25744,9 @@
         },
         "Virtuagym": {
             "js": [
+                "trigger_vg_neutral_message",
                 "vgtutorial",
-                "open_vg_custom_modal",
-                "trigger_vg_neutral_message"
+                "open_vg_custom_modal"
             ],
             "description": "Virtuagym is a cloud-based membership management and coaching platform designed for personal trainers and fitness businesses of all sizes.",
             "website": "https://business.virtuagym.com"
@@ -25809,9 +25809,9 @@
         },
         "Visely": {
             "js": [
+                "visely.recommendationsapi",
                 "viselycartproductids",
-                "viselypage",
-                "visely.recommendationsapi"
+                "viselypage"
             ],
             "description": "Visely is a Shopify app which personalise product recommendations for Shopify sites.",
             "website": "https://visely.io"
@@ -25890,8 +25890,8 @@
         },
         "Vizury": {
             "js": [
-                "safarivizury",
-                "vizury_data"
+                "vizury_data",
+                "safarivizury"
             ],
             "description": "Vizury is a ecommerce marketing platform.",
             "website": "https://www.vizury.com"
@@ -25992,12 +25992,12 @@
         },
         "Vue.js": {
             "js": [
+                "vuedll",
+                "vue",
                 "vue.version",
                 "vueroot",
                 "__vue_hot_map__",
-                "__vue__",
-                "vuedll",
-                "vue"
+                "__vue__"
             ],
             "html": [
                 "\u003c[^\u003e]+\\sdata-v(?:ue)?-"
@@ -26172,9 +26172,9 @@
         },
         "WP Rocket": {
             "js": [
+                "rocket_lazy",
                 "rocketlazyloadscripts",
-                "rocketpreloadlinksconfig",
-                "rocket_lazy"
+                "rocketpreloadlinksconfig"
             ],
             "headers": {
                 "x-powered-by": "wp rocket(?:/([\\d.]+))?\\;version:\\1",
@@ -26229,8 +26229,8 @@
         },
         "WPForms": {
             "js": [
-                "wpforms",
-                "wpforms_settings"
+                "wpforms_settings",
+                "wpforms"
             ],
             "description": "WPForms is a drag and drop WordPress form builder.",
             "website": "https://wpforms.com"
@@ -26718,9 +26718,9 @@
         },
         "Whatfix": {
             "js": [
+                "_wfx_add_logger",
                 "_wfx_settings",
-                "wfx_is_playing__",
-                "_wfx_add_logger"
+                "wfx_is_playing__"
             ],
             "description": "Whatfix is a SaaS based platform which provides in-app guidance and performance support for web applications and software products.",
             "website": "https://whatfix.com"
@@ -26752,8 +26752,8 @@
         },
         "Widen": {
             "js": [
-                "widensessiontimer",
-                "widenui"
+                "widenui",
+                "widensessiontimer"
             ],
             "description": "Widen is a digital asset management and product information management solutions provider.",
             "website": "https://www.widen.com"
@@ -26848,8 +26848,8 @@
         },
         "Wirecard": {
             "js": [
-                "wirecardhpp",
-                "wirecardpaymentpage"
+                "wirecardpaymentpage",
+                "wirecardhpp"
             ],
             "description": "Wirecard is a defunct German payment processor and financial services provider.",
             "website": "https://www.wirecard.com"
@@ -26872,9 +26872,9 @@
         },
         "Wistia": {
             "js": [
+                "wistiautils",
                 "wistia",
-                "wistiaembeds",
-                "wistiautils"
+                "wistiaembeds"
             ],
             "description": "Wistia is designed exclusively to serve companies using video on their websites for marketing, support, and sales.",
             "website": "https://wistia.com"
@@ -26919,9 +26919,9 @@
         },
         "WiziShop": {
             "js": [
-                "wscfg.bnavajust",
                 "wiziblock_array",
-                "wiziblocks_list"
+                "wiziblocks_list",
+                "wscfg.bnavajust"
             ],
             "headers": {
                 "server": "^wiziserver$"
@@ -27093,8 +27093,8 @@
         },
         "Workarea": {
             "js": [
-                "workarea",
-                "weblinc.cartcount"
+                "weblinc.cartcount",
+                "workarea"
             ],
             "implies": [
                 "Ruby on Rails",
@@ -27373,8 +27373,8 @@
         },
         "YUI": {
             "js": [
-                "yahoo.version",
-                "yui.version"
+                "yui.version",
+                "yahoo.version"
             ],
             "description": "YUI is a JavaScript and CSS library with more than 30 unique components including low-level DOM utilities and high-level user-interface widgets.",
             "website": "https://clarle.github.io/yui3"
@@ -27394,11 +27394,11 @@
         },
         "Yahoo Advertising": {
             "js": [
-                "adxinserthtml",
                 "yahoocvload",
                 "yahoo_retargeting_pv_id",
                 "yahoo_ydn_conv_label",
-                "yahoo_ydn_conv_transaction_id"
+                "yahoo_ydn_conv_transaction_id",
+                "adxinserthtml"
             ],
             "description": "Yahoo Advertising includes a comprehensive suite of web, mobile, and video ad products across native, audience, and premium display, which are accessible through a new buying platform.",
             "website": "https://www.adtech.yahooinc.com"
@@ -27469,8 +27469,8 @@
         },
         "Yandex.Direct": {
             "js": [
-                "yandex_partner_id",
-                "yandex_ad_format"
+                "yandex_ad_format",
+                "yandex_partner_id"
             ],
             "html": [
                 "\u003cyatag class=\"ya-partner__ads\"\u003e"
@@ -27674,8 +27674,8 @@
         },
         "YouCam Makeup": {
             "js": [
-                "ymk.caldeltae",
-                "ymk.applymakeupbylook"
+                "ymk.applymakeupbylook",
+                "ymk.caldeltae"
             ],
             "description": "YouCam Makeup is a cross-platform virtual makeup solution for omnichannel ecommerce.",
             "website": "https://www.perfectcorp.com/business/products/virtual-makeup"
@@ -27698,9 +27698,9 @@
         },
         "YouPay": {
             "js": [
+                "youpaystatus",
                 "youpay.buttonwindow",
-                "youpayready",
-                "youpaystatus"
+                "youpayready"
             ],
             "implies": [
                 "Shopify"
@@ -27770,10 +27770,10 @@
         },
         "Zakeke": {
             "js": [
-                "zakekeproductpage",
                 "zakekeboot",
                 "zakekecustomizelabel",
-                "zakekeloading"
+                "zakekeloading",
+                "zakekeproductpage"
             ],
             "description": "Zakeke is a product customisation tool compatible with services and apps mostly used to manage ecommerce store.",
             "website": "https://www.zakeke.com"
@@ -27794,8 +27794,8 @@
         },
         "Zakra": {
             "js": [
-                "zakrafrontend",
-                "zakranavhelper.dimension"
+                "zakranavhelper.dimension",
+                "zakrafrontend"
             ],
             "description": "Zakra is flexible, fast, lightweight and modern multipurpose WordPress theme that comes with many starter free sites.",
             "website": "https://zakratheme.com"
@@ -28000,9 +28000,9 @@
         },
         "Zoey": {
             "js": [
+                "zoey.module",
                 "zoey.developer",
-                "zoeydev",
-                "zoey.module"
+                "zoeydev"
             ],
             "implies": [
                 "PHP",
@@ -28596,9 +28596,9 @@
         },
         "hCaptcha": {
             "js": [
+                "hcaptcha.getrespkey",
                 "hcaptchaonload",
-                "hcaptcha_sitekey",
-                "hcaptcha.getrespkey"
+                "hcaptcha_sitekey"
             ],
             "headers": {
                 "content-security-policy": "(?:\\.|//)hcaptcha\\.com"
@@ -28738,8 +28738,8 @@
         },
         "inSided": {
             "js": [
-                "insideddata",
-                "insided"
+                "insided",
+                "insideddata"
             ],
             "description": "inSided is the only Customer Success Community Platform built to help SaaS companies improve customer success and retention.",
             "website": "https://www.insided.com"
@@ -28824,8 +28824,8 @@
         },
         "jQuery": {
             "js": [
-                "jquery.fn.jquery",
-                "$.fn.jquery"
+                "$.fn.jquery",
+                "jquery.fn.jquery"
             ],
             "description": "jQuery is a JavaScript library which is a free, open-source software designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
             "website": "https://jquery.com"
@@ -28933,8 +28933,8 @@
         },
         "keep. archeevo": {
             "js": [
-                "embedarcheevobasicsearch",
-                "archeevosnippets.mostvieweddocumentsurl"
+                "archeevosnippets.mostvieweddocumentsurl",
+                "embedarcheevobasicsearch"
             ],
             "description": "keep. archeevo is an archival management software that aims to support all the functional areas of an archival institution, covering activities ranging from archival description to employee performance assessment.",
             "website": "https://www.keep.pt/en/produts/archeevo-archival-management-software"
@@ -28950,8 +28950,8 @@
         },
         "libphonenumber": {
             "js": [
-                "libphonenumber.digits",
-                "libphonenumber.asyoutype"
+                "libphonenumber.asyoutype",
+                "libphonenumber.digits"
             ],
             "description": "libphonenumber is a JavaScript library for parsing, formatting, and validating international phone numbers.",
             "website": "https://github.com/google/libphonenumber"
@@ -28995,8 +28995,8 @@
         },
         "mParticle": {
             "js": [
-                "mparticle",
-                "mparticle.config.snippetversion"
+                "mparticle.config.snippetversion",
+                "mparticle"
             ],
             "description": "mParticle is a mobile-focused event tracking and data ingestion tool.",
             "website": "https://www.mparticle.com"
@@ -29034,8 +29034,8 @@
         },
         "mirrAR": {
             "js": [
-                "initmirrarui",
-                "loadmirrar"
+                "loadmirrar",
+                "initmirrarui"
             ],
             "description": "mirrAR is a real-time augmented reality platform for retail brands that enables consumers to virtually try on products and experience how it feels to own them before the actual purchase, both in-store and online.",
             "website": "https://www.mirrar.com"
@@ -29186,9 +29186,9 @@
         },
         "novomind iSHOP": {
             "js": [
-                "_ishopevents",
                 "_ishopevents_url",
-                "ishop.config.baseurl"
+                "ishop.config.baseurl",
+                "_ishopevents"
             ],
             "description": "novomind iSHOP can be introduced rapidly, is highly scalable, has open APIs headless ecommerce and GDPR-compliant in the novomind Cloud.",
             "website": "https://www.novomind.com/en/shopsystem/novomind-ishop-software"
@@ -29456,10 +29456,10 @@
         },
         "prettyPhoto": {
             "js": [
-                "pp_titles",
                 "pp_alreadyinitialized",
                 "pp_descriptions",
-                "pp_images"
+                "pp_images",
+                "pp_titles"
             ],
             "html": [
                 "(?:\u003clink [^\u003e]*href=\"[^\"]*prettyphoto(?:\\.min)?\\.css|\u003ca [^\u003e]*rel=\"prettyphoto)"
@@ -29529,9 +29529,9 @@
         },
         "snigel AdConsent": {
             "js": [
-                "adconsent.version",
                 "snhb.basesettings",
-                "snhb.info.cmpversion"
+                "snhb.info.cmpversion",
+                "adconsent.version"
             ],
             "description": "snigel AdConsent is a IAB-registered consent management platfrom (CMP) which help keep sites speed intact while remaining compliant with GDPR and CCPA.",
             "website": "https://www.snigel.com/adconsent/"
@@ -29689,8 +29689,8 @@
         },
         "vcita": {
             "js": [
-                "vcita",
-                "livesite.btcheckout"
+                "livesite.btcheckout",
+                "vcita"
             ],
             "description": "vcita is an all-in-one customer service and business management software designed for service providers.",
             "website": "https://www.vcita.com"
