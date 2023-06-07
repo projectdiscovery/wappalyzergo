@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"reflect"
+	"sort"
 	"strings"
 )
 
@@ -157,6 +158,8 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		for js := range fingerprint.JS {
 			output.JS = append(output.JS, strings.ToLower(js))
 		}
+		sort.Strings(output.JS)
+
 		for header, pattern := range fingerprint.Headers {
 			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
 		}
@@ -177,6 +180,8 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 					output.HTML = append(output.HTML, strings.ToLower(pat))
 				}
 			}
+
+			sort.Strings(output.HTML)
 		}
 
 		// Use reflection type switch for determining Script tag type
@@ -194,6 +199,8 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 					output.Script = append(output.Script, strings.ToLower(pat))
 				}
 			}
+
+			sort.Strings(output.Script)
 		}
 
 		for header, pattern := range fingerprint.Meta {
@@ -215,6 +222,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 					pat := pattern.(string)
 					final = append(final, strings.ToLower(pat))
 				}
+				sort.Strings(final)
 				output.Meta[strings.ToLower(header)] = final
 			}
 		}
@@ -234,6 +242,8 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 					output.Implies = append(output.Implies, pat)
 				}
 			}
+
+			sort.Strings(output.Implies)
 		}
 
 		// Use reflection type switch for determining CSS tag type
@@ -251,7 +261,10 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 					output.CSS = append(output.CSS, pat)
 				}
 			}
+
+			sort.Strings(output.CSS)
 		}
+
 		// Only add if the fingerprint is valid
 		outputFingerprints.Apps[app] = output
 	}
