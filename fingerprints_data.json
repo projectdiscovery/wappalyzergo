@@ -275,6 +275,19 @@
             ],
             "website": "https://awstats.sourceforge.net"
         },
+        "AbhiCMS": {
+            "meta": {
+                "generator": [
+                    "abhicms\\s([\\d\\.]+)\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "MySQL",
+                "PHP"
+            ],
+            "description": "AbhiCMS is a lesser-known content management system that may not have a significant user base or active development community.",
+            "website": "https://website999.org"
+        },
         "Abicart": {
             "meta": {
                 "generator": [
@@ -1735,6 +1748,14 @@
             "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalised video feeds.",
             "website": "https://www.anyclip.com"
         },
+        "Apache APISIX": {
+            "headers": {
+                "server": "^apisix(?:/([\\d\\.]+))?$\\;version:\\1",
+                "x-apisix-upstream-status": ""
+            },
+            "description": "Apache APISIX is an open-source, cloud-native API gateway developed by the Apache Software Foundation. It provides a scalable and high-performance solution for managing and securing API traffic.",
+            "website": "https://apisix.apache.org"
+        },
         "Apache HTTP Server": {
             "headers": {
                 "server": "(?:apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)httpd)\\;version:\\1"
@@ -1767,6 +1788,7 @@
             "headers": {
                 "server": "ats/?([\\d.]+)?\\;version:\\1"
             },
+            "description": "Apache Traffic Server is an open-source caching and proxying server that serves as an HTTP/1.1 and HTTP/2 reverse proxy with caching capabilities, load balancing, request routing, SSL termination, and support for advanced HTTP features.",
             "website": "https://trafficserver.apache.org/"
         },
         "Apache Wicket": {
@@ -1776,6 +1798,7 @@
             "implies": [
                 "Java"
             ],
+            "description": "Apache Wicket is an open-source Java web application framework for building scalable and maintainable web applications.",
             "website": "https://wicket.apache.org"
         },
         "Apereo CAS": {
@@ -3089,6 +3112,14 @@
             "description": "Blossom Travel is a free WordPress theme which allows you to create various types of feminine blogs such as travel blog, personal blog, fashion blog, beauty blog, and many more.",
             "website": "https://blossomthemes.com/wordpress-themes/blossom-travel"
         },
+        "Blotout EdgeTag": {
+            "js": [
+                "edgetag",
+                "edgetagproviders"
+            ],
+            "description": "Blotout EdgeTag is a technology provided by Blotout that tackles the effects of privacy changes on C-API signals by reconstructing signals around a lifetime ID, allowing for real-time remarketing of site visits.",
+            "website": "https://blotout.io"
+        },
         "Blue": {
             "js": [
                 "bluecpy_id",
@@ -3671,6 +3702,14 @@
             ],
             "description": "Brilliant Web-to-Lead plugin facilitates the technical integration between WordPress installations and Salesforce CRM accounts, enabling the exchange and synchronization of data.",
             "website": "https://brilliantplugins.com/downloads/salesforce/"
+        },
+        "Brimble": {
+            "headers": {
+                "server": "^brimble$",
+                "x-brimble-id": ""
+            },
+            "description": "Brimble is a cloud platform for deploying frontend web applications.",
+            "website": "https://brimble.io"
         },
         "Broadstreet": {
             "js": [
@@ -4807,6 +4846,13 @@
             ],
             "website": "https://www.labsmedia.com/clickheat/index.html"
         },
+        "ClickOnce": {
+            "css": [
+                "\\.ClickOnceInfoText"
+            ],
+            "description": "ClickOnce is a Microsoft .NET deployment technology that enables the creation of self-updating Windows-based applications that can be installed and run with minimal user interaction.",
+            "website": "https://learn.microsoft.com/en-us/visualstudio/deployment/clickonce-security-and-deployment"
+        },
         "ClickTale": {
             "js": [
                 "clicktale",
@@ -4923,7 +4969,7 @@
             "js": [
                 "__cfbeaconcustomtag"
             ],
-            "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
+            "description": "Cloudflare Browser Insights is a tool that measures the performance of websites from the perspective of users.",
             "website": "https://www.cloudflare.com"
         },
         "Cloudflare Rocket Loader": {
@@ -5126,6 +5172,13 @@
             ],
             "description": "CoinImp is a cryptocurrency mining service.",
             "website": "https://www.coinimp.com"
+        },
+        "Colbass": {
+            "js": [
+                "colbassrunning"
+            ],
+            "description": "Colbass is AI System that transforms text into real-human voiceovers.",
+            "website": "https://colbass.com"
         },
         "Colibri WP": {
             "js": [
@@ -5716,6 +5769,15 @@
                 "Craft CMS"
             ],
             "website": "https://craftcommerce.com"
+        },
+        "Craftum": {
+            "meta": {
+                "generator": [
+                    "^craftum cms$"
+                ]
+            },
+            "description": "Craftum is an Russian website builder.",
+            "website": "https://craftum.com"
         },
         "Cratejoy": {
             "cookies": {
@@ -6963,6 +7025,22 @@
             "description": "Dyte is a developer-friendly, real-time audio and video communication software development kit (SDK).",
             "website": "https://dyte.io"
         },
+        "E-Com Plus": {
+            "js": [
+                "ecompassport.storagekey"
+            ],
+            "meta": {
+                "generator": [
+                    "^e-com\\splus\\sstorefront$"
+                ]
+            },
+            "implies": [
+                "TypeScript",
+                "Vue.js"
+            ],
+            "description": "E-Com Plus is an open fair-code ecommerce platform designed to be used with headless commerce APIs.",
+            "website": "https://www.ecomplus.io"
+        },
         "E-monsite": {
             "meta": {
                 "generator": [
@@ -7379,6 +7457,17 @@
             ],
             "description": "Elixir is a dynamic, functional language designed for building scalable and maintainable applications.",
             "website": "https://elixir-lang.org"
+        },
+        "ElkArte": {
+            "js": [
+                "elk_forum_action",
+                "elk_iso_case_folding"
+            ],
+            "implies": [
+                "MySQL"
+            ],
+            "description": "ElkArte is an open-source PHP-based forum software with MySQL integration, offering features such as user authentication, topic categorisation, post formatting, private messaging, moderation tools, and customisable themes and extensions.",
+            "website": "https://www.elkarte.net"
         },
         "Ellucian CRM Recruit": {
             "js": [
@@ -8905,6 +8994,17 @@
             "description": "Front Chat is the live website chat solution that you can manage straight from your inbox.",
             "website": "https://front.com"
         },
+        "Front-Commerce": {
+            "implies": [
+                "GraphQL",
+                "Node.js",
+                "PWA",
+                "React",
+                "Webpack"
+            ],
+            "description": "Front-Commerce is a React-based ecommerce framework that provides a development environment and tools for building online stores, offering seamless integration with backend systems through GraphQL and supporting popular platforms like Adobe Commerce, BigCommerce, OpenMage, Contentful or Prismic.",
+            "website": "https://front-commerce.com"
+        },
         "FrontPage": {
             "meta": {
                 "generator": [
@@ -9404,6 +9504,13 @@
         "Gigalixir": {
             "description": "Gigalixir is a PaaS focused on deployments of Elixir and Phoenix web apps",
             "website": "https://gigalixir.com/"
+        },
+        "Gist": {
+            "js": [
+                "gist.setappid "
+            ],
+            "description": "Gist is email marketing automation, live chat, and helpdesk software.",
+            "website": "https://getgist.com/live-chat"
         },
         "Gist Giftship": {
             "description": "Gist Giftship is a gifting app on Shopify that allows your customers to complete all of their gift shopping at once.",
@@ -14180,7 +14287,7 @@
             "implies": [
                 "TypeScript"
             ],
-            "description": "Mantine is a React components library.",
+            "description": "Mantine is an open-source UI framework and component library for React.",
             "website": "https://mantine.dev"
         },
         "MantisBT": {
@@ -17596,6 +17703,15 @@
             ],
             "description": "Paymenter is an open-source webshop solution for hosting companies.",
             "website": "https://paymenter.org"
+        },
+        "Payplug": {
+            "js": [
+                "payplug.card",
+                "payplug_ajax_url",
+                "payplug_domain"
+            ],
+            "description": "Payplug is a French omnichannel payment solution dedicated to merchants.",
+            "website": "https://www.payplug.com"
         },
         "Paysafe": {
             "js": [
@@ -24035,10 +24151,13 @@
             "website": "https://tablepress.org"
         },
         "Taboola": {
+            "cookies": {
+                "taboola_session_id": ""
+            },
             "js": [
                 "_taboola",
-                "_taboolanetworkmode",
-                "taboola_view_id"
+                "taboola_view_id",
+                "trcimpl.global"
             ],
             "description": "Taboola is a content discovery \u0026 native advertising platform for publishers and advertisers.",
             "website": "https://www.taboola.com"
@@ -25526,6 +25645,18 @@
             "description": "Ultimate Addons for Elementor is a plugin that adds new widgets and modules to the Elementor page builder for WordPress, providing additional design options and functionality.",
             "website": "https://ultimateelementor.com"
         },
+        "Ultimate Bulletin Board": {
+            "meta": {
+                "generator": [
+                    "^ubb\\.threads\\s([\\d\\.]+)$\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "PHP"
+            ],
+            "description": "Ultimate Bulletin Board is an internet forum software designed for online communities, offering features such as user registration, thread organisation, moderation tools, search functionality, and customisable design options to facilitate discussions and community engagement.",
+            "website": "https://www.ubbcentral.com"
+        },
         "Ultimate GDPR \u0026 CCPA": {
             "js": [
                 "ct_ultimate_gdpr_cookie"
@@ -25985,6 +26116,10 @@
             ],
             "description": "Ve Global, formerly known as Ve Interactive, is a global technology company that provides ecommerce businesses with a managed-service of proprietary marketing software and digital advertising solutions.",
             "website": "https://ve.com"
+        },
+        "Vectary": {
+            "description": "Vectary is fully-featured 3D modeling tool with photorealistic real-time rendering, augmented reality, interactions and animations.",
+            "website": "https://www.vectary.com"
         },
         "Vendre": {
             "js": [
@@ -29036,6 +29171,13 @@
             ],
             "description": "fullPage.js a jQuery and vanilla JavaScript plugin for fullscreen scrolling websites.",
             "website": "https://github.com/alvarotrigo/fullpage.js"
+        },
+        "genezio": {
+            "headers": {
+                "x-powered-by": "^genezio$"
+            },
+            "description": "Genezio is a code generation tool that facilitates app logic focus, organises backend API code in deployable classes, autogenerates class interfaces with JSON-RPC for typesafe API calls, supports REST and Webhooks, enables simple API code deployment on pre-configured infrastructure using a shell command, and provides an SDK that eliminates the need to handle URLs, headers.",
+            "website": "https://genez.io"
         },
         "git": {
             "meta": {
