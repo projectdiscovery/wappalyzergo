@@ -4322,13 +4322,6 @@
             "description": "Carts Guru is the all-in-one marketing automation tool for ecommerce stores.",
             "website": "https://www.carts.guru"
         },
-        "Cashew Payments": {
-            "headers": {
-                "content-security-policy": "\\.cashewpayments\\.com"
-            },
-            "description": "Cashew Payments is a buy now, pay later platform that allows its customers to shop now and pay later in equal monthly installments.",
-            "website": "https://www.cashewpayments.com"
-        },
         "Catberry.js": {
             "js": [
                 "catberry",
@@ -28872,6 +28865,13 @@
             },
             "description": "cState is an open-source static (serverless) status page.",
             "website": "https://github.com/cstate/cstate"
+        },
+        "cashew": {
+            "headers": {
+                "content-security-policy": "\\.cashewpayments\\.com"
+            },
+            "description": "Cashew is a buy now, pay later platform that allows its customers to shop now and pay later in equal monthly installments.",
+            "website": "https://www.cashewpayments.com"
         },
         "cdnjs": {
             "implies": [
