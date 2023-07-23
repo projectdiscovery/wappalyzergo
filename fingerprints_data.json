@@ -12624,19 +12624,6 @@
             "description": "Kibo Commerce is a enterprise ecommerce platform  that offers a cloud-based, end-to-end commerce solution for retailers and branded manufacturers.",
             "website": "https://kibocommerce.com"
         },
-        "Kibo Personalization": {
-            "js": [
-                "baynoteapi",
-                "baynotejsversion",
-                "certona.recommendations",
-                "certonarecommendations",
-                "monetate",
-                "monetateq",
-                "monetatet"
-            ],
-            "description": "Kibo Personalization is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
-            "website": "https://kibocommerce.com/personalization-software"
-        },
         "Kiliba": {
             "description": "Kiliba has developed a module that automates the marketing process from creating an email to distributing it.",
             "website": "https://en.kiliba.com"
@@ -15362,6 +15349,19 @@
             ],
             "description": "Moneris is Canada’s leading processor of Debit and credit card payments. This WooCommerce extension automatically adds moneris payment gateway to your woocommerce website and allows you to keep the customer on your site for the checkout process.",
             "website": "https://wordpress.org/plugins/wc-moneris-payment-gateway"
+        },
+        "Monetate": {
+            "js": [
+                "baynoteapi",
+                "baynotejsversion",
+                "certona.recommendations",
+                "certonarecommendations",
+                "monetate",
+                "monetateq",
+                "monetatet"
+            ],
+            "description": "Monetate (formerly 'Kibo Personalization') is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
+            "website": "https://monetate.com"
         },
         "MongoDB": {
             "description": "MongoDB is a document-oriented NoSQL database used for high volume data storage.",
@@ -20361,6 +20361,7 @@
             },
             "js": [
                 "__react_on_rails_event_handlers_ran_once__",
+                "_rails_loaded",
                 "reactonrails"
             ],
             "headers": {
