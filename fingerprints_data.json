@@ -952,12 +952,13 @@
         },
         "Aegea": {
             "headers": {
-                "x-powered-by": "^e2 aegea v(\\d+)$\\;version:\\1"
+                "x-powered-by": "^(?:e2\\s)?aegea\\s(?:v)?([\\d\\.]+)\\;version:\\1"
             },
             "implies": [
                 "PHP",
                 "jQuery"
             ],
+            "description": "Aegea is a blog engine created by Ilya Birman.",
             "website": "https://blogengine.ru"
         },
         "Aero Commerce": {
@@ -4357,6 +4358,16 @@
             "description": "Carro connects participating Shopify stores together to enable cross-store selling or the ability for like-minded partners to directly sell each other products without the need for inventory, managing returns, or minimum order quantities.",
             "website": "https://getcarro.com"
         },
+        "Carrot quest": {
+            "js": [
+                "carrotquest"
+            ],
+            "headers": {
+                "content-security-policy": "\\.carrotquest\\.app"
+            },
+            "description": "Carrot quest is a customer engagement and communication platform that aids businesses in improving interactions with users and customers through targeted messaging, in-app messaging, live chat, email campaigns, and user behavior tracking.",
+            "website": "https://www.carrotquest.io"
+        },
         "Cart Functionality": {
             "js": [
                 "google_tag_params.ecomm_pagetype"
@@ -6656,6 +6667,14 @@
             "description": "Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.",
             "website": "https://www.docker.com/"
         },
+        "Docsify": {
+            "js": [
+                "docsify.version",
+                "docsifycompiler"
+            ],
+            "description": "Docsify is an open-source documentation generator for creating user-friendly documentation websites.",
+            "website": "https://docsify.js.org"
+        },
         "DocuSign": {
             "description": "DocuSign allows organisations to manage electronic agreements.",
             "website": "https://www.docusign.com"
@@ -7035,8 +7054,8 @@
                 "d_version",
                 "systemid"
             ],
-            "description": "Duda is a web design platform for companies that offer web design services.",
-            "website": "https://www.duda.co/website-builder"
+            "description": "Duda is a user-friendly website builder and CMS platform that enables businesses and individuals to create responsive, mobile-friendly websites without extensive coding knowledge.",
+            "website": "https://www.duda.co"
         },
         "Duel": {
             "cookies": {
@@ -11769,6 +11788,10 @@
             "description": "Infomaniak is a hosting company based in Geneva, Switzerland.",
             "website": "https://www.infomaniak.com"
         },
+        "InforUMobile": {
+            "description": "InforUMobile is a multi-channel system that enables digital communication with customers, offering various channels for interacting and engaging with users, developed by the Shamir Systems Group.",
+            "website": "https://www.inforu.co.il"
+        },
         "Infoset": {
             "js": [
                 "infosetchat",
@@ -12649,6 +12672,16 @@
             "description": "Karma is a test runner for JavaScript that runs on Node.js.",
             "website": "https://karma-runner.github.io"
         },
+        "Karte": {
+            "js": [
+                "__karte_live",
+                "__karte_loaded",
+                "__karte_rewrite_admin_config",
+                "__karte_tracker"
+            ],
+            "description": "Karte is a customer engagement and marketing automation platform that enables businesses to understand their customers, deliver personalised experiences, and optimise marketing strategies.",
+            "website": "https://karte.io"
+        },
         "Kartra": {
             "js": [
                 "init_kartra_tracking",
@@ -12656,6 +12689,16 @@
             ],
             "description": "Kartra is an online business platform that offers marketing and sales tools.",
             "website": "https://home.kartra.com"
+        },
+        "Kasada": {
+            "cookies": {
+                "kp_uidz": ""
+            },
+            "js": [
+                "kpsdk.configure"
+            ],
+            "description": "Kasada is a cybersecurity company that provides a platform to protect websites and web applications from bot attacks and malicious activities.",
+            "website": "https://www.kasada.io"
         },
         "Keap": {
             "description": "Keap offers an email marketing and sales platform for small businesses, including products to manage customers, customer relationship management, marketing, and ecommerce.",
@@ -14091,6 +14134,18 @@
             ],
             "website": "https://www.luigisbox.com"
         },
+        "Lume": {
+            "meta": {
+                "generator": [
+                    "^lume\\sv([\\d\\.]+)$\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "Deno"
+            ],
+            "description": "Lume is a static site generator based on Deno.",
+            "website": "https://lume.land"
+        },
         "Luna": {
             "js": [
                 "ditto.__esmodule",
@@ -14706,6 +14761,8 @@
         },
         "Mautic": {
             "js": [
+                "mauticformvalidations",
+                "mauticsdk",
                 "mautictrackingobject"
             ],
             "description": "Mautic is a free and open-source marketing automation tool for Content Management, Social Media, Email Marketing, and can be used for the integration of social networks, campaign management, forms, questionnaires, reports, etc.",
@@ -16344,6 +16401,13 @@
             "description": "NodePing is a tool in the Website Monitoring category of a tech stack. NodePing is an open source tool with GitHub stars and GitHub forks.",
             "website": "https://nodeping.com"
         },
+        "Nogin": {
+            "js": [
+                "nogin.wishlist"
+            ],
+            "description": "Nogin is a platform operating as Commerce-as-a-Service (CaaS), offering cloud-based ecommerce functionalities and infrastructure for seamless integration and development of ecommerce solutions.",
+            "website": "https://www.nogin.com"
+        },
         "Noibu": {
             "js": [
                 "noibujs_config"
@@ -17103,6 +17167,10 @@
         "OperateBeyond": {
             "description": "OperateBeyond is a software development company that offers website design, automated inventory management, CRM, dealer websites, and DMS.",
             "website": "https://operatebeyond.com/dealer-websites-marketing"
+        },
+        "Opigno LMS": {
+            "description": "Opigno LMS is an open-source Learning Management System (LMS) based on Drupal, designed for creating and delivering online courses and educational content.",
+            "website": "https://www.opigno.org"
         },
         "OpinionLab": {
             "js": [
@@ -24165,20 +24233,14 @@
             "website": "https://swagifyapp.com"
         },
         "SweetAlert": {
-            "html": [
-                "\u003clink[^\u003e]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css"
-            ],
-            "description": "SweetAlert is a beautiful replacement for JavaScript's alert.",
+            "description": "SweetAlert is a JavaScript library that provides alternative alert and modal dialog boxes for web applications, with customisable features, aiming to improve the user interface of the default browser dialogs.",
             "website": "https://sweetalert.js.org"
         },
         "SweetAlert2": {
             "js": [
                 "sweetalert2"
             ],
-            "html": [
-                "\u003clink[^\u003e]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css"
-            ],
-            "description": "SweetAlert2 is a beautiful, responsive, customizable, accessible replacement for JavaScript's popup boxes.",
+            "description": "SweetAlert2 is a JavaScript library that provides customisable, visually appealing, and responsive alert and modal dialog boxes for web applications.",
             "website": "https://sweetalert2.github.io/"
         },
         "Swell": {
@@ -24188,13 +24250,8 @@
             "js": [
                 "swell.version"
             ],
-            "html": [
-                "\u003c[^\u003e]*schema\\.io",
-                "\u003c[^\u003e]*swell\\.is",
-                "\u003c[^\u003e]*swell\\.store"
-            ],
             "description": "Swell is a headless ecommerce platform for modern brands, startups, and agencies.",
-            "website": "https://www.swell.is/"
+            "website": "https://www.swell.is"
         },
         "Swiffy Slider": {
             "description": "Swiffy Slider is a wrapper defined in html with slides, navigation and indicators as its children.",
@@ -25271,6 +25328,13 @@
             ],
             "description": "Tiqets provides a complete overview of a city - museums, attractions, zoos, canal cruises, concerts. Publishers joined to the Tiqets affiliate program can receive 6% commission during our 30-day cookie window from completed total bookings resulting from featuring links to Tiqets products and content across their brand: blog/website, social media, newsletters, etc.",
             "website": "https://www.tiqets.com/affiliate"
+        },
+        "Tistory": {
+            "js": [
+                "tistoryblog"
+            ],
+            "description": "Tistory is a South Korean blog-publishing service that allows private or multi-user blogs.",
+            "website": "https://tistory.com"
         },
         "Titan": {
             "js": [
@@ -28787,6 +28851,13 @@
                 "\u003cimg [^\u003e]*src=\"[^\"]+ad\\.zanox\\.com"
             ],
             "website": "https://zanox.com"
+        },
+        "Zeabur": {
+            "headers": {
+                "x-zeabur-request-id": ""
+            },
+            "description": "Zeabur is a platform for running full stack apps and databases.",
+            "website": "https://zeabur.com"
         },
         "Zeald": {
             "cookies": {
