@@ -2786,6 +2786,10 @@
             "description": "Basic is an authetication method used by some web servers.",
             "website": "https://tools.ietf.org/html/rfc7617"
         },
+        "Basil.css": {
+            "description": "Basil.css is a responsive and customizable UI framework.",
+            "website": "https://basilcss.com"
+        },
         "Basis Technologies": {
             "description": "Basis Technologies, formerly ‘Centro,’ provides cloud-based workflow automation and business intelligence software for marketing.",
             "website": "https://basis.net/"
@@ -5538,7 +5542,7 @@
                 "x-contentful-request-id": ""
             },
             "html": [
-                "\u003c[^\u003e]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)"
+                "\u003c[^\u003e]+(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)"
             ],
             "description": "Contentful is an API-first content management platform to create, manage and publish content on any digital channel.",
             "website": "https://www.contentful.com"
@@ -10776,6 +10780,13 @@
             "description": "Hashnode is a free developer blogging platform that allows you to publish articles on your own domain and helps you stay connected with a global developer community.",
             "website": "https://hashnode.com/"
         },
+        "Hashtag Labs": {
+            "js": [
+                "htlbid.cmd"
+            ],
+            "description": "Hashtag Labs is a full-service digital ad operations company.",
+            "website": "https://hashtag-labs.com"
+        },
         "Haskell": {
             "website": "https://wiki.haskell.org/Haskell"
         },
@@ -10791,6 +10802,10 @@
                 "\u003c[^\u003e]*data-headjs-load"
             ],
             "website": "https://headjs.com"
+        },
+        "Header Bidding Ai": {
+            "description": "Header Bidding Ai is a provider of an automated and managed header bidding solution. Header bidding cutting-edge technique where publishers offer their ad inventory to many ad exchanges.",
+            "website": "https://headerbidding.ai"
         },
         "Headless UI": {
             "description": "Headless UI is an unstyled component library for either React.js or Vue.js from the same people that created Tailwind CSS.",
@@ -11991,12 +12006,10 @@
                 "ionic.config",
                 "ionic.version"
             ],
+            "description": "Ionic is an open-source framework that enables developers to create cross-platform mobile, web, and desktop applications using web technologies like HTML, CSS, and JavaScript.",
             "website": "https://ionicframework.com"
         },
         "Ionicons": {
-            "html": [
-                "\u003clink[^\u003e]* href=[^\u003e]+ionicons(?:\\.min)?\\.css"
-            ],
             "description": "Ionicons is an open-source icon set crafted for web, iOS, Android, and desktop apps.",
             "website": "https://ionicons.com"
         },
@@ -12937,6 +12950,10 @@
         "Klickly": {
             "description": "Klickly is an invite-only, commission-based advertising platform.",
             "website": "https://www.klickly.com"
+        },
+        "Knak": {
+            "description": "Knak is a platform that provides customisable email and landing page templates to simplify the creation of visually appealing marketing campaigns.",
+            "website": "https://knak.com"
         },
         "Knockout.js": {
             "js": [
@@ -16487,7 +16504,8 @@
         },
         "Nuxt.js": {
             "js": [
-                "$nuxt"
+                "$nuxt",
+                "usenuxtapp"
             ],
             "html": [
                 "\u003cdiv [^\u003e]*id=\"__nuxt\"",
@@ -16498,7 +16516,7 @@
                 "Vue.js"
             ],
             "description": "Nuxt is a Vue framework for developing modern web applications.",
-            "website": "https://nuxtjs.org"
+            "website": "https://nuxt.com"
         },
         "OTYS": {
             "js": [
@@ -19609,6 +19627,26 @@
             "website": "https://github.com/rtomayko/rack-cache"
         },
         "Radix UI": {
+            "css": [
+                "--radix-accordion-content-height",
+                "--radix-context-menu-content-available-height",
+                "--radix-context-menu-content-transform-origin",
+                "--radix-dropdown-menu-content-available-height",
+                "--radix-dropdown-menu-content-transform-origin",
+                "--radix-hover-card-content-transform-origin",
+                "--radix-navigation-menu-viewport-height",
+                "--radix-navigation-menu-viewport-width",
+                "--radix-popover-content-transform-origin",
+                "--radix-popover-trigger-width",
+                "--radix-select-content-available-height",
+                "--radix-select-content-transform-origin",
+                "--radix-select-trigger-height",
+                "--radix-select-trigger-width",
+                "--radix-select-trigger-width",
+                "--radix-toast-swipe-end-x",
+                "--radix-toast-swipe-move-x",
+                "--radix-tooltip-content-transform-origin"
+            ],
             "description": "Radix UI is a React-based user interface component library that offers accessible, responsive, and customisable components for building web applications.",
             "website": "https://www.radix-ui.com"
         },
@@ -20634,6 +20672,13 @@
         },
         "Rollbar": {
             "website": "https://rollbar.com/"
+        },
+        "Rosti": {
+            "headers": {
+                "x-rosti": ""
+            },
+            "description": "Rosti is a hosting service suitable for development and production deployment of web applications.",
+            "website": "https://rosti.cz"
         },
         "Rotic": {
             "js": [
@@ -22576,6 +22621,18 @@
             "description": "Sitecore Engagement Cloud is a cloud-based customer experience management platform offering content management, personalisation, marketing automation, analytics, and omni-channel delivery for enhancing digital marketing efforts and improving customer experiences.",
             "website": "https://www.sitecore.com/products/engagement-cloud"
         },
+        "Sitecore Experience Edge": {
+            "implies": [
+                "GraphQL",
+                "Sitecore Experience Platform"
+            ],
+            "description": "Sitecore Experience Edge is a product that optimises content delivery by utilising edge computing and caching technologies to enhance website performance and user experience.",
+            "website": "https://doc.sitecore.com/xp/en/developers/101/developer-tools/experience-edge-for-xm-apis.html"
+        },
+        "Sitecore Experience Platform": {
+            "description": "Sitecore Experience Platform is a digital platform used by businesses to create, manage, and deliver personalised content and experiences to users across different channels.",
+            "website": "https://www.sitecore.com/products/sitecore-experience-platform"
+        },
         "Siteglide": {
             "implies": [
                 "PlatformOS"
@@ -24098,6 +24155,10 @@
             ],
             "description": "SummerCart is an ecommerce platform written in PHP.",
             "website": "https://www.summercart.com"
+        },
+        "Summernote": {
+            "description": "Summernote is an open-source JavaScript library that offers a feature-rich WYSIWYG editor for web applications, allowing users to create and edit formatted content in a familiar word processor-like interface.",
+            "website": "https://summernote.org"
         },
         "Sumo": {
             "js": [
@@ -27407,6 +27468,10 @@
             "website": "https://web2py.com"
         },
         "WebAssembly": {
+            "js": [
+                "wasmbinary",
+                "wasmbinaryfile"
+            ],
             "headers": {
                 "content-type": "application/wasm"
             },
@@ -30588,6 +30653,17 @@
                 "\u003c[^\u003e]+data-sr(?:-id)"
             ],
             "website": "https://scrollrevealjs.org"
+        },
+        "shadcn/ui": {
+            "css": [
+                "--destructive-foreground"
+            ],
+            "implies": [
+                "Radix UI",
+                "Tailwind CSS"
+            ],
+            "description": "shadcn/ui is a component system built with Radix UI and Tailwind CSS.",
+            "website": "https://ui.shadcn.com"
         },
         "shine.js": {
             "js": [
