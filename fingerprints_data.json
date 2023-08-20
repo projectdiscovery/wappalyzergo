@@ -50,6 +50,13 @@
             "description": "4-Tell is an ecommerce software company for retailers with AI-powered personalisation and recommendations products.",
             "website": "https://4-tell.com"
         },
+        "42stores": {
+            "headers": {
+                "powered-by": "^42stores$"
+            },
+            "description": "42stores is a French SaaS ecommerce solution that was established in 2008. It offers a range of features such as monitoring, customer support, and regular updates. The platform is known for its flexibility and modularity, making it possible to integrate with various ERP systems.",
+            "website": "https://www.42stores.com"
+        },
         "51.LA": {
             "js": [
                 "la.config.ck"
@@ -842,6 +849,10 @@
             ],
             "description": "Adobe Experience Manager (AEM) is a content management solution for building websites, mobile apps and forms.",
             "website": "https://www.adobe.com/marketing/experience-manager.html"
+        },
+        "Adobe Experience Manager Franklin": {
+            "description": "Adobe Experience Manager Franklin, also known as Project Helix or Composability, is a new way to publish AEM pages using Google Drive or Microsoft Office via Sharepoint. Instead of components, Franklin uses blocks to build pages. Blocks are pieces of a document that will be transformed into web page content.",
+            "website": "https://www.hlx.live"
         },
         "Adobe Experience Platform Identity Service": {
             "js": [
@@ -2186,6 +2197,13 @@
             "description": "Asgaros Forum is a lightweight and simple forum plugin for WordPress.",
             "website": "https://www.asgaros.de"
         },
+        "Assertive Yield": {
+            "js": [
+                "assertive.predict"
+            ],
+            "description": "Assertive Yield is a SaaS company that specialises in helping SSPs (Supply-Side Platforms), publishers, and ad networks optimise their advertising revenue through real-time attribution and yield optimisation strategies.",
+            "website": "https://www.assertiveyield.com"
+        },
         "Astra": {
             "description": "Astra is a fast, lightweight, and highly customizable WordPress Theme.",
             "website": "https://wpastra.com/"
@@ -2390,6 +2408,10 @@
         "Automatad": {
             "description": "Automatad is a digital media products company that provides a suite of programmatic monetisation solutions.",
             "website": "https://automatad.com/"
+        },
+        "Automatic.css": {
+            "description": "Automatic.css is a CSS framework for WordPress page builders.",
+            "website": "https://automaticcss.com"
         },
         "Automizely": {
             "js": [
@@ -8568,7 +8590,8 @@
             "implies": [
                 "Python"
             ],
-            "website": "https://flask.pocoo.org"
+            "description": "Flask is a Python micro web framework ideal for rapidly constructing web applications, offering minimalism, flexibility, and modularity.",
+            "website": "https://github.com/pallets/flask/"
         },
         "Flat UI": {
             "html": [
@@ -12031,6 +12054,16 @@
             "description": "Isotope.js is a JavaScript library that makes it easy to sort, filter, and add Masonry layouts to items on a webpage.",
             "website": "https://isotope.metafizzy.co"
         },
+        "Isso": {
+            "js": [
+                "isso.fetchcomments"
+            ],
+            "implies": [
+                "Python"
+            ],
+            "description": "Isso is a lightweight commenting server written in Python and JavaScript, referred to as \"Ich schrei sonst\" in German.",
+            "website": "https://github.com/posativ/isso/"
+        },
         "Issuu": {
             "js": [
                 "issuupanel",
@@ -12221,6 +12254,9 @@
             "website": "https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html"
         },
         "Jekyll": {
+            "js": [
+                "simplejekyllsearch"
+            ],
             "html": [
                 "\u003c!-- begin jekyll seo tag",
                 "\u003c!-- created with jekyll now -",
@@ -12840,6 +12876,13 @@
             "description": "Kibo Personalization is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
             "website": "https://kibocommerce.com/personalization-software"
         },
+        "Kicksite": {
+            "cookies": {
+                "_kicksite_session": ""
+            },
+            "description": "Kicksite is a gym and martial arts member management software with attendance tracking, automated billing, free texting, lead capture forms and more.",
+            "website": "https://kicksite.com"
+        },
         "Kiliba": {
             "description": "Kiliba has developed a module that automates the marketing process from creating an email to distributing it.",
             "website": "https://en.kiliba.com"
@@ -13421,6 +13464,10 @@
             "description": "Leanplum is a multi-channel messaging and campaign orchestration platform.",
             "website": "https://www.leanplum.com"
         },
+        "LearnDash": {
+            "description": "LearnDash is a WordPress plugin that enables the creation and management of online courses, quizzes, and educational content within a website.",
+            "website": "https://www.learndash.com"
+        },
         "LearnWorlds": {
             "js": [
                 "lwclient.ebooks",
@@ -13900,12 +13947,12 @@
         },
         "LlamaLink Cloud Server": {
             "headers": {
-                "server": "^llamalink\\scloud$"
+                "server": "^llamalink"
             },
             "implies": [
                 "Nginx"
             ],
-            "description": "LlamaLink Cloud Server is a custom dynamic web server based on Nginx Web server that load balance user traffic between hosting nodes and allows fast and cached expiriance to website users.",
+            "description": "LlamaLink Cloud Server is a custom dynamic web server based on Nginx Web server that load balance user traffic between hosting nodes and allows fast and cached experience to web and app users.",
             "website": "https://llamalink.net"
         },
         "Loadable-Components": {
@@ -21223,6 +21270,7 @@
                 "sallaapplepay"
             ],
             "headers": {
+                "x-frame-options": "\\.salla\\.sa",
                 "x-powered-by": "^salla$"
             },
             "description": "Salla is an ecommerce platform specifically tailored to serve businesses and customers in Saudi Arabia.",
@@ -22342,7 +22390,7 @@
             "description": "Signifyd is a provider of an enterprise-grade fraud technology solution for ecommerce stores.",
             "website": "https://www.signifyd.com"
         },
-        "SilverStripe": {
+        "Silverstripe": {
             "html": [
                 "powered by \u003ca href=\"[^\u003e]+silverstripe"
             ],
@@ -26860,6 +26908,14 @@
             "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
             "website": "https://visualcomposer.com"
         },
+        "Visual Portfolio": {
+            "js": [
+                "vpdata.screensizes",
+                "vpdata.version"
+            ],
+            "description": "Visual Portfolio is a plugin with a robust set of features, designed to help you create galleries that effectively display your creative projects.",
+            "website": "https://visualportfolio.co"
+        },
         "Visual Quiz Builder": {
             "description": "Visual Quiz Builder is a Shopify app built by AskWhai.",
             "website": "https://apps.shopify.com/product-recommendation-quiz"
@@ -27213,6 +27269,10 @@
             ],
             "description": "WP Maintenance Mode is a WordPress plugin which add a maintenance page to your blog.",
             "website": "https://github.com/andrianvaleanu/WP-Maintenance-Mode"
+        },
+        "WP Portfolio": {
+            "description": "WP Portfolio is a premium standalone WordPress plugin designed for creating and showcasing portfolios.",
+            "website": "https://wpportfolio.net"
         },
         "WP Puzzle Basic": {
             "description": "WP Puzzle Basic is fully responsive, clean and minimal WordPress theme.",
