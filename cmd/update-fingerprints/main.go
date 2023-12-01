@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -24,12 +24,14 @@ type Fingerprints struct {
 
 // Fingerprint is a single piece of information about a tech
 type Fingerprint struct {
+	Cats        []int                  `json:"cats"`
 	CSS         interface{}            `json:"css"`
 	Cookies     map[string]string      `json:"cookies"`
 	JS          map[string]string      `json:"js"`
 	Headers     map[string]string      `json:"headers"`
 	HTML        interface{}            `json:"html"`
-	Script      interface{}            `json:"script"`
+	Script      interface{}            `json:"scripts"`
+	ScriptSrc   interface{}            `json:"scriptSrc"`
 	Meta        map[string]interface{} `json:"meta"`
 	Implies     interface{}            `json:"implies"`
 	Description string                 `json:"description"`
@@ -45,12 +47,14 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
+	Cats        []int               `json:"cats,omitempty"`
+	CSS         []string            `json:"css,omitempty"`
 	Cookies     map[string]string   `json:"cookies,omitempty"`
 	JS          []string            `json:"js,omitempty"`
 	Headers     map[string]string   `json:"headers,omitempty"`
 	HTML        []string            `json:"html,omitempty"`
-	Script      []string            `json:"script,omitempty"`
-	CSS         []string            `json:"css,omitempty"`
+	Script      []string            `json:"scripts,omitempty"`
+	ScriptSrc   []string            `json:"scriptSrc,omitempty"`
 	Meta        map[string][]string `json:"meta,omitempty"`
 	Implies     []string            `json:"implies,omitempty"`
 	Description string              `json:"description,omitempty"`
@@ -123,7 +127,7 @@ func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
 	}
 	defer resp.Body.Close()
 
-	data, err := ioutil.ReadAll(resp.Body)
+	data, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
@@ -145,6 +149,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 
 	for app, fingerprint := range fingerprints.Apps {
 		output := OutputFingerprint{
+			Cats:        fingerprint.Cats,
 			Cookies:     make(map[string]string),
 			Headers:     make(map[string]string),
 			Meta:        make(map[string][]string),
@@ -184,7 +189,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			sort.Strings(output.HTML)
 		}
 
-		// Use reflection type switch for determining Script tag type
+		// Use reflection type switch for determining Script type
 		if fingerprint.Script != nil {
 			v := reflect.ValueOf(fingerprint.Script)
 
@@ -201,6 +206,25 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			}
 
 			sort.Strings(output.Script)
+		}
+
+		// Use reflection type switch for determining ScriptSrc type
+		if fingerprint.ScriptSrc != nil {
+			v := reflect.ValueOf(fingerprint.ScriptSrc)
+
+			switch v.Kind() {
+			case reflect.String:
+				data := v.Interface().(string)
+				output.ScriptSrc = append(output.ScriptSrc, strings.ToLower(data))
+			case reflect.Slice:
+				data := v.Interface().([]interface{})
+				for _, pattern := range data {
+					pat := pattern.(string)
+					output.ScriptSrc = append(output.ScriptSrc, strings.ToLower(pat))
+				}
+			}
+
+			sort.Strings(output.ScriptSrc)
 		}
 
 		for header, pattern := range fingerprint.Meta {

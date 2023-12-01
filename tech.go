@@ -183,3 +183,23 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 
 	return result
 }
+
+// FingerprintWithCats identifies technologies on a target,
+// based on the received response headers and body.
+// It also returns categories information about the technology, is there's any
+// Body should not be mutated while this function is being called, or it may
+// lead to unexpected things.
+func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte) map[string]CatsInfo {
+	apps := s.Fingerprint(headers, body)
+	result := make(map[string]CatsInfo, len(apps))
+
+	for app := range apps {
+		if fingerprint, ok := s.fingerprints.Apps[app]; ok {
+			result[app] = CatsInfo{
+				Cats: fingerprint.cats,
+			}
+		}
+	}
+
+	return result
+}

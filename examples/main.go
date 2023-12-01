@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 
@@ -14,11 +14,16 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	data, _ := ioutil.ReadAll(resp.Body) // Ignoring error for example
+	data, _ := io.ReadAll(resp.Body) // Ignoring error for example
 
 	wappalyzerClient, err := wappalyzer.New()
+	if err != nil {
+		log.Fatal(err)
+	}
 	fingerprints := wappalyzerClient.Fingerprint(resp.Header, data)
 	fmt.Printf("%v\n", fingerprints)
-
 	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
+
+	fingerprintsWithCats := wappalyzerClient.FingerprintWithCats(resp.Header, data)
+	fmt.Printf("%v\n", fingerprintsWithCats)
 }

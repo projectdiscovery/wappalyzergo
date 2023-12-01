@@ -11,7 +11,7 @@ func TestCookiesDetect(t *testing.T) {
 	require.Nil(t, err, "could not create wappalyzer")
 
 	matches := wappalyzer.Fingerprint(map[string][]string{
-		"Set-Cookie": []string{"_uetsid=ABCDEF"},
+		"Set-Cookie": {"_uetsid=ABCDEF"},
 	}, []byte(""))
 
 	require.Contains(t, matches, "Microsoft Advertising", "Could not get correct match")
@@ -20,14 +20,14 @@ func TestCookiesDetect(t *testing.T) {
 		wappalyzerClient, _ := New()
 
 		fingerprints := wappalyzerClient.Fingerprint(map[string][]string{
-			"Set-Cookie": []string{"path=/; jsessionid=111; path=/, jsessionid=111;"},
+			"Set-Cookie": {"path=/; jsessionid=111; path=/, jsessionid=111;"},
 		}, []byte(""))
 		fingerprints1 := wappalyzerClient.Fingerprint(map[string][]string{
-			"Set-Cookie": []string{"jsessionid=111; path=/, XSRF-TOKEN=; expires=test, path=/ laravel_session=eyJ*"},
+			"Set-Cookie": {"jsessionid=111; path=/, XSRF-TOKEN=; expires=test, path=/ laravel_session=eyJ*"},
 		}, []byte(""))
 
 		require.Equal(t, map[string]struct{}{"Java": {}}, fingerprints, "could not get correct fingerprints")
-		require.Equal(t, map[string]struct{}{"Java": {}, "Laravel": {}, "PHP": struct{}{}}, fingerprints1, "could not get correct fingerprints")
+		require.Equal(t, map[string]struct{}{"Java": {}, "Laravel": {}, "PHP": {}}, fingerprints1, "could not get correct fingerprints")
 	})
 }
 
@@ -36,7 +36,7 @@ func TestHeadersDetect(t *testing.T) {
 	require.Nil(t, err, "could not create wappalyzer")
 
 	matches := wappalyzer.Fingerprint(map[string][]string{
-		"Server": []string{"now"},
+		"Server": {"now"},
 	}, []byte(""))
 
 	require.Contains(t, matches, "Vercel", "Could not get correct match")

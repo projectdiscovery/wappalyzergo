@@ -15,12 +15,14 @@ type Fingerprints struct {
 
 // Fingerprint is a single piece of information about a tech validated and normalized
 type Fingerprint struct {
+	Cats        []int               `json:"cats"`
+	CSS         []string            `json:"css"`
 	Cookies     map[string]string   `json:"cookies"`
 	JS          []string            `json:"js"`
 	Headers     map[string]string   `json:"headers"`
 	HTML        []string            `json:"html"`
-	CSS         []string            `json:"css"`
 	Script      []string            `json:"scripts"`
+	ScriptSrc   []string            `json:"scriptSrcs"`
 	Meta        map[string][]string `json:"meta"`
 	Implies     []string            `json:"implies"`
 	Description string              `json:"description"`
@@ -35,6 +37,8 @@ type CompiledFingerprints struct {
 
 // CompiledFingerprint contains the compiled fingerprints from the tech json
 type CompiledFingerprint struct {
+	// cats contain categories that are implicit with this tech
+	cats []int
 	// implies contains technologies that are implicit with this tech
 	implies []string
 	// description contains fingerprint description
@@ -49,8 +53,10 @@ type CompiledFingerprint struct {
 	headers map[string]*versionRegex
 	// html contains fingerprints for the target HTML
 	html []*versionRegex
-	// script contains fingerprints for script tags
+	// script contains fingerprints for scripts
 	script []*versionRegex
+	// scriptSrc contains fingerprints for script srcs
+	scriptSrc []*versionRegex
 	// meta contains fingerprints for meta tags
 	meta map[string][]*versionRegex
 }
@@ -59,6 +65,11 @@ type CompiledFingerprint struct {
 type AppInfo struct {
 	Description string
 	Website     string
+}
+
+// CatsInfo contains basic information about an App.
+type CatsInfo struct {
+	Cats []int
 }
 
 type versionRegex struct {
@@ -130,6 +141,7 @@ const (
 // loadPatterns loads the fingerprint patterns and compiles regexes
 func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 	compiled := &CompiledFingerprint{
+		cats:        fingerprint.Cats,
 		implies:     fingerprint.Implies,
 		description: fingerprint.Description,
 		website:     fingerprint.Website,
@@ -138,6 +150,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		headers:     make(map[string]*versionRegex),
 		html:        make([]*versionRegex, 0, len(fingerprint.HTML)),
 		script:      make([]*versionRegex, 0, len(fingerprint.Script)),
+		scriptSrc:   make([]*versionRegex, 0, len(fingerprint.ScriptSrc)),
 		meta:        make(map[string][]*versionRegex),
 	}
 
@@ -181,6 +194,14 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		compiled.script = append(compiled.script, fingerprint)
 	}
 
+	for _, pattern := range fingerprint.ScriptSrc {
+		fingerprint, err := newVersionRegex(pattern)
+		if err != nil {
+			continue
+		}
+		compiled.scriptSrc = append(compiled.scriptSrc, fingerprint)
+	}
+
 	for meta, patterns := range fingerprint.Meta {
 		var compiledList []*versionRegex
 
@@ -213,7 +234,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 				}
 			}
 		case scriptPart:
-			for _, pattern := range fingerprint.script {
+			for _, pattern := range fingerprint.scriptSrc {
 				if valid, versionString := pattern.MatchString(data); valid {
 					matched = true
 					version = versionString
