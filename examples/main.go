@@ -19,6 +19,8 @@ func main() {
 	wappalyzerClient, err := wappalyzer.New()
 	fingerprints := wappalyzerClient.Fingerprint(resp.Header, data)
 	fmt.Printf("%v\n", fingerprints)
-
 	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
+
+	fingerprintsWithCats := wappalyzerClient.FingerprintWithCats(resp.Header, data)
+	fmt.Printf("%v\n", fingerprintsWithCats)
 }
