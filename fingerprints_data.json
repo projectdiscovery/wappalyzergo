@@ -2277,6 +2277,16 @@
             "description": "Amaya is an open-source web browser editor to create and update documents on the web.",
             "website": "https://www.w3.org/Amaya"
         },
+        "Amaze UI": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:js\\/)?)?amazeui(?:\\/js\\/jquery)?(?:\\.widgets)?(?:\\.helper)?(?:\\.legacy)?(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "Amaze UI is a mobile-first JavaScript library designed to simplify front-end development.",
+            "website": "https://amazeui.shopxo.net/"
+        },
         "Amazon ALB": {
             "cats": [
                 65
@@ -2577,6 +2587,16 @@
             "description": "Amplience is an API-first, headless content management platform for enterprise retail.",
             "website": "https://amplience.com"
         },
+        "Amplify JS": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?amplify(?:-production)?(?:\\.core)?(?:\\.store)?(?:\\.min)?(?:[-\\.][\\d\\w]{0,40})?\\.js\\;version:\\1"
+            ],
+            "description": "AmplifyJS is a set of components designed to solve common web application problems with a simplistic API. Amplify's goal is to simplify all forms of data handling by providing a unified API for various data sources.",
+            "website": "https://amplifyjs.com/"
+        },
         "Amplitude": {
             "cats": [
                 10
@@ -2707,6 +2727,17 @@
             ],
             "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
             "website": "https://angular.io"
+        },
+        "Angular Gridster": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "angular-gridster(?:\\.min)?\\.js"
+            ],
+            "description": "Gridster is a JavaScript library, with a simple drag-and-drop interface, for creating intuitive, dynamic and customizable layouts in web applications.",
+            "website": "https://tiberiuzuld.github.io/angular-gridster2/"
         },
         "Angular Material": {
             "cats": [
@@ -2895,6 +2926,16 @@
             ],
             "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalised video feeds.",
             "website": "https://www.anyclip.com"
+        },
+        "AnythingSlider": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "anythingslider(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "A robust jQuery-based slider plugin.",
+            "website": "https://css-tricks.com/anythingslider-jquery-plugin/"
         },
         "Apache APISIX": {
             "cats": [
@@ -4380,6 +4421,17 @@
             "description": "Backdrop is an open-source content management system (CMS) derived from Drupal 7, offering a user-friendly interface, customisable content types, taxonomies, views, theming capabilities, extensibility through modules, and regular security updates.",
             "website": "https://backdropcms.org"
         },
+        "Backstretch": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?(?:jquery\\.)?backstretch(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "A simple jQuery plugin that allows you to add a dynamically-resized, slideshow-capable background image to any page or element.",
+            "website": "https://www.jquery-backstretch.com/"
+        },
         "Baidu Analytics (百度统计)": {
             "cats": [
                 10
@@ -5750,6 +5802,16 @@
             "description": "The Page Speed Optimizer is a Shopify app built by BoosterApps.",
             "website": "https://apps.shopify.com/page-speed-optimizer"
         },
+        "Bootbox.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?bootbox(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "Bootbox.js is a small JavaScript library which allows you to create custom modal dialogs using Bootstrap modals, without having to worry about creating, managing, or removing any of the required DOM elements or JavaScript event handlers.",
+            "website": "https://bootboxjs.com/"
+        },
         "Bootic": {
             "cats": [
                 6
@@ -6518,6 +6580,16 @@
             ],
             "description": "C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system.",
             "website": "https://www.open-std.org/jtc1/sc22/wg14/"
+        },
+        "C3.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "c3(?:\\.min)?(?:-[a-za-z0-9]{8})?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "D3 based reusable chart library",
+            "website": "https://c3js.org/"
         },
         "CCV Shop": {
             "cats": [
@@ -7680,6 +7752,17 @@
             ],
             "description": "Chorus is the only all-in-one publishing, audience, and revenue platform built for modern media companies.",
             "website": "https://getchorus.voxmedia.com"
+        },
+        "Chosen": {
+            "cats": [
+                12,
+                18
+            ],
+            "scriptSrc": [
+                "chosen(?:\\.jquery)?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Chosen is a jQuery plugin that makes long, unwieldy select boxes much more user-friendly.",
+            "website": "https://harvesthq.github.io/chosen/"
         },
         "Chronofresh": {
             "cats": [
@@ -12547,6 +12630,16 @@
             "description": "Enlistly tracks referral orders in realtime. Orders that are partially refunded, refunded, or cancelled update on the fly.",
             "website": "https://enlistly.com"
         },
+        "Enquire.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "enquire(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "enquire.js is a lightweight, pure JavaScript library for responding to CSS media queries.",
+            "website": "https://wicky.nillia.ms/enquire.js/"
+        },
         "Ensi": {
             "cats": [
                 6
@@ -13858,6 +13951,17 @@
             "description": "Fit Analytics is a platform that provides clothing size recommendations for online customers by measuring individual dimensions via webcams.",
             "website": "https://www.fitanalytics.com"
         },
+        "FitVids.JS": {
+            "cats": [
+                5,
+                14
+            ],
+            "scriptSrc": [
+                "fitvids(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+            ],
+            "description": "jQuery plugin for fluid width video embeds",
+            "website": "https://fitvidsjs.com/"
+        },
         "FlagSmith": {
             "cats": [
                 85
@@ -13984,6 +14088,17 @@
             ],
             "description": "Flickity is a JavaScript slider library, built by David DeSandro of Metafizzy fame.",
             "website": "https://flickity.metafizzy.co"
+        },
+        "FlipClock.js": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "flipclock(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "FlipClock.js is a JavaScript library, offering a modern twist to displaying time and countdowns on web applications.",
+            "website": "https://flipclock.readthedocs.io/en/dev-1.0.0/CHANGE%20LOG/"
         },
         "FlippingBook": {
             "cats": [
@@ -17340,6 +17455,16 @@
             "description": "Handlebars is a JavaScript library used to create reusable webpage templates.",
             "website": "https://handlebarsjs.com"
         },
+        "Handsontable": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?(?:jquery\\.)?handsontable(?:\\.full)?(?:\\.min)?(?:\\.[\\w]+)?\\.js\\;version:\\1"
+            ],
+            "description": "A front-end component that combines data grid features with spreadsheet UX/UI. Professional support included.",
+            "website": "https://handsontable.com/"
+        },
         "Handtalk": {
             "cats": [
                 68
@@ -17513,6 +17638,17 @@
             ],
             "description": "Headless UI is an unstyled component library for either React.js or Vue.js from the same people that created Tailwind CSS.",
             "website": "https://headlessui.dev"
+        },
+        "Headroom.js": {
+            "cats": [
+                5,
+                59
+            ],
+            "scriptSrc": [
+                "headroom(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Headroom.js is a JS widget that allows you to react to the user's scroll. The header slides out of view when scrolling down and slides back in when scrolling up.",
+            "website": "https://wicky.nillia.ms/headroom.js/"
         },
         "Heap": {
             "cats": [
@@ -22553,6 +22689,23 @@
             "description": "Locksmith is a shopify app for adding access control capability on shopify stores.",
             "website": "https://apps.shopify.com/locksmith"
         },
+        "Locomotive Scroll": {
+            "cats": [
+                25,
+                59
+            ],
+            "js": [
+                "locomotivescroll"
+            ],
+            "scriptSrc": [
+                "locomotive-scroll(?:\\.min)?\\.js"
+            ],
+            "implies": [
+                "Lenis"
+            ],
+            "description": "Locomotive Scroll is an opinionated JavaScript library that provides smooth scrolling animations and advanced scroll interactions for web applications.",
+            "website": "https://scroll.locomotive.ca/docs/#/"
+        },
         "LocomotiveCMS": {
             "cats": [
                 1
@@ -23227,7 +23380,7 @@
             "scriptSrc": [
                 "js/mage",
                 "skin/frontend/(?:default|(enterprise))\\;version:\\1?1 (enterprise):1 (community)",
-                "skin/frontend/\\;confidence:50\\;version:\\1",
+                "skin/frontend/\\;confidence:50",
                 "static/_requirejs\\;confidence:50\\;version:2"
             ],
             "implies": [
@@ -23276,6 +23429,16 @@
             "description": "Magixite offers the Web Content Accessibility Guidelines (WCAG), a set of guidelines and requirements designed to help designers and developers improve the accessibility of web content, ensuring it can be effectively used by individuals with disabilities.",
             "website": "https://acc.magixite.com"
         },
+        "Magnific Popup": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "magnific-popup(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Magnific Popup is a responsive lightbox \u0026 dialog script with focus on performance and providing best experience for user with any device.",
+            "website": "https://dimsemenov.com/plugins/magnific-popup/"
+        },
         "MailChimp": {
             "cats": [
                 32,
@@ -23322,6 +23485,16 @@
             ],
             "description": "MailChimp for WordPress is an email marketing plugin that enables you to build subscriber lists.",
             "website": "https://www.mc4wp.com"
+        },
+        "Mailcheck": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "mailcheck(?:\\.min)?\\.js(?:\\?v(?:er)?=(\\d+\\.\\d+\\.\\d+))?\\;version:\\1"
+            ],
+            "description": "Mailcheck is a JavaScript library designed to address the issue of misspelled email addresses during user input.",
+            "website": "https://github.com/mailcheck/mailcheck"
         },
         "MailerLite": {
             "cats": [
@@ -25314,6 +25487,27 @@
             "description": "Mopinion is an all-in-one user feedback platform that helps digital enterprises listen, understand, and act across all digital touchpoints.",
             "website": "https://mopinion.com"
         },
+        "Morphext": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "morphext(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "A simple, high-performance and cross-browser jQuery rotating / carousel plugin for text phrases powered by Animate.css.",
+            "website": "https://morphext.fyianlai.com/"
+        },
+        "Morris.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "morris(?:\\/(?:area|bar|donut|grid|hover|line))?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "A JavaScript library that simplifies the process of creating interactive and responsive data visualizations on the web.",
+            "website": "https://morrisjs.github.io/morris.js/"
+        },
         "Moshimo": {
             "cats": [
                 71
@@ -25383,6 +25577,17 @@
                 ]
             },
             "website": "https://movabletype.org"
+        },
+        "Moxie": {
+            "cats": [
+                5,
+                68
+            ],
+            "scriptSrc": [
+                "moxie(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+            ],
+            "description": "Pollyfills for XHR2 and File API",
+            "website": "https://github.com/moxiecode/moxie"
         },
         "Mozard Suite": {
             "cats": [
@@ -27902,6 +28107,16 @@
             "description": "Orankl is a provider email marketing and review services.",
             "website": "https://www.orankl.com"
         },
+        "Orbit Slider": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "orbit(?:\\.min)?([\\d.]{2,}[\\d])?\\.js\\;version:\\1"
+            ],
+            "description": "Orbit is a jQuery slider.",
+            "website": "https://zurb.com/playground/orbit-jquery-image-slider"
+        },
         "OrbitFox": {
             "cats": [
                 87,
@@ -28526,6 +28741,16 @@
             "description": "Panelbear is a simple website performance and traffic analytics tool.",
             "website": "https://panelbear.com"
         },
+        "Pannellum": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:build\\/)?)?pannellum(?:-plugin)?\\.js\\;version:\\1"
+            ],
+            "description": "Pannellum is a lightweight, free, and open source panorama viewer for the web.",
+            "website": "https://pannellum.org/"
+        },
         "Pantheon": {
             "cats": [
                 62
@@ -28543,6 +28768,17 @@
             ],
             "description": "Pantheon is a WebOps (Website Operations) and Management Platform for WordPress and Drupal.",
             "website": "https://pantheon.io/"
+        },
+        "Paper.js": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?paper(?:-full)?(?:-core)?(?:\\.min)?(?:-[\\d\\w]{0,64})?\\.js\\;version:\\1"
+            ],
+            "description": "Paper.js is an open-source, vector graphics scripting framework, which offers a powerful Scene Graph and extensive functionality to create and manipulate graphic items using layers, gradients, blending, and other advanced features",
+            "website": "http://paperjs.org/"
         },
         "Paradox": {
             "cats": [
@@ -29910,6 +30146,17 @@
             ],
             "description": "Plug\u0026Pay is a payment processor that provides payment solutions for ecommerce businesses.",
             "website": "https://plugandpay.nl"
+        },
+        "Plupload": {
+            "cats": [
+                5,
+                68
+            ],
+            "scriptSrc": [
+                "plupload(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+            ],
+            "description": "Plupload is JavaScript API for building file uploaders.",
+            "website": "https://www.plupload.com/"
         },
         "Plyr": {
             "cats": [
@@ -32695,6 +32942,16 @@
             ],
             "description": "Responsive Lightbox \u0026 Gallery plugin is a lightweight WordPress gallery plugin by Digital Factory.",
             "website": "https://dfactory.eu/products/responsive-lightbox-gallery-extensions/"
+        },
+        "Responsive Nav": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "responsive-nav(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Responsive navigation plugin without library dependencies and with fast touch screen support.",
+            "website": "http://responsive-nav.com/"
         },
         "ResponsiveVoice": {
             "cats": [
@@ -38386,6 +38643,16 @@
             "description": "SteelHouse is an advertising software company which provides services for brands, agencies, and direct marketers.",
             "website": "https://steelhouse.com"
         },
+        "Stellar.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "stellar(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Stellar.js is a JavaScript library and jQuery plugin specifically designed to deliver parallax scrolling effects for web pages.",
+            "website": "https://markdalgleish.com/projects/stellar.js/"
+        },
         "Stencil": {
             "cats": [
                 18
@@ -38742,6 +39009,16 @@
             "description": "Sucuri is a cybersecurity company that provides website security solutions and services.",
             "website": "https://sucuri.net/"
         },
+        "SugarJS": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "sugar\\/?((?:\\d+\\.)+\\d+)?(?:\\/sugar(?:-full)?)?(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "SugarJS is a JavaScript library that simplifies working with native JavaScript objects, enhancing productivity and code readability.",
+            "website": "https://sugarjs.com/"
+        },
         "Suiteshare": {
             "cats": [
                 52
@@ -39078,6 +39355,19 @@
             "description": "Swiper is a JavaScript library that creates modern touch sliders with hardware-accelerated transitions.",
             "website": "https://swiperjs.com"
         },
+        "Swup": {
+            "cats": [
+                59
+            ],
+            "js": [
+                "swup"
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?swup(?:-preload)?(?:-plugin)?(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "Swup is a versatile and expandable library for implementing page transitions on websites that use server-side rendering.",
+            "website": "https://swup.js.org"
+        },
         "Swym Wishlist Plus": {
             "cats": [
                 100
@@ -39139,6 +39429,16 @@
             ],
             "description": "Sympa is an open-source mailing list management (MLM) software.",
             "website": "https://www.sympa.org/"
+        },
+        "Syncfusion": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "syncfusion(?:\\.com)?(?:\\/ej\\d)?(?:-[base|input|buttons|lists|calendars]+)?(?:\\/dist)?(?:\\/global)?(?:\\/ej\\d)?(?:-[base|input|buttons|lists|calendars]+)?(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Syncfusion is a suite of JavaScript libraries crafted for modern web development. It's modular design enables developers to create interactive, and responsive applications, enhancing user experience across various devices and platforms.",
+            "website": "https://www.syncfusion.com/"
         },
         "Syndeca": {
             "cats": [
@@ -41877,6 +42177,16 @@
             "description": "Typecho is a PHP Blogging Platform.",
             "website": "https://typecho.org/"
         },
+        "Typed.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "typed(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Typed.js is a library that types. It is designed to create typewriter-style animations with ease.",
+            "website": "https://mattboldt.com/demos/typed-js/"
+        },
         "Typeform": {
             "cats": [
                 73
@@ -43807,6 +44117,18 @@
             "description": "WHMCS is an automation platform that simplifies and automates all aspects of operating an online web hosting and domain registrar business.",
             "website": "https://www.whmcs.com"
         },
+        "WOW": {
+            "cats": [
+                12,
+                18,
+                25
+            ],
+            "scriptSrc": [
+                "wow(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Reveal CSS animation as you scroll down a page.",
+            "website": "https://www.delac.io/WOW"
+        },
         "WP Automatic": {
             "cats": [
                 87
@@ -44228,6 +44550,16 @@
             ],
             "description": "Weaver Xtreme is the orginal options-based WordPress theme.",
             "website": "https://weavertheme.com"
+        },
+        "Web Font Loader": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?webfontloader(?:\\.min)?(?:[-\\.][\\d\\w]{0,32})?\\.js\\;version:\\1"
+            ],
+            "description": "WebFont Loader is a versatile JavaScript library that provides enhanced control and flexibility in managing web fonts.",
+            "website": "https://github.com/typekit/webfontloader"
         },
         "Web Shop Manager": {
             "cats": [
@@ -45330,7 +45662,8 @@
             ],
             "headers": {
                 "link": "rel=\"https://api\\.w\\.org/\"",
-                "x-pingback": "/xmlrpc\\.php$"
+                "x-pingback": "/xmlrpc\\.php$",
+                "x-redirect-by": "wordpress"
             },
             "html": [
                 "\u003clink rel=[\"']stylesheet[\"'] [^\u003e]+/wp-(?:content|includes)/",
@@ -47265,6 +47598,27 @@
             "description": "bdok is a cloud-based platform which provides the capability to create and manage online stores with no technical knowledge.",
             "website": "https://bdok.ir"
         },
+        "bowser": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?bowser(?:\\.min)?(?:[-\\.][\\d\\w]{0,64})?\\.js\\;version:\\1"
+            ],
+            "description": "A small, fast and rich-API browser/platform/engine detector for both browser and node.",
+            "website": "https://opencollective.com/bowser"
+        },
+        "bxSlider": {
+            "cats": [
+                7,
+                59
+            ],
+            "scriptSrc": [
+                "bxslider(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Add a respsonsive image slider to any website.",
+            "website": "https://bxslider.com/"
+        },
         "cPanel": {
             "cats": [
                 9
@@ -47335,6 +47689,16 @@
             ],
             "description": "cgit is a web interface (cgi) for Git repositories, written in C. licensed under GPLv2.",
             "website": "https://git.zx2c4.com/cgit"
+        },
+        "chroma.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+            ],
+            "description": "chroma.js is a small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.",
+            "website": "https://www.vis4.net/chromajs/"
         },
         "clickio": {
             "cats": [
@@ -47451,6 +47815,17 @@
                 "deepminer\\.js"
             ],
             "website": "https://github.com/deepwn/deepMiner"
+        },
+        "dimple": {
+            "cats": [
+                25,
+                59
+            ],
+            "scriptSrc": [
+                "dimple(?:\\/lib\\/[\\w\\.]+)?(?:\\/theme\\/js\\/[\\w\\.-]+)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "dimple.js is a powerful and flexible open-source charting API for d3 letting you quickly and easily create and combine bar, line, area and scatter charts.",
+            "website": "http://dimplejs.org/"
         },
         "e-Shop Commerce": {
             "cats": [
@@ -48601,6 +48976,16 @@
             "description": "Mobicred is a credit facility that allows you to safely shop online with our participating retailers.",
             "website": "https://mobicred.co.za/"
         },
+        "mobile-detect.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "mobile-detect(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Mobile-detect.js is a compact JavaScript library designed to detect devices by comparing patterns against a given User-Agent string.",
+            "website": "https://hgoebl.github.io/mobile-detect.js/doc/MobileDetect.html"
+        },
         "mod_auth_pam": {
             "cats": [
                 33
@@ -48883,6 +49268,20 @@
                 "PHP"
             ],
             "website": "https://owncloud.org"
+        },
+        "p5.js": {
+            "cats": [
+                59
+            ],
+            "js": [
+                "p5.camera",
+                "p5.colorconversion"
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:addons\\/)?)?p5(?:\\.sound)?(?:\\.dom)?(?:\\.min)?\\.js\\;version:\\1"
+            ],
+            "description": "p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else.",
+            "website": "https://p5js.org"
         },
         "papaya CMS": {
             "cats": [
@@ -49307,6 +49706,16 @@
             "description": "snigel AdEngine is a header bidding solution product from snigel.",
             "website": "https://www.snigel.com/adengine/"
         },
+        "spin.js": {
+            "cats": [
+                25
+            ],
+            "scriptSrc": [
+                "spin(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+            ],
+            "description": "Configurable JavaScript/CSS spinner that can be used as a resolution-independent loading indicator",
+            "website": "https://spin.js.org/"
+        },
         "stores.jp": {
             "cats": [
                 6
@@ -49571,6 +49980,16 @@
             ],
             "description": "wBuy is a SaaS ecommerce platform.",
             "website": "https://www.wbuy.com.br"
+        },
+        "waitForImages": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?waitforimages(?:-((?:\\d+\\.)+\\d+)-modded)?(?:\\.min)?\\.js\\;version:\\1\\2"
+            ],
+            "description": "waitForImages is a lightweight, high-performance JavaScript library that simplifies the handling of image preloading events.",
+            "website": "https://github.com/alexanderdickson/waitForImages"
         },
         "wap.store": {
             "cats": [
