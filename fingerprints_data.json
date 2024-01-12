@@ -29835,7 +29835,7 @@
                 "plesk.form"
             ],
             "headers": {
-                "x-powered-by": "^plesk(?:l|w)in",
+                "x-powered-by": "^PleskLin",
                 "x-powered-by-plesk": "^plesk"
             },
             "scriptSrc": [
