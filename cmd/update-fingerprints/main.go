@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"flag"
-	"fmt"
-	"io"
+	"io/ioutil"
+	"archive/zip"
 	"log"
 	"net/http"
 	"os"
@@ -61,30 +61,71 @@ type OutputFingerprint struct {
 	Website     string              `json:"website,omitempty"`
 }
 
-const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies/%s.json"
+const chromeExtensionURL = "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=119.0.6045.199&acceptformat=crx2,crx3&x=id%3Dgppongmhjkpfnbhagpmjfkannfbllamg%26installsource%3Dondemand%26uc"
 
-func makeFingerprintURLs() []string {
-	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
+func downloadAndExtractFingerprints(url string, fingerprints *Fingerprints) (error) {
+    // Download the CRX file
+    resp, err := http.Get(url)
+    if err != nil {
+        return err
+    }
+    defer resp.Body.Close()
 
-	fingerprints := make([]string, 0, len(files))
-	for _, item := range files {
-		fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
-	}
-	return fingerprints
+    // Read the content into a byte slice
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        return err
+    }
+
+    // Read the CRX file without writing to disk
+    reader := bytes.NewReader(body)
+    zipReader, err := zip.NewReader(reader, int64(len(body)))
+    if err != nil {
+        return err
+    }
+
+    // Iterate through the files in the zip archive
+    for _, file := range zipReader.File {
+        if strings.HasPrefix(file.Name, "technologies/") && strings.HasSuffix(file.Name, ".json") {
+            log.Printf("Extracted %s\n", file.Name)
+
+            // Open the file
+            f, err := file.Open()
+            if err != nil {
+                return err
+            }
+            defer f.Close()
+
+			// Read the file's content
+			data, err := ioutil.ReadAll(f)
+			if err != nil {
+				return err
+			}
+
+			fingerprintsOld := &Fingerprints{}
+			err = json.NewDecoder(bytes.NewReader(data)).Decode(&fingerprintsOld.Apps)
+			if err != nil {
+				return err
+			}
+
+			for k, v := range fingerprintsOld.Apps {
+				fingerprints.Apps[k] = v
+			}
+
+        }
+    }
+    return nil
 }
 
 func main() {
 	flag.Parse()
 
-	fingerprintURLs := makeFingerprintURLs()
-
 	fingerprintsOld := &Fingerprints{
 		Apps: make(map[string]Fingerprint),
 	}
-	for _, fingerprintItem := range fingerprintURLs {
-		if err := gatherFingerprintsFromURL(fingerprintItem, fingerprintsOld); err != nil {
-			log.Fatalf("Could not gather fingerprints %s: %v\n", fingerprintItem, err)
-		}
+	err := downloadAndExtractFingerprints(chromeExtensionURL, fingerprintsOld)
+	if err != nil {
+		log.Fatalf("Could not gather fingerprints %v\n", err)
 	}
 
 	log.Printf("Read fingerprints from the server\n")
@@ -113,35 +154,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not close fingerprints file: %s\n", err)
 	}
-}
-
-func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
-	req, err := http.NewRequest(http.MethodGet, URL, nil)
-	if err != nil {
-		return err
-	}
-
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		return err
-	}
-	defer resp.Body.Close()
-
-	data, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
-
-	fingerprintsOld := &Fingerprints{}
-	err = json.NewDecoder(bytes.NewReader(data)).Decode(&fingerprintsOld.Apps)
-	if err != nil {
-		return err
-	}
-
-	for k, v := range fingerprintsOld.Apps {
-		fingerprints.Apps[k] = v
-	}
-	return nil
 }
 
 func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {

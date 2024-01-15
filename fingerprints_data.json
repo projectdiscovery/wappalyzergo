@@ -23,6 +23,17 @@
             "description": "1C-Bitrix is a system of web project management, universal software for the creation, support and successful development of corporate websites and online stores.",
             "website": "https://www.1c-bitrix.ru"
         },
+        "24nettbutikk": {
+            "cats": [
+                6
+            ],
+            "cookies": {
+                " _gat_24nb": "\\;confidence:50",
+                "24nb": "\\;confidence:50"
+            },
+            "description": "24nettbutikk is an ecommerce platform from Norway.",
+            "website": "https://www.24nettbutikk.no"
+        },
         "2B Advice": {
             "cats": [
                 67
@@ -91,6 +102,30 @@
             },
             "description": "42stores is a French SaaS ecommerce solution that was established in 2008. It offers a range of features such as monitoring, customer support, and regular updates. The platform is known for its flexibility and modularity, making it possible to integrate with various ERP systems.",
             "website": "https://www.42stores.com"
+        },
+        "4Partners": {
+            "cats": [
+                99
+            ],
+            "description": "4Partners is an international dropshipping service that allows you to launch a ready-made online store.",
+            "website": "https://4partners.io/en/"
+        },
+        "4Partners CMS": {
+            "cats": [
+                6
+            ],
+            "meta": {
+                "author": [
+                    "^4cms$"
+                ]
+            },
+            "implies": [
+                "4Partners",
+                "Nginx",
+                "PHP"
+            ],
+            "description": "4Partners CMS is a cloud-based solution designed for ecommerce shops.",
+            "website": "https://4partners.io/en/4p-cms"
         },
         "51.LA": {
             "cats": [
@@ -975,10 +1010,13 @@
                 "adroll_pix_id",
                 "adroll_version"
             ],
+            "scripts": [
+                "(?:d|s)\\.adroll\\.com/"
+            ],
             "scriptSrc": [
                 "(?:a|s)\\.adroll\\.com"
             ],
-            "description": "AdRoll is a digital marketing technology platform that specializes in retargeting.",
+            "description": "AdRoll is a digital marketing technology platform that specialises in retargeting.",
             "website": "https://adroll.com"
         },
         "AdRoll CMP System": {
@@ -5616,6 +5654,17 @@
             "description": "BookVisit is an IT services and IT consulting, recreation, and hotel company located in Goteborg,Sweden.",
             "website": "https://bookvisit.com"
         },
+        "Bookafy": {
+            "cats": [
+                72
+            ],
+            "js": [
+                "bookafypopup",
+                "openbookafypopup"
+            ],
+            "description": "Bookafy is a service that offers appointment scheduling and booking solutions for businesses and professionals.",
+            "website": "https://bookafy.com"
+        },
         "Bookatable": {
             "cats": [
                 93
@@ -5978,7 +6027,9 @@
             ],
             "js": [
                 "appboy",
-                "appboyqueue"
+                "appboyqueue",
+                "braze.brazesdkmetadata",
+                "brazequeue"
             ],
             "scriptSrc": [
                 "js\\.appboycdn\\.com/web-sdk/([\\d.]+)\\;version:\\1"
@@ -6528,6 +6579,16 @@
             ],
             "website": "https://ccvshop.be"
         },
+        "CDK Global": {
+            "cats": [
+                53
+            ],
+            "scriptSrc": [
+                "\\.connectcdk\\.com/"
+            ],
+            "description": "CDK Global offered a range of software and digital marketing solutions designed to help automotive businesses manage their operations, improve customer engagement, and enhance their online presence. Their services included dealership management systems (DMS), customer relationship management (CRM) software, website and digital marketing services, and various other tools tailored to the automotive industry.",
+            "website": "https://www.cdkglobal.com"
+        },
         "CDN77": {
             "cats": [
                 31
@@ -6828,7 +6889,8 @@
                 72
             ],
             "js": [
-                "calendly"
+                "calendly.closepopupwidget",
+                "calendly.showpopupwidget"
             ],
             "scriptSrc": [
                 "assets\\.calendly\\.com/"
@@ -7043,7 +7105,7 @@
                 51
             ],
             "scripts": [
-                "\\(\\!section\\s\\|\\|\\ssection\\.tagname\\s\\!\\=\\s\\'section\\'\\)"
+                "\\(\\!section\\s\\|\\|\\ssection\\.tagname\\s\\!\\=\\s\\'section\\'\\)\\;confidence:90"
             ],
             "description": "Carrd is a platform for building simple, responsive, one-page sites.",
             "website": "https://carrd.co"
@@ -7706,6 +7768,19 @@
             "description": "ChurnZero is a real-time customer success platform that helps subscription businesses fight customer churn.",
             "website": "https://churnzero.net"
         },
+        "Circle": {
+            "cats": [
+                2
+            ],
+            "cookies": {
+                "_circle_session:": "\\;confidence:50"
+            },
+            "js": [
+                "circleuser"
+            ],
+            "description": "Circie is an all-in-one community platform for businesses that brings together engaging courses, discussions, members, live streams, chat, events, and memberships.",
+            "website": "https://circle.so"
+        },
         "CitrusPay": {
             "cats": [
                 41
@@ -8104,6 +8179,16 @@
             ],
             "description": "Closure Library is a JavaScript library developed by Google for building robust web applications, offering utilities for DOM manipulation, event handling, data structures, and more.",
             "website": "https://github.com/google/closure-library"
+        },
+        "CloudCannon": {
+            "cats": [
+                1
+            ],
+            "headers": {
+                "cc-build-id": "\\d+"
+            },
+            "description": "CloudCannon is a web development platform and content management system (CMS).",
+            "website": "https://cloudcannon.com"
         },
         "CloudCart": {
             "cats": [
@@ -9251,6 +9336,20 @@
             ],
             "description": "Cookie-Script automatically scans, categorizes and adds description to all cookies found on your website.",
             "website": "https://cookie-script.com"
+        },
+        "Cookie Seal": {
+            "cats": [
+                67
+            ],
+            "js": [
+                "cookieseal",
+                "cookieseal.consentenabled"
+            ],
+            "scriptSrc": [
+                "\\.cookieseal\\.com/"
+            ],
+            "description": "Cookie Seal is a tool or system that helps you manage and configure the use of cookies on your website in accordance with data protection laws, ensuring compliance with relevant regulations.",
+            "website": "https://cookieseal.com"
         },
         "CookieFirst": {
             "cats": [
@@ -10571,6 +10670,18 @@
             ],
             "website": "https://www.digicert.com/"
         },
+        "DigiFi": {
+            "cats": [
+                6
+            ],
+            "meta": {
+                "generator": [
+                    "^digify$"
+                ]
+            },
+            "description": "DigiFi is a subscription-based software that allows anyone to set up an online store and sell their products.",
+            "website": "https://digify.shop"
+        },
         "Digismoothie Candy Rack": {
             "cats": [
                 100
@@ -10633,6 +10744,13 @@
             ],
             "description": "Digital River provides global ecommerce, payments and marketing services.",
             "website": "https://www.digitalriver.com"
+        },
+        "Digizuite": {
+            "cats": [
+                95
+            ],
+            "description": "Digizuite is a Digital Asset Management software for enterprises.",
+            "website": "https://www.digizuite.com"
         },
         "DirectAdmin": {
             "cats": [
@@ -10751,6 +10869,19 @@
             ],
             "description": "Dito is a tool that centralizes and manages the relationship between brands and their customers.",
             "website": "https://www.dito.com.br"
+        },
+        "Divhunt": {
+            "cats": [
+                51
+            ],
+            "js": [
+                "divhunt"
+            ],
+            "scriptSrc": [
+                "divhunt-site\\.\\w-cdn\\.net/"
+            ],
+            "description": "Divhunt is an SPA builder.",
+            "website": "https://www.divhunt.com"
         },
         "Divi": {
             "cats": [
@@ -11115,6 +11246,22 @@
             ],
             "description": "Doteasy Website Builder is a tool provided by Doteasy, a web hosting company that enables users to create and personalise their own websites without necessitating any technical knowledge or expertise in website design.",
             "website": "https://www.doteasy.com/website-builder/"
+        },
+        "Dotser": {
+            "cats": [
+                6
+            ],
+            "meta": {
+                "generator": [
+                    "^dotser\\scommerce\\s([\\d\\.]+)/\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "MySQL",
+                "PHP"
+            ],
+            "description": "Dotser is a web software development company specialising in ecommerce and cloud-based business solutions.",
+            "website": "https://www.dotser.ie"
         },
         "DoubleClick Ad Exchange (AdX)": {
             "cats": [
@@ -14026,6 +14173,19 @@
             "description": "Flocktory is a social referral marketing platform that enables users to share personalised offers via social networks.",
             "website": "https://www.flocktory.com"
         },
+        "Flourish": {
+            "cats": [
+                25
+            ],
+            "js": [
+                "_flourish_template_id",
+                "flourish.environment",
+                "flourishconfig",
+                "flourishloaded"
+            ],
+            "description": "Flourish is a data visualisation and storytelling platform that enables users to create interactive data visualisations, charts, and presentations.",
+            "website": "https://flourish.studio"
+        },
         "Flow": {
             "cats": [
                 106
@@ -15307,6 +15467,17 @@
                 "_gauges"
             ],
             "website": "https://get.gaug.es"
+        },
+        "Gcore": {
+            "cats": [
+                31
+            ],
+            "headers": {
+                "x-id": "^[\\w-]+-gc\\d{2}$",
+                "x-id-fe": "^[\\w-]+-gc\\d{2}$"
+            },
+            "description": "Gcore is a public cloud and content delivery network (CDN) company.",
+            "website": "https://gcore.com"
         },
         "GeeTest": {
             "cats": [
@@ -16597,6 +16768,9 @@
         "Google Sign-in": {
             "cats": [
                 69
+            ],
+            "js": [
+                "googlesigninclientid"
             ],
             "scriptSrc": [
                 "accounts\\.google\\.com/gsi/client"
@@ -18974,6 +19148,16 @@
             "description": "Incapsula is a cloud-based application delivery platform. It uses a global content delivery network to provide web application security, DDoS mitigation, content caching, application delivery, load balancing and failover services.",
             "website": "https://www.incapsula.com"
         },
+        "Incident.io": {
+            "cats": [
+                13
+            ],
+            "headers": {
+                "x-webkit-csp": "incident-io-team\\.vercel\\.app"
+            },
+            "description": "Incident.io is a Slack-integrated incident management tool used to announce, manage, and resolve all incidents in a single channel.",
+            "website": "https://incident.io"
+        },
         "Includable": {
             "cats": [
                 18
@@ -20619,6 +20803,16 @@
             ],
             "description": "Keen-Slider is a free library agnostic touch slider with native touch/swipe behavior.",
             "website": "https://keen-slider.io"
+        },
+        "KelonCloud": {
+            "cats": [
+                31
+            ],
+            "headers": {
+                "server": "^(?:(?:keloncloud|kc)-private-cdn|keloncloud)$"
+            },
+            "description": "KelonCloud offers a variety of cloud-based services, such as CDN, DDoS mitigation, cloud security, streaming, cloud compute, and more.",
+            "website": "https://www.keloncloud.com"
         },
         "Kemal": {
             "cats": [
@@ -22553,6 +22747,19 @@
             "description": "Locksmith is a shopify app for adding access control capability on shopify stores.",
             "website": "https://apps.shopify.com/locksmith"
         },
+        "Locomotive Scroll": {
+            "cats": [
+                59
+            ],
+            "js": [
+                "locomotivescroll"
+            ],
+            "implies": [
+                "Lenis"
+            ],
+            "description": "Locomotive Scroll is an opinionated JavaScript library that provides smooth scrolling animations and advanced scroll interactions for web applications.",
+            "website": "https://github.com/locomotivemtl/locomotive-scroll"
+        },
         "LocomotiveCMS": {
             "cats": [
                 1
@@ -24178,6 +24385,18 @@
                 "Zend"
             ],
             "website": "https://www.melistechnology.com/"
+        },
+        "MemberSpace": {
+            "cats": [
+                19,
+                41
+            ],
+            "js": [
+                "memberspace",
+                "memberspaceparams"
+            ],
+            "description": "MemberSpace is a cloud-based membership solution, which allows users to provide role-based access to content.",
+            "website": "https://www.memberspace.com"
         },
         "MemberStack": {
             "cats": [
@@ -27552,15 +27771,23 @@
         },
         "OpenUI5": {
             "cats": [
-                12
+                12,
+                66
             ],
+            "cookies": {
+                "sap-usercontext": "sap-client"
+            },
             "js": [
                 "sap.ui.version"
             ],
             "scriptSrc": [
                 "sap-ui-core\\.js"
             ],
-            "website": "https://openui5.org/"
+            "meta": {
+                "sap-ui-fesr": []
+            },
+            "description": "OpenUI5 is a JavaScript UI Framework released by SAP under the Apache 2.0 license.",
+            "website": "https://openui5.org"
         },
         "OpenWeb": {
             "cats": [
@@ -27801,6 +28028,16 @@
             },
             "description": "Oracle Commerce Cloud is a cloud-native, fully featured, extensible SaaS ecommerce solution, delivered in the Oracle Cloud, supporting B2C and B2B models in a single platform.",
             "website": "https://cloud.oracle.com/commerce-cloud"
+        },
+        "Oracle Content Management": {
+            "cats": [
+                1
+            ],
+            "scriptSrc": [
+                "/_sitesclouddelivery/renderer/renderer\\.js"
+            ],
+            "description": "Oracle Content Management is a cloud-based platform designed for organisations to create, store, manage, and deliver digital content while supporting structured content organisation, collaboration, and seamless integration with other applications.",
+            "website": "https://www.oracle.com/content-management"
         },
         "Oracle Dynamic Monitoring Service": {
             "cats": [
@@ -28167,6 +28404,19 @@
             "description": "Oxygen Builder is a tool to build a WordPress website.",
             "website": "https://oxygenbuilder.com"
         },
+        "PCI Proxy": {
+            "cats": [
+                41
+            ],
+            "headers": {
+                "content-security-policy": "\\.datatrans\\.(?:com|biz)"
+            },
+            "scripts": [
+                "\\.datatrans\\.com"
+            ],
+            "description": "PCI Proxy is a tokenization platform that enables organisations worldwide to embrace a modern approach to payment flexibility and data security.",
+            "website": "https://www.pci-proxy.com"
+        },
         "PCRecruiter": {
             "cats": [
                 101
@@ -28245,7 +28495,7 @@
             ],
             "headers": {
                 "x-phpfusion": "(.+)$\\;version:\\1",
-                "x-powered-by": "phpfusion (.+)$\\;version:\\1"
+                "x-powered-by": "php(?:-)?fusion (.+)$\\;version:\\1"
             },
             "html": [
                 "powered by \u003ca href=\"[^\u003e]+php-fusion",
@@ -28255,6 +28505,7 @@
                 "MySQL",
                 "PHP"
             ],
+            "description": "PHPFusion is an open-source content management system (CMS) and web application framework written in PHP.",
             "website": "https://phpfusion.com"
         },
         "PIXIjs": {
@@ -32740,6 +32991,16 @@
             "description": "Retail Rocket is a big data-based personalisation platform for ecommerce websites.",
             "website": "https://retailrocket.net"
         },
+        "Retool": {
+            "cats": [
+                47
+            ],
+            "js": [
+                "retool_page_suspend_detected"
+            ],
+            "description": "Retool is a development platform that enables the rapid creation and customisation of internal tools, including admin dashboards and database interfaces, through a combination of drag-and-drop components and code.",
+            "website": "https://retool.com"
+        },
         "Return Prime": {
             "cats": [
                 100,
@@ -35437,6 +35698,7 @@
             "js": [
                 "shopify",
                 "shopify_api_base_url",
+                "shopifyaccessurl",
                 "shopifyapi",
                 "shopifycustomer"
             ],
@@ -35712,6 +35974,7 @@
                 6
             ],
             "js": [
+                "mollie_javascript_use_shopware",
                 "shopstudiogoogletagmanagercloudgtagcallback"
             ],
             "headers": {
@@ -35942,6 +36205,16 @@
             "description": "Simple Machines Forum is a free open-source software, used for community forums and is written in PHP.",
             "website": "https://www.simplemachines.org"
         },
+        "Simple.ink": {
+            "cats": [
+                51
+            ],
+            "implies": [
+                "Notion"
+            ],
+            "description": "Simple.ink allows you to build no-code websites with Notion.",
+            "website": "https://www.simple.ink"
+        },
         "SimpleHTTP": {
             "cats": [
                 22
@@ -36023,6 +36296,16 @@
             ],
             "description": "Simplo7 is an all-in-one ecommerce product.",
             "website": "https://www.simplo7.com.br"
+        },
+        "SimplyBook.me": {
+            "cats": [
+                72
+            ],
+            "scriptSrc": [
+                "\\.simplybook\\.(?:asia|it|me)"
+            ],
+            "description": "SimplyBook.me is an online appointment scheduling and booking software.",
+            "website": "https://simplybook.me"
         },
         "Simplébo": {
             "cats": [
@@ -36434,6 +36717,13 @@
                 ]
             },
             "website": "https://sivuviidakko.fi"
+        },
+        "SixCMS": {
+            "cats": [
+                1
+            ],
+            "description": "SixCMS is a content management system (CMS) used for creating and managing websites and digital content.",
+            "website": "https://www.six.de/produktwelt/content-management/"
         },
         "Sizebay": {
             "cats": [
@@ -37597,6 +37887,16 @@
             "description": "Speedimize is a Shopify agency that focuses on website speed optimisation and performance issues.",
             "website": "https://speedimize.io"
         },
+        "Spektrix": {
+            "cats": [
+                53
+            ],
+            "scriptSrc": [
+                "\\.spektrix\\.com/"
+            ],
+            "description": "Spektrix is a cloud-based ticketing, marketing, and fundraising CRM system putting audience insight at your fingertips.",
+            "website": "https://www.spektrix.com"
+        },
         "Sphinx": {
             "cats": [
                 4
@@ -38552,6 +38852,9 @@
             "headers": {
                 "x-powered-by": "^strapi"
             },
+            "scripts": [
+                "(?://|-)strapi-"
+            ],
             "description": "Strapi is an open-source headless CMS used for building fast and easily manageable APIs written in JavaScript.",
             "website": "https://strapi.io"
         },
@@ -38609,7 +38912,8 @@
             "js": [
                 "__next_data__.props.pageprops.appsettings.stripe_api_public_key",
                 "checkout.enabledpayments.stripe",
-                "stripe.version"
+                "stripe.version",
+                "stripepublickey"
             ],
             "html": [
                 "\u003cinput[^\u003e]+data-stripe"
@@ -38834,7 +39138,8 @@
             ],
             "js": [
                 "__nuxt__.config.public.supabase",
-                "__nuxt__.config.public.supabase_url"
+                "__nuxt__.config.public.supabase_url",
+                "supabase.storagekey"
             ],
             "implies": [
                 "PostgreSQL"
@@ -38980,6 +39285,9 @@
             "cats": [
                 4
             ],
+            "css": [
+                "swagger-ui"
+            ],
             "js": [
                 "swaggeruibundle",
                 "swaggeruistandalonepreset"
@@ -39077,6 +39385,16 @@
             ],
             "description": "Swiper is a JavaScript library that creates modern touch sliders with hardware-accelerated transitions.",
             "website": "https://swiperjs.com"
+        },
+        "Swup": {
+            "cats": [
+                59
+            ],
+            "js": [
+                "swup"
+            ],
+            "description": "Swup is a versatile and expandable library for implementing page transitions on websites that use server-side rendering.",
+            "website": "https://swup.js.org"
         },
         "Swym Wishlist Plus": {
             "cats": [
@@ -39198,8 +39516,12 @@
         },
         "Systeme.io": {
             "cats": [
-                32
+                32,
+                71
             ],
+            "cookies": {
+                "systeme_affiliate": ""
+            },
             "scriptSrc": [
                 "//systeme\\.io/"
             ],
@@ -39797,7 +40119,12 @@
                 97
             ],
             "js": [
-                "tealiumenabled"
+                "__tealium_twc_switch",
+                "tealiumenabled",
+                "tealiumutils"
+            ],
+            "scripts": [
+                "tealium_js_path"
             ],
             "scriptSrc": [
                 "/tealium/utag\\.js$",
@@ -40127,6 +40454,17 @@
             ],
             "description": "The.com is a low-code website building platform with community-created components that you can share and own.",
             "website": "https://www.the.com"
+        },
+        "Theatre.js": {
+            "cats": [
+                25
+            ],
+            "js": [
+                "__theatrejs_corebundle",
+                "__theatrejs_corebundle.version"
+            ],
+            "description": "Theatre.js is a javascript animation library with a professional motion design toolset.",
+            "website": "https://www.theatrejs.com"
         },
         "Thefork": {
             "cats": [
@@ -40680,9 +41018,14 @@
             "cats": [
                 6
             ],
-            "scriptSrc": [
-                "cdn\\.ticimax\\.com/"
+            "js": [
+                "ticimaxapi",
+                "ticimaxservices"
             ],
+            "scriptSrc": [
+                "cdn\\.ticimax\\.(?:com|cloud)/"
+            ],
+            "description": "Ticimax provides ecommerce infrastructure services.",
             "website": "https://www.ticimax.com"
         },
         "Tictail": {
@@ -41061,6 +41404,17 @@
                 "Python"
             ],
             "website": "https://trac.edgewall.org"
+        },
+        "Track123": {
+            "cats": [
+                100,
+                99
+            ],
+            "js": [
+                "track123"
+            ],
+            "description": "Track123 is a product under Lingxing, founded in September 2021, with a focus on providing all-in-one tracking and management services for cross-border sellers.",
+            "website": "https://www.track123.com"
         },
         "TrackJs": {
             "cats": [
@@ -41751,7 +42105,8 @@
                 14
             ],
             "js": [
-                "twitch.player"
+                "twitch.embed",
+                "twitchplayer"
             ],
             "description": "Twitch is an American video live streaming service that focuses on video game live streaming, including broadcasts of esports competitions.",
             "website": "https://dev.twitch.tv/docs/embed/video-and-clips/"
@@ -41906,6 +42261,16 @@
             ],
             "description": "Typekit is an online service which offers a subscription library of fonts.",
             "website": "https://typekit.com"
+        },
+        "Typer.js": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "unpkg\\.com/typer-dot-js@([\\d\\.]+)/typer\\.js\\;version:\\1"
+            ],
+            "description": "Typer.js is a JavaScript library for creating a fully configurable typing effect in HTML.",
+            "website": "https://github.com/straversi/Typer.js"
         },
         "Typof": {
             "cats": [
@@ -43858,16 +44223,28 @@
             "description": "WP Featherlight is a WordPress lightbox plugin for adding a minimal, high-performance, responsive jQuery lightbox to your WordPress website.",
             "website": "https://wordpress.org/plugins/wp-featherlight"
         },
+        "WP Google Map Embed": {
+            "cats": [
+                87
+            ],
+            "implies": [
+                "Google Maps"
+            ],
+            "description": "WP Google Map Embed is a lightweight WordPress plugin for embedding Google Maps with custom markers via shortcodes in posts, pages, and sidebars.",
+            "website": "https://wpgooglemap.com"
+        },
         "WP Google Map Plugin": {
             "cats": [
-                87,
-                35
+                87
             ],
             "js": [
                 "wpgmp_local"
             ],
             "scriptSrc": [
                 "/wp-content/plugins/wp-google-map-plugin/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+            ],
+            "implies": [
+                "Google Maps"
             ],
             "description": "WP Google Map Plugin allows you to create google maps shortcodes to display responsive google maps on pages, widgets and custom templates.",
             "website": "https://www.wpmapspro.com"
@@ -44442,6 +44819,17 @@
             ],
             "description": "WebToffee Stripe Payment Plugin for WooCommerce is a software add-on that allows online retailers using the WooCommerce ecommerce platform to accept payments through the Stripe payment gateway.",
             "website": "https://www.webtoffee.com/product/woocommerce-stripe-payment-gateway/"
+        },
+        "WebWave": {
+            "cats": [
+                51
+            ],
+            "js": [
+                "webwave.getappversion",
+                "webwavefontsloadedflag"
+            ],
+            "description": "WebWave is a drag and drop website builder.",
+            "website": "https://webwavecms.com"
         },
         "WebZi": {
             "cats": [
@@ -45770,6 +46158,20 @@
             },
             "website": "https://xitami.com"
         },
+        "Xiuno BBS": {
+            "cats": [
+                1
+            ],
+            "meta": {
+                "author": [
+                    "xiunobbs\\s([\\d\\.]+)\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "PHP"
+            ],
+            "website": "https://xiunobbs.cn"
+        },
         "Xonic": {
             "cats": [
                 6
@@ -45826,6 +46228,19 @@
             ],
             "description": "Xserver engages in web hosting, web application and internet-related services.",
             "website": "https://www.xserver.ne.jp"
+        },
+        "Xtime": {
+            "cats": [
+                72
+            ],
+            "js": [
+                "xtime"
+            ],
+            "scriptSrc": [
+                "\\.xtime\\.com/scheduling"
+            ],
+            "description": "Xtime is a company that provides automotive service scheduling and management solutions primarily for car dealerships and automotive service centers.",
+            "website": "https://xtime.com"
         },
         "Xtra": {
             "cats": [
@@ -46851,6 +47266,16 @@
                 "x-b3-traceid": ""
             },
             "website": "https://zipkin.io/"
+        },
+        "Zipteams": {
+            "cats": [
+                52
+            ],
+            "js": [
+                "zipteamswidget"
+            ],
+            "description": "Zipteams is a live chat solution.",
+            "website": "https://zipteams.com"
         },
         "Zmags Creator": {
             "cats": [
@@ -48883,6 +49308,17 @@
                 "PHP"
             ],
             "website": "https://owncloud.org"
+        },
+        "p5.js": {
+            "cats": [
+                59
+            ],
+            "js": [
+                "p5.camera",
+                "p5.colorconversion"
+            ],
+            "description": "p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else.",
+            "website": "https://p5js.org"
         },
         "papaya CMS": {
             "cats": [
