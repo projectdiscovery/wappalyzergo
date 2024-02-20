@@ -36,6 +36,7 @@ type Fingerprint struct {
 	Implies     interface{}            `json:"implies"`
 	Description string                 `json:"description"`
 	Website     string                 `json:"website"`
+	CPE         string                 `json:"cpe"`
 }
 
 // OutputFingerprints contains a map of fingerprints for tech detection
@@ -59,9 +60,10 @@ type OutputFingerprint struct {
 	Implies     []string            `json:"implies,omitempty"`
 	Description string              `json:"description,omitempty"`
 	Website     string              `json:"website,omitempty"`
+	CPE         string              `json:"cpe,omitempty"`
 }
 
-const fingerprintURL = "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/technologies/%s.json"
+const fingerprintURL = "https://raw.githubusercontent.com/Lissy93/wapalyzer/master/src/technologies/%s.json"
 
 func makeFingerprintURLs() []string {
 	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
@@ -155,6 +157,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			Meta:        make(map[string][]string),
 			Description: fingerprint.Description,
 			Website:     fingerprint.Website,
+			CPE:         fingerprint.CPE,
 		}
 
 		for cookie, value := range fingerprint.Cookies {

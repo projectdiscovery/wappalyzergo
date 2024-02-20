@@ -177,6 +177,7 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 			result[app] = AppInfo{
 				Description: fingerprint.description,
 				Website:     fingerprint.website,
+				CPE:         fingerprint.cpe,
 			}
 		}
 	}
