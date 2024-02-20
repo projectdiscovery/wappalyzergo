@@ -27,6 +27,7 @@ type Fingerprint struct {
 	Implies     []string            `json:"implies"`
 	Description string              `json:"description"`
 	Website     string              `json:"website"`
+	CPE         string              `json:"cpe"`
 }
 
 // CompiledFingerprints contains a map of fingerprints for tech detection
@@ -59,12 +60,15 @@ type CompiledFingerprint struct {
 	scriptSrc []*versionRegex
 	// meta contains fingerprints for meta tags
 	meta map[string][]*versionRegex
+	// cpe contains the cpe for a fingerpritn
+	cpe string
 }
 
 // AppInfo contains basic information about an App.
 type AppInfo struct {
 	Description string
 	Website     string
+	CPE         string
 }
 
 // CatsInfo contains basic information about an App.
@@ -152,6 +156,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		script:      make([]*versionRegex, 0, len(fingerprint.Script)),
 		scriptSrc:   make([]*versionRegex, 0, len(fingerprint.ScriptSrc)),
 		meta:        make(map[string][]*versionRegex),
+		cpe:         fingerprint.CPE,
 	}
 
 	for header, pattern := range fingerprint.Cookies {
