@@ -8,14 +8,14 @@ import (
 )
 
 // checkBody checks for fingerprints in the HTML body
-func (s *Wappalyze) checkBody(body []byte) []string {
+func (s *Wappalyze) checkBody(url string, body []byte) []string {
 	var technologies []string
 
 	bodyString := unsafeToString(body)
 
 	technologies = append(
 		technologies,
-		s.fingerprints.matchString(bodyString, htmlPart)...,
+		s.fingerprints.matchString(url, bodyString, htmlPart)...,
 	)
 
 	// Tokenize the HTML document and check for fingerprints as required
@@ -36,7 +36,7 @@ func (s *Wappalyze) checkBody(body []byte) []string {
 					// Check the script tags for script fingerprints
 					technologies = append(
 						technologies,
-						s.fingerprints.matchString(source, scriptPart)...,
+						s.fingerprints.matchString(url, source, scriptPart)...,
 					)
 					continue
 				}
@@ -53,7 +53,7 @@ func (s *Wappalyze) checkBody(body []byte) []string {
 				// data := tokenizer.Token().Data
 				// technologies = append(
 				// 	technologies,
-				// 	s.fingerprints.matchString(data, jsPart)...,
+				// 	s.fingerprints.matchString(url, data, jsPart)...,
 				// )
 			case "meta":
 				// For meta tag, we are only interested in name and content attributes.

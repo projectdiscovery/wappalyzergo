@@ -6,10 +6,18 @@ import (
 	"strings"
 )
 
-// Wappalyze is a client for working with tech detection
-type Wappalyze struct {
-	fingerprints *CompiledFingerprints
-}
+type (
+	// Wappalyze is a client for working with tech detection
+	Wappalyze struct {
+		fingerprints *CompiledFingerprints
+	}
+
+	Technology struct {
+		Name    string `json:"name"`
+		Version string `json:"version"`
+		Info    any    `json:"info"`
+	}
+)
 
 // New creates a new tech detection instance
 func New() (*Wappalyze, error) {
@@ -45,7 +53,7 @@ func (s *Wappalyze) loadFingerprints() error {
 //
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
-func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[string]struct{} {
+func (s *Wappalyze) Fingerprint(url string, headers map[string][]string, body []byte) []Technology {
 	uniqueFingerprints := newUniqueFingerprints()
 
 	// Lowercase everything that we have received to check
@@ -67,25 +75,44 @@ func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[st
 	}
 
 	// Check for stuff in the body finally
-	bodyTech := s.checkBody(normalizedBody)
+	bodyTech := s.checkBody(url, normalizedBody)
 	for _, application := range bodyTech {
 		uniqueFingerprints.setIfNotExists(application)
 	}
-	return uniqueFingerprints.getValues()
+	return uniqueFingerprints.getTechnologies()
 }
 
 type uniqueFingerprints struct {
-	values map[string]struct{}
+	values map[string]any
 }
 
 func newUniqueFingerprints() uniqueFingerprints {
 	return uniqueFingerprints{
-		values: make(map[string]struct{}),
+		values: make(map[string]any),
 	}
 }
 
-func (u uniqueFingerprints) getValues() map[string]struct{} {
+func (u uniqueFingerprints) getValues() map[string]any {
 	return u.values
+}
+
+func (u uniqueFingerprints) getTechnologies() []Technology {
+	var technologies []Technology
+	for key, value := range u.values {
+		technology := strings.Split(key, ":")
+		name := technology[0]
+		version := ""
+		if len(technology) > 1 {
+			version = technology[1]
+		}
+
+		technologies = append(technologies, Technology{
+			Name:    name,
+			Version: version,
+			Info:    value,
+		})
+	}
+	return technologies
 }
 
 const versionSeparator = ":"
@@ -106,7 +133,7 @@ func (u uniqueFingerprints) setIfNotExists(value string) {
 		// Handles case when we get additional version information next
 		if version != "" {
 			delete(u.values, app)
-			u.values[strings.Join([]string{app, version}, versionSeparator)] = struct{}{}
+			u.values[strings.Join([]string{app, version}, versionSeparator)] = interface{}(nil)
 		}
 		return
 	}
@@ -119,7 +146,7 @@ func (u uniqueFingerprints) setIfNotExists(value string) {
 			}
 		}
 	}
-	u.values[value] = struct{}{}
+	u.values[value] = interface{}(nil)
 }
 
 // FingerprintWithTitle identifies technologies on a target,
@@ -128,7 +155,7 @@ func (u uniqueFingerprints) setIfNotExists(value string) {
 //
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
-func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byte) (map[string]struct{}, string) {
+func (s *Wappalyze) FingerprintWithTitle(url string, headers map[string][]string, body []byte) ([]Technology, string) {
 	uniqueFingerprints := newUniqueFingerprints()
 
 	// Lowercase everything that we have received to check
@@ -151,14 +178,14 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 
 	// Check for stuff in the body finally
 	if strings.Contains(normalizedHeaders["content-type"], "text/html") {
-		bodyTech := s.checkBody(normalizedBody)
+		bodyTech := s.checkBody(url, normalizedBody)
 		for _, application := range bodyTech {
 			uniqueFingerprints.setIfNotExists(application)
 		}
 		title := s.getTitle(body)
-		return uniqueFingerprints.getValues(), title
+		return uniqueFingerprints.getTechnologies(), title
 	}
-	return uniqueFingerprints.getValues(), ""
+	return uniqueFingerprints.getTechnologies(), ""
 }
 
 // FingerprintWithInfo identifies technologies on a target,
@@ -168,21 +195,22 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 //
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
-func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte) map[string]AppInfo {
-	apps := s.Fingerprint(headers, body)
-	result := make(map[string]AppInfo, len(apps))
+func (s *Wappalyze) FingerprintWithInfo(url string, headers map[string][]string, body []byte) []Technology {
+	var technologies []Technology
 
-	for app := range apps {
-		if fingerprint, ok := s.fingerprints.Apps[app]; ok {
-			result[app] = AppInfo{
+	apps := s.Fingerprint(url, headers, body)
+	for _, app := range apps {
+		if fingerprint, ok := s.fingerprints.Apps[app.Name]; ok {
+			app.Info = AppInfo{
 				Description: fingerprint.description,
 				Website:     fingerprint.website,
 				CPE:         fingerprint.cpe,
 			}
+			technologies = append(technologies, app)
 		}
 	}
 
-	return result
+	return technologies
 }
 
 // FingerprintWithCats identifies technologies on a target,
@@ -190,17 +218,18 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 // It also returns categories information about the technology, is there's any
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
-func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte) map[string]CatsInfo {
-	apps := s.Fingerprint(headers, body)
-	result := make(map[string]CatsInfo, len(apps))
+func (s *Wappalyze) FingerprintWithCats(url string, headers map[string][]string, body []byte) []Technology {
+	var technologies []Technology
 
-	for app := range apps {
-		if fingerprint, ok := s.fingerprints.Apps[app]; ok {
-			result[app] = CatsInfo{
+	apps := s.Fingerprint(url, headers, body)
+	for _, app := range apps {
+		if fingerprint, ok := s.fingerprints.Apps[app.Name]; ok {
+			app.Info = CatsInfo{
 				Cats: fingerprint.cats,
 			}
+			technologies = append(technologies, app)
 		}
 	}
 
-	return result
+	return technologies
 }
