@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/stretchr/testify v1.8.4
-	golang.org/x/net v0.21.0
+	golang.org/x/net v0.24.0
 )
 
 require (
