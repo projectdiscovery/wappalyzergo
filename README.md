@@ -9,6 +9,7 @@ Uses data from https://github.com/AliasIO/wappalyzer
 - Very simple and easy to use, with clean codebase.
 - Normalized regexes + auto-updating database of wappalyzer fingerprints.
 - Optimized for performance: parsing HTML manually for best speed.
+- Added technology icons. The name of the icons is taken from the [Simple Icons](https://simpleicons.org/).
 
 ### Using *go install*
 
