@@ -1,6 +1,7 @@
 package wappalyzer
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -88,4 +89,23 @@ func TestUniqueFingerprints(t *testing.T) {
 		fingerprints.setIfNotExists("another:2.3.5")
 		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
 	})
+}
+
+func Test_FingerprintWithInfo(t *testing.T) {
+	wappalyzer, err := New()
+	require.Nil(t, err, "could not create wappalyzer")
+
+	name := "Liferay:7.3.5"
+	matches := wappalyzer.FingerprintWithInfo(map[string][]string{
+		"liferay-portal": {"testserver 7.3.5"},
+	}, []byte(""))
+	fmt.Printf("matches: %v\n", matches)
+	require.Contains(t, matches, name, "Could not get correct match")
+
+	value := matches[name]
+	require.Equal(t, "cpe:2.3:a:liferay:liferay_portal:*:*:*:*:*:*:*:*", value.CPE, "could not get correct name")
+	require.Equal(t, "https://www.liferay.com/", value.Website, "could not get correct website")
+	require.Equal(t, "Liferay is an open-source company that provides free documentation and paid professional service to users of its software.", value.Description, "could not get correct description")
+	require.Equal(t, "Liferay.svg", value.Icon, "could not get correct icon")
+	require.ElementsMatch(t, []string{"CMS"}, value.Categories, "could not get correct categories")
 }
