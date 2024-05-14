@@ -63,7 +63,7 @@ type OutputFingerprint struct {
 	CPE         string              `json:"cpe,omitempty"`
 }
 
-const fingerprintURL = "https://raw.githubusercontent.com/Lissy93/wapalyzer/master/src/technologies/%s.json"
+const fingerprintURL = "https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json"
 
 func makeFingerprintURLs() []string {
 	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
