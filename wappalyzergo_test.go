@@ -1,7 +1,6 @@
 package wappalyzer
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -99,7 +98,6 @@ func Test_FingerprintWithInfo(t *testing.T) {
 	matches := wappalyzer.FingerprintWithInfo(map[string][]string{
 		"liferay-portal": {"testserver 7.3.5"},
 	}, []byte(""))
-	fmt.Printf("matches: %v\n", matches)
 	require.Contains(t, matches, name, "Could not get correct match")
 
 	value := matches[name]
