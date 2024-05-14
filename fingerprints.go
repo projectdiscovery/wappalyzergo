@@ -2,6 +2,8 @@ package wappalyzer
 
 import (
 	"fmt"
+	"io"
+	"net/http"
 	"regexp"
 	"strconv"
 	"strings"
@@ -22,12 +24,13 @@ type Fingerprint struct {
 	Headers     map[string]string   `json:"headers"`
 	HTML        []string            `json:"html"`
 	Script      []string            `json:"scripts"`
-	ScriptSrc   []string            `json:"scriptSrcs"`
+	ScriptSrc   []string            `json:"scriptSrc"`
 	Meta        map[string][]string `json:"meta"`
 	Implies     []string            `json:"implies"`
 	Description string              `json:"description"`
 	Website     string              `json:"website"`
 	CPE         string              `json:"cpe"`
+	Icon        string              `json:"icon"`
 }
 
 // CompiledFingerprints contains a map of fingerprints for tech detection
@@ -60,8 +63,10 @@ type CompiledFingerprint struct {
 	scriptSrc []*versionRegex
 	// meta contains fingerprints for meta tags
 	meta map[string][]*versionRegex
-	// cpe contains the cpe for a fingerpritn
+	// cpe contains the cpe for a fingerprint
 	cpe string
+	// icon contains fingerprint icon
+	icon string
 }
 
 // AppInfo contains basic information about an App.
@@ -69,6 +74,11 @@ type AppInfo struct {
 	Description string
 	Website     string
 	CPE         string
+}
+
+// AppIcon contains icon of technology.
+type AppIcon struct {
+	Name string
 }
 
 // CatsInfo contains basic information about an App.
@@ -82,7 +92,10 @@ type versionRegex struct {
 	group     int
 }
 
-const versionPrefix = "version:\\"
+const (
+	versionPrefix       = "version:\\"
+	versionRegexPattern = `v(\d+(\.\d+)?(\.\d+)?)`
+)
 
 // newVersionRegex creates a new version matching regex
 // TODO: handles simple group cases only as of now (no ternary)
@@ -157,6 +170,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		scriptSrc:   make([]*versionRegex, 0, len(fingerprint.ScriptSrc)),
 		meta:        make(map[string][]*versionRegex),
 		cpe:         fingerprint.CPE,
+		icon:        fingerprint.Icon,
 	}
 
 	for header, pattern := range fingerprint.Cookies {
@@ -223,7 +237,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 }
 
 // matchString matches a string for the fingerprints
-func (f *CompiledFingerprints) matchString(data string, part part) []string {
+func (f *CompiledFingerprints) matchString(url, data string, part part) []string {
 	var matched bool
 	var technologies []string
 
@@ -259,6 +273,12 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 			continue
 		}
 
+		if version == "" {
+			scriptContent, err := fetchScriptContent(url, data)
+			if err == nil && len(scriptContent) != 0 {
+				version = extractVersionFromScriptContent(scriptContent)
+			}
+		}
 		if version != "" {
 			app = formatAppVersion(app, version)
 		}
@@ -418,4 +438,39 @@ func formatAppVersion(app, version string) string {
 // GetFingerprints returns the fingerprint string from wappalyzer
 func GetFingerprints() string {
 	return fingerprints
+}
+
+// fetchScriptContent retrieves content of a linked script
+func fetchScriptContent(url, scriptSrc string) ([]byte, error) {
+	if !strings.Contains(scriptSrc, "://") {
+		scriptSrc = fmt.Sprintf("%s%s", url, scriptSrc)
+	}
+
+	resp, err := http.DefaultClient.Get(scriptSrc)
+	if err != nil {
+		return nil, err
+	}
+
+	scriptBody, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	err = resp.Body.Close()
+	if err != nil {
+		return nil, err
+	}
+
+	return scriptBody, nil
+}
+
+// extractVersionFromScriptContent extracts version number from script content
+func extractVersionFromScriptContent(scriptContent []byte) string {
+	regex := regexp.MustCompile(versionRegexPattern)
+	version := regex.FindString(string(scriptContent))
+	if version != "" {
+		version = strings.TrimPrefix(version, "v")
+	}
+
+	return version
 }

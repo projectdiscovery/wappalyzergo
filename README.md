@@ -9,6 +9,7 @@ Uses data from https://github.com/AliasIO/wappalyzer
 - Very simple and easy to use, with clean codebase.
 - Normalized regexes + auto-updating database of wappalyzer fingerprints.
 - Optimized for performance: parsing HTML manually for best speed.
+- Added technology icons. The name of the icons is taken from the [Simple Icons](https://simpleicons.org/).
 
 ### Using *go install*
 
@@ -34,16 +35,21 @@ import (
 )
 
 func main() {
-	resp, err := http.DefaultClient.Get("https://www.hackerone.com")
+	url := "https://www.hackerone.com"
+	resp, err := http.DefaultClient.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
 	data, _ := io.ReadAll(resp.Body) // Ignoring error for example
 
 	wappalyzerClient, err := wappalyzer.New()
-	fingerprints := wappalyzerClient.Fingerprint(resp.Header, data)
-	fmt.Printf("%v\n", fingerprints)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	// Output: map[Acquia Cloud Platform:{} Amazon EC2:{} Apache:{} Cloudflare:{} Drupal:{} PHP:{} Percona:{} React:{} Varnish:{}]
+	technologies := wappalyzerClient.Fingerprint(url, resp.Header, data)
+	for _, technology := range technologies {
+		fmt.Println(technology)
+	}
 }
 ```

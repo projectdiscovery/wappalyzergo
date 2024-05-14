@@ -4,5 +4,9 @@ import (
 	_ "embed"
 )
 
-//go:embed fingerprints_data.json
-var fingerprints string
+var (
+	//go:embed fingerprints_data.json
+	fingerprints string
+	//go:embed technology_icons.json
+	technologyIcons string
+)
