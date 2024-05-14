@@ -36,13 +36,23 @@ func New() (*Wappalyze, error) {
 
 // loadFingerprints loads the fingerprints and compiles them
 func (s *Wappalyze) loadFingerprints() error {
-	var fingerprintsStruct Fingerprints
-	err := json.Unmarshal([]byte(fingerprints), &fingerprintsStruct)
-	if err != nil {
+	var (
+		fingerprintsStruct Fingerprints
+		icons              map[string]string
+	)
+
+	if err := json.Unmarshal([]byte(fingerprints), &fingerprintsStruct); err != nil {
+		return err
+	}
+
+	if err := json.Unmarshal([]byte(technologyIcons), &icons); err != nil {
 		return err
 	}
 
 	for i, fingerprint := range fingerprintsStruct.Apps {
+		if icon, ok := icons[i]; ok {
+			fingerprint.Icon = icon
+		}
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
 	return nil
@@ -226,6 +236,25 @@ func (s *Wappalyze) FingerprintWithCats(url string, headers map[string][]string,
 		if fingerprint, ok := s.fingerprints.Apps[app.Name]; ok {
 			app.Info = CatsInfo{
 				Cats: fingerprint.cats,
+			}
+			technologies = append(technologies, app)
+		}
+	}
+
+	return technologies
+}
+
+// FingerprintWithIcon identifies technologies on a target,
+// based on the received response headers and body.
+// It also returns basic technology icon.
+func (s *Wappalyze) FingerprintWithIcon(url string, headers map[string][]string, body []byte) []Technology {
+	var technologies []Technology
+
+	apps := s.Fingerprint(url, headers, body)
+	for _, app := range apps {
+		if fingerprint, ok := s.fingerprints.Apps[app.Name]; ok {
+			app.Info = AppIcon{
+				Name: fingerprint.icon,
 			}
 			technologies = append(technologies, app)
 		}
