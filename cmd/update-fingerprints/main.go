@@ -36,6 +36,7 @@ type Fingerprint struct {
 	Implies     interface{}            `json:"implies"`
 	Description string                 `json:"description"`
 	Website     string                 `json:"website"`
+	Icon        string                 `json:"icon"`
 	CPE         string                 `json:"cpe"`
 }
 
@@ -61,6 +62,7 @@ type OutputFingerprint struct {
 	Description string              `json:"description,omitempty"`
 	Website     string              `json:"website,omitempty"`
 	CPE         string              `json:"cpe,omitempty"`
+	Icon        string              `json:"icon,omitempty"`
 }
 
 const fingerprintURL = "https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json"
@@ -158,6 +160,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			Description: fingerprint.Description,
 			Website:     fingerprint.Website,
 			CPE:         fingerprint.CPE,
+			Icon:        fingerprint.Icon,
 		}
 
 		for cookie, value := range fingerprint.Cookies {
