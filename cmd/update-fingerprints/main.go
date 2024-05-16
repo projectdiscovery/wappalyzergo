@@ -52,7 +52,7 @@ type OutputFingerprint struct {
 	Cats        []int               `json:"cats,omitempty"`
 	CSS         []string            `json:"css,omitempty"`
 	Cookies     map[string]string   `json:"cookies,omitempty"`
-	JS          []string            `json:"js,omitempty"`
+	JS          map[string]string   `json:"js,omitempty"`
 	Headers     map[string]string   `json:"headers,omitempty"`
 	HTML        []string            `json:"html,omitempty"`
 	Script      []string            `json:"scripts,omitempty"`
@@ -156,6 +156,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			Cats:        fingerprint.Cats,
 			Cookies:     make(map[string]string),
 			Headers:     make(map[string]string),
+			JS:          make(map[string]string),
 			Meta:        make(map[string][]string),
 			Description: fingerprint.Description,
 			Website:     fingerprint.Website,
@@ -166,10 +167,9 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		for cookie, value := range fingerprint.Cookies {
 			output.Cookies[strings.ToLower(cookie)] = strings.ToLower(value)
 		}
-		for js := range fingerprint.JS {
-			output.JS = append(output.JS, strings.ToLower(js))
+		for k, v := range fingerprint.JS {
+			output.JS[k] = v
 		}
-		sort.Strings(output.JS)
 
 		for header, pattern := range fingerprint.Headers {
 			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)

@@ -18,7 +18,7 @@ type Fingerprint struct {
 	Cats        []int               `json:"cats"`
 	CSS         []string            `json:"css"`
 	Cookies     map[string]string   `json:"cookies"`
-	JS          []string            `json:"js"`
+	JS          map[string]string   `json:"js"`
 	Headers     map[string]string   `json:"headers"`
 	HTML        []string            `json:"html"`
 	Script      []string            `json:"scripts"`
@@ -52,7 +52,7 @@ type CompiledFingerprint struct {
 	// cookies contains fingerprints for target cookies
 	cookies map[string]*versionRegex
 	// js contains fingerprints for the js file
-	js []*versionRegex
+	js map[string]*versionRegex
 	// headers contains fingerprints for target headers
 	headers map[string]*versionRegex
 	// html contains fingerprints for the target HTML
@@ -156,7 +156,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		website:     fingerprint.Website,
 		icon:        fingerprint.Icon,
 		cookies:     make(map[string]*versionRegex),
-		js:          make([]*versionRegex, 0, len(fingerprint.JS)),
+		js:          make(map[string]*versionRegex),
 		headers:     make(map[string]*versionRegex),
 		html:        make([]*versionRegex, 0, len(fingerprint.HTML)),
 		script:      make([]*versionRegex, 0, len(fingerprint.Script)),
@@ -173,12 +173,12 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		compiled.cookies[header] = fingerprint
 	}
 
-	for _, pattern := range fingerprint.JS {
+	for k, pattern := range fingerprint.JS {
 		fingerprint, err := newVersionRegex(pattern)
 		if err != nil {
 			continue
 		}
-		compiled.js = append(compiled.js, fingerprint)
+		compiled.js[k] = fingerprint
 	}
 
 	for header, pattern := range fingerprint.Headers {

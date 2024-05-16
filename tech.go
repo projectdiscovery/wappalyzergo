@@ -8,6 +8,7 @@ import (
 
 // Wappalyze is a client for working with tech detection
 type Wappalyze struct {
+	original     *Fingerprints
 	fingerprints *CompiledFingerprints
 }
 
@@ -26,6 +27,11 @@ func New() (*Wappalyze, error) {
 	return wappalyze, nil
 }
 
+// GetFingerprints returns the original fingerprints
+func (s *Wappalyze) GetFingerprints() *Fingerprints {
+	return s.original
+}
+
 // loadFingerprints loads the fingerprints and compiles them
 func (s *Wappalyze) loadFingerprints() error {
 	var fingerprintsStruct Fingerprints
@@ -34,6 +40,7 @@ func (s *Wappalyze) loadFingerprints() error {
 		return err
 	}
 
+	s.original = &fingerprintsStruct
 	for i, fingerprint := range fingerprintsStruct.Apps {
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
