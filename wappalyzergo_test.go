@@ -69,24 +69,24 @@ func TestBodyDetect(t *testing.T) {
 }
 
 func TestUniqueFingerprints(t *testing.T) {
-	fingerprints := newUniqueFingerprints()
-	fingerprints.setIfNotExists("test")
-	require.Equal(t, map[string]struct{}{"test": {}}, fingerprints.getValues(), "could not get correct values")
+	fingerprints := NewUniqueFingerprints()
+	fingerprints.SetIfNotExists("test")
+	require.Equal(t, map[string]struct{}{"test": {}}, fingerprints.GetValues(), "could not get correct values")
 
 	t.Run("linear", func(t *testing.T) {
-		fingerprints.setIfNotExists("new:2.3.5")
-		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+		fingerprints.SetIfNotExists("new:2.3.5")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.GetValues(), "could not get correct values")
 
-		fingerprints.setIfNotExists("new")
-		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+		fingerprints.SetIfNotExists("new")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}}, fingerprints.GetValues(), "could not get correct values")
 	})
 
 	t.Run("opposite", func(t *testing.T) {
-		fingerprints.setIfNotExists("another")
-		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another": {}}, fingerprints.getValues(), "could not get correct values")
+		fingerprints.SetIfNotExists("another")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another": {}}, fingerprints.GetValues(), "could not get correct values")
 
-		fingerprints.setIfNotExists("another:2.3.5")
-		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another:2.3.5": {}}, fingerprints.getValues(), "could not get correct values")
+		fingerprints.SetIfNotExists("another:2.3.5")
+		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another:2.3.5": {}}, fingerprints.GetValues(), "could not get correct values")
 	})
 }
 

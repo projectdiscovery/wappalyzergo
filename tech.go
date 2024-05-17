@@ -32,6 +32,11 @@ func (s *Wappalyze) GetFingerprints() *Fingerprints {
 	return s.original
 }
 
+// GetCompiledFingerprints returns the compiled fingerprints
+func (s *Wappalyze) GetCompiledFingerprints() *CompiledFingerprints {
+	return s.fingerprints
+}
+
 // loadFingerprints loads the fingerprints and compiles them
 func (s *Wappalyze) loadFingerprints() error {
 	var fingerprintsStruct Fingerprints
@@ -53,7 +58,7 @@ func (s *Wappalyze) loadFingerprints() error {
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
 func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[string]struct{} {
-	uniqueFingerprints := newUniqueFingerprints()
+	uniqueFingerprints := NewUniqueFingerprints()
 
 	// Lowercase everything that we have received to check
 	normalizedBody := bytes.ToLower(body)
@@ -62,36 +67,36 @@ func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[st
 	// Run header based fingerprinting if the number
 	// of header checks if more than 0.
 	for _, application := range s.checkHeaders(normalizedHeaders) {
-		uniqueFingerprints.setIfNotExists(application)
+		uniqueFingerprints.SetIfNotExists(application)
 	}
 
 	cookies := s.findSetCookie(normalizedHeaders)
 	// Run cookie based fingerprinting if we have a set-cookie header
 	if len(cookies) > 0 {
 		for _, application := range s.checkCookies(cookies) {
-			uniqueFingerprints.setIfNotExists(application)
+			uniqueFingerprints.SetIfNotExists(application)
 		}
 	}
 
 	// Check for stuff in the body finally
 	bodyTech := s.checkBody(normalizedBody)
 	for _, application := range bodyTech {
-		uniqueFingerprints.setIfNotExists(application)
+		uniqueFingerprints.SetIfNotExists(application)
 	}
-	return uniqueFingerprints.getValues()
+	return uniqueFingerprints.GetValues()
 }
 
-type uniqueFingerprints struct {
+type UniqueFingerprints struct {
 	values map[string]struct{}
 }
 
-func newUniqueFingerprints() uniqueFingerprints {
-	return uniqueFingerprints{
+func NewUniqueFingerprints() UniqueFingerprints {
+	return UniqueFingerprints{
 		values: make(map[string]struct{}),
 	}
 }
 
-func (u uniqueFingerprints) getValues() map[string]struct{} {
+func (u UniqueFingerprints) GetValues() map[string]struct{} {
 	return u.values
 }
 
@@ -107,7 +112,7 @@ func separateAppVersion(value string) (string, string) {
 	return value, ""
 }
 
-func (u uniqueFingerprints) setIfNotExists(value string) {
+func (u UniqueFingerprints) SetIfNotExists(value string) {
 	app, version := separateAppVersion(value)
 	if _, ok := u.values[app]; ok {
 		// Handles case when we get additional version information next
@@ -136,7 +141,7 @@ func (u uniqueFingerprints) setIfNotExists(value string) {
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
 func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byte) (map[string]struct{}, string) {
-	uniqueFingerprints := newUniqueFingerprints()
+	uniqueFingerprints := NewUniqueFingerprints()
 
 	// Lowercase everything that we have received to check
 	normalizedBody := bytes.ToLower(body)
@@ -145,14 +150,14 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 	// Run header based fingerprinting if the number
 	// of header checks if more than 0.
 	for _, application := range s.checkHeaders(normalizedHeaders) {
-		uniqueFingerprints.setIfNotExists(application)
+		uniqueFingerprints.SetIfNotExists(application)
 	}
 
 	cookies := s.findSetCookie(normalizedHeaders)
 	// Run cookie based fingerprinting if we have a set-cookie header
 	if len(cookies) > 0 {
 		for _, application := range s.checkCookies(cookies) {
-			uniqueFingerprints.setIfNotExists(application)
+			uniqueFingerprints.SetIfNotExists(application)
 		}
 	}
 
@@ -160,12 +165,12 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 	if strings.Contains(normalizedHeaders["content-type"], "text/html") {
 		bodyTech := s.checkBody(normalizedBody)
 		for _, application := range bodyTech {
-			uniqueFingerprints.setIfNotExists(application)
+			uniqueFingerprints.SetIfNotExists(application)
 		}
 		title := s.getTitle(body)
-		return uniqueFingerprints.getValues(), title
+		return uniqueFingerprints.GetValues(), title
 	}
-	return uniqueFingerprints.getValues(), ""
+	return uniqueFingerprints.GetValues(), ""
 }
 
 // FingerprintWithInfo identifies technologies on a target,
@@ -181,14 +186,14 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 
 	for app := range apps {
 		if fingerprint, ok := s.fingerprints.Apps[app]; ok {
-			result[app] = appInfoFromFingerprint(fingerprint)
+			result[app] = AppInfoFromFingerprint(fingerprint)
 		}
 
 		// Handle colon separated values
 		if strings.Contains(app, versionSeparator) {
 			if parts := strings.Split(app, versionSeparator); len(parts) == 2 {
 				if fingerprint, ok := s.fingerprints.Apps[parts[0]]; ok {
-					result[app] = appInfoFromFingerprint(fingerprint)
+					result[app] = AppInfoFromFingerprint(fingerprint)
 				}
 			}
 		}
@@ -197,7 +202,7 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 	return result
 }
 
-func appInfoFromFingerprint(fingerprint *CompiledFingerprint) AppInfo {
+func AppInfoFromFingerprint(fingerprint *CompiledFingerprint) AppInfo {
 	categories := make([]string, 0, len(fingerprint.cats))
 	for _, cat := range fingerprint.cats {
 		if category, ok := categoriesMapping[cat]; ok {

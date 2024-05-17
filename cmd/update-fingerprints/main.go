@@ -27,6 +27,7 @@ type Fingerprint struct {
 	Cats        []int                  `json:"cats"`
 	CSS         interface{}            `json:"css"`
 	Cookies     map[string]string      `json:"cookies"`
+	Dom         interface{}            `json:"dom"`
 	JS          map[string]string      `json:"js"`
 	Headers     map[string]string      `json:"headers"`
 	HTML        interface{}            `json:"html"`
@@ -49,20 +50,21 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
-	Cats        []int               `json:"cats,omitempty"`
-	CSS         []string            `json:"css,omitempty"`
-	Cookies     map[string]string   `json:"cookies,omitempty"`
-	JS          map[string]string   `json:"js,omitempty"`
-	Headers     map[string]string   `json:"headers,omitempty"`
-	HTML        []string            `json:"html,omitempty"`
-	Script      []string            `json:"scripts,omitempty"`
-	ScriptSrc   []string            `json:"scriptSrc,omitempty"`
-	Meta        map[string][]string `json:"meta,omitempty"`
-	Implies     []string            `json:"implies,omitempty"`
-	Description string              `json:"description,omitempty"`
-	Website     string              `json:"website,omitempty"`
-	CPE         string              `json:"cpe,omitempty"`
-	Icon        string              `json:"icon,omitempty"`
+	Cats        []int                             `json:"cats,omitempty"`
+	CSS         []string                          `json:"css,omitempty"`
+	DOM         map[string]map[string]interface{} `json:"dom,omitempty"`
+	Cookies     map[string]string                 `json:"cookies,omitempty"`
+	JS          map[string]string                 `json:"js,omitempty"`
+	Headers     map[string]string                 `json:"headers,omitempty"`
+	HTML        []string                          `json:"html,omitempty"`
+	Script      []string                          `json:"scripts,omitempty"`
+	ScriptSrc   []string                          `json:"scriptSrc,omitempty"`
+	Meta        map[string][]string               `json:"meta,omitempty"`
+	Implies     []string                          `json:"implies,omitempty"`
+	Description string                            `json:"description,omitempty"`
+	Website     string                            `json:"website,omitempty"`
+	CPE         string                            `json:"cpe,omitempty"`
+	Icon        string                            `json:"icon,omitempty"`
 }
 
 const fingerprintURL = "https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json"
@@ -155,6 +157,7 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		output := OutputFingerprint{
 			Cats:        fingerprint.Cats,
 			Cookies:     make(map[string]string),
+			DOM:         make(map[string]map[string]interface{}),
 			Headers:     make(map[string]string),
 			JS:          make(map[string]string),
 			Meta:        make(map[string][]string),
@@ -173,6 +176,28 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 
 		for header, pattern := range fingerprint.Headers {
 			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
+		}
+
+		// Use reflection for DOM as well
+		if fingerprint.Dom != nil {
+			v := reflect.ValueOf(fingerprint.Dom)
+
+			switch v.Kind() {
+			case reflect.String:
+				data := v.Interface().(string)
+				output.DOM[data] = map[string]interface{}{"exists": ""}
+			case reflect.Slice:
+				data := v.Interface().([]interface{})
+				for _, pattern := range data {
+					pat := pattern.(string)
+					output.DOM[pat] = map[string]interface{}{"exists": ""}
+				}
+			case reflect.Map:
+				data := v.Interface().(map[string]interface{})
+				for pattern, value := range data {
+					output.DOM[pattern] = value.(map[string]interface{})
+				}
+			}
 		}
 
 		// Use reflection type switch for determining HTML tag type
