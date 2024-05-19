@@ -16287,6 +16287,17 @@
             "website": "https://frappeframework.com",
             "icon": "Frappe.png"
         },
+        "Fraud Blocker": {
+            "cats": [
+                16
+            ],
+            "scriptSrc": [
+                "monitor\\.fraudblocker\\.com/"
+            ],
+            "description": "Fraudblocker is an ad fraud and click-fraud detection and protection service software.",
+            "website": "https://fraudblocker.com",
+            "icon": "fraudblocker.png"
+        },
         "FraudLabs Pro": {
             "cats": [
                 16
@@ -26612,6 +26623,21 @@
             "website": "https://mavo.io",
             "icon": "default.svg"
         },
+        "Max Mega Menu": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "megamenu"
+            ],
+            "scriptSrc": [
+                "(?:max)?megamenu(?:-pro)?(?:\\/assets)?(?:\\/public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Max Mega Menu is a popular WordPress plugin that enhances the menu functionality on WordPress websites.",
+            "website": "https://www.megamenu.com/",
+            "icon": "Max Mega Menu.png"
+        },
         "MaxCDN": {
             "cats": [
                 31
@@ -28217,6 +28243,18 @@
             ],
             "website": "https://motocms.com",
             "icon": "MotoCMS.svg"
+        },
+        "Mountain": {
+            "cats": [
+                36
+            ],
+            "scriptSrc": [
+                "dx\\.mountain\\.com",
+                "px\\.mountain\\.com"
+            ],
+            "description": "MNTN Performance TV is a CTV advertising platform with targeting, measurement, and optimization for amplifying marketers' performance goals.",
+            "website": "https://mountain.com/",
+            "icon": "Mountain.png"
         },
         "Mouse Flow": {
             "cats": [
@@ -36462,6 +36500,18 @@
             "description": "Retype is an open-source static site generator built with Node.js that allows users to create and manage websites with ease using Markdown as the primary content format.",
             "website": "https://retype.com",
             "icon": "retype.svg"
+        },
+        "RevContent": {
+            "cats": [
+                36,
+                5
+            ],
+            "js": [
+                "revcontent"
+            ],
+            "description": "RevContent is a monetization and recommendation engine that connects advertisers to highly engaged audiences on the web's leading publisher sites.",
+            "website": "https://www.revcontent.com",
+            "icon": "revcontent.png"
         },
         "RevJet": {
             "cats": [
