@@ -13801,6 +13801,14 @@
             "description": "Embed PDF, DOC, PPT and XLS documents easily on your WordPress website.",
             "website": "https://wordpress.org/plugins/embed-any-document"
         },
+        "Embed PDF Viewer": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "Embed a PDF from the Media Library or elsewhere via oEmbed.",
+            "website": "https://wordpress.org/plugins/embed-pdf-viewer"
+        },
         "EmbedPlus": {
             "cats": [
                 87
@@ -25927,6 +25935,21 @@
             "website": "https://www.mc4wp.com",
             "icon": "MailChimp for WordPress.png"
         },
+        "MailOptin": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "mailoptin_globals"
+            ],
+            "scriptSrc": [
+                "mailoptin(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "WordPress plugin to create email signup forms that convert visitors into subscribers combined with email automation and newsletter features.",
+            "website": "https://mailoptin.io/",
+            "icon": "MailOptin.png"
+        },
         "Mailcheck": {
             "cats": [
                 59
@@ -26872,6 +26895,14 @@
             "website": "https://www.meilisearch.com",
             "icon": "Meilisearch.svg"
         },
+        "Meks Simple Flickr Widget": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "Meks Simple Flickr Widget is a WordPress plugin created by Meks. This plugin is designed to help WordPress website owners easily integrate Flickr photo streams into their websites.",
+            "website": "https://wordpress.org/plugins/meks-simple-flickr-widget"
+        },
         "Melis Platform": {
             "cats": [
                 1,
@@ -27000,6 +27031,17 @@
                 "/mermaid(?:\\.min)?\\.js"
             ],
             "website": "https://mermaidjs.github.io/"
+        },
+        "Mesmerize Companion": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "mesmerize-companion\\/theme-data\\/mesmerize\\/assets\\/js\\/companion(?:\\.bundle)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "The Mesmerize Companion is a WordPress plugin that enhances the Mesmerize theme by adding drag-and-drop page builder functionality.",
+            "website": "https://wordpress.org/plugins/mesmerize-companion"
         },
         "MetaSlider": {
             "cats": [
@@ -27486,6 +27528,18 @@
             ],
             "description": "Minero.cc is a bot that helps run crypto mining application.",
             "website": "https://minero.cc/"
+        },
+        "MiniOrange Login": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "miniorange-login-openid\\/includes\\/js(?:\\/mo_openid_jquery)?(?:\\/mo-openid-social_login)?(?:\\/social_login)?(?:\\/jquery)?(?:\\.cookie)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Social Login with Discord, Facebook, Google, Twitter, LinkedIn and other apps.",
+            "website": "https://wordpress.org/plugins/miniorange-login-openid",
+            "icon": "MiniOrange Login.png"
         },
         "MiniServ": {
             "cats": [
