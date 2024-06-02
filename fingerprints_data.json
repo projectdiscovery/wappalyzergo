@@ -10283,6 +10283,14 @@
             "website": "https://www.cookiebot.com",
             "icon": "Cookiebot.svg"
         },
+        "Cool Tag Cloud": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "A simple tag cloud system for WordPress.",
+            "website": "https://wordpress.org/plugins/cool-tag-cloud"
+        },
         "Cool Timeline": {
             "cats": [
                 5,
@@ -20515,6 +20523,21 @@
             "website": "https://hund.io",
             "icon": "Hund.io.svg"
         },
+        "HurryTimer": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "hurrytimer_ajax_object"
+            ],
+            "scriptSrc": [
+                "hurrytimer(?:\\/assets)?(?:\\/js)?(?:\\/cookie)?(?:\\/jquery)?(?:\\.countdown)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "HurryTimer is a cutting-edge WordPress plugin that enables users to create customizable, scheduled countdown timers to further engage visitors and increase conversions.",
+            "website": "https://wordpress.org/plugins/hurrytimer",
+            "icon": "HurryTimer.png"
+        },
         "Hushly": {
             "cats": [
                 32
@@ -27135,6 +27158,18 @@
             "description": "MetroUI is an open-source frontend toolkit inspired by Microsoft Fluent (former Metro) design principles.",
             "website": "https://github.com/olton/Metro-UI-CSS",
             "icon": "default.svg"
+        },
+        "Metronet Profile Picture": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "metronet-profile-picture(?:\\/js)?(?:\\/mpp-frontend)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Set a custom profile image for a user using the standard WordPress media upload tool.",
+            "website": "https://wordpress.org/plugins/metronet-profile-picture/",
+            "icon": "Metronet Profile Picture.png"
         },
         "Mews": {
             "cats": [
