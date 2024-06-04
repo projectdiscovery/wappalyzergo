@@ -3,6 +3,8 @@ package wappalyzer
 import (
 	"bytes"
 	"encoding/json"
+	"log"
+	"os"
 	"strings"
 )
 
@@ -27,9 +29,40 @@ func New() (*Wappalyze, error) {
 }
 
 // loadFingerprints loads the fingerprints and compiles them
+// func (s *Wappalyze) loadFingerprints() error {
+// 	var fingerprintsStruct Fingerprints
+// 	err := json.Unmarshal([]byte(fingerprints), &fingerprintsStruct)
+// 	if err != nil {
+// 		return err
+// 	}
+
+//		for i, fingerprint := range fingerprintsStruct.Apps {
+//			s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
+//		}
+//		return nil
+//	}
+
+// loadFingerprints loads the fingerprints and compiles them
 func (s *Wappalyze) loadFingerprints() error {
+	filePath := os.Getenv("FINGERPRINTS_PATH")
+	var fingerprintsData []byte
+	var err error
+
+	if filePath != "" {
+		fingerprintsData, err = os.ReadFile(filePath)
+		if err != nil {
+			log.Printf("Warning: Could not read fingerprints file from %s: %v. Using default fingerprints.", filePath, err)
+			fingerprintsData = []byte(fingerprints)
+		} else {
+			log.Printf("Info: Loaded fingerprints from %s", filePath)
+		}
+	} else {
+		log.Println("Warning: FINGERPRINTS_PATH environment variable not set. Using default fingerprints.")
+		fingerprintsData = []byte(fingerprints)
+	}
+
 	var fingerprintsStruct Fingerprints
-	err := json.Unmarshal([]byte(fingerprints), &fingerprintsStruct)
+	err = json.Unmarshal(fingerprintsData, &fingerprintsStruct)
 	if err != nil {
 		return err
 	}
