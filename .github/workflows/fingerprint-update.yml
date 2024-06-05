@@ -21,7 +21,7 @@ jobs:
 
       - name: Installing Update binary
         run: |
-          go install github.com/projectdiscovery/wappalyzergo/cmd/update-fingerprints
+          go install github.com/algorocom/wappalyzergo/cmd/update-fingerprints
         shell: bash
 
       - name: Downloading latest wappalyzer changes
