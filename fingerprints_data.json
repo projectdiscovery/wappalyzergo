@@ -1882,6 +1882,20 @@
             "cpe": "cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*:*",
             "icon": "afterpay.png"
         },
+        "Age Gate": {
+            "cats": [
+                87
+            ],
+            "js": [
+                "age_gate"
+            ],
+            "scriptSrc": [
+                "age-gate(?:\\/dist)?(?:\\/all)?(?:\\/focus)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "A plugin to check the age of a visitor for Wordpress.",
+            "website": "https://wordpress.org/plugins/age-gate",
+            "icon": "Age Gate.png"
+        },
         "Ahoy": {
             "cats": [
                 10
@@ -3020,6 +3034,17 @@
             "website": "https://angularjs.org",
             "cpe": "cpe:2.3:a:angularjs:angular.js:*:*:*:*:*:*:*:*",
             "icon": "AngularJS.svg"
+        },
+        "Animate It": {
+            "cats": [
+                87
+            ],
+            "scriptSrc": [
+                "animate-it(?:\\/assets)?(?:\\/js)?(?:\\/animo)?(?:\\/edsanimate)?(?:\\/jquery)?(?:\\/viewportchecker)?(?:\\.ba-throttle-debounce)?(?:\\.min)?(?:\\.site)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Animate It! adds CSS3 animations to your content.",
+            "website": "https://wordpress.org/plugins/animate-it/",
+            "icon": "Animate It.png"
         },
         "Animate.css": {
             "cats": [
@@ -5131,6 +5156,14 @@
             "description": "Bentobox is a restaurant website platform that handles menus, reservations, gift cards and more.",
             "website": "https://getbento.com",
             "icon": "Bentobox.svg"
+        },
+        "Better Click To Tweet": {
+            "cats": [
+                87
+            ],
+            "description": "Adds click to tweet boxes into your posts.",
+            "website": "https://wordpress.org/plugins/better-click-to-tweet/",
+            "icon": "Better Click To Tweet.png"
         },
         "Better Price": {
             "cats": [
@@ -9936,6 +9969,18 @@
             "description": "ContentStudio is an integrated cloud-based social media management and content marketing solution.",
             "website": "https://contentstudio.io",
             "icon": "ContentStudio.png"
+        },
+        "ContentViews": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "content-views(?:-pro)?(?:-query-and-display-post-page)?(?:\\/public)?(?:\\/assets)?(?:\\/js)?(?:\\/cv(?:pro)?)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "ContentViews is a lightweight and user-friendly WordPress Plugin, crafted specifically for efficient content management and display. This plugin offers seamless integration with Widgets and enables users to showcase their posts, pages, or custom post types in a highly responsive grid, list, or timeline layout.",
+            "website": "https://wordpress.org/plugins/content-views-query-and-display-post-page/",
+            "icon": "ContentViews.svg"
         },
         "Contentful": {
             "cats": [
@@ -38108,6 +38153,17 @@
             "description": "Sass is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more.",
             "website": "https://sass-lang.com",
             "icon": "Sass.svg"
+        },
+        "Sassy Social Share": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "sassy-social-share(?:-public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Sassy Social Share allows your website visitors to share your content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Gab, Gettr and over 110 more social sharing and bookmarking services.",
+            "website": "https://wordpress.org/plugins/sassy-social-share"
         },
         "Satori": {
             "cats": [
