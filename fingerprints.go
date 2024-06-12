@@ -23,7 +23,7 @@ type Fingerprint struct {
 	Headers     map[string]string                 `json:"headers"`
 	HTML        []string                          `json:"html"`
 	Script      []string                          `json:"scripts"`
-	ScriptSrc   []string                          `json:"scriptSrcs"`
+	ScriptSrc   []string                          `json:"scriptSrc"`
 	Meta        map[string][]string               `json:"meta"`
 	Implies     []string                          `json:"implies"`
 	Description string                            `json:"description"`

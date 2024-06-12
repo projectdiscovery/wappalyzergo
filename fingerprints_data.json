@@ -2084,6 +2084,20 @@
             "cpe": "cpe:2.3:a:afterpay:afterpay:*:*:*:*:*:*:*:*",
             "icon": "afterpay.png"
         },
+        "Age Gate": {
+            "cats": [
+                87
+            ],
+            "js": [
+                "age_gate"
+            ],
+            "scriptSrc": [
+                "age-gate(?:\\/dist)?(?:\\/all)?(?:\\/focus)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "A plugin to check the age of a visitor for Wordpress.",
+            "website": "https://wordpress.org/plugins/age-gate",
+            "icon": "Age Gate.png"
+        },
         "Ahoy": {
             "cats": [
                 10
@@ -3306,6 +3320,17 @@
             "website": "https://angularjs.org",
             "cpe": "cpe:2.3:a:angularjs:angular.js:*:*:*:*:*:*:*:*",
             "icon": "AngularJS.svg"
+        },
+        "Animate It": {
+            "cats": [
+                87
+            ],
+            "scriptSrc": [
+                "animate-it(?:\\/assets)?(?:\\/js)?(?:\\/animo)?(?:\\/edsanimate)?(?:\\/jquery)?(?:\\/viewportchecker)?(?:\\.ba-throttle-debounce)?(?:\\.min)?(?:\\.site)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Animate It! adds CSS3 animations to your content.",
+            "website": "https://wordpress.org/plugins/animate-it/",
+            "icon": "Animate It.png"
         },
         "Animate.css": {
             "cats": [
@@ -5707,6 +5732,14 @@
             "description": "Bentobox is a restaurant website platform that handles menus, reservations, gift cards and more.",
             "website": "https://getbento.com",
             "icon": "Bentobox.svg"
+        },
+        "Better Click To Tweet": {
+            "cats": [
+                87
+            ],
+            "description": "Adds click to tweet boxes into your posts.",
+            "website": "https://wordpress.org/plugins/better-click-to-tweet/",
+            "icon": "Better Click To Tweet.png"
         },
         "Better Price": {
             "cats": [
@@ -10995,6 +11028,18 @@
             "website": "https://contentstudio.io",
             "icon": "ContentStudio.png"
         },
+        "ContentViews": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "content-views(?:-pro)?(?:-query-and-display-post-page)?(?:\\/public)?(?:\\/assets)?(?:\\/js)?(?:\\/cv(?:pro)?)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "ContentViews is a lightweight and user-friendly WordPress Plugin, crafted specifically for efficient content management and display. This plugin offers seamless integration with Widgets and enables users to showcase their posts, pages, or custom post types in a highly responsive grid, list, or timeline layout.",
+            "website": "https://wordpress.org/plugins/content-views-query-and-display-post-page/",
+            "icon": "ContentViews.svg"
+        },
         "Contentful": {
             "cats": [
                 1
@@ -11365,6 +11410,14 @@
             "description": "Cookiebot is a cloud-driven solution that automatically controls cookies and trackers, enabling full GDPR/ePrivacy and CCPA compliance for websites.",
             "website": "https://www.cookiebot.com",
             "icon": "Cookiebot.svg"
+        },
+        "Cool Tag Cloud": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "A simple tag cloud system for WordPress.",
+            "website": "https://wordpress.org/plugins/cool-tag-cloud"
         },
         "Cool Timeline": {
             "cats": [
@@ -15161,6 +15214,14 @@
             "description": "Embed PDF, DOC, PPT and XLS documents easily on your WordPress website.",
             "website": "https://wordpress.org/plugins/embed-any-document"
         },
+        "Embed PDF Viewer": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "Embed a PDF from the Media Library or elsewhere via oEmbed.",
+            "website": "https://wordpress.org/plugins/embed-pdf-viewer"
+        },
         "EmbedPlus": {
             "cats": [
                 87
@@ -17906,6 +17967,17 @@
             "description": "Frappe is a full stack, batteries-included, web framework written in Python and Javascript.",
             "website": "https://frappeframework.com",
             "icon": "Frappe.png"
+        },
+        "Fraud Blocker": {
+            "cats": [
+                16
+            ],
+            "scriptSrc": [
+                "monitor\\.fraudblocker\\.com/"
+            ],
+            "description": "Fraudblocker is an ad fraud and click-fraud detection and protection service software.",
+            "website": "https://fraudblocker.com",
+            "icon": "fraudblocker.png"
         },
         "FraudLabs Pro": {
             "cats": [
@@ -22577,6 +22649,21 @@
             "description": "Hund.io is an automated status pages with monitoring.",
             "website": "https://hund.io",
             "icon": "Hund.io.svg"
+        },
+        "HurryTimer": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "hurrytimer_ajax_object"
+            ],
+            "scriptSrc": [
+                "hurrytimer(?:\\/assets)?(?:\\/js)?(?:\\/cookie)?(?:\\/jquery)?(?:\\.countdown)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "HurryTimer is a cutting-edge WordPress plugin that enables users to create customizable, scheduled countdown timers to further engage visitors and increase conversions.",
+            "website": "https://wordpress.org/plugins/hurrytimer",
+            "icon": "HurryTimer.png"
         },
         "Hushly": {
             "cats": [
@@ -28477,6 +28564,21 @@
             "website": "https://www.mc4wp.com",
             "icon": "MailChimp for WordPress.png"
         },
+        "MailOptin": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "mailoptin_globals"
+            ],
+            "scriptSrc": [
+                "mailoptin(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "WordPress plugin to create email signup forms that convert visitors into subscribers combined with email automation and newsletter features.",
+            "website": "https://mailoptin.io/",
+            "icon": "MailOptin.png"
+        },
         "Mailcheck": {
             "cats": [
                 59
@@ -29250,6 +29352,21 @@
             "website": "https://mavo.io",
             "icon": "default.svg"
         },
+        "Max Mega Menu": {
+            "cats": [
+                5,
+                87
+            ],
+            "js": [
+                "megamenu"
+            ],
+            "scriptSrc": [
+                "(?:max)?megamenu(?:-pro)?(?:\\/assets)?(?:\\/public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Max Mega Menu is a popular WordPress plugin that enhances the menu functionality on WordPress websites.",
+            "website": "https://www.megamenu.com/",
+            "icon": "Max Mega Menu.png"
+        },
         "MaxCDN": {
             "cats": [
                 31
@@ -29499,6 +29616,14 @@
             "website": "https://www.meilisearch.com",
             "icon": "Meilisearch.svg"
         },
+        "Meks Simple Flickr Widget": {
+            "cats": [
+                5,
+                87
+            ],
+            "description": "Meks Simple Flickr Widget is a WordPress plugin created by Meks. This plugin is designed to help WordPress website owners easily integrate Flickr photo streams into their websites.",
+            "website": "https://wordpress.org/plugins/meks-simple-flickr-widget"
+        },
         "Melis Platform": {
             "cats": [
                 1,
@@ -29633,6 +29758,17 @@
             ],
             "website": "https://mermaidjs.github.io/"
         },
+        "Mesmerize Companion": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "mesmerize-companion\\/theme-data\\/mesmerize\\/assets\\/js\\/companion(?:\\.bundle)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "The Mesmerize Companion is a WordPress plugin that enhances the Mesmerize theme by adding drag-and-drop page builder functionality.",
+            "website": "https://wordpress.org/plugins/mesmerize-companion"
+        },
         "MetaSlider": {
             "cats": [
                 87
@@ -29737,6 +29873,18 @@
             "description": "MetroUI is an open-source frontend toolkit inspired by Microsoft Fluent (former Metro) design principles.",
             "website": "https://github.com/olton/Metro-UI-CSS",
             "icon": "default.svg"
+        },
+        "Metronet Profile Picture": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "metronet-profile-picture(?:\\/js)?(?:\\/mpp-frontend)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Set a custom profile image for a user using the standard WordPress media upload tool.",
+            "website": "https://wordpress.org/plugins/metronet-profile-picture/",
+            "icon": "Metronet Profile Picture.png"
         },
         "Mews": {
             "cats": [
@@ -30145,6 +30293,18 @@
             ],
             "description": "Minero.cc is a bot that helps run crypto mining application.",
             "website": "https://minero.cc/"
+        },
+        "MiniOrange Login": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "miniorange-login-openid\\/includes\\/js(?:\\/mo_openid_jquery)?(?:\\/mo-openid-social_login)?(?:\\/social_login)?(?:\\/jquery)?(?:\\.cookie)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Social Login with Discord, Facebook, Google, Twitter, LinkedIn and other apps.",
+            "website": "https://wordpress.org/plugins/miniorange-login-openid",
+            "icon": "MiniOrange Login.png"
         },
         "MiniServ": {
             "cats": [
@@ -30912,6 +31072,18 @@
             ],
             "website": "https://motocms.com",
             "icon": "MotoCMS.svg"
+        },
+        "Mountain": {
+            "cats": [
+                36
+            ],
+            "scriptSrc": [
+                "dx\\.mountain\\.com",
+                "px\\.mountain\\.com"
+            ],
+            "description": "MNTN Performance TV is a CTV advertising platform with targeting, measurement, and optimization for amplifying marketers' performance goals.",
+            "website": "https://mountain.com/",
+            "icon": "Mountain.png"
         },
         "Mouse Flow": {
             "cats": [
@@ -39975,6 +40147,18 @@
             "website": "https://retype.com",
             "icon": "retype.svg"
         },
+        "RevContent": {
+            "cats": [
+                36,
+                5
+            ],
+            "js": [
+                "revcontent"
+            ],
+            "description": "RevContent is a monetization and recommendation engine that connects advertisers to highly engaged audiences on the web's leading publisher sites.",
+            "website": "https://www.revcontent.com",
+            "icon": "revcontent.png"
+        },
         "RevJet": {
             "cats": [
                 36
@@ -41621,6 +41805,17 @@
             "description": "Sass is an extension of CSS that enables you to use things like variables, nested rules, inline imports and more.",
             "website": "https://sass-lang.com",
             "icon": "Sass.svg"
+        },
+        "Sassy Social Share": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "sassy-social-share(?:-public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Sassy Social Share allows your website visitors to share your content over Facebook, Twitter, Google, Linkedin, Whatsapp, Tumblr, Pinterest, Reddit, Gab, Gettr and over 110 more social sharing and bookmarking services.",
+            "website": "https://wordpress.org/plugins/sassy-social-share"
         },
         "Satori": {
             "cats": [
