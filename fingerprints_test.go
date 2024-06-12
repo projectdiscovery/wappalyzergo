@@ -18,4 +18,12 @@ func TestVersionRegex(t *testing.T) {
 		_, err := newVersionRegex("\\;confidence:50")
 		require.NoError(t, err, "could create invalid version regex")
 	})
+
+	t.Run("blank", func(t *testing.T) {
+		matcher, err := newVersionRegex("")
+		require.NoError(t, err, "could create invalid version regex")
+
+		matched, _ := matcher.MatchString("JBoss-2.3.9")
+		require.True(t, matched, "should match anything")
+	})
 }
