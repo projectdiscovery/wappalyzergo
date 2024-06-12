@@ -2088,9 +2088,14 @@
             "cats": [
                 87
             ],
-            "js": [
-                "age_gate"
-            ],
+            "dom": {
+                "link[href*='/wp-content/plugins/age-gate/'], .age-gate, .age-gate-form, button[name='age_gate[confirm]']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "age_gate": ""
+            },
             "scriptSrc": [
                 "age-gate(?:\\/dist)?(?:\\/all)?(?:\\/focus)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -3325,6 +3330,11 @@
             "cats": [
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/animate-it/']": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "animate-it(?:\\/assets)?(?:\\/js)?(?:\\/animo)?(?:\\/edsanimate)?(?:\\/jquery)?(?:\\/viewportchecker)?(?:\\.ba-throttle-debounce)?(?:\\.min)?(?:\\.site)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -5737,6 +5747,11 @@
             "cats": [
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/better-click-to-tweet/']": {
+                    "exists": ""
+                }
+            },
             "description": "Adds click to tweet boxes into your posts.",
             "website": "https://wordpress.org/plugins/better-click-to-tweet/",
             "icon": "Better Click To Tweet.png"
@@ -11033,6 +11048,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/content-views-query-and-display-post-page/'], link[href*='/wp-content/plugins/pt-content-views-pro/']": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "content-views(?:-pro)?(?:-query-and-display-post-page)?(?:\\/public)?(?:\\/assets)?(?:\\/js)?(?:\\/cv(?:pro)?)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -11416,6 +11436,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link#cool-tag-cloud-css[href*='/wp-content/plugins/cool-tag-cloud/'], .cool-tag-cloud, .widget_cool_tag_cloud, .cool-tag-cloud-open, .cool-tag-cloud-close, .cool-tag-cloud-inner": {
+                    "exists": ""
+                }
+            },
             "description": "A simple tag cloud system for WordPress.",
             "website": "https://wordpress.org/plugins/cool-tag-cloud"
         },
@@ -14171,6 +14196,17 @@
             "website": "https://duopana.com",
             "icon": "Duopana.svg"
         },
+        "Dynamic Conditions": {
+            "cats": [
+                5,
+                87
+            ],
+            "scriptSrc": [
+                "dynamic-conditions-public\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Dynamic Conditions of Widgets is a cutting-edge WordPress plugin that extends the functionality of your website using conditional logic.",
+            "website": "https://wordpress.org/plugins/dynamicconditions"
+        },
         "Dynamic Yield": {
             "cats": [
                 74,
@@ -15219,6 +15255,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "#embed-pdf-viewer-css, link[href*='/wp-content/plugins/embed-pdf-viewer/']": {
+                    "exists": ""
+                }
+            },
             "description": "Embed a PDF from the Media Library or elsewhere via oEmbed.",
             "website": "https://wordpress.org/plugins/embed-pdf-viewer"
         },
@@ -22655,9 +22696,14 @@
                 5,
                 87
             ],
-            "js": [
-                "hurrytimer_ajax_object"
-            ],
+            "dom": {
+                "link[href*='/wp-content/uploads/hurrytimer/'], #hurrytimer, #hurrytimer-css": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "hurrytimer_ajax_object": ""
+            },
             "scriptSrc": [
                 "hurrytimer(?:\\/assets)?(?:\\/js)?(?:\\/cookie)?(?:\\/jquery)?(?:\\.countdown)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -28569,9 +28615,9 @@
                 5,
                 87
             ],
-            "js": [
-                "mailoptin_globals"
-            ],
+            "js": {
+                "mailoptin_globals": ""
+            },
             "scriptSrc": [
                 "mailoptin(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -29357,9 +29403,14 @@
                 5,
                 87
             ],
-            "js": [
-                "megamenu"
-            ],
+            "dom": {
+                "link[href*='/wp-content/uploads/maxmegamenu/'], link[href*='/wp-content/plugins/megamenu-pro/'], link#megamenu-css, .mega-menu, .max-mega-menu, .mega-menu-megamenu, .mega-menu-primary, .mega-menu-item": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "megamenu": ""
+            },
             "scriptSrc": [
                 "(?:max)?megamenu(?:-pro)?(?:\\/assets)?(?:\\/public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -29621,6 +29672,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/meks-simple-flickr-widget/'], link#meks-flickr-widget-css": {
+                    "exists": ""
+                }
+            },
             "description": "Meks Simple Flickr Widget is a WordPress plugin created by Meks. This plugin is designed to help WordPress website owners easily integrate Flickr photo streams into their websites.",
             "website": "https://wordpress.org/plugins/meks-simple-flickr-widget"
         },
@@ -29763,6 +29819,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/mesmerize-companion/'], link#companion-bundle-css": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "mesmerize-companion\\/theme-data\\/mesmerize\\/assets\\/js\\/companion(?:\\.bundle)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -29879,6 +29940,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/metronet-profile-picture/']": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "metronet-profile-picture(?:\\/js)?(?:\\/mpp-frontend)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -30299,6 +30365,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/miniorange-login-openid/'], #js-cookie-script-js, #mo-social-login-script-js": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "miniorange-login-openid\\/includes\\/js(?:\\/mo_openid_jquery)?(?:\\/mo-openid-social_login)?(?:\\/social_login)?(?:\\/jquery)?(?:\\.cookie)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
@@ -34771,6 +34842,23 @@
             "description": "PageFly is an app for Shopify that allows you to build landing pages, product pages, blogs, and FAQs.",
             "website": "https://pagefly.io",
             "icon": "pagefly.png"
+        },
+        "PageLayer": {
+            "cats": [
+                5,
+                87
+            ],
+            "dom": {
+                "link[href*='/wp-content/plugins/pagelayer/'], #pagelayer-frontend-css, #pagelayer-global-styles, .pagelayer-body, .pagelayer-header, .pagelayer-footer, .pagelayer-content": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "pagelayer(?:-frontend)?(?:\\/js)?(?:\\/combined)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+            ],
+            "description": "Drag and drop page builder for Wordpress.",
+            "website": "https://wordpress.org/plugins/pagelayer",
+            "icon": "PageLayer.png"
         },
         "Pagefai CMS": {
             "cats": [
@@ -40152,9 +40240,14 @@
                 36,
                 5
             ],
-            "js": [
-                "revcontent"
-            ],
+            "dom": {
+                "link[href*='.revcontent.com']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "revcontent": ""
+            },
             "description": "RevContent is a monetization and recommendation engine that connects advertisers to highly engaged audiences on the web's leading publisher sites.",
             "website": "https://www.revcontent.com",
             "icon": "revcontent.png"
@@ -41811,6 +41904,11 @@
                 5,
                 87
             ],
+            "dom": {
+                "link[href*='/wp-content/plugins/sassy-social-share/']": {
+                    "exists": ""
+                }
+            },
             "scriptSrc": [
                 "sassy-social-share(?:-public)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
