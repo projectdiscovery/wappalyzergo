@@ -1,7 +1,6 @@
 package wappalyzer
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -14,8 +13,6 @@ func TestCookiesDetect(t *testing.T) {
 	matches := wappalyzer.Fingerprint(map[string][]string{
 		"Set-Cookie": {"_uetsid=ABCDEF"},
 	}, []byte(""))
-
-	fmt.Printf("%v\n", matches)
 	require.Contains(t, matches, "Microsoft Advertising", "Could not get correct match")
 
 	t.Run("position", func(t *testing.T) {
@@ -89,6 +86,15 @@ func TestUniqueFingerprints(t *testing.T) {
 
 		fingerprints.SetIfNotExists("another", "2.3.5", 100)
 		require.Equal(t, map[string]struct{}{"test": {}, "new:2.3.5": {}, "another:2.3.5": {}}, fingerprints.GetValues(), "could not get correct values")
+	})
+
+	t.Run("confidence", func(t *testing.T) {
+		f := NewUniqueFingerprints()
+		f.SetIfNotExists("test", "", 0)
+		require.Equal(t, map[string]struct{}{}, f.GetValues(), "could not get correct values")
+
+		f.SetIfNotExists("test", "2.36.4", 100)
+		require.Equal(t, map[string]struct{}{"test:2.36.4": {}}, f.GetValues(), "could not get correct values")
 	})
 }
 

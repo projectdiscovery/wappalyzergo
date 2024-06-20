@@ -109,7 +109,6 @@ func evaluateVersionExpression(expression string, submatches []string) (string, 
 		if len(parts) != 2 {
 			return "", fmt.Errorf("invalid ternary expression: %s", expression)
 		}
-		fmt.Printf("Parts: %+v\n", parts)
 
 		trueFalseParts := strings.Split(parts[1], ":")
 		if len(trueFalseParts) != 2 {
