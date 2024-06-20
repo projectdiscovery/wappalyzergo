@@ -32,6 +32,14 @@ func init() {
 	})
 }
 
+func GetRawFingerprints() string {
+	return fingerprints
+}
+
+func GetCategoriesMapping() map[int]categoryItem {
+	return categoriesMapping
+}
+
 type categoryItem struct {
 	Name     string `json:"name"`
 	Priority int    `json:"priority"`
