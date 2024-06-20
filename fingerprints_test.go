@@ -14,7 +14,7 @@ func Test_All_Match_Paths(t *testing.T) {
 		"Server": {"Apache/2.4.29"},
 	}, []byte(""))
 	require.NotNil(t, matches, "could not get matches")
-	require.Equal(t, map[string]struct{}{"Apache HTTP Server:2.4.29": struct{}{}}, matches, "could not match apache")
+	require.Equal(t, map[string]struct{}{"Apache HTTP Server:2.4.29": {}}, matches, "could not match apache")
 }
 
 func Test_New_Panicking_Regex(t *testing.T) {
