@@ -66,72 +66,79 @@ func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[st
 
 	// Run header based fingerprinting if the number
 	// of header checks if more than 0.
-	for _, application := range s.checkHeaders(normalizedHeaders) {
-		uniqueFingerprints.SetIfNotExists(application)
+	for _, app := range s.checkHeaders(normalizedHeaders) {
+		uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 	}
 
 	cookies := s.findSetCookie(normalizedHeaders)
 	// Run cookie based fingerprinting if we have a set-cookie header
 	if len(cookies) > 0 {
-		for _, application := range s.checkCookies(cookies) {
-			uniqueFingerprints.SetIfNotExists(application)
+		for _, app := range s.checkCookies(cookies) {
+			uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 		}
 	}
 
 	// Check for stuff in the body finally
 	bodyTech := s.checkBody(normalizedBody)
-	for _, application := range bodyTech {
-		uniqueFingerprints.SetIfNotExists(application)
+	for _, app := range bodyTech {
+		uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 	}
 	return uniqueFingerprints.GetValues()
 }
 
 type UniqueFingerprints struct {
-	values map[string]struct{}
+	values map[string]uniqueFingerprintMetadata
+}
+
+type uniqueFingerprintMetadata struct {
+	confidence int
+	version    string
 }
 
 func NewUniqueFingerprints() UniqueFingerprints {
 	return UniqueFingerprints{
-		values: make(map[string]struct{}),
+		values: make(map[string]uniqueFingerprintMetadata),
 	}
 }
 
 func (u UniqueFingerprints) GetValues() map[string]struct{} {
-	return u.values
+	values := make(map[string]struct{}, len(u.values))
+	for k, v := range u.values {
+		if v.confidence == 0 {
+			continue
+		}
+		values[FormatAppVersion(k, v.version)] = struct{}{}
+	}
+	return values
 }
 
 const versionSeparator = ":"
 
-// separateAppVersion returns app name and version
-func separateAppVersion(value string) (string, string) {
-	if strings.Contains(value, versionSeparator) {
-		if parts := strings.Split(value, versionSeparator); len(parts) == 2 {
-			return parts[0], parts[1]
+func (u UniqueFingerprints) SetIfNotExists(value, version string, confidence int) {
+	if _, ok := u.values[value]; ok {
+		new := u.values[value]
+		updatedConfidence := new.confidence + confidence
+		if updatedConfidence > 100 {
+			updatedConfidence = 100
 		}
-	}
-	return value, ""
-}
-
-func (u UniqueFingerprints) SetIfNotExists(value string) {
-	app, version := separateAppVersion(value)
-	if _, ok := u.values[app]; ok {
-		// Handles case when we get additional version information next
-		if version != "" {
-			delete(u.values, app)
-			u.values[strings.Join([]string{app, version}, versionSeparator)] = struct{}{}
+		new.confidence = updatedConfidence
+		if new.version == "" && version != "" {
+			new.version = version
 		}
+		u.values[value] = new
 		return
 	}
 
-	// Handle duplication for : based values
-	for k := range u.values {
-		if strings.Contains(k, versionSeparator) {
-			if parts := strings.Split(k, versionSeparator); len(parts) == 2 && parts[0] == value {
-				return
-			}
-		}
+	u.values[value] = uniqueFingerprintMetadata{
+		confidence: confidence,
+		version:    version,
 	}
-	u.values[value] = struct{}{}
+}
+
+type matchPartResult struct {
+	application string
+	confidence  int
+	version     string
 }
 
 // FingerprintWithTitle identifies technologies on a target,
@@ -149,23 +156,23 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 
 	// Run header based fingerprinting if the number
 	// of header checks if more than 0.
-	for _, application := range s.checkHeaders(normalizedHeaders) {
-		uniqueFingerprints.SetIfNotExists(application)
+	for _, app := range s.checkHeaders(normalizedHeaders) {
+		uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 	}
 
 	cookies := s.findSetCookie(normalizedHeaders)
 	// Run cookie based fingerprinting if we have a set-cookie header
 	if len(cookies) > 0 {
-		for _, application := range s.checkCookies(cookies) {
-			uniqueFingerprints.SetIfNotExists(application)
+		for _, app := range s.checkCookies(cookies) {
+			uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 		}
 	}
 
 	// Check for stuff in the body finally
 	if strings.Contains(normalizedHeaders["content-type"], "text/html") {
 		bodyTech := s.checkBody(normalizedBody)
-		for _, application := range bodyTech {
-			uniqueFingerprints.SetIfNotExists(application)
+		for _, app := range bodyTech {
+			uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 		}
 		title := s.getTitle(body)
 		return uniqueFingerprints.GetValues(), title

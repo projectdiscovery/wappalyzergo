@@ -213,12 +213,13 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 }
 
 // matchString matches a string for the fingerprints
-func (f *CompiledFingerprints) matchString(data string, part part) []string {
+func (f *CompiledFingerprints) matchString(data string, part part) []matchPartResult {
 	var matched bool
-	var technologies []string
+	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
 		var version string
+		confidence := 100
 
 		switch part {
 		case jsPart:
@@ -226,6 +227,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 				}
 			}
 		case scriptPart:
@@ -233,6 +235,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 				}
 			}
 		case htmlPart:
@@ -240,6 +243,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 				}
 			}
 		}
@@ -249,13 +253,20 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 			continue
 		}
 
-		if version != "" {
-			app = FormatAppVersion(app, version)
-		}
 		// Append the technologies as well as implied ones
-		technologies = append(technologies, app)
+		technologies = append(technologies, matchPartResult{
+			application: app,
+			version:     version,
+			confidence:  confidence,
+		})
 		if len(fingerprint.implies) > 0 {
-			technologies = append(technologies, fingerprint.implies...)
+			for _, implies := range fingerprint.implies {
+				technologies = append(technologies, matchPartResult{
+					application: implies,
+					version:     version,
+					confidence:  confidence,
+				})
+			}
 		}
 		matched = false
 	}
@@ -263,12 +274,13 @@ func (f *CompiledFingerprints) matchString(data string, part part) []string {
 }
 
 // matchKeyValue matches a key-value store map for the fingerprints
-func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part) []string {
+func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part) []matchPartResult {
 	var matched bool
-	var technologies []string
+	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
 		var version string
+		confidence := 100
 
 		switch part {
 		case cookiesPart:
@@ -280,6 +292,7 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 					break
 				}
 			}
@@ -292,6 +305,7 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 					break
 				}
 			}
@@ -305,6 +319,7 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
 						version = versionString
+						confidence = pattern.Confidence
 						break
 					}
 				}
@@ -316,13 +331,19 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 			continue
 		}
 
-		// Append the technologies as well as implied ones
-		if version != "" {
-			app = FormatAppVersion(app, version)
-		}
-		technologies = append(technologies, app)
+		technologies = append(technologies, matchPartResult{
+			application: app,
+			version:     version,
+			confidence:  confidence,
+		})
 		if len(fingerprint.implies) > 0 {
-			technologies = append(technologies, fingerprint.implies...)
+			for _, implies := range fingerprint.implies {
+				technologies = append(technologies, matchPartResult{
+					application: implies,
+					version:     version,
+					confidence:  confidence,
+				})
+			}
 		}
 		matched = false
 	}
@@ -330,12 +351,13 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 }
 
 // matchMapString matches a key-value store map for the fingerprints
-func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part part) []string {
+func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part part) []matchPartResult {
 	var matched bool
-	var technologies []string
+	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
 		var version string
+		confidence := 100
 
 		switch part {
 		case cookiesPart:
@@ -350,6 +372,7 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 					break
 				}
 			}
@@ -363,6 +386,7 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
 					version = versionString
+					confidence = pattern.Confidence
 					break
 				}
 			}
@@ -377,6 +401,7 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
 						version = versionString
+						confidence = pattern.Confidence
 						break
 					}
 				}
@@ -388,13 +413,19 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 			continue
 		}
 
-		// Append the technologies as well as implied ones
-		if version != "" {
-			app = FormatAppVersion(app, version)
-		}
-		technologies = append(technologies, app)
+		technologies = append(technologies, matchPartResult{
+			application: app,
+			version:     version,
+			confidence:  confidence,
+		})
 		if len(fingerprint.implies) > 0 {
-			technologies = append(technologies, fingerprint.implies...)
+			for _, implies := range fingerprint.implies {
+				technologies = append(technologies, matchPartResult{
+					application: implies,
+					version:     version,
+					confidence:  confidence,
+				})
+			}
 		}
 		matched = false
 	}
@@ -402,6 +433,9 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 }
 
 func FormatAppVersion(app, version string) string {
+	if version == "" {
+		return app
+	}
 	return fmt.Sprintf("%s:%s", app, version)
 }
 

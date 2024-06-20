@@ -8,8 +8,8 @@ import (
 )
 
 // checkBody checks for fingerprints in the HTML body
-func (s *Wappalyze) checkBody(body []byte) []string {
-	var technologies []string
+func (s *Wappalyze) checkBody(body []byte) []matchPartResult {
+	var technologies []matchPartResult
 
 	bodyString := unsafeToString(body)
 
