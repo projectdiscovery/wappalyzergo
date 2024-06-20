@@ -263,7 +263,6 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			for _, implies := range fingerprint.implies {
 				technologies = append(technologies, matchPartResult{
 					application: implies,
-					version:     version,
 					confidence:  confidence,
 				})
 			}
@@ -340,7 +339,6 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 			for _, implies := range fingerprint.implies {
 				technologies = append(technologies, matchPartResult{
 					application: implies,
-					version:     version,
 					confidence:  confidence,
 				})
 			}
@@ -422,7 +420,6 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 			for _, implies := range fingerprint.implies {
 				technologies = append(technologies, matchPartResult{
 					application: implies,
-					version:     version,
 					confidence:  confidence,
 				})
 			}
