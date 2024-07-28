@@ -566,8 +566,7 @@
             ],
             "meta": {
                 "generator": [
-                    "abicart",
-                    "textalk webshop"
+                    "abicart"
                 ]
             },
             "description": "Abicart is an ecommerce platform developed by the Swedish company Abicart AB.",
@@ -2333,6 +2332,7 @@
             ],
             "description": "Akaunting is a free and online accounting software.",
             "website": "https://akaunting.com",
+            "cpe": "cpe:2.3:a:akaunting:akaunting:*:*:*:*:*:*:*:*",
             "icon": "akaunting.svg"
         },
         "Akilli Ticaret": {
@@ -2683,6 +2683,7 @@
             ],
             "description": "AlternC is a set of software management on Linux shared hosting.",
             "website": "https://alternc.com",
+            "cpe": "cpe:2.3:a:alternc:alternc:*:*:*:*:*:*:*:*",
             "icon": "AlternC.png"
         },
         "AlumnIQ": {
@@ -3044,6 +3045,7 @@
                 "Java"
             ],
             "website": "https://ametys.org",
+            "cpe": "cpe:2.3:a:ametys:ametys:*:*:*:*:*:*:*:*",
             "icon": "Ametys.png"
         },
         "Amex Express Checkout": {
@@ -3776,6 +3778,7 @@
             ],
             "description": "ApostropheCMS is a powerful website builder platform built on an enterprise open source CMS.",
             "website": "https://apostrophecms.com",
+            "cpe": "cpe:2.3:a:apostrophecms:apostrophecms:*:*:*:*:*:*:*:*",
             "icon": "ApostropheCMS.svg"
         },
         "AppDynamics": {
@@ -4103,6 +4106,7 @@
             ],
             "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
             "website": "https://arc.io",
+            "cpe": "cpe:2.3:a:arc:arc:*:*:*:*:*:*:*:*",
             "icon": "Arc.svg"
         },
         "Arc XP": {
@@ -4298,6 +4302,7 @@
             ],
             "description": "Asciidoctor is an open-source text processor and publishing toolchain, written in Ruby, for converting AsciiDoc content to HTML 5, DocBook 5, and other formats.",
             "website": "https://github.com/asciidoctor/asciidoctor",
+            "cpe": "cpe:2.3:a:asciidoctor:asciidoctor:*:*:*:*:*:*:*:*",
             "icon": "Asciidoctor.png"
         },
         "Asciinema": {
@@ -5231,6 +5236,7 @@
             ],
             "description": "Bigace is a free open-source content management developed in PHP and JavaScript that uses a MySQL or ADOdb environment.",
             "website": "https://github.com/bigace",
+            "cpe": "cpe:2.3:a:bigace:bigace:*:*:*:*:*:*:*:*",
             "icon": "BIGACE.png"
         },
         "BON Loyalty": {
@@ -6070,6 +6076,7 @@
             ],
             "description": "Bitrix24 is a set of tools for the organization and management of business processes.",
             "website": "https://www.bitrix24.com",
+            "cpe": "cpe:2.3:a:bitrix24:bitrix24:*:*:*:*:*:*:*:*",
             "icon": "Bitrix24.svg"
         },
         "BittAds": {
@@ -7585,6 +7592,7 @@
             ],
             "description": "BuddyPress is designed to allow schools, companies, sports teams, or any other niche community to start their own social network or communication tool.",
             "website": "https://buddypress.org",
+            "cpe": "cpe:2.3:a:buddypress:buddypress:0.1:*:*:*:*:wordpress:*:*",
             "icon": "BuddyPress.svg"
         },
         "BugHerd": {
@@ -8763,6 +8771,7 @@
             },
             "description": "Cecil is a CLI application, powered by PHP, that merge plain text files (written in Markdown), images and Twig templates to generate a static website.",
             "website": "https://cecil.app",
+            "cpe": "cpe:2.3:a:cecil:cecil:*:*:*:*:*:*:*:*",
             "icon": "Cecil.svg"
         },
         "Celeritas": {
@@ -9112,6 +9121,7 @@
             },
             "description": "Chatwoot is a customer support tool for instant messaging channels.",
             "website": "https://www.chatwoot.com",
+            "cpe": "cpe:2.3:a:chatwoot:chatwoot:*:*:*:*:*:*:*:*",
             "icon": "Chatwoot.svg"
         },
         "Checkfront": {
@@ -9178,7 +9188,8 @@
                 "server": "cherrypy(?:/([\\d.]+))?\\;version:\\1"
             },
             "description": "CherryPy is an object-oriented web application framework using the Python programming language.",
-            "website": "https://cherrypy.org/",
+            "website": "https://cherrypy.dev/",
+            "cpe": "cpe:2.3:a:cherrypy:cherrypy:*:*:*:*:*:*:*:*",
             "icon": "CherryPy.svg"
         },
         "Chevereto": {
@@ -9202,6 +9213,7 @@
             ],
             "description": "Chevereto is an image hosting software that allows you to create a full-featured image hosting website on your own server.",
             "website": "https://chevereto.com",
+            "cpe": "cpe:2.3:a:chevereto:chevereto:*:*:*:*:*:*:*:*",
             "icon": "Chevereto.svg"
         },
         "Chicago Boss": {
@@ -9444,6 +9456,7 @@
             },
             "description": "CiviCRM is a web-based suite of internationalised open-source software for constituency relationship management.",
             "website": "https://civicrm.org",
+            "cpe": "cpe:2.3:a:civicrm:civicrm:*:*:*:*:*:*:*:*",
             "icon": "CiviCRM.png"
         },
         "CiviCRM plugins": {
@@ -10295,13 +10308,13 @@
                 18
             ],
             "cookies": {
-                "ci_csrf_token": "^(.+)$\\;version:\\1?2+:",
+                "ci_csrf_token": "",
                 "ci_session": "",
                 "exp_last_activity": "",
                 "exp_tracker": ""
             },
             "html": [
-                "\u003cinput[^\u003e]+name=\"ci_csrf_token\"\\;version:2+"
+                "\u003cinput[^\u003e]+name=\"ci_csrf_token\""
             ],
             "implies": [
                 "PHP"
@@ -10320,6 +10333,7 @@
             },
             "description": "CodeMirror is a JavaScript component that provides a code editor in the browser.",
             "website": "https://codemirror.net",
+            "cpe": "cpe:2.3:a:codemirror:codemirror:*:*:*:*:*:*:*:*",
             "icon": "CodeMirror.png"
         },
         "CodeSandbox": {
@@ -11749,6 +11763,7 @@
                 "x-powered-by": "^cppcms/([\\d.]+)$\\;version:\\1"
             },
             "website": "https://cppcms.com",
+            "cpe": "cpe:2.3:a:cppcms:cppcms:*:*:*:*:*:*:*:*",
             "icon": "CppCMS.png"
         },
         "Craft CMS": {
@@ -12547,8 +12562,9 @@
             "implies": [
                 "Perl"
             ],
-            "description": "Mono.net delivers the a Software-as-a-Service (SaaS) platform to build and sell websites and other digital products.",
+            "description": "Dancer is a simple but powerful web application framework for Perl.",
             "website": "https://perldancer.org",
+            "cpe": "cpe:2.3:a:dancer:dancer:*:*:*:*:*:*:*:*",
             "icon": "Dancer.png"
         },
         "Danneo CMS": {
@@ -13190,6 +13206,7 @@
             ],
             "description": "Discourse is an open-source internet forum and mailing list management software application.",
             "website": "https://discourse.org",
+            "cpe": "cpe:2.3:a:discourse:discourse:*:*:*:*:*:*:*:*",
             "icon": "Discourse.png"
         },
         "Discuz! X": {
@@ -13493,6 +13510,7 @@
             ],
             "description": "Dokeos is an e-learning and course management web application.",
             "website": "https://dokeos.com",
+            "cpe": "cpe:2.3:a:dokeos:dokeos:*:*:*:*:*:*:*:*",
             "icon": "Dokeos.png"
         },
         "DokuWiki": {
@@ -14814,6 +14832,7 @@
             ],
             "description": "ElasticPress is a hosting service that connects your WordPress site to search hosting.",
             "website": "https://www.elasticpress.io/",
+            "cpe": "cpe:2.3:a:10up:elasticpress:*:*:*:*:*:wordpress:*:*",
             "icon": "elasticpress.svg"
         },
         "ElasticSuite": {
@@ -15061,6 +15080,7 @@
             ],
             "description": "Elgg is a social networking engine, delivering the building blocks for creating social networks and applications.",
             "website": "https://elgg.org/",
+            "cpe": "cpe:2.3:a:elgg:elgg:*:*:*:*:*:*:*:*",
             "icon": "Elgg.svg"
         },
         "Elixir": {
@@ -15734,6 +15754,7 @@
             ],
             "description": "Open Source CRM Software.",
             "website": "https://www.espocrm.com/",
+            "cpe": "cpe:2.3:a:espocrm:espocrm:*:*:*:*:*:*:*:*",
             "icon": "EspoCRM.svg"
         },
         "Essent SiteBuilder Pro": {
@@ -17339,7 +17360,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?flot(?:\\/curvedlines)?(?:\\/excanvas)?(?:\\/jquery)?(?:\\.categories)?(?:\\.pack)?(?:\\.pie)?(?:\\.resize)?(?:\\.selection)?(?:\\.spline)?(?:\\.symbol)?(?:\\.time)?(?:\\.tooltip)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?flot(?:\\/curvedlines)?(?:\\/excanvas)?(?:\\/jquery)?(?:\\.categories)?(?:\\.pack)?(?:\\.pie)?(?:\\.resize)?(?:\\.selection)?(?:\\.spline)?(?:\\.symbol)?(?:\\.time)?(?:\\.tooltip)?(?:\\.min)?\\.js\\;version:\\1",
+                "(?:(?:jquery\\.)?)?flot(?:\\/curvedlines)?(?:\\/excanvas)?(?:\\/jquery)?(?:\\.categories)?(?:\\.pack)?(?:\\.pie)?(?:\\.resize)?(?:\\.selection)?(?:\\.spline)?(?:\\.symbol)?(?:\\.time)?(?:\\.tooltip)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Attractive Javascript plotting for jQuery.",
             "website": "https://flotcharts.org/",
@@ -17406,6 +17428,7 @@
             ],
             "description": "Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase.",
             "website": "https://flutter.dev",
+            "cpe": "cpe:2.3:a:flutter:flutter:*:*:*:*:*:*:*:*",
             "icon": "Flutter.svg"
         },
         "FluxBB": {
@@ -18028,6 +18051,7 @@
             ],
             "description": "Frappe is a full stack, batteries-included, web framework written in Python and Javascript.",
             "website": "https://frappeframework.com",
+            "cpe": "cpe:2.3:a:frappe:frappe:*:*:*:*:*:*:*:*",
             "icon": "Frappe.png"
         },
         "Fraud Blocker": {
@@ -18104,6 +18128,7 @@
             ],
             "description": "FreeTextBox is a free open-source HTML Editor.",
             "website": "https://freetextbox.com",
+            "cpe": "cpe:2.3:a:freetextbox:freetextbox:*:*:*:*:*:*:*:*",
             "icon": "FreeTextBox.png"
         },
         "Freespee": {
@@ -19061,7 +19086,8 @@
                 87
             ],
             "scriptSrc": [
-                "wp-content\\/plugins\\/gp-premium(?:\\/menu-plus)?(?:\\/sections)?\\/functions\\/js(?:\\/offside)?(?:\\/parallax)?(?:\\/sticky)?(?:\\.min)?(?:-((?:\\d+\\.)+\\d+))?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "wp-content\\/plugins\\/gp-premium(?:\\/menu-plus)?(?:\\/sections)?\\/functions\\/js(?:\\/offside)?(?:\\/parallax)?(?:\\/sticky)?(?:\\.min)?(?:-((?:\\d+\\.)+\\d+))?\\.js\\;version:\\1",
+                "wp-content\\/plugins\\/gp-premium(?:\\/menu-plus)?(?:\\/sections)?\\/functions\\/js(?:\\/offside)?(?:\\/parallax)?(?:\\/sticky)?(?:\\.min)?(?:-)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "implies": [
                 "GeneratePress"
@@ -19281,10 +19307,14 @@
                     }
                 },
                 "img[src*='cdn.getyourguide.com/']": {
-                    "src": ""
+                    "attributes": {
+                        "src": ""
+                    }
                 },
                 "link[href*='cdn.getyourguide.com/']": {
-                    "src": ""
+                    "attributes": {
+                        "src": ""
+                    }
                 }
             },
             "scriptSrc": [
@@ -19380,6 +19410,7 @@
             },
             "description": "GitBook is a command-line tool for creating documentation using Git and Markdown.",
             "website": "https://www.gitbook.com",
+            "cpe": "cpe:2.3:a:gitbook:gitbook:*:*:*:*:*:*:*:*",
             "icon": "GitBook.png"
         },
         "GitHub Pages": {
@@ -20846,6 +20877,7 @@
                 "PHP"
             ],
             "website": "https://getgrav.org",
+            "cpe": "cpe:2.3:a:getgrav:grav:*:*:*:*:*:*:*:*",
             "icon": "Grav.png"
         },
         "Gravatar": {
@@ -20982,6 +21014,7 @@
             ],
             "description": "Grin is a influence marketing platform.",
             "website": "https://grin.co/",
+            "cpe": "cpe:2.3:a:grin:grin:*:*:*:*:*:*:*:*",
             "icon": "Grin.png"
         },
         "GrocerKey": {
@@ -22034,6 +22067,7 @@
             ],
             "description": "Highcharts is a charting library written in pure JavaScript, for adding interactive charts to a website or web application. Highcharts meets accessibility standards and works with Python, Angular, React, iOS, Android, and more.",
             "website": "https://www.highcharts.com",
+            "cpe": "cpe:2.3:a:highcharts:highcharts:*:*:*:*:*:*:*:*",
             "icon": "Highcharts.svg"
         },
         "Highlight.js": {
@@ -23226,6 +23260,7 @@
             },
             "description": "Imgix is a visual media platform for managing, processing, rendering, optimising and delivering your existing images.",
             "website": "https://imgix.com/",
+            "cpe": "cpe:2.3:a:imgix:imgix:*:*:*:*:*:*:*:*",
             "icon": "Imgix.svg"
         },
         "Immutable.js": {
@@ -26555,6 +26590,7 @@
             },
             "description": "Layui is an open-source modular front-end UI component library.",
             "website": "https://layui.gitee.io",
+            "cpe": "cpe:2.3:a:layui:layui:*:*:*:*:*:*:*:*",
             "icon": "Layui.png"
         },
         "Lazada": {
@@ -26662,7 +26698,8 @@
                 "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?leaflet[\\w\\-\\.]{0,32}\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?(?!.+shopify)\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?leaflet[\\w\\-\\.]{0,32}\\.js(?!.+shopify)\\;version:\\1",
+                "(?:(?:dist\\/)?)?leaflet[\\w\\-\\.]{0,32}\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?(?!.+shopify)\\;version:\\1"
             ],
             "description": "Leaflet is the open-source JavaScript library for mobile-friendly interactive maps.",
             "website": "https://leafletjs.com",
@@ -28414,6 +28451,7 @@
             ],
             "description": "Macaron is a high productive and modular web framework in Go.",
             "website": "https://go-macaron.com",
+            "cpe": "cpe:2.3:a:go-macaron:macaron:*:*:*:*:*:*:*:*",
             "icon": "Macaron.png"
         },
         "MachoThemes NewsMag": {
@@ -29263,6 +29301,7 @@
             },
             "description": "Mastodon is a free and open-source self-hosted social networking service.",
             "website": "https://joinmastodon.org",
+            "cpe": "cpe:2.3:a:joinmastodon:mastodon:*:*:*:*:*:*:*:*",
             "icon": "Mastodon.svg"
         },
         "Matajer": {
@@ -29322,6 +29361,7 @@
             ],
             "description": "MathJax is a cross-browser JavaScript library that displays mathematical notation in web browsers, using MathML, LaTeX and ASCIIMathML markup.",
             "website": "https://www.mathjax.org",
+            "cpe": "cpe:2.3:a:mathjax:mathjax:*:*:*:*:*:*:*:*",
             "icon": "MathJax.png"
         },
         "Matomo Analytics": {
@@ -30276,6 +30316,7 @@
             ],
             "description": "Open Source drag and drop style hosted CMS system.",
             "website": "https://microweber.com",
+            "cpe": "cpe:2.3:a:microweber:microweber:*:*:*:*:*:*:*:*",
             "icon": "Microweber.svg"
         },
         "Miestro": {
@@ -30467,6 +30508,7 @@
             },
             "description": "Misskey is a distributed microblogging platform.",
             "website": "https://join.misskey.page/",
+            "cpe": "cpe:2.3:a:misskey:misskey:*:*:*:*:*:*:*:*",
             "icon": "Misskey.svg"
         },
         "Mithril": {
@@ -30475,7 +30517,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?mithril(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?mithril(?:[\\.-]min)?\\.js\\;version:\\1",
+                "mithril(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "A Javascript Framework for building applications.",
             "website": "https://mithril.js.org/",
@@ -30677,7 +30720,8 @@
                 "Modernizr._version": "^(.+)$\\;version:\\1"
             },
             "scriptSrc": [
-                "([\\d.]+)?/modernizr(?:\\.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
+                "([\\d.]+)?/modernizr.*\\.js\\;version:\\1",
+                "modernizr(?:\\.([\\d.]+))?.*\\.js\\;version:\\1"
             ],
             "description": "Modernizr is a JavaScript library that detects the features available in a user's browser.",
             "website": "https://modernizr.com",
@@ -30782,6 +30826,7 @@
                 "Perl"
             ],
             "website": "https://mojolicio.us",
+            "cpe": "cpe:2.3:a:mojolicious:mojolicious:*:*:*:*:*:*:*:*",
             "icon": "Mojolicious.png"
         },
         "Mokka": {
@@ -33774,6 +33819,7 @@
             ],
             "description": "OpenResty is a web platform based on nginx which can run Lua scripts using its LuaJIT engine.",
             "website": "https://openresty.org",
+            "cpe": "cpe:2.3:a:openresty:openresty:*:*:*:*:*:*:*:*",
             "icon": "OpenResty.svg"
         },
         "OpenSSL": {
@@ -34473,6 +34519,7 @@
             ],
             "description": "OutSystems is a low-code platform which provides tools for companies to develop, deploy and manage omnichannel enterprise applications.",
             "website": "https://www.outsystems.com",
+            "cpe": "cpe:2.3:a:outsystems:outsystems:*:*:*:*:*:*:*:*",
             "icon": "OutSystems.svg"
         },
         "OutTheBoxThemes Panoramic": {
@@ -36357,6 +36404,7 @@
             ],
             "description": "Piwigo is an open-source photo management software designed for creating and managing online photo galleries.",
             "website": "https://piwigo.com",
+            "cpe": "cpe:2.3:a:piwigo:piwigo:*:*:*:*:*:*:*:*",
             "icon": "Piwigo.svg"
         },
         "Piwik PRO Core": {
@@ -37578,6 +37626,7 @@
             ],
             "description": "ProcessWire is an open source content management system (CMS) and framework (CMF).",
             "website": "https://processwire.com/",
+            "cpe": "cpe:2.3:a:processwire:processwire:*:*:*:*:*:*:*:*",
             "icon": "ProcessWire.svg"
         },
         "Product Hunt": {
@@ -37704,7 +37753,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?progressbar(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?progressbar(?:\\.min)?\\.js\\;version:\\1",
+                "progressbar(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Responsive progress bars with animated SVG paths.",
             "website": "https://kimmobrunfeldt.github.io/progressbar.js/",
@@ -38193,6 +38243,7 @@
                 "Laravel"
             ],
             "website": "https://pyrocms.com",
+            "cpe": "cpe:2.3:a:pyrocms:pyrocms:*:*:*:*:*:*:*:*",
             "icon": "PyroCMS.png"
         },
         "Python": {
@@ -40648,6 +40699,7 @@
                 "SQLite\\;confidence:80"
             ],
             "website": "https://ritecms.com",
+            "cpe": "cpe:2.3:a:ritecms:ritecms:*:*:*:*:*:*:*:*",
             "icon": "RiteCMS.png"
         },
         "Rive": {
@@ -41007,6 +41059,7 @@
             ],
             "description": "Rust is a multi-paradigm, general-purpose programming language designed for performance and safety, especially safe concurrency.",
             "website": "https://www.rust-lang.org",
+            "cpe": "cpe:2.3:a:rust-lang:rust:*:*:*:*:*:*:*:*",
             "icon": "Rust.svg"
         },
         "RxJS": {
@@ -41559,6 +41612,7 @@
             ],
             "description": "Saleor is a headless, GraphQL ecommerce platform.",
             "website": "https://saleor.io",
+            "cpe": "cpe:2.3:a:saleor:saleor:*:*:*:*:*:*:*:*",
             "icon": "Saleor.svg"
         },
         "SalesFire": {
@@ -42128,7 +42182,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?screenfull(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?screenfull(?:\\.min)?\\.js\\;version:\\1",
+                "screenfull(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Simple wrapper for cross-browser usage of the JavaScript Fullscreen API.",
             "website": "https://sindresorhus.com/screenfull/"
@@ -42462,6 +42517,7 @@
             ],
             "description": "Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.",
             "website": "https://select2.org/",
+            "cpe": "cpe:2.3:a:select2:select2:*:*:*:*:*:*:*:*",
             "icon": "Select2.png"
         },
         "Selectize": {
@@ -42747,6 +42803,7 @@
             ],
             "description": "Sentry is an open-source platform for workflow productivity, aggregating errors from across the stack in real time.",
             "website": "https://sentry.io/",
+            "cpe": "cpe:2.3:a:sentry:sentry:*:*:*:*:*:*:*:*",
             "icon": "Sentry.svg"
         },
         "Seravo": {
@@ -42996,6 +43053,7 @@
             ],
             "description": "Sharetribe is cloud-based platform for small to medium businesses, which helps businesses to create and manage custom online marketplaces.",
             "website": "https://www.sharetribe.com",
+            "cpe": "cpe:2.3:a:sharetribe:sharetribe:*:*:*:*:*:*:*:*",
             "icon": "Sharetribe.svg"
         },
         "SharpSpring": {
@@ -43869,7 +43927,8 @@
                 "showdown": ""
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?showdown(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?\\.js\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:dist\\/)?)?showdown(?:\\.min)?(?:-)?\\.js\\;version:\\1",
+                "(?:(?:dist\\/)?)?showdown(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?\\.js\\;version:\\1"
             ],
             "description": "A Markdown to HTML converter written in Javascript.",
             "website": "https://showdownjs.com/",
@@ -43945,7 +44004,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/jquery\\.)?signal[rr](?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/jquery\\.)?signal[rr](?:-)?(?:\\.min)?\\.js\\;version:\\1",
+                "(?:jquery\\.)?signal[rr](?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js\\;version:\\1"
             ],
             "description": "Realtime web communication framework from Microsoft for ASP.NET.",
             "website": "https://dotnet.microsoft.com/es-es/apps/aspnet/signalr"
@@ -43982,6 +44042,7 @@
             ],
             "description": "Silverstripe CMS is a free and open source Content Management System and Framework for creating and maintaining websites and web applications.",
             "website": "https://www.silverstripe.org/",
+            "cpe": "cpe:2.3:a:silverstripe:silverstripe:*:*:*:*:*:*:*:*",
             "icon": "SilverStripe.svg"
         },
         "Simbel": {
@@ -44085,6 +44146,7 @@
             ],
             "description": "SimpleSAMLphp is an open-source PHP authentication application that provides support for SAML 2.0 as a Service Provider (SP) or Identity Provider (IdP).",
             "website": "https://simplesamlphp.org",
+            "cpe": "cpe:2.3:a:simplesamlphp:simplesamlphp:*:*:*:*:*:*:*:*",
             "icon": "default.svg"
         },
         "Simplero": {
@@ -45137,6 +45199,7 @@
             ],
             "description": "Smartstore is an open-source ecommerce system with CMS capabilities.",
             "website": "https://www.smartstore.com",
+            "cpe": "cpe:2.3:a:smartstore:smartstore:*:*:*:*:*:*:*:*",
             "icon": "Smartstore.png"
         },
         "Smartstore Page Builder": {
@@ -45259,7 +45322,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?snabbt(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?snabbt(?:[\\.-]min)?\\.js\\;version:\\1",
+                "snabbt(?:[\\.-]min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Minimalistic animation library in javascript Snabbt.js.",
             "website": "https://daniel-lundin.github.io/snabbt.js/"
@@ -45510,7 +45574,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?sockjs(?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?sockjs(?:\\.min)?\\.js\\;version:\\1",
+                "sockjs(?:-((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js\\;version:\\1"
             ],
             "description": "SockJS is a browser JavaScript library that provides a WebSocket-like object.",
             "website": "https://sockjs.org",
@@ -47211,6 +47276,7 @@
             },
             "description": "Strapi is an open-source headless CMS used for building fast and easily manageable APIs written in JavaScript.",
             "website": "https://strapi.io",
+            "cpe": "cpe:2.3:a:strapi:strapi:*:*:*:*:*:*:*:*",
             "icon": "Strapi.svg"
         },
         "Strato": {
@@ -47468,6 +47534,7 @@
             ],
             "description": "Sulu is the go-to CMS for back-end projects written within the PHP Symfony framework.",
             "website": "https://sulu.io",
+            "cpe": "cpe:2.3:a:sulu:sulu:*:*:*:*:*:*:*:*",
             "icon": "Sulu.svg"
         },
         "SummerCart": {
@@ -47978,6 +48045,7 @@
             ],
             "description": "Sylius is an open-source ecommerce framework based on Symfony full stack.",
             "website": "https://sylius.com",
+            "cpe": "cpe:2.3:a:sylius:sylius:*:*:*:*:*:*:*:*",
             "icon": "Sylius.svg"
         },
         "Symfony": {
@@ -48020,6 +48088,7 @@
             ],
             "description": "Sympa is an open-source mailing list management (MLM) software.",
             "website": "https://www.sympa.org/",
+            "cpe": "cpe:2.3:a:sympa:sympa:*:*:*:*:*:*:*:*",
             "icon": "sympa.png"
         },
         "Syncfusion": {
@@ -48342,6 +48411,7 @@
             ],
             "description": "TWiki is an open-source wiki and application platform.",
             "website": "https://twiki.org",
+            "cpe": "cpe:2.3:a:twiki:twiki:*:*:*:*:*:*:*:*",
             "icon": "TWiki.png"
         },
         "TYPO3 CMS": {
@@ -50440,6 +50510,7 @@
             "implies": [
                 "Python"
             ],
+            "description": "Trac is an enhanced wiki and issue tracking system for software development projects.",
             "website": "https://trac.edgewall.org",
             "icon": "Trac.png"
         },
@@ -50584,6 +50655,7 @@
                 "Transifex.live.lib_version": "(.+)\\;version:\\1"
             },
             "website": "https://www.transifex.com",
+            "cpe": "cpe:2.3:a:transifex:transifex:*:*:*:*:*:*:*:*",
             "icon": "transifex.png"
         },
         "Transistor.fm": {
@@ -51494,6 +51566,7 @@
             ],
             "description": "Typecho is a PHP Blogging Platform.",
             "website": "https://typecho.org/",
+            "cpe": "cpe:2.3:a:typecho:typecho:*:*:*:*:*:*:*:*",
             "icon": "typecho.svg"
         },
         "Typed.js": {
@@ -52590,6 +52663,7 @@
             ],
             "description": "Vaadin is an open-source framework for building user interfaces and single-page applications using Java and TypeScript.",
             "website": "https://vaadin.com",
+            "cpe": "cpe:2.3:a:vaadin:vaadin:*:*:*:*:*:*:*:*",
             "icon": "Vaadin.svg"
         },
         "ValueCommerce": {
@@ -54179,30 +54253,30 @@
                 },
                 "[style*='images/']": {
                     "attributes": {
-                        "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                        "style": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                     }
                 },
                 "img[src*='images/']": {
                     "attributes": {
-                        "src": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                        "src": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                     }
                 },
                 "img[srcset*='images/'], source[srcset*='images/']": {
                     "attributes": {
-                        "srcset": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                        "srcset": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                     }
                 },
                 "meta[content*='images/']": {
                     "attributes": {
-                        "content": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                        "content": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                     }
                 },
                 "style, script": {
-                    "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                    "text": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                 },
                 "video[poster*='images/']": {
                     "attributes": {
-                        "poster": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
+                        "poster": "(?:\\.[a-z]+|/media)(?:/[\\w-]+)?/(?:original_images/[\\w-]+|images/[\\w\\-.]+\\.(?:(?:fill|max|min)-\\d+x\\d+(?:-c\\d+)?|(?:width|height|scale)-\\d+|original))\\."
                     }
                 }
             },
@@ -54489,6 +54563,7 @@
                 "jQuery"
             ],
             "website": "https://web2py.com",
+            "cpe": "cpe:2.3:a:web2py:web2py:*:*:*:*:*:*:*:*",
             "icon": "Web2py.png"
         },
         "WebAssembly": {
@@ -54947,6 +55022,7 @@
                 "PHP"
             ],
             "website": "https://websitebaker2.org/en/home.php",
+            "cpe": "cpe:2.3:a:websitebaker:websitebaker:*:*:*:*:*:*:*:*",
             "icon": "WebsiteBaker.png"
         },
         "WebsiteBuilder": {
@@ -58107,7 +58183,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js\\;version:\\1",
+                "chroma(?:\\.min)?\\.js(?:\\?ver=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "chroma.js is a small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.",
             "website": "https://www.vis4.net/chromajs/"
@@ -58633,7 +58710,8 @@
                 }
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:js\\/)?)?framework7(?:-((?:\\d+\\.)+\\d+))?(?:\\.custom)?(?:\\.min)?(?:-vue)?_?[\\w\\.]{0,29}\\.js\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:js\\/)?)?framework7(?:-)?(?:\\.custom)?(?:\\.min)?(?:-vue)?_?[\\w\\.]{0,29}\\.js\\;version:\\1",
+                "(?:\\/(?:js\\/)?)?framework7(?:-((?:\\d+\\.)+\\d+))?(?:\\.custom)?(?:\\.min)?(?:-vue)?_?[\\w\\.]{0,29}\\.js\\;version:\\1"
             ],
             "description": "Full Featured Mobile HTML Framework For Building iOS \u0026 Android Apps.",
             "website": "https://framework7.io/",
@@ -58818,7 +58896,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?html2canvas(?:\\.min)?(?:[_\\w]{0,8})?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?html2canvas(?:\\.min)?(?:[_\\w]{0,8})?\\.js\\;version:\\1",
+                "html2canvas(?:\\.min)?(?:[_\\w]{0,8})?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Screenshots with JavaScript.",
             "website": "https://html2canvas.hertzen.com/"
@@ -59283,7 +59362,8 @@
                 "jqueryMigrate": ""
             },
             "scriptSrc": [
-                "jquery-migrate(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "jquery-migrate(?:\\.min)?(?:-)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1",
+                "jquery-migrate(?:\\.min)?(?:-?((?:\\d+\\.)+\\d+))?(?:\\.min)?\\.js\\;version:\\1"
             ],
             "implies": [
                 "jQuery"
@@ -59300,7 +59380,8 @@
                 "jQuery.mobile.version": "^(.+)$\\;version:\\1"
             },
             "scriptSrc": [
-                "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2"
+                "jquery[.-]mobile(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+                "jquery[.-]mobile(?:-)?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
             ],
             "implies": [
                 "jQuery"
@@ -59372,7 +59453,8 @@
                 "\u003cdiv[^\u003e]+data-pjax-container"
             ],
             "scriptSrc": [
-                "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2"
+                "jquery[.-]pjax(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+                "jquery[.-]pjax(?:-)?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
             ],
             "meta": {
                 "pjax-push": [],
@@ -59612,6 +59694,7 @@
                 "server": "mini_httpd(?:/([\\d.]+))?\\;version:\\1"
             },
             "website": "https://acme.com/software/mini_httpd",
+            "cpe": "cpe:2.3:a:acme:mini_httpd:*:*:*:*:*:*:*:*",
             "icon": "mini_httpd.png"
         },
         "mirrAR": {
@@ -59830,6 +59913,7 @@
             ],
             "description": "nopCommerce is an open-source ecommerce solution based on Microsoft's ASP.NET Core framework and MS SQL Server 2012 (or higher) backend database.",
             "website": "https://www.nopcommerce.com",
+            "cpe": "cpe:2.3:a:nopcommerce:nopcommerce:*:*:*:*:*:*:*:*",
             "icon": "nopCommerce.png"
         },
         "nopStation": {
@@ -59906,6 +59990,7 @@
             ],
             "description": "OsCommerce is an open-source ecommerce and online store-management software program.",
             "website": "https://www.oscommerce.com",
+            "cpe": "cpe:2.3:a:oscommerce:oscommerce:*:*:*:*:*:*:*:*",
             "icon": "osCommerce.png"
         },
         "osTicket": {
@@ -59920,6 +60005,7 @@
                 "PHP"
             ],
             "website": "https://osticket.com",
+            "cpe": "cpe:2.3:a:osticket:osticket:*:*:*:*:*:*:*:*",
             "icon": "osTicket.png"
         },
         "otrs": {
@@ -59998,7 +60084,8 @@
                 "parallaxInstance": ""
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?parallax(?:\\/assets\\/js)?(?:\\/jquery)?(?:\\/scripts)?(?:\\/wow)?(?:[_\\.]move)?(?:\\.inview)?(?:\\.pkgd)?(?:\\.scrolling)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?parallax(?:\\/assets\\/js)?(?:\\/jquery)?(?:\\/scripts)?(?:\\/wow)?(?:[_\\.]move)?(?:\\.inview)?(?:\\.pkgd)?(?:\\.scrolling)?(?:\\.min)?\\.js\\;version:\\1",
+                "parallax(?:\\/assets\\/js)?(?:\\/jquery)?(?:\\/scripts)?(?:\\/wow)?(?:[_\\.]move)?(?:\\.inview)?(?:\\.pkgd)?(?:\\.scrolling)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Simple parallax scrolling effect.",
             "website": "https://github.com/pixelcog/parallax.js"
@@ -60505,7 +60592,8 @@
                 "slideout": ""
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?slideout(?:-init)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/)?slideout(?:-init)?(?:\\.min)?\\.js\\;version:\\1",
+                "slideout(?:-init)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "A touch slideout navigation menu for your mobile web apps.",
             "website": "https://slideout.js.org/",
@@ -60890,7 +60978,8 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?waitforimages(?:-((?:\\d+\\.)+\\d+)-modded)?(?:\\.min)?\\.js\\;version:\\1\\2"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:jquery\\.)?)?waitforimages(?:-modded)?(?:\\.min)?\\.js\\;version:\\1",
+                "(?:(?:jquery\\.)?)?waitforimages(?:-((?:\\d+\\.)+\\d+)-modded)?(?:\\.min)?\\.js\\;version:\\1"
             ],
             "description": "waitForImages is a lightweight, high-performance JavaScript library that simplifies the handling of image preloading events.",
             "website": "https://github.com/alexanderdickson/waitForImages"
