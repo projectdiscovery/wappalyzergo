@@ -28188,7 +28188,7 @@
                 31
             ],
             "headers": {
-                "x-cdn": "^imperva",
+                "x-cdn": "incapsula",
                 "x-iinfo": ""
             },
             "scriptSrc": [
