@@ -20509,6 +20509,17 @@
             "website": "https://pqina.nl/filepond/",
             "icon": "filepond.svg"
         },
+        "Fillout": {
+            "cats": [
+                5,
+                110
+            ],
+            "scriptSrc": [
+                "^https://server\\.fillout\\.com/embed/v(\\d)/\\;version:\\1"
+            ],
+            "description": "Fillout is a form builder widget.",
+            "website": "https://www.fillout.com/"
+        },
         "FinanceAds": {
             "cats": [
                 71
@@ -28188,7 +28199,7 @@
                 31
             ],
             "headers": {
-                "x-cdn": "incapsula",
+                "x-cdn": "^imperva",
                 "x-iinfo": ""
             },
             "scriptSrc": [
