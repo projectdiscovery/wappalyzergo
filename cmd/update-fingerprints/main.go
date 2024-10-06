@@ -67,14 +67,19 @@ type OutputFingerprint struct {
 	Icon        string                            `json:"icon,omitempty"`
 }
 
-const fingerprintURL = "https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json"
+var fingerprintURLs = []string{
+	"https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json",
+	"https://raw.githubusercontent.com/HTTPArchive/wappalyzer/main/src/technologies/%s.json",
+}
 
 func makeFingerprintURLs() []string {
 	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
 
 	fingerprints := make([]string, 0, len(files))
 	for _, item := range files {
-		fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
+		for _, fingerprintURL := range fingerprintURLs {
+			fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
+		}
 	}
 	return fingerprints
 }
