@@ -240,6 +240,17 @@ func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte
 				Cats: fingerprint.cats,
 			}
 		}
+		
+		// Handle colon separated values
+		if strings.Contains(app, versionSeparator) {
+			if parts := strings.Split(app, versionSeparator); len(parts) == 2 {
+				if fingerprint, ok := s.fingerprints.Apps[parts[0]]; ok {
+					result[app] = CatsInfo{
+						Cats: fingerprint.cats,
+					}
+				}
+			}
+		}
 	}
 
 	return result
