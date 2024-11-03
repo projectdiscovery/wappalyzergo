@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  wappalyzergo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: ["./main"]
+    command: ["--fingerprints", "/app/fingerprints_data.json"]
+    volumes:
+      - .:/app
