@@ -18521,7 +18521,7 @@
                     "^embed-optimizer ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which optimizes embeds by lazy loading them only as they come into view.",
+            "description": "Performance plugin from the WordPress Performance Team, which optimizes embeds by lazy loading them only as they come into view.",
             "website": "https://wordpress.org/plugins/embed-optimizer/",
             "icon": "embed-optimizer.svg"
         },
@@ -18771,7 +18771,7 @@
                     "^auto-sizes ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which improves image sizes attribute accuracy and implements the HTML spec for adding sizes='auto' to lazy loaded images.",
+            "description": "Performance plugin from the WordPress Performance Team, which improves image sizes attribute accuracy and implements the HTML spec for adding sizes='auto' to lazy loaded images.",
             "website": "https://wordpress.org/plugins/auto-sizes/",
             "icon": "enhanced-image-sizes.svg"
         },
@@ -27990,7 +27990,7 @@
                     "^dominant-color-images ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which determines and stores the dominant color for newly uploaded images in the media library, then uses that as a placeholder background during front end image loads.",
+            "description": "Performance plugin from the WordPress Performance Team, which determines and stores the dominant color for newly uploaded images in the media library, then uses that as a placeholder background during front end image loads.",
             "website": "https://wordpress.org/plugins/dominant-color-images/",
             "icon": "dominant-color-images.svg"
         },
@@ -28004,7 +28004,7 @@
                     "^image-prioritizer ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which optimizes the loading of images which are the LCP (Largest Contentful Paint) element, including both img elements and elements with CSS background images.",
+            "description": "Performance plugin from the WordPress Performance Team, which optimizes the loading of images which are the LCP (Largest Contentful Paint) element, including both img elements and elements with CSS background images.",
             "website": "https://wordpress.org/plugins/image-prioritizer/",
             "icon": "image-prioritizer.svg"
         },
@@ -37344,7 +37344,7 @@
                     "^webp-uploads ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which adds support for outputting images in WebP or AVIF format and supports the `picture` element to enable format fallbacks.",
+            "description": "Performance plugin from the WordPress Performance Team, which adds support for outputting images in WebP or AVIF format and supports the `picture` element to enable format fallbacks.",
             "website": "https://wordpress.org/plugins/webp-uploads/",
             "icon": "modern-image-formats.svg"
         },
@@ -41447,7 +41447,7 @@
                     "^optimization-detective ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which captures real user metrics about what elements are displayed on the page across a variety of device form factors (e.g. desktop, tablet, and phone) in order to apply loading optimizations.",
+            "description": "Performance plugin from the WordPress Performance Team, which captures real user metrics about what elements are displayed on the page across a variety of device form factors (e.g. desktop, tablet, and phone) in order to apply loading optimizations.",
             "website": "https://wordpress.org/plugins/optimization-detective/",
             "icon": "optimization-detective.svg"
         },
@@ -43574,7 +43574,7 @@
                     "^(performance lab|performance-lab) ?([\\d.]+)?\\;version:\\2"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which is a collection of standalone performance modules.",
+            "description": "Performance plugin from the WordPress Performance Team, which is a collection of standalone performance modules.",
             "website": "https://wordpress.org/plugins/performance-lab/",
             "icon": "Performance Lab.svg"
         },
@@ -43588,7 +43588,7 @@
                     "^performant-translations ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which makes internationalization/localization in WordPress faster than ever before.",
+            "description": "Performance plugin from the WordPress Performance Team, which makes internationalization/localization in WordPress faster than ever before.",
             "website": "https://wordpress.org/plugins/performant-translations/",
             "icon": "performant-translations.svg"
         },
@@ -48041,9 +48041,9 @@
             "cats": [
                 12
             ],
-            "scriptSrc": [
-                "(?:/react-router(@|/)([\\d.]+)(?:/[a-z]+)?)?/react-router(?:\\.min)?\\.js\\;version:\\2"
-            ],
+            "js": {
+                "__reactRouterVersion": "([\\d\\.]+)\\;version:\\1"
+            },
             "implies": [
                 "React"
             ],
@@ -48785,7 +48785,8 @@
                 "__remixContext": ""
             },
             "implies": [
-                "React"
+                "React",
+                "React Router"
             ],
             "description": "Remix is a React framework used for server-side rendering (SSR).",
             "website": "https://remix.run/",
@@ -56168,7 +56169,7 @@
                     "^speculation-rules ([\\d.]+)?\\;version:\\1"
                 ]
             },
-            "description": "Performance plugin from the WordPress Performance Group, which adds support for the Speculation Rules API, by which certain URLs are dynamically prefetched or prerendered based on user interaction.",
+            "description": "Performance plugin from the WordPress Performance Team, which adds support for the Speculation Rules API, by which certain URLs are dynamically prefetched or prerendered based on user interaction.",
             "website": "https://wordpress.org/plugins/speculation-rules/",
             "icon": "speculation-rules.svg"
         },
@@ -63752,6 +63753,20 @@
             "website": "https://usizy.com",
             "icon": "Usizy.svg"
         },
+        "Utiq": {
+            "cats": [
+                36
+            ],
+            "js": {
+                "Utiq": ""
+            },
+            "scriptSrc": [
+                "/utiqloader\\.js"
+            ],
+            "description": "Utiq empowers brands and publishers to address audiences through Telco-powered first-party identifier.",
+            "website": "https://utiq.com/",
+            "icon": "Utiq.svg"
+        },
         "Uvicorn": {
             "cats": [
                 22
@@ -66523,6 +66538,20 @@
             ],
             "description": "Web Wiz Forums is a web-based forum software that enables developers to create and manage online discussion boards or forums for engaging user interactions and community building.",
             "website": "https://www.webwizforums.com"
+        },
+        "Web Worker Offloading": {
+            "cats": [
+                87,
+                92
+            ],
+            "meta": {
+                "generator": [
+                    "^web-worker-offloading ([\\d.]+)?\\;version:\\1"
+                ]
+            },
+            "description": "Performance plugin from the WordPress Performance Team, which offloads JavaScript execution to a Web Worker, improving performance by freeing up the main thread.",
+            "website": "https://wordpress.org/plugins/web-worker-offloading/",
+            "icon": "web-worker-offloading.svg"
         },
         "Web2py": {
             "cats": [
@@ -73955,6 +73984,21 @@
             },
             "website": "https://wisy.3we.de",
             "icon": "wisyCMS.svg"
+        },
+        "wp.cloud": {
+            "cats": [
+                62,
+                88
+            ],
+            "headers": {
+                "host-header": "wpcloud"
+            },
+            "implies": [
+                "WordPress"
+            ],
+            "description": "WordPress-first cloud hosting.",
+            "website": "https://wp.cloud/",
+            "icon": "wp-cloud.png"
         },
         "wpBakery": {
             "cats": [
