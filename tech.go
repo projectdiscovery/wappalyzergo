@@ -3,6 +3,7 @@ package wappalyzer
 import (
 	"bytes"
 	"encoding/json"
+	"os"
 	"strings"
 )
 
@@ -13,14 +14,19 @@ type Wappalyze struct {
 }
 
 // New creates a new tech detection instance
-func New() (*Wappalyze, error) {
+func New(customFilePaths ...string) (*Wappalyze, error) {
 	wappalyze := &Wappalyze{
 		fingerprints: &CompiledFingerprints{
 			Apps: make(map[string]*CompiledFingerprint),
 		},
 	}
 
-	err := wappalyze.loadFingerprints()
+	var customFilePath string
+	if len(customFilePaths) > 0 {
+		customFilePath = customFilePaths[0]
+	}
+
+	err := wappalyze.loadFingerprints(customFilePath)
 	if err != nil {
 		return nil, err
 	}
@@ -37,12 +43,33 @@ func (s *Wappalyze) GetCompiledFingerprints() *CompiledFingerprints {
 	return s.fingerprints
 }
 
-// loadFingerprints loads the fingerprints and compiles them
-func (s *Wappalyze) loadFingerprints() error {
+// loadFingerprints loads the fingerprints from the embedded JSON and optionally from a custom JSON file
+func (s *Wappalyze) loadFingerprints(customFilePath string) error {
 	var fingerprintsStruct Fingerprints
+
+	// Load embedded fingerprints
 	err := json.Unmarshal([]byte(fingerprints), &fingerprintsStruct)
 	if err != nil {
 		return err
+	}
+
+	// Load custom fingerprints if a file path is provided
+	if customFilePath != "" {
+		customData, err := os.ReadFile(customFilePath)
+		if err != nil {
+			return err
+		}
+
+		var customFingerprints Fingerprints
+		err = json.Unmarshal(customData, &customFingerprints)
+		if err != nil {
+			return err
+		}
+
+		// Merge custom fingerprints into the existing ones
+		for app, fingerprint := range customFingerprints.Apps {
+			fingerprintsStruct.Apps[app] = fingerprint
+		}
 	}
 
 	s.original = &fingerprintsStruct
