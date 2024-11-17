@@ -12505,8 +12505,8 @@
                 "ClientJS": ""
             },
             "scriptSrc": [
-                "/clientjs/(?:(\\d.*?)/)?\\;version:\\1",
-                "/clientjs@(\\d.*?)/\\;version:\\1"
+                "/clientjs/([\\d.]+)/\\;version:\\1",
+                "/clientjs@([\\d.]+)\\;version:\\1"
             ],
             "description": "ClientJS is a JavaScript library for generating browser fingerprints, exposing all the browser data-points.",
             "website": "https://clientjs.org",
@@ -22727,11 +22727,6 @@
             "scriptSrc": [
                 "\\.fourthwall\\.com"
             ],
-            "meta": {
-                "version": [
-                    "^(.+)$\\;version:\\1\\;confidence:0"
-                ]
-            },
             "description": "Fourthwall helps to create and launch a branded website.",
             "website": "https://fourthwall.com/",
             "icon": "Fourthwall.svg"
