@@ -32125,6 +32125,7 @@
             "implies": [
                 "WordPress"
             ],
+            "description": "Kinsta is a leading managed WordPress hosting provider, prioritizing speed and security.",
             "website": "https://kinsta.com",
             "icon": "kinsta.svg"
         },
