@@ -19924,6 +19924,25 @@
             "website": "https://essential-addons.com/elementor/",
             "icon": "Essential Addons for Elementor.svg"
         },
+        "Essential Blocks": {
+            "cats": [
+                87
+            ],
+            "dom": {
+                "link#essential-blocks-frontend-style-css": {
+                    "exists": ""
+                },
+                "link[href*='/wp-content/uploads/eb-style/']": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "\u003cdiv[^\u003e]+class=[\"']wp-block-essential-blocks-*"
+            ],
+            "description": "Essential Blocks is a Gutenberg Blocks page builder plugin that adds extra functionality to the WordPress Block Editor.",
+            "website": "https://essential-blocks.com",
+            "icon": "essential-blocks.png"
+        },
         "Essential JS 2": {
             "cats": [
                 12,
@@ -23998,13 +24017,42 @@
             "website": "https://docs.generatepress.com/article/installing-gp-premium/",
             "icon": "generatepress.png"
         },
+        "Genesis blocks": {
+            "cats": [
+                87
+            ],
+            "dom": {
+                "link[href*='/wp-content/plugins/atomic-blocks']": {
+                    "exists": ""
+                },
+                "link[href*='/wp-content/plugins/genesis-blocks']": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "\u003cdiv[^\u003e]+class=[\"']wp-block-atomic-blocks-*"
+            ],
+            "scriptSrc": [
+                "/wp-content/themes/genesis-blocks/lib/js/"
+            ],
+            "description": "Premium block library \u0026 block editor enhancements from StudioPress.",
+            "website": "https://www.studiopress.com/genesis-blocks/",
+            "icon": "genesis-blocks.png"
+        },
         "Genesis theme": {
             "cats": [
                 80
             ],
-            "js": {
-                "genesisBlocksShare": "",
-                "genesis_responsive_menu": ""
+            "dom": {
+                "body[class*='genesis-breadcrumbs-hidden']": {
+                    "exists": ""
+                },
+                "body[class*='genesis-title-hidden']": {
+                    "exists": ""
+                },
+                "body[class*='theme-genesis']": {
+                    "exists": ""
+                }
             },
             "scriptSrc": [
                 "/wp-content/themes/genesis/lib/js/"
@@ -43540,6 +43588,22 @@
             "website": "https://www.post.at",
             "icon": "Post AG.svg"
         },
+        "Otter Blocks": {
+            "cats": [
+                87
+            ],
+            "dom": {
+                "link[href*='/wp-content/plugins/otter-blocks']": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "\u003cdiv[^\u003e]+class=[\"']wp-block-themeisle-blocks-*"
+            ],
+            "description": "Otter blocks is a Gutenberg Blocks page builder plugin that adds extra functionality to the WordPress Block Editor.",
+            "website": "https://wordpress.org/plugins/otter-blocks/",
+            "icon": "otter-blocks.png"
+        },
         "OtterText": {
             "cats": [
                 32
@@ -48083,6 +48147,22 @@
             "description": "Agnostic server Static Site CMS built for Windows, MacOS and Linux.",
             "website": "https://getpublii.com",
             "icon": "Publii.png"
+        },
+        "PublishPress Blocks": {
+            "cats": [
+                87
+            ],
+            "dom": {
+                "link[href*='/wp-content/plugins/advanced-gutenberg/assets/css/blocks.css?ver=([\\d\\.]+))?\\;version:\\1']": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "\u003cdiv[^\u003e]+class=[\"']wp-block-advgb-*"
+            ],
+            "description": "PublishPress Blocks is a Gutenberg Blocks page builder plugin that adds extra functionality to the WordPress Block Editor.",
+            "website": "https://publishpress.com/blocks/",
+            "icon": "publishpress-blocks.png"
         },
         "Publishrr": {
             "cats": [
@@ -65005,6 +65085,38 @@
             ],
             "description": "Twenty Twenty is the default WordPress theme for 2020.",
             "website": "https://wordpress.org/themes/twentytwenty",
+            "icon": "WordPress.svg"
+        },
+        "Twenty Twenty-Five": {
+            "cats": [
+                80
+            ],
+            "dom": {
+                "link[href*='/wp-content/themes/twentytwentyfive/']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "/wp-content/themes/twentytwentyfive/"
+            ],
+            "description": "Twenty Twenty-Five is the default WordPress theme for 2025.",
+            "website": "https://wordpress.org/themes/twentytwentyfive",
+            "icon": "WordPress.svg"
+        },
+        "Twenty Twenty-Four": {
+            "cats": [
+                80
+            ],
+            "dom": {
+                "link[href*='/wp-content/themes/twentytwentyfour/']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "/wp-content/themes/twentytwentyfour/"
+            ],
+            "description": "Twenty Twenty-Four is the default WordPress theme for 2024.",
+            "website": "https://wordpress.org/themes/twentytwentyfour",
             "icon": "WordPress.svg"
         },
         "Twenty Twenty-One": {
