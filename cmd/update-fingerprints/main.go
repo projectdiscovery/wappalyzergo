@@ -27,6 +27,7 @@ type Fingerprint struct {
 	Cats        []int                  `json:"cats"`
 	CSS         interface{}            `json:"css"`
 	Cookies     map[string]string      `json:"cookies"`
+	Dom         interface{}            `json:"dom"`
 	JS          map[string]string      `json:"js"`
 	Headers     map[string]string      `json:"headers"`
 	HTML        interface{}            `json:"html"`
@@ -36,6 +37,7 @@ type Fingerprint struct {
 	Implies     interface{}            `json:"implies"`
 	Description string                 `json:"description"`
 	Website     string                 `json:"website"`
+	Icon        string                 `json:"icon"`
 	CPE         string                 `json:"cpe"`
 }
 
@@ -48,29 +50,36 @@ type OutputFingerprints struct {
 
 // OutputFingerprint is a single piece of information about a tech validated and normalized
 type OutputFingerprint struct {
-	Cats        []int               `json:"cats,omitempty"`
-	CSS         []string            `json:"css,omitempty"`
-	Cookies     map[string]string   `json:"cookies,omitempty"`
-	JS          []string            `json:"js,omitempty"`
-	Headers     map[string]string   `json:"headers,omitempty"`
-	HTML        []string            `json:"html,omitempty"`
-	Script      []string            `json:"scripts,omitempty"`
-	ScriptSrc   []string            `json:"scriptSrc,omitempty"`
-	Meta        map[string][]string `json:"meta,omitempty"`
-	Implies     []string            `json:"implies,omitempty"`
-	Description string              `json:"description,omitempty"`
-	Website     string              `json:"website,omitempty"`
-	CPE         string              `json:"cpe,omitempty"`
+	Cats        []int                             `json:"cats,omitempty"`
+	CSS         []string                          `json:"css,omitempty"`
+	DOM         map[string]map[string]interface{} `json:"dom,omitempty"`
+	Cookies     map[string]string                 `json:"cookies,omitempty"`
+	JS          map[string]string                 `json:"js,omitempty"`
+	Headers     map[string]string                 `json:"headers,omitempty"`
+	HTML        []string                          `json:"html,omitempty"`
+	Script      []string                          `json:"scripts,omitempty"`
+	ScriptSrc   []string                          `json:"scriptSrc,omitempty"`
+	Meta        map[string][]string               `json:"meta,omitempty"`
+	Implies     []string                          `json:"implies,omitempty"`
+	Description string                            `json:"description,omitempty"`
+	Website     string                            `json:"website,omitempty"`
+	CPE         string                            `json:"cpe,omitempty"`
+	Icon        string                            `json:"icon,omitempty"`
 }
 
-const fingerprintURL = "https://raw.githubusercontent.com/Lissy93/wapalyzer/master/src/technologies/%s.json"
+var fingerprintURLs = []string{
+	"https://raw.githubusercontent.com/enthec/webappanalyzer/main/src/technologies/%s.json",
+	"https://raw.githubusercontent.com/HTTPArchive/wappalyzer/main/src/technologies/%s.json",
+}
 
 func makeFingerprintURLs() []string {
 	files := []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "_"}
 
 	fingerprints := make([]string, 0, len(files))
 	for _, item := range files {
-		fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
+		for _, fingerprintURL := range fingerprintURLs {
+			fingerprints = append(fingerprints, fmt.Sprintf(fingerprintURL, item))
+		}
 	}
 	return fingerprints
 }
@@ -153,23 +162,47 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 		output := OutputFingerprint{
 			Cats:        fingerprint.Cats,
 			Cookies:     make(map[string]string),
+			DOM:         make(map[string]map[string]interface{}),
 			Headers:     make(map[string]string),
+			JS:          make(map[string]string),
 			Meta:        make(map[string][]string),
 			Description: fingerprint.Description,
 			Website:     fingerprint.Website,
 			CPE:         fingerprint.CPE,
+			Icon:        fingerprint.Icon,
 		}
 
 		for cookie, value := range fingerprint.Cookies {
 			output.Cookies[strings.ToLower(cookie)] = strings.ToLower(value)
 		}
-		for js := range fingerprint.JS {
-			output.JS = append(output.JS, strings.ToLower(js))
+		for k, v := range fingerprint.JS {
+			output.JS[k] = v
 		}
-		sort.Strings(output.JS)
 
 		for header, pattern := range fingerprint.Headers {
 			output.Headers[strings.ToLower(header)] = strings.ToLower(pattern)
+		}
+
+		// Use reflection for DOM as well
+		if fingerprint.Dom != nil {
+			v := reflect.ValueOf(fingerprint.Dom)
+
+			switch v.Kind() {
+			case reflect.String:
+				data := v.Interface().(string)
+				output.DOM[data] = map[string]interface{}{"exists": ""}
+			case reflect.Slice:
+				data := v.Interface().([]interface{})
+				for _, pattern := range data {
+					pat := pattern.(string)
+					output.DOM[pat] = map[string]interface{}{"exists": ""}
+				}
+			case reflect.Map:
+				data := v.Interface().(map[string]interface{})
+				for pattern, value := range data {
+					output.DOM[pattern] = value.(map[string]interface{})
+				}
+			}
 		}
 
 		// Use reflection type switch for determining HTML tag type
