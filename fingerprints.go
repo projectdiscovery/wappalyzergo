@@ -20,7 +20,7 @@ type Fingerprint struct {
 	Cats        []int               `json:"cats"`
 	CSS         []string            `json:"css"`
 	Cookies     map[string]string   `json:"cookies"`
-	JS          []string            `json:"js"`
+	JS          map[string]string   `json:"js"`
 	Headers     map[string]string   `json:"headers"`
 	HTML        []string            `json:"html"`
 	Script      []string            `json:"scripts"`
