@@ -67308,6 +67308,27 @@
             "website": "https://vercel.com/analytics",
             "icon": "vercel.svg"
         },
+        "Vercel Speed Insights": {
+            "cats": [
+                10
+            ],
+            "dom": {
+                "script[data-sdkn='@vercel/speed-insights/next']": {
+                    "attributes": {
+                        "data-sdkv": "^(.+)$\\;version:\\1"
+                    }
+                }
+            },
+            "js": {
+                "si": ""
+            },
+            "scriptSrc": [
+                "/_vercel/speed-insights/script\\.js"
+            ],
+            "description": "Vercel Speed Insights provides you with a detailed view of your website's performance metrics, based on Core Web Vitals.",
+            "website": "https://vercel.com/docs/speed-insights",
+            "icon": "vercel.svg"
+        },
         "Vergic": {
             "cats": [
                 52
