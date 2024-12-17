@@ -34,8 +34,8 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 
 			regexPattern = strings.ReplaceAll(regexPattern, "/", "\\/")
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
-			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
-			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,250}")
+			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,100}")
+			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,100}")
 			regexPattern = strings.ReplaceAll(regexPattern, "__escapedPlus__", "\\+")
 
 			var err error

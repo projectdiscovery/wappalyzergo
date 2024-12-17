@@ -14,19 +14,19 @@ func TestParsePattern(t *testing.T) {
 		{
 			name:          "Basic pattern",
 			input:         "Mage.*",
-			expectedRegex: "(?i)Mage.{0,250}",
+			expectedRegex: "(?i)Mage.{0,100}",
 			expectedConf:  100,
 		},
 		{
 			name:          "With confidence",
 			input:         "Mage.*\\;confidence:50",
-			expectedRegex: "(?i)Mage.{0,250}",
+			expectedRegex: "(?i)Mage.{0,100}",
 			expectedConf:  50,
 		},
 		{
 			name:          "With version",
 			input:         "jquery-([0-9.]+)\\.js\\;version:\\1",
-			expectedRegex: "(?i)jquery-([0-9.]{1,250})\\.js",
+			expectedRegex: "(?i)jquery-([0-9.]{1,100})\\.js",
 			expectedConf:  100,
 			expectedVer:   "\\1",
 		},
