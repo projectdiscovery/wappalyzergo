@@ -30657,16 +30657,16 @@
                 1
             ],
             "dom": {
-                "a[href*='www.jadu.net']": {
-                    "exists": ""
+                "footer.site-footer": {
+                    "text": "Designed and powered by Jadu"
                 }
             },
             "headers": {
-                "node": "jadu-web-1"
+                "node": "^jadu-web-."
             },
-            "description": "The Jadu Digital Platform provides the foundation of accessible, responsive and award-winning Websites, Forms, CRM and Portal solutions.",
-            "website": "https://www.jadu.net/",
-            "icon": "jadu.png"
+            "description": "Jadu is a commercial Digital Experience Platform focused on customer self-service with accessibility at the core. Websites, Forms, CRM and Case Management written in PHP with integrations to many enterprise systems.",
+            "website": "https://www.jadu.net",
+            "icon": "Jadu.png"
         },
         "Jahia DX": {
             "cats": [
@@ -43571,12 +43571,15 @@
                 67
             ],
             "js": {
-                "Osano": ""
+                "Osano": "",
+                "Osano.cm.cmpVersion": "(.+)\\;version:\\1"
             },
             "scriptSrc": [
-                "cmp\\.osano\\.com/"
+                "ajax/libs/cookieconsent2?/([\\d\\.]+)/cookieconsent.min.js\\;version:\\1",
+                "cmp\\.osano\\.com/",
+                "npm/cookieconsent@(\\d)/build/cookieconsent.min.js\\;version:\\1"
             ],
-            "description": "Osano is a data privacy platform that helps your website become compliant with laws such as GDPR and CCPA.",
+            "description": "Osano is a data privacy platform that helps your website comply with regulations such as GDPR and CCPA.",
             "website": "https://www.osano.com",
             "icon": "Osano.svg"
         },
