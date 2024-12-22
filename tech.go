@@ -3,13 +3,17 @@ package wappalyzer
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"strings"
+
+	"github.com/projectdiscovery/utils/memoize"
 )
 
 // Wappalyze is a client for working with tech detection
 type Wappalyze struct {
 	original     *Fingerprints
 	fingerprints *CompiledFingerprints
+	memocache    *memoize.Memoizer
 }
 
 // New creates a new tech detection instance
@@ -24,6 +28,12 @@ func New() (*Wappalyze, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	wappalyze.memocache, err = memoize.New(memoize.WithMaxSize(1024))
+	if err != nil {
+		return nil, err
+	}
+
 	return wappalyze, nil
 }
 
@@ -58,6 +68,40 @@ func (s *Wappalyze) loadFingerprints() error {
 // Body should not be mutated while this function is being called, or it may
 // lead to unexpected things.
 func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[string]struct{} {
+	result, _, _ := s.memocache.Do(fmt.Sprintf("%s-%s", headers, body), func() (interface{}, error) {
+		uniqueFingerprints := NewUniqueFingerprints()
+
+		// Lowercase everything that we have received to check
+		normalizedBody := bytes.ToLower(body)
+		normalizedHeaders := s.normalizeHeaders(headers)
+
+		// Run header based fingerprinting if the number
+		// of header checks if more than 0.
+		for _, app := range s.checkHeaders(normalizedHeaders) {
+			uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
+		}
+
+		cookies := s.findSetCookie(normalizedHeaders)
+		// Run cookie based fingerprinting if we have a set-cookie header
+		if len(cookies) > 0 {
+			for _, app := range s.checkCookies(cookies) {
+				uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
+			}
+		}
+
+		// Check for stuff in the body finally
+		bodyTech := s.checkBody(normalizedBody)
+		for _, app := range bodyTech {
+			uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
+		}
+		return uniqueFingerprints.GetValues(), nil
+	})
+
+	return result.(map[string]struct{})
+}
+
+func (s *Wappalyze) Fingerprint1(headers map[string][]string, body []byte) map[string]struct{} {
+	//result, _, _ := s.memocache.Do(fmt.Sprintf("%s-%s", headers, body), func() (interface{}, error) {
 	uniqueFingerprints := NewUniqueFingerprints()
 
 	// Lowercase everything that we have received to check
@@ -83,7 +127,10 @@ func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[st
 	for _, app := range bodyTech {
 		uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 	}
-	return uniqueFingerprints.GetValues()
+	return uniqueFingerprints.GetValues() //, nil
+	// })
+
+	// return result.(map[string]struct{})
 }
 
 type UniqueFingerprints struct {
