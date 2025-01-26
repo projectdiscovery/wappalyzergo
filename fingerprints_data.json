@@ -206,6 +206,21 @@
             "website": "https://www.5centscdn.net",
             "icon": "5centsCDN.svg"
         },
+        "6Valley eCommerce CMS": {
+            "cats": [
+                1,
+                6
+            ],
+            "cookies": {
+                "6valley_session": ""
+            },
+            "scripts": [
+                "6valley_cookie_consent"
+            ],
+            "description": "6Valley eCommerce CMS is a multi-vendor platform designed to facilitate business launches by providing tools for managing vendors, products, and transactions within an ecommerce ecosystem.",
+            "website": "https://6valley.app",
+            "icon": "6ValleyEcommerceCMS.svg"
+        },
         "6sense": {
             "cats": [
                 32,
@@ -2037,6 +2052,9 @@
             "cats": [
                 1
             ],
+            "js": {
+                "hlx.RUM_MANUAL_ENHANCE": ""
+            },
             "scriptSrc": [
                 "^.+/scripts/lib-franklin\\.js$"
             ],
@@ -2954,6 +2972,18 @@
             "website": "https://akaunting.com",
             "icon": "akaunting.svg"
         },
+        "Akavita": {
+            "cats": [
+                10,
+                36
+            ],
+            "scriptSrc": [
+                "adlik\\.akavita\\.com/"
+            ],
+            "description": "Akavita is a Russian-based service offering analytics and advertising solutions.",
+            "website": "https://akavita.com",
+            "icon": "Akavita.svg"
+        },
         "Akero": {
             "cats": [
                 32
@@ -3315,6 +3345,22 @@
             "website": "https://aioseo.com",
             "cpe": "cpe:2.3:a:aioseo:all_in_one_seo:*:*:*:*:*:wordpress:*:*",
             "icon": "AIOSEO.svg"
+        },
+        "AllClients": {
+            "cats": [
+                32
+            ],
+            "dom": {
+                "form[action*='www.allclients.com/']": {
+                    "exists": ""
+                },
+                "iframe[href*='www.allclients.com/']": {
+                    "exists": ""
+                }
+            },
+            "description": "AllClients is an all-in-one platform that integrates contact management and marketing automation.",
+            "website": "https://allclients.com",
+            "icon": "AllClients.svg"
         },
         "Allbookable": {
             "cats": [
@@ -4955,6 +5001,12 @@
             "cats": [
                 72
             ],
+            "js": {
+                "onRefreshAppointoWidget": ""
+            },
+            "scripts": [
+                "app\\.appointo\\.me"
+            ],
             "scriptSrc": [
                 "/appointo-14/assets/appointo_bundle.js"
             ],
@@ -5018,6 +5070,22 @@
             "cpe": "cpe:2.3:a:appwrite:appwrite:*:*:*:*:*:*:*:*",
             "icon": "Appwrite.svg"
         },
+        "Appzi": {
+            "cats": [
+                90
+            ],
+            "js": {
+                "appzi.At": "",
+                "appziSettings": "",
+                "apzbtgtr": ""
+            },
+            "scriptSrc": [
+                "app\\.appzi\\.io/"
+            ],
+            "description": "Appzi is a customer experience software that is a user feedback and bug reporting tool.",
+            "website": "https://www.appzi.com",
+            "icon": "Appzi.svg"
+        },
         "Aprimo": {
             "cats": [
                 95
@@ -5076,6 +5144,19 @@
             "description": "AquilaCMS is a fullstack, headless CMS written in JavaScript.",
             "website": "https://www.aquila-cms.com/",
             "icon": "AquilaCMS.svg"
+        },
+        "Arabot": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "arabotChatScript": "",
+                "arabotSelector": "",
+                "injectArabotScript": ""
+            },
+            "description": "Arabot is a no-code chatbot platform designed to automate customer interactions and service fulfillment at scale.",
+            "website": "https://arabot.io",
+            "icon": "Arabot.svg"
         },
         "Arastta": {
             "cats": [
@@ -5273,6 +5354,20 @@
             "description": "Arsys is a Spanish domain registrar.",
             "website": "https://www.arsys.es",
             "icon": "arsys.png"
+        },
+        "ArtiBot": {
+            "cats": [
+                52,
+                53
+            ],
+            "js": {
+                "ArtiBot": "",
+                "_artibotLauncherInitializer": "",
+                "artibotApi": ""
+            },
+            "description": "ArtiBot is a chatbot designed for websites, providing automated assistance and customer engagement through conversational interactions.",
+            "website": "https://www.artibot.ai",
+            "icon": "ArtiBot.svg"
         },
         "Artifactory": {
             "cats": [
@@ -5484,6 +5579,34 @@
             "website": "https://www.asgaros.de",
             "icon": "Asgaros Forum.png"
         },
+        "AskNicely": {
+            "cats": [
+                90
+            ],
+            "js": {
+                "askNicelyConversation": ""
+            },
+            "scriptSrc": [
+                "static\\.asknice\\.ly/"
+            ],
+            "description": "AskNicely is a platform that measures and improves customer happiness using the Net Promoter Score (NPS) framework.",
+            "website": "https://www.asknicely.com",
+            "icon": "AskNicely.svg"
+        },
+        "AskSpot": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "askspot.Chatbot": ""
+            },
+            "scripts": [
+                "app\\.askspot\\.ai"
+            ],
+            "description": "AskSpot is an AI chatbot platform tailored for marketing, digital, and web development agencies.",
+            "website": "https://askspot.ai",
+            "icon": "AskSpot.svg"
+        },
         "Asksuite": {
             "cats": [
                 104
@@ -5648,6 +5771,21 @@
             "description": "Athena Search is a customizable autocomplete, feature-rich dashboard, smart predictions, real-time reports search engine developed from scratch by Syncit Group’s.",
             "website": "https://www.athenasearch.io",
             "icon": "Athena Search.svg"
+        },
+        "Atlasmic": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "atlasmic": "",
+                "atlasmic.VERSION": "^([\\d\\.]+)$\\;version:\\1"
+            },
+            "scripts": [
+                "\\.atlasmic\\.com"
+            ],
+            "description": "Atlasmic is a live chat and business messenger platform designed to support modern online businesses.",
+            "website": "https://atlasmic.com",
+            "icon": "Atlasmic.svg"
         },
         "Atlassian Bitbucket": {
             "cats": [
@@ -6006,6 +6144,17 @@
             "website": "https://www.automanager.io",
             "icon": "AutoManager.svg"
         },
+        "AutoOps": {
+            "cats": [
+                72
+            ],
+            "js": {
+                "AutoOps.addSourceTracking": ""
+            },
+            "description": "AutoOps is an online scheduling tool that integrates with shop management softwares for auto shops.",
+            "website": "https://www.autoops.com/",
+            "icon": "AutoOps.svg"
+        },
         "Autocommerce": {
             "cats": [
                 100
@@ -6016,6 +6165,17 @@
             "description": "Autocommerce is a product recommendation app for Shopify stores, similar to Amazon, designed to enhance the shopping experience by suggesting relevant products to customers based on their browsing and purchase history.",
             "website": "https://autocommerce.io",
             "icon": "Autocommerce.svg"
+        },
+        "Autoconf": {
+            "cats": [
+                1
+            ],
+            "scriptSrc": [
+                "static\\.autoconf\\.com"
+            ],
+            "description": "Autoconf is a system designed for managing car dealership operations, including inventory, sales, and customer data.",
+            "website": "https://autoconf.com.br",
+            "icon": "Autoconf.svg"
         },
         "Autoketing": {
             "cats": [
@@ -6786,6 +6946,19 @@
             "website": "https://bambuser.com",
             "icon": "Bambuser.png"
         },
+        "Banana Splash": {
+            "cats": [
+                32
+            ],
+            "scripts": [
+                "my\\.banana-splash\\.com"
+            ],
+            "scriptSrc": [
+                "my\\.banana-splash\\.com/"
+            ],
+            "description": "Banana Splash is a mobile lead generation system designed to help businesses attract and capture potential customer information.",
+            "website": "https://www.banana-splash.com"
+        },
         "BandsInTown Events Widget": {
             "cats": [
                 5
@@ -6993,6 +7166,21 @@
             "description": "Batch is a web-push notifications technology provider.",
             "website": "https://batch.com",
             "icon": "Batch.svg"
+        },
+        "Batchbook": {
+            "cats": [
+                53
+            ],
+            "dom": {
+                "iframe[src*='.batchbook.com']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.batchbook\\.com"
+            ],
+            "description": "Batchbook is a customer relationship management (CRM) tool designed for small businesses.",
+            "website": "https://batchbook.com"
         },
         "Batflat": {
             "cats": [
@@ -7207,6 +7395,19 @@
             "description": "Beeswax offers Bidder-as-a-Service solution.",
             "website": "https://www.beeswax.com/",
             "icon": "Beeswax.png"
+        },
+        "Behzi": {
+            "cats": [
+                51
+            ],
+            "meta": {
+                "generator": [
+                    "^behzi$"
+                ]
+            },
+            "description": "Behzi is an all-in-one Iranian platform providing services such as event organization, tours, school registrations, and store discounts.",
+            "website": "https://behzi.com",
+            "icon": "Behzi.svg"
         },
         "Bench": {
             "cats": [
@@ -9035,6 +9236,19 @@
             "website": "https://botpenguin.com",
             "icon": "BotPenguin.svg"
         },
+        "BotStar": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "BotStar.appId": "",
+                "BotStarApi": "",
+                "BotStarUp": ""
+            },
+            "description": "BotStar is a platform for creating chatbots for websites and messaging applications.",
+            "website": "https://botstar.com",
+            "icon": "BotStar.svg"
+        },
         "BotUp": {
             "cats": [
                 52
@@ -10451,6 +10665,17 @@
             "website": "https://www.ctt.pt",
             "icon": "CTT.svg"
         },
+        "CUE": {
+            "cats": [
+                1
+            ],
+            "scripts": [
+                "\\.cue\\.cloud"
+            ],
+            "description": "CUE is a unified media enterprise platform tailored for news media organizations seeking efficiency and revenue growth in the media market.",
+            "website": "https://www.stibodx.com/",
+            "icon": "CUE.svg"
+        },
         "Caast.tv": {
             "cats": [
                 5
@@ -11179,6 +11404,21 @@
             "website": "https://www.cartkit.com",
             "icon": "CartKit.svg"
         },
+        "CartPops": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "CartPops.drawer": "",
+                "CartPopsConfig": ""
+            },
+            "implies": [
+                "WooCommerce"
+            ],
+            "description": "CartPops is a conversion-optimized AJAX fly-out cart solution for WooCommerce that replaces the traditional cart page and is compatible with any theme.",
+            "website": "https://cartpops.com",
+            "icon": "CartPops.svg"
+        },
         "CartStack": {
             "cats": [
                 98
@@ -11375,6 +11615,22 @@
             "description": "Celeritas offers transportation logistics services for package deliveries.",
             "website": "https://celeritastransporte.com",
             "icon": "Celeritas.svg"
+        },
+        "Cellxpert": {
+            "cats": [
+                71
+            ],
+            "dom": {
+                "link[href*='.cellxpert.com/']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.cellxpert\\.com/"
+            ],
+            "description": "Cellxpert is a SaaS platform for affiliate and partner program management, providing tools for tracking, reporting, and optimizing performance-based marketing campaigns.",
+            "website": "https://www.cellxpert.com",
+            "icon": "Cellxpert.svg"
         },
         "Celum": {
             "cats": [
@@ -11740,6 +11996,18 @@
             "website": "https://www.chatbot.com",
             "icon": "ChatBot.svg"
         },
+        "ChatFood": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "ChatFoodWidget": "",
+                "ChatFoodWidgetClient": ""
+            },
+            "description": "ChatFood is a platform providing mobile ordering tailored for hospitality brands.",
+            "website": "https://www.chatfood.io",
+            "icon": "ChatFood.svg"
+        },
         "ChatGen": {
             "cats": [
                 52
@@ -11826,6 +12094,20 @@
             "website": "https://chatango.com",
             "icon": "Chatango.png"
         },
+        "Chatbaby": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "$$chatbaby": ""
+            },
+            "scriptSrc": [
+                "\\.chatbaby\\.co/"
+            ],
+            "description": "Chatbaby is a service for creating custom ChatGPT chatbots tailored to website content.",
+            "website": "https://chatbaby.co",
+            "icon": "Chatbaby.svg"
+        },
         "Chatbase": {
             "cats": [
                 52
@@ -11859,6 +12141,37 @@
             "description": "Chatify is a chat solution for websites seeking to enhance customer engagement.",
             "website": "https://www.chatify.com",
             "icon": "Chatify.svg"
+        },
+        "Chative": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "Chative.app_id": "",
+                "ChativeApi": "",
+                "ChativeEvents": ""
+            },
+            "scriptSrc": [
+                "\\.chative\\.io/"
+            ],
+            "description": "Chative is a platform that provides live chat and chatbot solutions for real-time customer interactions.",
+            "website": "https://chative.io",
+            "icon": "Chative.svg"
+        },
+        "Chatlio": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "ChatlioReact": "",
+                "ChatlioReactDOM": ""
+            },
+            "scriptSrc": [
+                "w\\.chatlio\\.com/"
+            ],
+            "description": "Chatlio is a live chat solution that integrates with Slack, enabling real-time communication and customer support directly within the Slack platform.",
+            "website": "https://chatlio.com",
+            "icon": "Chatlio.svg"
         },
         "Chatlyn": {
             "cats": [
@@ -11914,6 +12227,20 @@
             "description": "Chatt is an all-in-one platform that provides businesses with reviews, messaging, and payment solutions.",
             "website": "https://getchatt.com",
             "icon": "Chatt.svg"
+        },
+        "Chatway": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "$chatway": ""
+            },
+            "scriptSrc": [
+                "cdn\\.chatway\\.app/"
+            ],
+            "description": "Chatway is a live chat tool for websites, designed to facilitate customer engagement through real-time conversations.",
+            "website": "https://chatway.app",
+            "icon": "Chatway.svg"
         },
         "Chatwoot": {
             "cats": [
@@ -12486,6 +12813,18 @@
             "website": "https://www.classy.org/",
             "icon": "classy.png"
         },
+        "Clear": {
+            "cats": [
+                16
+            ],
+            "js": {
+                "ClearMe.Environments": "",
+                "clearMeClientID": ""
+            },
+            "description": "Clear is a platform that offers secure identity verification.",
+            "website": "https://www.clearme.com",
+            "icon": "Clear.svg"
+        },
         "ClearSale": {
             "cats": [
                 10
@@ -12805,6 +13144,17 @@
             "website": "https://www.clicksign.com",
             "icon": "Clicksign.svg"
         },
+        "Clickskeks": {
+            "cats": [
+                67
+            ],
+            "js": {
+                "Clickskeks": ""
+            },
+            "description": "Clickskeks is an all-in-one cookie consent management platform for businesses.",
+            "website": "https://www.clickskeks.at/",
+            "icon": "Clickskeks.svg"
+        },
         "Clicktripz": {
             "cats": [
                 36
@@ -12840,6 +13190,22 @@
             "description": "Clicky is web an analytics tool which helps you to get real-time analysis including spy view.",
             "website": "https://getclicky.com",
             "icon": "Clicky.png"
+        },
+        "Client Chat Live": {
+            "cats": [
+                52
+            ],
+            "dom": {
+                "link[href*='platform.clientchatlive.com/']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.clientchatlive\\.com/"
+            ],
+            "description": "Client Chat Live is a tool that converts website visitors into clients through live chat functionality.",
+            "website": "https://clientchatlive.com",
+            "icon": "ClientChatLive.svg"
         },
         "ClientJS": {
             "cats": [
@@ -13319,6 +13685,18 @@
             "description": "Clutch review widgets are stand-alone applications that you can embed on your website to show your dynamic ratings and reviews.",
             "website": "https://clutch.co/content/add-review-widget-your-website",
             "icon": "clutch.svg"
+        },
+        "CmonSite": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "BASEURL": "www\\.cmonsite\\.fr",
+                "CmonSite.CookieManagement": ""
+            },
+            "description": "CmonSite is a French-based platform for building websites and ecommerce stores.",
+            "website": "https://www.cmonsite.fr",
+            "icon": "CmonSite.svg"
         },
         "CoConstruct": {
             "cats": [
@@ -16423,6 +16801,17 @@
             "cpe": "cpe:2.3:a:datatables:datatables.net:*:*:*:*:*:*:*:*",
             "icon": "DataTables.png"
         },
+        "Datacrush": {
+            "cats": [
+                32
+            ],
+            "scripts": [
+                "js\\.datacrush\\.la"
+            ],
+            "description": "Datacrush is a marketing automation platform.",
+            "website": "https://www.datacrush.la",
+            "icon": "Datacrush.svg"
+        },
         "Datadog": {
             "cats": [
                 78,
@@ -16439,6 +16828,21 @@
             "website": "https://www.datadoghq.com",
             "icon": "Datadog.svg"
         },
+        "Datalitics": {
+            "cats": [
+                32
+            ],
+            "js": {
+                "createWPDatalitics": "",
+                "createWPRedirectDatalitics": ""
+            },
+            "scriptSrc": [
+                "app\\.datalitics\\.com\\.br/"
+            ],
+            "description": "Datalitics is a platform designed for advanced lead tracking, offering tools to monitor, analyze, and optimize customer acquisition efforts.",
+            "website": "https://datalitics.com.br",
+            "icon": "Datalitics.svg"
+        },
         "Datanyze": {
             "cats": [
                 10
@@ -16449,6 +16853,18 @@
             "description": "Datanyze is a provider of visitor tracking script, offering sales intelligence and lead generation software solutions.",
             "website": "https://www.datanyze.com",
             "icon": "Datanyze.svg"
+        },
+        "Datarize": {
+            "cats": [
+                32,
+                53
+            ],
+            "scriptSrc": [
+                "assets\\.datarize\\.ai/"
+            ],
+            "description": "Datarize is a CRM marketing solution designed to streamline customer relationship management and enhance targeted marketing efforts.",
+            "website": "https://datarize.ai",
+            "icon": "Datarize.svg"
         },
         "Datascape": {
             "cats": [
@@ -16462,6 +16878,17 @@
             "description": "Datascape is a cloud-based solution designed to create new ways for councils to work and better engage with their communities.",
             "website": "https://datacom.com/nz/en/products/datascape",
             "icon": "Datascape.svg"
+        },
+        "Dataships": {
+            "cats": [
+                16
+            ],
+            "scriptSrc": [
+                "\\.dataships\\.io/"
+            ],
+            "description": "Dataships is a platform that ensures compliance with global data privacy regulations, helping businesses manage and protect customer data according to international standards.",
+            "website": "https://dataships.io",
+            "icon": "Dataships.svg"
         },
         "Datatrics": {
             "cats": [
@@ -16715,6 +17142,20 @@
             "description": "Delm is a customisable and multilingual delivery date estimation app for Shopify, providing shipping information.",
             "website": "https://delm.io",
             "icon": "Delm.svg"
+        },
+        "Dema": {
+            "cats": [
+                10
+            ],
+            "scripts": [
+                "\\.dema\\.ai"
+            ],
+            "scriptSrc": [
+                "\\.dema\\.ai"
+            ],
+            "description": "Dema is a next-generation ecommerce analytics system designed to provide insights and data-driven solutions for online businesses.",
+            "website": "https://www.dema.ai",
+            "icon": "Dema.svg"
         },
         "Demandbase": {
             "cats": [
@@ -18752,6 +19193,17 @@
             "website": "https://www.oclc.org/en/ezproxy.html",
             "icon": "default.svg"
         },
+        "EarlyParrot": {
+            "cats": [
+                94
+            ],
+            "scripts": [
+                "app\\.earlyparrot\\.com"
+            ],
+            "description": "EarlyParrot is a referral marketing platform that supports coaches, course creators, and event hosts in expanding launches, webinars, and email lists through effective referral strategies.",
+            "website": "https://www.earlyparrot.com",
+            "icon": "EarlyParrot.svg"
+        },
         "EaselJS": {
             "cats": [
                 59
@@ -18939,6 +19391,19 @@
             ],
             "description": "EasyLog is a logistics company based in Brazil.",
             "website": "https://www.easylog.com.br"
+        },
+        "Easysize": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "EasySize": "",
+                "EasySizeDebugEnable": "",
+                "EasySizeParametersDebug": ""
+            },
+            "description": "Easysize is a system that provides clothing size recommendations to enhance fit and reduce sizing errors.",
+            "website": "https://www.easysize.me",
+            "icon": "Easysize.svg"
         },
         "Ebasnet": {
             "cats": [
@@ -19861,6 +20326,19 @@
             "cpe": "cpe:2.3:a:emberjs:ember.js:*:*:*:*:*:*:*:*",
             "icon": "Ember.js.png"
         },
+        "Emojicom": {
+            "cats": [
+                73
+            ],
+            "js": {
+                "$emojicom": "",
+                "EMOJICOM_BASE_PATH": "cdn\\.emojicom\\.io/",
+                "emojicom": ""
+            },
+            "description": "Emojicom is a tool for collecting feedback through emojis, enabling the capture of visitors' emotions.",
+            "website": "https://emojicom.io",
+            "icon": "Emojicom.svg"
+        },
         "Emotion": {
             "cats": [
                 12,
@@ -20622,6 +21100,20 @@
             "website": "https://www.everflow.io",
             "icon": "Everflow.png"
         },
+        "Everviz": {
+            "cats": [
+                10
+            ],
+            "js": {
+                "everviz.beforePrint": ""
+            },
+            "scriptSrc": [
+                "app\\.everviz\\.com/"
+            ],
+            "description": "Everviz is an online tool for creating interactive charts and maps, enabling data visualization with customizable features.",
+            "website": "https://www.everviz.com",
+            "icon": "Everviz.svg"
+        },
         "EveryAction": {
             "cats": [
                 111
@@ -21144,6 +21636,17 @@
             "website": "https://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx",
             "icon": "FAST Search for SharePoint.png"
         },
+        "FC2 Analyzer": {
+            "cats": [
+                10
+            ],
+            "scriptSrc": [
+                "\\.fc2\\.com/"
+            ],
+            "description": "FC2 Analyzer is a platform designed to track and analyze affiliate system performance, providing insights into traffic, conversions, and revenue metrics.",
+            "website": "https://fc2.com",
+            "icon": "FC2Analyzer.svg"
+        },
         "FMG Suite": {
             "cats": [
                 32
@@ -21482,6 +21985,11 @@
                 6,
                 41
             ],
+            "dom": {
+                "form[action*='sites.fastspring.com']": {
+                    "exists": ""
+                }
+            },
             "js": {
                 "fastspring": "",
                 "fastspringAfterMarkupCallback": ""
@@ -22600,6 +23108,21 @@
             "website": "https://flowplayer.com",
             "icon": "Flowplayer.svg"
         },
+        "Fluid Player": {
+            "cats": [
+                14
+            ],
+            "js": {
+                "fluidPlayer": "",
+                "webpackChunkfluid_player": ""
+            },
+            "scriptSrc": [
+                "cdn\\.fluidplayer\\.com"
+            ],
+            "description": "Fluid Player is an open-source HTML5 video player.",
+            "website": "https://www.fluidplayer.com",
+            "icon": "FluidPlayer.svg"
+        },
         "Flurry Analytics": {
             "cats": [
                 10
@@ -23372,6 +23895,17 @@
             "description": "Frames is a tool that allows you to create wireframes in real time, design and develop systems, and access a library of components to help you build custom websites quickly and easily, without any restrictions on your creative input.",
             "website": "https://getframes.io",
             "icon": "Frames.svg"
+        },
+        "Framework7": {
+            "cats": [
+                26
+            ],
+            "js": {
+                "Framework7.Component": ""
+            },
+            "description": "Framework7 is a mobile HTML framework designed for creating iOS and Android applications with a native-like user experience.",
+            "website": "https://framework7.io",
+            "icon": "Framework7.svg"
         },
         "France Express": {
             "cats": [
@@ -24776,6 +25310,19 @@
             },
             "website": "https://getsatisfaction.com/corp/",
             "icon": "Get Satisfaction.png"
+        },
+        "GetAuto": {
+            "cats": [
+                6
+            ],
+            "dom": {
+                "link[href*='cdn.getauto.com/']": {
+                    "exists": ""
+                }
+            },
+            "description": "GetAuto is a platform offering an inventory of used cars available for purchase.",
+            "website": "https://getauto.com",
+            "icon": "GetAuto.svg"
         },
         "GetButton": {
             "cats": [
@@ -27620,6 +28167,17 @@
             "website": "https://www.happyfox.com/live-chat",
             "icon": "HappyFox.svg"
         },
+        "HappySync": {
+            "cats": [
+                32
+            ],
+            "scriptSrc": [
+                "api\\.happysync\\.io/"
+            ],
+            "description": "HappySync is a Korean-developed tool designed for marketing automation and conversion optimization.",
+            "website": "https://www.happysync.io",
+            "icon": "HappySync.svg"
+        },
         "Haptik": {
             "cats": [
                 52
@@ -29819,6 +30377,19 @@
             "website": "https://ikas.com",
             "icon": "Ikas.svg"
         },
+        "Ilias": {
+            "cats": [
+                21
+            ],
+            "js": {
+                "il.Accordion": "",
+                "ilAccordionsInits": "",
+                "ilTagging": ""
+            },
+            "description": "Ilias is an open source learning management system.",
+            "website": "https://www.ilias.de",
+            "icon": "Ilias.svg"
+        },
         "Iluria": {
             "cats": [
                 6,
@@ -31010,6 +31581,9 @@
             },
             "html": [
                 "\u003clink[^\u003e]+ipb_[^\u003e]+\\.css"
+            ],
+            "scripts": [
+                "ipb_url_filter_option"
             ],
             "scriptSrc": [
                 "jscripts/ips_"
@@ -33854,6 +34428,22 @@
             "website": "https://kuroco.app",
             "icon": "Kuroco.svg"
         },
+        "KuronekoServer CDN": {
+            "cats": [
+                31
+            ],
+            "dom": {
+                "link[href*='cdn.krnk.org/']": {
+                    "exists": ""
+                }
+            },
+            "scripts": [
+                "cdn\\.krnk\\.org/"
+            ],
+            "description": "KuronekoServer CDN is a distributed content delivery network utilizing VPS and Cloudflare to enhance performance and reliability.",
+            "website": "https://cdn.krnk.org",
+            "icon": "KuronekoServerCDN.svg"
+        },
         "Kustomer": {
             "cats": [
                 52,
@@ -34171,6 +34761,17 @@
             "description": "LaunchDarkly is a continuous delivery and feature flags as a service platform that integrates into a company's current development cycle.",
             "website": "https://launchdarkly.com",
             "icon": "LaunchDarkly.svg"
+        },
+        "LaunchNotes": {
+            "cats": [
+                85
+            ],
+            "scriptSrc": [
+                "\\.launchnotes\\.com/"
+            ],
+            "description": "LaunchNotes is a platform that aligns teams with product development and release pipelines while keeping users informed and engaged with product updates.",
+            "website": "https://launchnotes.com",
+            "icon": "LaunchNotes.svg"
         },
         "Launchrock": {
             "cats": [
@@ -36403,6 +37004,17 @@
             "website": "https://lume.land",
             "icon": "Lume.svg"
         },
+        "Lumino": {
+            "cats": [
+                10
+            ],
+            "scripts": [
+                "api\\.getlumino\\.ai"
+            ],
+            "description": "Lumino is a data platform that helps Shopify brands optimize marketing, conversions, and user experience by leveraging data.",
+            "website": "https://getlumino.ai",
+            "icon": "Lumino.svg"
+        },
         "Lumio": {
             "cats": [
                 10
@@ -36492,6 +37104,17 @@
             ],
             "description": "A very simple search index.",
             "website": "https://lunrjs.com/"
+        },
+        "Luveedu Cloud": {
+            "cats": [
+                88
+            ],
+            "scriptSrc": [
+                "cdn\\.luveedu\\.com/"
+            ],
+            "description": "Luveedu Cloud is a domain and web hosting platform.",
+            "website": "https://cloud.luveedu.com",
+            "icon": "LuveeduCloud.svg"
         },
         "Lychee": {
             "cats": [
@@ -36994,6 +37617,22 @@
             ],
             "description": "Magewire is a Laravel Livewire port for Magento 2.",
             "website": "https://github.com/magewirephp/magewire"
+        },
+        "Magic UI": {
+            "cats": [
+                66
+            ],
+            "dom": {
+                "a[href*='magicui.design'] \u003e video[src*='cdn.magicui.design']": {
+                    "exists": ""
+                },
+                "iframe[src*='.magicui.design']": {
+                    "exists": ""
+                }
+            },
+            "description": "Magic UI is a UI library featuring open-source animated components built with React, TypeScript, Tailwind CSS, and Framer Motion.",
+            "website": "https://magicui.design/",
+            "icon": "MagicUI.svg"
         },
         "Magisto": {
             "cats": [
@@ -38031,6 +38670,17 @@
             "website": "https://mapp.sa",
             "icon": "Matajer.png"
         },
+        "Matchi": {
+            "cats": [
+                72
+            ],
+            "scriptSrc": [
+                "\\.matchi\\.com/"
+            ],
+            "description": "Matchi is a platform for racket sports enthusiasts to search, book, and play tennis, badminton, table tennis, squash, or padel.",
+            "website": "https://www.matchi.se",
+            "icon": "Matchi.svg"
+        },
         "Material Design Lite": {
             "cats": [
                 66
@@ -38958,6 +39608,22 @@
             "website": "https://mginex.com",
             "icon": "Mginex.svg"
         },
+        "Miappi": {
+            "cats": [
+                96
+            ],
+            "dom": {
+                "script[data-src*='web.miappi.com']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "web\\.miappi\\.com/"
+            ],
+            "description": "Miappi is a user-generated content platform designed to build trust and boost sales for brands.",
+            "website": "https://miappi.com",
+            "icon": "Miappi.svg"
+        },
         "MichiJS": {
             "cats": [
                 47
@@ -39439,6 +40105,35 @@
             "description": "Mintlify is a platform that enables developers to create and maintain documentation for their projects using Markdown format and automatically generate and deploy static websites via a continuous integration and deployment system.",
             "website": "https://mintlify.com",
             "icon": "Mintlify.svg"
+        },
+        "Mintox": {
+            "cats": [
+                53
+            ],
+            "js": {
+                "MintoxJS": "",
+                "mintoxPaging": "",
+                "mintoxTrim": ""
+            },
+            "meta": {
+                "author": [
+                    "^mintox"
+                ]
+            },
+            "description": "Mintox is a business software designed to streamline operations and enhance efficiency.",
+            "website": "https://www.mintox.com",
+            "icon": "Mintox.svg"
+        },
+        "Mirador": {
+            "cats": [
+                95
+            ],
+            "scriptSrc": [
+                "\\.miradorfin\\.com"
+            ],
+            "description": "Mirador is a platform designed to enhance customer acquisition, streamline digital loan applications, and enable intelligent product routing and digitization.",
+            "website": "https://www.miradortech.com",
+            "icon": "Mirador.svg"
         },
         "Mirai": {
             "cats": [
@@ -39936,6 +40631,21 @@
             "website": "https://mokka.ro",
             "icon": "Mokka.svg"
         },
+        "Molin AI": {
+            "cats": [
+                53
+            ],
+            "js": {
+                "__INIT_MOLIN_SHOP_AI": "",
+                "__INIT_MOLIN_SHOP_AI_OPTIONS": ""
+            },
+            "scriptSrc": [
+                "\\.molin\\.ai/"
+            ],
+            "description": "Molin AI is a multilingual tool that reduces support volume by 70%, recommends relevant products to shoppers, and uses up-to-date information from client websites to enhance store revenue.",
+            "website": "https://molin.ai",
+            "icon": "MolinAI.svg"
+        },
         "Mollie": {
             "cats": [
                 41
@@ -40196,6 +40906,21 @@
             "website": "https://www.mono.net/en",
             "icon": "Mono.net.png"
         },
+        "Monocle": {
+            "cats": [
+                32
+            ],
+            "js": {
+                "monocle.config": "",
+                "monocle_popup_id_variants": ""
+            },
+            "scriptSrc": [
+                "\\.usemonocle\\.com/"
+            ],
+            "description": "Monocle is an AI-powered platform that optimizes incentives to boost profits while maintaining brand equity and margins.",
+            "website": "https://www.usemonocle.com",
+            "icon": "Monocle.svg"
+        },
         "Monsido": {
             "cats": [
                 10,
@@ -40303,6 +41028,17 @@
             "description": "Moove GDPR Consent is a GDPR Cookie Compliance plugin for Wordpress.",
             "website": "https://www.mooveagency.com/wordpress/gdpr-cookie-compliance-plugin",
             "icon": "Moove.svg"
+        },
+        "Moovin": {
+            "cats": [
+                6
+            ],
+            "scriptSrc": [
+                "\\.moovin\\.(com|store)"
+            ],
+            "description": "Moovin is an ecommerce platform.",
+            "website": "https://moovin.com.br",
+            "icon": "Moovin.svg"
         },
         "Mopinion": {
             "cats": [
@@ -40555,6 +41291,19 @@
             "description": "MudBlazor is a component library for Blazor implementing Material Design.",
             "website": "https://mudblazor.com/",
             "icon": "Mudblazor.svg"
+        },
+        "Mul-Pay": {
+            "cats": [
+                41
+            ],
+            "js": {
+                "Multipayment.config": ""
+            },
+            "scriptSrc": [
+                "static\\.mul-pay\\.jp/"
+            ],
+            "description": "Mul-Pay is a payment gateway platform from Japan.",
+            "website": "https://static.mul-pay.jp"
         },
         "Mulberry": {
             "cats": [
@@ -40833,6 +41582,20 @@
             "description": "Myhkw player is a website music player.",
             "website": "https://myhkw.cn",
             "icon": "Myhkw player.png"
+        },
+        "Myli": {
+            "cats": [
+                90
+            ],
+            "js": {
+                "myli_push.geolocate": ""
+            },
+            "scriptSrc": [
+                "cdn-app\\.myli\\.io/"
+            ],
+            "description": "Myli is a platform enhancing customer experience, streamlining reputation management, and facilitating consumer acquisition.",
+            "website": "https://www.myli.io",
+            "icon": "Myli.svg"
         },
         "Mynetcap": {
             "cats": [
@@ -41278,6 +42041,20 @@
             "website": "https://neatab.com",
             "icon": "Neat.png"
         },
+        "Nebula Sites": {
+            "cats": [
+                51,
+                88
+            ],
+            "dom": {
+                "link[ns^='Nebula Sites']": {
+                    "exists": ""
+                }
+            },
+            "description": "Nebula Sites is a platform that allows users to create, host, and manage websites.",
+            "website": "https://nebulasites.org",
+            "icon": "NebulaSites.svg"
+        },
         "Neexa": {
             "cats": [
                 52
@@ -41565,6 +42342,17 @@
             "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
             "website": "https://newrelic.com",
             "icon": "New Relic.svg"
+        },
+        "New UI": {
+            "cats": [
+                66
+            ],
+            "scripts": [
+                "data-new-ui-theme"
+            ],
+            "description": "New UI is a framework designed for developing user interfaces for SaaS applications and websites.",
+            "website": "https://new-ui.com/",
+            "icon": "NewUI.svg"
         },
         "NewStore": {
             "cats": [
@@ -42410,6 +43198,19 @@
             "description": "Nuvemshop is a website builder with customizable layouts, product, shipping and payment management, marketing tools and a mobile app.",
             "website": "https://www.nuvemshop.com.br",
             "icon": "Nuvemshop.svg"
+        },
+        "Nuxt UI": {
+            "cats": [
+                66
+            ],
+            "dom": {
+                "style[id*='nuxt-ui-']": {
+                    "exists": ""
+                }
+            },
+            "description": "Nuxt UI is a customizable UI library designed for Nuxt.",
+            "website": "https://ui.nuxt.com",
+            "icon": "Nuxt.js.svg"
         },
         "Nuxt.js": {
             "cats": [
@@ -43405,6 +44206,17 @@
             "description": "Onlim is a software platform designed for chatbots, social media management, and intelligent personal assistants.",
             "website": "https://onlim.com",
             "icon": "Onlim.svg"
+        },
+        "Onsen UI": {
+            "cats": [
+                26
+            ],
+            "scriptSrc": [
+                "(/.*onsen.*min\\.js|.*angular-onsenui\\.min\\.js)"
+            ],
+            "description": "Onsen UI is an open-source HTML5 hybrid app framework offering mobile UI components for PhoneGap and Cordova development.",
+            "website": "https://onsen.io",
+            "icon": "OnsenUI.svg"
         },
         "Ookla Speedtest Custom": {
             "cats": [
@@ -45620,6 +46432,37 @@
             "website": "https://passage.1password.com",
             "icon": "Passage.svg"
         },
+        "Passle": {
+            "cats": [
+                32
+            ],
+            "js": {
+                "Passel.API": "",
+                "PassleEnvironmentConfig": "",
+                "PassleEvents": "",
+                "PassleFunctions": ""
+            },
+            "description": "Passle is a digital marketing platform designed to help professionals create and share expert-led content.",
+            "website": "https://home.passle.net",
+            "icon": "Passle.svg"
+        },
+        "Passport.js": {
+            "cats": [
+                69
+            ],
+            "js": {
+                "Passport.Core": "",
+                "Passport.Core.VERSION": "([\\d.]+)\\;version:\\1",
+                "PassportHandler": "",
+                "_passport_html": ""
+            },
+            "implies": [
+                "Node.js"
+            ],
+            "description": "Passport.js is an authentication middleware for Node.js, supporting various strategies to enable user authentication in web applications.",
+            "website": "https://www.passportjs.org",
+            "icon": "Passport.svg"
+        },
         "PathFactory": {
             "cats": [
                 32
@@ -46003,6 +46846,18 @@
             "website": "https://www.pebblepost.com",
             "icon": "PebblePost.svg"
         },
+        "Peddle": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "PeddlePublisherEmbed": "",
+                "PeddlePublisherEmbedConfig": ""
+            },
+            "description": "Peddle is a platform offering instant cash offers for cars, streamlining the selling process.",
+            "website": "https://www.peddle.com",
+            "icon": "Peddle.svg"
+        },
         "Peek": {
             "cats": [
                 5,
@@ -46102,7 +46957,7 @@
                 "peity": ""
             },
             "scriptSrc": [
-                "peity(?:-demo)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+                "(?:jquery\\.)?peity(?:-demo)?(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
             ],
             "description": "Peity is a jQuery plugin that converts an element's content into a simple mini svg pie, line or bar chart.",
             "website": "https://benpickles.github.io/peity/"
@@ -46538,6 +47393,17 @@
             "website": "https://github.com/Sazito/phoenix/",
             "icon": "sazito-phoenix.png"
         },
+        "Phoenix Cart": {
+            "cats": [
+                6
+            ],
+            "cookies": {
+                "ceid": ""
+            },
+            "description": "Phoenix Cart is an open source software that allows users to set up an online store and sell their products.",
+            "website": "https://phoenixcart.org",
+            "icon": "PhoenixCart.svg"
+        },
         "Phoenix Framework": {
             "cats": [
                 18
@@ -46764,6 +47630,19 @@
             "description": "PickyStory is the ecommerce conversion platform.",
             "website": "https://pickystory.com",
             "icon": "PickyStory.png"
+        },
+        "Pickzen": {
+            "cats": [
+                29
+            ],
+            "js": {
+                "pickzen.server": "",
+                "pickzenLoaded": "",
+                "pickzenonActivation": ""
+            },
+            "description": "Pickzen is an AI-powered tool designed for conversational search.",
+            "website": "https://www.pickzen.com",
+            "icon": "Pickzen.svg"
         },
         "Pico": {
             "cats": [
@@ -47457,6 +48336,16 @@
             "website": "https://www.plezi.co",
             "icon": "Plezi.svg"
         },
+        "Pliek": {
+            "cats": [
+                32
+            ],
+            "js": {
+                "pliekConfig.key": ""
+            },
+            "description": "Pliek is a system that provides live sales notifications, enabling real-time updates on purchase activities.",
+            "website": "https://pliek.io"
+        },
         "Pligg": {
             "cats": [
                 1
@@ -47637,6 +48526,20 @@
             "description": "Podigee is an independent company for podcast publishers. Podigee offers hosting, distribution, analytics and monetisation of podcasts.",
             "website": "https://www.podigee.com",
             "icon": "Podigee.svg"
+        },
+        "Podio": {
+            "cats": [
+                53
+            ],
+            "js": {
+                "_podioWebForm": ""
+            },
+            "scriptSrc": [
+                "//podio\\.com/"
+            ],
+            "description": "Podio is a customizable social work platform for collaboration with co-workers and clients, enabling task management and communication.",
+            "website": "https://www.podio.com",
+            "icon": "Podio.svg"
         },
         "Podium": {
             "cats": [
@@ -47828,6 +48731,20 @@
             "description": "Poppins is a tool that enables notifications on websites, ranging from video alerts to informational popups.",
             "website": "https://poppins.so",
             "icon": "Poppins.svg"
+        },
+        "Poptin": {
+            "cats": [
+                32
+            ],
+            "js": {
+                "poptinAfterPageLoad": ""
+            },
+            "scriptSrc": [
+                "cdn\\.popt\\.in/"
+            ],
+            "description": "Poptin is a platform designed to engage visitors and coverts them into leads, subscribers and sales.",
+            "website": "https://www.poptin.com",
+            "icon": "Poptin.svg"
         },
         "PopularFX": {
             "cats": [
@@ -48724,6 +49641,17 @@
             "description": "Procurios is a provider of software solutions tailored to nonprofit and member organizations, offering website management, fundraising, CRM, and event tools.",
             "website": "https://www.procurios.com",
             "icon": "Procurios.svg"
+        },
+        "ProdPad": {
+            "cats": [
+                53
+            ],
+            "scriptSrc": [
+                "\\.prodpad\\.com/"
+            ],
+            "description": "ProdPad is a product management software platform enabling teams to gather ideas, set priorities, and create adaptable product roadmaps.",
+            "website": "https://www.prodpad.com",
+            "icon": "ProdPad.svg"
         },
         "Product Hunt": {
             "cats": [
@@ -49711,6 +50639,17 @@
             "website": "https://q4mobile.github.io/q4widgets-jquery-ui/doc_html/q4.cookieMonster.html",
             "icon": "Q4.png"
         },
+        "QForm": {
+            "cats": [
+                110
+            ],
+            "scriptSrc": [
+                "cdn\\.qform(?:24\\.com|\\.io)/"
+            ],
+            "description": "QForm is a tool for designing and managing customizable forms for data collection and processing.",
+            "website": "https://qform.io",
+            "icon": "QForm.svg"
+        },
         "QUIC.cloud": {
             "cats": [
                 92,
@@ -50067,6 +51006,18 @@
             "website": "https://queue-it.com",
             "icon": "Queue-it.png"
         },
+        "Quform": {
+            "cats": [
+                110
+            ],
+            "js": {
+                "Quform.captchaRefreshFormQueue": "",
+                "QuformRecaptchaLoaded": ""
+            },
+            "description": "Quform is a WordPress plugin designed for building and managing forms.",
+            "website": "https://www.quform.com",
+            "icon": "Quform.svg"
+        },
         "Quick.CMS": {
             "cats": [
                 1
@@ -50268,6 +51219,18 @@
             "description": "Qukasoft is an online solution that offers integration for your ecommerce platform with leading online marketplaces, expanding your reach to potential customers.",
             "website": "https://www.qukasoft.com",
             "icon": "Qukasoft.svg"
+        },
+        "Qumra": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "Qumra.cart": "",
+                "__qumra__": ""
+            },
+            "description": "Qumra is a platform that enables users to create ecommerce websites without requiring any programming knowledge.",
+            "website": "https://www.qumra.cloud",
+            "icon": "Qumra.svg"
         },
         "Quoli": {
             "cats": [
@@ -51893,6 +52856,18 @@
             "website": "https://reflektion.com",
             "icon": "Reflektion.png"
         },
+        "Reform": {
+            "cats": [
+                110
+            ],
+            "js": {
+                "Reform": "",
+                "ReformHandlers": ""
+            },
+            "description": "Reform is a conversion-focused form builder designed to optimize data collection.",
+            "website": "https://www.reform.app",
+            "icon": "Reform.svg"
+        },
         "Refundid": {
             "cats": [
                 102
@@ -52465,6 +53440,22 @@
             "description": "Retool is a development platform that enables the rapid creation and customisation of internal tools, including admin dashboards and database interfaces, through a combination of drag-and-drop components and code.",
             "website": "https://retool.com",
             "icon": "Retool.svg"
+        },
+        "Retrina Builder": {
+            "cats": [
+                51
+            ],
+            "dom": {
+                "link[href*='/retrina-builder.min.css']": {
+                    "exists": ""
+                },
+                "link[href*='/retrina_builder_custom.css']": {
+                    "exists": ""
+                }
+            },
+            "description": "Retrina Builder is a drag-and-drop page builder for OpenCart that enables website creation without requiring coding skills.",
+            "website": "https://retrina.com/ronixa-product",
+            "icon": "RetrinaBuilder.svg"
         },
         "Return Prime": {
             "cats": [
@@ -53204,6 +54195,17 @@
             "website": "https://www.robly.com",
             "icon": "Robly.svg"
         },
+        "Robofy": {
+            "cats": [
+                52
+            ],
+            "scriptSrc": [
+                "\\.robofy\\.ai/"
+            ],
+            "description": "Robofy is a platform providing AI chatbots for websites, enabling the creation of custom ChatGPT models trained on user-specific content.",
+            "website": "https://www.robofy.ai",
+            "icon": "Robofy.svg"
+        },
         "Rock Content": {
             "cats": [
                 96
@@ -53685,6 +54687,17 @@
             "website": "https://www.ryviu.com/",
             "icon": "Ryviu.png"
         },
+        "S\u0026P Global Mobility": {
+            "cats": [
+                10
+            ],
+            "scriptSrc": [
+                "vcu\\.collserve\\.com"
+            ],
+            "description": "S\u0026P Global Mobility, formerly Dataium is a platform that analyzes online automotive shopping behavior.",
+            "website": "https://www.spglobal.com/mobility/en/index.html",
+            "icon": "S\u0026PGlobalMobility.svg"
+        },
         "S-COREpion": {
             "cats": [
                 1
@@ -53803,6 +54816,17 @@
             "description": "SEMrush is an all-in-one tool suite for improving online visibility and discovering marketing insights.",
             "website": "https://www.semrush.com",
             "icon": "SEMrush.svg"
+        },
+        "SEO Manager": {
+            "cats": [
+                29
+            ],
+            "scripts": [
+                "\\.seomanager\\.com/"
+            ],
+            "description": "SEO Manager is a platform that optimizes Shopify websites to enhance search engine visibility and improve organic traffic.",
+            "website": "https://venntov.com/pages/seo-manager",
+            "icon": "SEOManager.svg"
         },
         "SEOAnt": {
             "cats": [
@@ -55053,6 +56077,17 @@
             "description": "Simple wrapper for cross-browser usage of the JavaScript Fullscreen API.",
             "website": "https://sindresorhus.com/screenfull/"
         },
+        "Screets": {
+            "cats": [
+                52
+            ],
+            "js": {
+                "screetsxi.appid": ""
+            },
+            "description": "Screets is a chat widget compatible with WordPress, HTML, and PHP websites.",
+            "website": "https://screets.com",
+            "icon": "Screets.svg"
+        },
         "Scrivito": {
             "cats": [
                 1
@@ -55235,6 +56270,17 @@
             "website": "https://searchspring.com",
             "icon": "Searchspring.svg"
         },
+        "Seated": {
+            "cats": [
+                104
+            ],
+            "scriptSrc": [
+                "widget\\.seated\\.com/"
+            ],
+            "description": "Seated is a platform offering a ticketing system for live events and live streams.",
+            "website": "https://www.seated.com",
+            "icon": "Seated.svg"
+        },
         "Secomapp": {
             "cats": [
                 100
@@ -55384,7 +56430,7 @@
                 "@segment/consent-manager@([\\d.]+)\\;version:\\1"
             ],
             "description": "Segment Consent Manager is a tool that automates the process of requesting consent for data usage, stores data on user privacy preferences, and updates these preferences when users request changes.",
-            "website": "https://segment.com/blog/how-to-build-consent-management-into-your-site-in-less-than-a-week",
+            "website": "https://segment.com/",
             "icon": "Segment.svg"
         },
         "Segment Consent Manager ": {
@@ -55417,6 +56463,7 @@
         },
         "Segmentify": {
             "cats": [
+                29,
                 97,
                 76
             ],
@@ -56222,6 +57269,17 @@
             "website": "https://sharpay.io",
             "icon": "Sharpay.svg"
         },
+        "Sharper MMS": {
+            "cats": [
+                19
+            ],
+            "scripts": [
+                "api\\.sharpermms\\.com"
+            ],
+            "description": "Sharper MMS is a provider of marina management services, focusing on operations and maintenance for marina facilities.",
+            "website": "https://sharpermms.com",
+            "icon": "SharperMMS.svg"
+        },
         "SheerID": {
             "cats": [
                 19
@@ -56411,6 +57469,23 @@
             "description": "ShippyPro is the complete shipping software for ecommerce that helps worldwide merchants to ship, track, and manage returns for their orders.",
             "website": "https://www.shippypro.com",
             "icon": "ShippyPro.png"
+        },
+        "Shipup": {
+            "cats": [
+                99
+            ],
+            "js": {
+                "ShipupETA": ""
+            },
+            "scripts": [
+                "shipup\\.co"
+            ],
+            "scriptSrc": [
+                "\\.shipup\\.co/"
+            ],
+            "description": "Shipup is a system that enables users to track shipping packages, providing real-time updates on delivery status and location.",
+            "website": "https://www.shipup.co",
+            "icon": "Shipup.svg"
         },
         "Shoefitr.io": {
             "cats": [
@@ -56931,6 +58006,20 @@
             "description": "Shopistry is a data-driven, headless customer management system.",
             "website": "https://www.shopistry.com/",
             "icon": "Shopistry.png"
+        },
+        "Shopix": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "shopixAnalytics": ""
+            },
+            "scriptSrc": [
+                "\\.shopixai\\.com/"
+            ],
+            "description": "Shopix is a visual search tool for ecommerce that allows users to find products by uploading images.",
+            "website": "https://shopixai.com",
+            "icon": "Shopix.svg"
         },
         "Shoplazza": {
             "cats": [
@@ -58513,6 +59602,17 @@
             "website": "https://skio.com",
             "icon": "Skio.png"
         },
+        "Skitter": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "/jquery\\.skitter\\.min\\.js"
+            ],
+            "description": "Skitter is a jQuery-based slider system.",
+            "website": "https://skitter-slider.net",
+            "icon": "Skitter.svg"
+        },
         "Skolengo": {
             "cats": [
                 1,
@@ -59732,7 +60832,7 @@
             ],
             "meta": {
                 "application-name": [
-                    "^sonarqubes$"
+                    "^sonarqube$"
                 ]
             },
             "implies": [
@@ -60153,6 +61253,26 @@
             "website": "https://speedimize.io",
             "icon": "Speedimize.svg"
         },
+        "SpeedyCache": {
+            "cats": [
+                87,
+                23
+            ],
+            "dom": {
+                "link[href*='/wp-content/cache/speedycache/']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "speedycachell": ""
+            },
+            "headers": {
+                "x-speedycache-source": ""
+            },
+            "description": "SpeedyCache is a WordPress plugin for optimizing page load times and caching efficiency.",
+            "website": "https://speedycache.com",
+            "icon": "SpeedyCache.svg"
+        },
         "Spektrix": {
             "cats": [
                 53
@@ -60163,6 +61283,17 @@
             "description": "Spektrix is a cloud-based ticketing, marketing, and fundraising CRM system putting audience insight at your fingertips.",
             "website": "https://www.spektrix.com",
             "icon": "Spektrix.svg"
+        },
+        "Spexo Addons": {
+            "cats": [
+                87
+            ],
+            "scriptSrc": [
+                "/wp-content/plugins/sastra-essential-addons-for-elementor/"
+            ],
+            "description": "Spexo Addons is a tool offering essential features for Elementor, enhancing website design and functionality in a single solution.",
+            "website": "https://spexoaddons.com/",
+            "icon": "SpexoAddons.svg"
         },
         "Sphinx": {
             "cats": [
@@ -62869,6 +64000,17 @@
             "website": "https://www.syncfusion.com",
             "icon": "Syncfusion.svg"
         },
+        "Synctrack": {
+            "cats": [
+                6
+            ],
+            "scriptSrc": [
+                "apps\\.synctrack\\.io/"
+            ],
+            "description": "Synctrack is a platform that helps merchants improve the shopping experience and post-sale processes, including payment syncing and delivery tracking, to enhance revenue and customer loyalty.",
+            "website": "https://synctrack.io",
+            "icon": "Synctrack.svg"
+        },
         "Syndeca": {
             "cats": [
                 10,
@@ -64259,6 +65401,20 @@
             "description": "Tengine is a web server which is based on the Nginx HTTP server.",
             "website": "https://tengine.taobao.org",
             "icon": "Tengine.png"
+        },
+        "TerMed": {
+            "cats": [
+                72
+            ],
+            "scripts": [
+                "api\\.termed\\.de"
+            ],
+            "scriptSrc": [
+                "api\\.termed\\.de"
+            ],
+            "description": "TerMed is a platform that simplifies online booking of medical appointments.",
+            "website": "https://www.termed.de",
+            "icon": "TerMed.svg"
         },
         "Terminalfour": {
             "cats": [
@@ -65710,6 +66866,19 @@
             "website": "https://www.tix.com",
             "icon": "Tix.svg"
         },
+        "TogetherJS": {
+            "cats": [
+                59
+            ],
+            "js": {
+                "TogetherJS": "",
+                "TogetherJSConfig_cloneClicks": "",
+                "TogetherJSConfig_toolName": ""
+            },
+            "description": "TogetherJS is an open-source JavaScript library by Mozilla that integrates collaboration tools and features into websites.",
+            "website": "https://togetherjs.com",
+            "icon": "TogetherJS.svg"
+        },
         "Tolt": {
             "cats": [
                 71
@@ -66137,6 +67306,19 @@
             "website": "https://gtranslate.io",
             "icon": "GTranslate.svg"
         },
+        "TranslatePress": {
+            "cats": [
+                87
+            ],
+            "js": {
+                "trp_el": "",
+                "trp_ls_shortcode_width": "",
+                "trp_ls_shortcodes": ""
+            },
+            "description": "TranslatePress is a WordPress plugin that simplifies website translation, enabling multilingual functionality to enhance global traffic.",
+            "website": "https://translatepress.com",
+            "icon": "TranslatePress.svg"
+        },
         "Transmart": {
             "cats": [
                 99
@@ -66438,6 +67620,20 @@
             "website": "https://www.trumba.com",
             "icon": "Trumba.png"
         },
+        "Trumpia": {
+            "cats": [
+                32
+            ],
+            "cookies": {
+                "trumpiareferer": ""
+            },
+            "scriptSrc": [
+                "\\.trumpia\\.com/"
+            ],
+            "description": "Trumpia is a marketing platform that supports multiple channels, including mobile, email, social media, voice, and chat marketing.",
+            "website": "https://www.trumpia.com",
+            "icon": "Trumpia.svg"
+        },
         "Trunkrs": {
             "cats": [
                 99
@@ -66456,6 +67652,22 @@
             "description": "TrustArc provides software and services to help corporations update their privacy management processes so they comply with government laws and best practices.",
             "website": "https://trustarc.com",
             "icon": "TrustArc.svg"
+        },
+        "TrustPulse": {
+            "cats": [
+                32
+            ],
+            "dom": {
+                "link[href*='.trstplse.com']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.trstplse\\.com/"
+            ],
+            "description": "TrustPulse is a marketing tool that enables marketers to drive more conversions and sales by leveraging the power of social proof and fear of missing out.",
+            "website": "https://trustpulse.com",
+            "icon": "TrustPulse.svg"
         },
         "TrustYou": {
             "cats": [
@@ -66655,6 +67867,18 @@
             "description": "Turf is a modular geospatial engine written in JavaScript.",
             "website": "https://turfjs.org/",
             "icon": "TurfJS.svg"
+        },
+        "Tutor LMS": {
+            "cats": [
+                21
+            ],
+            "js": {
+                "tutorElementorData": "",
+                "tutor_prevent_copy": ""
+            },
+            "description": "Tutor LMS is an all-in-one learning management system.",
+            "website": "https://tutorlms.com",
+            "icon": "TutorLMS.svg"
         },
         "Twenty Eleven": {
             "cats": [
@@ -67276,6 +68500,18 @@
             },
             "description": "UGC Creative is a tool that utilises reviews, Instagram, and TikTok user-generated content on websites to enhance conversion rates and customer lifetime value.",
             "website": "https://ugc-creative.com/"
+        },
+        "UI Avenue": {
+            "cats": [
+                10,
+                91
+            ],
+            "scripts": [
+                "analytics\\.uiavenue\\.ca"
+            ],
+            "description": "UI Avenue is a data tracking and analytics software for Shopify.",
+            "website": "https://www.uiavenue.ca",
+            "icon": "UIAvenue.svg"
         },
         "UIKit": {
             "cats": [
@@ -69628,6 +70864,17 @@
             "website": "https://vimeo.com/ott",
             "icon": "Vimeo.svg"
         },
+        "Vimos": {
+            "cats": [
+                32
+            ],
+            "scriptSrc": [
+                "widget\\.vimos\\.io/"
+            ],
+            "description": "Vimos is a marketing SaaS specializing in marketing automation.",
+            "website": "https://vimos.io",
+            "icon": "Vimos.svg"
+        },
         "Vincere": {
             "cats": [
                 101
@@ -69876,6 +71123,16 @@
             "description": "Visitor Chat is a service that provides businesses with managed automotive live chat solutions to improve customer relationships.",
             "website": "https://visitor.chat",
             "icon": "VisitorChat.svg"
+        },
+        "VisitorVille": {
+            "cats": [
+                10
+            ],
+            "scriptSrc": [
+                "www\\.visitorville\\.com/"
+            ],
+            "description": "VisitorVille is a tool that visualizes website visitors as a SimCity-like map, providing an interactive way to analyze traffic and user behavior.",
+            "website": "http://visitorville.com"
         },
         "Viskan": {
             "cats": [
@@ -71330,6 +72587,24 @@
             "website": "https://weaverse.io",
             "icon": "Weaverse.svg"
         },
+        "Web CEO": {
+            "cats": [
+                10,
+                32,
+                54
+            ],
+            "scriptSrc": [
+                "\\.webceo\\.com/"
+            ],
+            "meta": {
+                "application-name": [
+                    "^webceo$"
+                ]
+            },
+            "description": "Web CEO is an all-in-one platform offering tools for SEO, digital marketing, and performance analytics.",
+            "website": "https://www.webceo.com",
+            "icon": "WebCEO.svg"
+        },
         "Web Font Loader": {
             "cats": [
                 59
@@ -71577,6 +72852,18 @@
             "description": "Webnode is a drag-and-drop online website builder.",
             "website": "https://www.webnode.com",
             "icon": "WebNode.svg"
+        },
+        "WebQnA": {
+            "cats": [
+                52,
+                53
+            ],
+            "js": {
+                "webqna": ""
+            },
+            "description": "WebQnA is a platform that offers generative AI chatbots for businesses to enhance customer interactions and support.",
+            "website": "https://webqna.ai",
+            "icon": "WebQnA.svg"
         },
         "WebRTC": {
             "cats": [
@@ -73014,6 +74301,17 @@
             "website": "https://www.woowup.com",
             "icon": "WoowUp.png"
         },
+        "Word of Mouth": {
+            "cats": [
+                90
+            ],
+            "scriptSrc": [
+                "www\\.womo\\.com\\.au/"
+            ],
+            "description": "Word of Mouth is a feedback platform that allows users to compare reviews and ratings for various services and businesses.",
+            "website": "https://www.wordofmouth.com.au",
+            "icon": "WOMO.svg"
+        },
         "WordAds": {
             "cats": [
                 36
@@ -73800,6 +75098,17 @@
             "website": "https://www.xserver.ne.jp",
             "icon": "Xserver.png"
         },
+        "Xsolla": {
+            "cats": [
+                41
+            ],
+            "scriptSrc": [
+                "\\.xsolla\\.(com|net)"
+            ],
+            "description": "Xsolla is a video game business system offering payment solutions and store management.",
+            "website": "https://xsolla.com",
+            "icon": "Xsolla.svg"
+        },
         "Xtime": {
             "cats": [
                 72
@@ -73924,6 +75233,17 @@
             ],
             "website": "https://www.yabbforum.com",
             "icon": "YaBB.png"
+        },
+        "YachtSys": {
+            "cats": [
+                72
+            ],
+            "scriptSrc": [
+                "apps\\.yachtsys\\.com/"
+            ],
+            "description": "YachtSys is a booking management system.",
+            "website": "https://www.yachtsys.com",
+            "icon": "YachtSys.svg"
         },
         "Yahoo Advertising": {
             "cats": [
@@ -74927,6 +76247,17 @@
             "website": "https://zenplanner.com",
             "icon": "Zen Planner.svg"
         },
+        "Zenbooker": {
+            "cats": [
+                72
+            ],
+            "js": {
+                "Zenbooker.BadgeWidget": ""
+            },
+            "description": "Zenbooker is a system that enables users to book appointments or reservations online.",
+            "website": "https://zenbooker.com",
+            "icon": "Zenbooker.svg"
+        },
         "Zenchef": {
             "cats": [
                 93
@@ -75399,6 +76730,19 @@
             ],
             "description": "Zoho PageSense is a conversion optimisation platform which combines the power of web analytics, A/B testing, and personalisation.",
             "website": "https://www.zoho.com/pagesense/",
+            "icon": "Zoho.svg"
+        },
+        "Zoho Sites": {
+            "cats": [
+                51
+            ],
+            "meta": {
+                "generator": [
+                    "^zoho sites ([\\d\\.]+)\\;version:\\1"
+                ]
+            },
+            "description": "Zoho Sites is an all-in-one platform designed to help businesses create websites.",
+            "website": "https://www.zoho.com/sites/",
             "icon": "Zoho.svg"
         },
         "Zoko": {
@@ -76966,6 +78310,17 @@
             ],
             "website": "https://ipresta.ir",
             "icon": "iPresta.png"
+        },
+        "iSET": {
+            "cats": [
+                6
+            ],
+            "scripts": [
+                "cdn\\.iset\\.io/"
+            ],
+            "description": "iSET is an ecommerce platform providing tools to start, grow, and scale online stores.",
+            "website": "https://www.iset.com.br",
+            "icon": "iSET.svg"
         },
         "iScripts": {
             "cats": [
