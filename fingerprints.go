@@ -226,7 +226,9 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			for _, pattern := range fingerprint.js {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 				}
 			}
@@ -234,7 +236,9 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			for _, pattern := range fingerprint.scriptSrc {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 				}
 			}
@@ -242,7 +246,9 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			for _, pattern := range fingerprint.html {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 				}
 			}
@@ -290,7 +296,9 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 					break
 				}
@@ -303,7 +311,9 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 					break
 				}
@@ -317,7 +327,9 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						version = versionString
+						if version == "" && versionString != "" {
+							version = versionString
+						}
 						confidence = pattern.Confidence
 						break
 					}
@@ -369,7 +381,9 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				}
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 					break
 				}
@@ -383,7 +397,9 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					version = versionString
+					if version == "" && versionString != "" {
+						version = versionString
+					}
 					confidence = pattern.Confidence
 					break
 				}
@@ -398,7 +414,9 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						version = versionString
+						if version == "" && versionString != "" {
+							version = versionString
+						}
 						confidence = pattern.Confidence
 						break
 					}
