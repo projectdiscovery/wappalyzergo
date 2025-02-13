@@ -32,11 +32,19 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			}
 			regexPattern := part
 
+			// save version capture groups
+			regexPattern = strings.ReplaceAll(regexPattern, `((?:\d+\.)+\d+)`, "__verCapOne__")
+			regexPattern = strings.ReplaceAll(regexPattern, `(\d+(?:\.\d+)+)`, "__verCapTwo__")
+
 			regexPattern = strings.ReplaceAll(regexPattern, "/", "\\/")
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
 			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "__escapedPlus__", "\\+")
+
+			// restore version capture groups
+			regexPattern = strings.ReplaceAll(regexPattern, "__verCapOne__", `((?:\d{1,20}\.){1,20}\d{1,20})`)
+			regexPattern = strings.ReplaceAll(regexPattern, "__verCapTwo__", `(\d{1,20}(?:\.\d{1,20}){1,20})`)
 
 			var err error
 			p.regex, err = regexp.Compile("(?i)" + regexPattern)
