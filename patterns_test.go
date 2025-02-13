@@ -30,6 +30,27 @@ func TestParsePattern(t *testing.T) {
 			expectedConf:  100,
 			expectedVer:   "\\1",
 		},
+		{
+			name:          "Complex pattern - 1",
+			input:         "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+			expectedRegex: `(?i)\/wp-content\/themes\/make(?:-child)?\/.{1,250}frontend\.js(?:\?ver=(\d{1,20}(?:\.\d{1,20}){1,20}))?`,
+			expectedConf:  100,
+			expectedVer:   "\\1",
+		},
+		{
+			name:          "Complex pattern - 2",
+			input:         "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js\\;version:\\1",
+			expectedRegex: `(?i)(?:((?:\d{1,20}\.){1,20}\d{1,20})\/)?chroma(?:\.min)?\.js`,
+			expectedConf:  100,
+			expectedVer:   "\\1",
+		},
+		{
+			name:          "Complex pattern - 3",
+			input:         "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?dc(?:\\.leaflet)?\\.js\\;version:\\1",
+			expectedRegex: `(?i)(?:(\d{1,20}(?:\.\d{1,20}){1,20})\/(?:dc\/)?)?dc(?:\.leaflet)?\.js`,
+			expectedConf:  100,
+			expectedVer:   "\\1",
+		},
 	}
 
 	for _, tt := range tests {
@@ -114,6 +135,34 @@ func TestExtractVersion(t *testing.T) {
 			pattern:     "(?:apache(?:$|/([\\d.]+)|[^/-])|(?:^|\\b)httpd)\\;version:\\1",
 			target:      "apache/2.4.29",
 			expectedVer: "2.4.29",
+			expectError: false,
+		},
+		{
+			name:        "Complex pattern - 5",
+			pattern:     "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
+			target:      "/wp-content/themes/make-child/whatever/frontend.js?ver=1.9.1",
+			expectedVer: "1.9.1",
+			expectError: false,
+		},
+		{
+			name:        "Complex pattern - 6",
+			pattern:     "(?:((?:\\d+\\.)+\\d+)\\/)?chroma(?:\\.min)?\\.js\\;version:\\1",
+			target:      "/ajax/libs/chroma-js/2.4.2/chroma.min.js",
+			expectedVer: "2.4.2",
+			expectError: false,
+		},
+		{
+			name:        "Complex pattern - 7",
+			pattern:     "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?dc(?:\\.leaflet)?\\.js\\;version:\\1",
+			target:      "/ajax/libs/dc/2.1.8/dc.leaflet.js",
+			expectedVer: "2.1.8",
+			expectError: false,
+		},
+		{
+			name:        "Complex pattern - 8",
+			pattern:     "(?:(\\d+(?:\\.\\d+)+)\\/(?:dc\\/)?)?dc(?:\\.leaflet)?\\.js\\;version:\\1",
+			target:      "/ajax/libs/dc/2.1.8/dc.leaflet.js",
+			expectedVer: "2.1.8",
 			expectError: false,
 		},
 	}

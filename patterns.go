@@ -17,6 +17,16 @@ type ParsedPattern struct {
 	SkipRegex  bool
 }
 
+const (
+	verCap1        = `(\d+(?:\.\d+)+)` // captures 1 set of digits '\d+' followed by one or more '\.\d+' patterns
+	verCap1Fill    = "__verCap1__"
+	verCap1Limited = `(\d{1,20}(?:\.\d{1,20}){1,20})` // goodVerCap with limits
+
+	verCap2        = `((?:\d+\.)+\d+)` // captures 1 or more '\d+\.' patterns followed by 1 set of digits '\d+'
+	verCap2Fill    = "__verCap2__"
+	verCap2Limited = `((?:\d{1,20}\.){1,20}\d{1,20})` // badVerCap with limits
+)
+
 // ParsePattern extracts information from a pattern, supporting both regex and simple patterns
 func ParsePattern(pattern string) (*ParsedPattern, error) {
 	parts := strings.Split(pattern, "\\;")
@@ -32,11 +42,18 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			}
 			regexPattern := part
 
-			regexPattern = strings.ReplaceAll(regexPattern, "/", "\\/")
+			// save version capture groups
+			regexPattern = strings.ReplaceAll(regexPattern, verCap2, verCap1Fill)
+			regexPattern = strings.ReplaceAll(regexPattern, verCap1, verCap2Fill)
+
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
 			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "__escapedPlus__", "\\+")
+
+			// restore version capture groups
+			regexPattern = strings.ReplaceAll(regexPattern, verCap1Fill, verCap1Limited)
+			regexPattern = strings.ReplaceAll(regexPattern, verCap2Fill, verCap2Limited)
 
 			var err error
 			p.regex, err = regexp.Compile("(?i)" + regexPattern)
