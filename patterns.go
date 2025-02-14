@@ -20,11 +20,11 @@ type ParsedPattern struct {
 const (
 	verCap1        = `(\d+(?:\.\d+)+)` // captures 1 set of digits '\d+' followed by one or more '\.\d+' patterns
 	verCap1Fill    = "__verCap1__"
-	verCap1Limited = `(\d{1,20}(?:\.\d{1,20}){1,20})` // goodVerCap with limits
+	verCap1Limited = `(\d{1,20}(?:\.\d{1,20}){1,20})`
 
 	verCap2        = `((?:\d+\.)+\d+)` // captures 1 or more '\d+\.' patterns followed by 1 set of digits '\d+'
 	verCap2Fill    = "__verCap2__"
-	verCap2Limited = `((?:\d{1,20}\.){1,20}\d{1,20})` // badVerCap with limits
+	verCap2Limited = `((?:\d{1,20}\.){1,20}\d{1,20})`
 )
 
 // ParsePattern extracts information from a pattern, supporting both regex and simple patterns
