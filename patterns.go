@@ -43,8 +43,8 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern := part
 
 			// save version capture groups
-			regexPattern = strings.ReplaceAll(regexPattern, verCap2, verCap1Fill)
-			regexPattern = strings.ReplaceAll(regexPattern, verCap1, verCap2Fill)
+			regexPattern = strings.ReplaceAll(regexPattern, verCap1, verCap1Fill)
+			regexPattern = strings.ReplaceAll(regexPattern, verCap2, verCap2Fill)
 
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
 			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
