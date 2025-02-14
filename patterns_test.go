@@ -33,7 +33,7 @@ func TestParsePattern(t *testing.T) {
 		{
 			name:          "Complex pattern - 1",
 			input:         "/wp-content/themes/make(?:-child)?/.+frontend\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1",
-			expectedRegex: `(?i)\/wp-content\/themes\/make(?:-child)?\/.{1,250}frontend\.js(?:\?ver=(\d{1,20}(?:\.\d{1,20}){1,20}))?`,
+			expectedRegex: `(?i)/wp-content/themes/make(?:-child)?/.{1,250}frontend\.js(?:\?ver=(\d{1,20}(?:\.\d{1,20}){1,20}))?`,
 			expectedConf:  100,
 			expectedVer:   "\\1",
 		},
@@ -47,7 +47,7 @@ func TestParsePattern(t *testing.T) {
 		{
 			name:          "Complex pattern - 3",
 			input:         "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?dc(?:\\.leaflet)?\\.js\\;version:\\1",
-			expectedRegex: `(?i)(?:(\d{1,20}(?:\.\d{1,20}){1,20})\/(?:dc\/)?)?dc(?:\.leaflet)?\.js`,
+			expectedRegex: `(?i)(?:((?:\d{1,20}\.){1,20}\d{1,20})\/(?:dc\/)?)?dc(?:\.leaflet)?\.js`,
 			expectedConf:  100,
 			expectedVer:   "\\1",
 		},
