@@ -1,4 +1,4 @@
-module github.com/projectdiscovery/wappalyzergo
+module github.com/scottdharvey/wappalyzergo
 
 go 1.21
 
