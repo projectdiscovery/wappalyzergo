@@ -3,6 +3,8 @@ package wappalyzer
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
+	"os"
 	"strings"
 )
 
@@ -24,6 +26,26 @@ func New() (*Wappalyze, error) {
 	if err != nil {
 		return nil, err
 	}
+	return wappalyze, nil
+}
+
+// NewFromFile creates a new tech detection instance from a file
+// this allows using the latest fingerprints without recompiling the code
+// loadEmbedded indicates whether to load the embedded fingerprints
+// supersede indicates whether to overwrite the embedded fingerprints (if loaded) with the file fingerprints if the app name conflicts
+// supersede is only used if loadEmbedded is true
+func NewFromFile(filePath string, loadEmbedded, supersede bool) (*Wappalyze, error) {
+	wappalyze := &Wappalyze{
+		fingerprints: &CompiledFingerprints{
+			Apps: make(map[string]*CompiledFingerprint),
+		},
+	}
+
+	err := wappalyze.loadFingerprintsFromFile(filePath, loadEmbedded, supersede)
+	if err != nil {
+		return nil, err
+	}
+
 	return wappalyze, nil
 }
 
@@ -49,6 +71,52 @@ func (s *Wappalyze) loadFingerprints() error {
 	for i, fingerprint := range fingerprintsStruct.Apps {
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
+	return nil
+}
+
+// loadFingerprints loads the fingerprints from the provided file and compiles them
+func (s *Wappalyze) loadFingerprintsFromFile(filePath string, loadEmbedded, supersede bool) error {
+
+	f, err := os.ReadFile(filePath)
+	if err != nil {
+		return err
+	}
+
+	var fingerprintsStruct Fingerprints
+	err = json.Unmarshal(f, &fingerprintsStruct)
+	if err != nil {
+		return err
+	}
+
+	if len(fingerprintsStruct.Apps) == 0 {
+		return fmt.Errorf("no fingerprints found in file: %s", filePath)
+	}
+
+	if loadEmbedded {
+		var embedded Fingerprints
+		err := json.Unmarshal([]byte(fingerprints), &embedded)
+		if err != nil {
+			return err
+		}
+
+		s.original = &embedded
+
+		for app, fingerprint := range fingerprintsStruct.Apps {
+			if _, ok := s.original.Apps[app]; ok && supersede {
+				s.original.Apps[app] = fingerprint
+			} else {
+				s.original.Apps[app] = fingerprint
+			}
+		}
+
+	} else {
+		s.original = &fingerprintsStruct
+	}
+
+	for i, fingerprint := range s.original.Apps {
+		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
+	}
+
 	return nil
 }
 
