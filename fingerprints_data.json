@@ -23857,12 +23857,10 @@
         },
         "Framer Sites": {
             "cats": [
+                1,
                 51
             ],
             "js": {
-                "Framer": "",
-                "Framer.Animatable": "",
-                "Framer.version": "([\\d\\.]+)\\;version:\\1\\;confidence:0",
                 "__framer_importFromPackage": ""
             },
             "headers": {
@@ -30481,6 +30479,23 @@
             "description": "ImageEngine is an intelligent image content delivery network. ImageEngine will resize your image content tailored to the end users device.",
             "website": "https://imageengine.io",
             "icon": "ImageEngine.svg"
+        },
+        "ImageKit": {
+            "cats": [
+                31,
+                95
+            ],
+            "dom": {
+                "img[src*='.imagekit.io/'], img[data-src*='.imagekit.io/'], source[src*='.imagekit.io/'], source[data-src*='.imagekit.io/']": {
+                    "exists": ""
+                }
+            },
+            "headers": {
+                "x-server": "imagekit\\.io"
+            },
+            "description": "ImageKit is a real-time image and video transformation, optimization, and delivery service with built-in digital asset management, powered by a global CDN.",
+            "website": "https://imagekit.io/",
+            "icon": "ImageKit.svg"
         },
         "Imagekit": {
             "cats": [
