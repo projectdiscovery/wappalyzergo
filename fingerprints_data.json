@@ -29996,8 +29996,12 @@
         },
         "Hyva Themes": {
             "cats": [
+                6,
                 108
             ],
+            "js": {
+                "hyva": ""
+            },
             "headers": {
                 "x-built-with": "^hyva themes$"
             },
@@ -30007,7 +30011,7 @@
                 "Tailwind CSS"
             ],
             "description": "Hyva Themes is a performance-optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
-            "website": "https://hyva.io",
+            "website": "https://www.hyva.io/hyva-theme-license.html",
             "icon": "Hyva Themes.svg"
         },
         "IBM Coremetrics": {
@@ -33783,18 +33787,50 @@
             "scriptSrc": [
                 "klaviyo\\.com"
             ],
-            "description": "Klaviyo is an email marketing platform for online businesses.",
+            "description": "Klaviyo is an email and SMS marketing platform for online businesses.",
             "website": "https://www.klaviyo.com/",
+            "icon": "Klaviyo.svg"
+        },
+        "Klaviyo Customer Hub": {
+            "cats": [
+                19
+            ],
+            "dom": {
+                "div#k-hub": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "customerHub": ""
+            },
+            "description": "Klaviyo Customer Hub gives customers a unified signed-in experience to track orders, manage returns, and get help",
+            "website": "https://www.klaviyo.com/products/customer-experience-hub",
+            "icon": "Klaviyo.svg"
+        },
+        "Klaviyo Data Platform": {
+            "cats": [
+                97
+            ],
+            "scriptSrc": [
+                "static-tracking\\.klaviyo\\.com/onsite/js/web_personalization"
+            ],
+            "description": "Klaviyo Data Platform is Klaviyo's CDP offering.",
+            "website": "https://www.klaviyo.com/solutions/customer-data-platform",
             "icon": "Klaviyo.svg"
         },
         "Klaviyo Reviews": {
             "cats": [
                 90
             ],
-            "js": {
-                "klaviyoModulesObject.loadedModules": "reviews"
+            "dom": {
+                "div#klaviyo-product-reviews-wrapper": {
+                    "exists": ""
+                }
             },
-            "description": "Klaviyo is an email marketing platform for online businesses.",
+            "scriptSrc": [
+                "static\\.klaviyo\\.com/onsite/js/vendors~reviews"
+            ],
+            "description": "Klaviyo reviews is Klaviyo's customer reivews offering for Shopify and WooCommerce platforms",
             "website": "https://www.klaviyo.com/product-reviews",
             "icon": "Klaviyo.svg"
         },
