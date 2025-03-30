@@ -592,6 +592,17 @@
             "website": "https://www.apc-pli.com",
             "icon": "APC.svg"
         },
+        "APPLOVIN": {
+            "cats": [
+                36
+            ],
+            "scriptSrc": [
+                "\\.applovin\\.com"
+            ],
+            "description": "APPLOVIN is an advertising platform.",
+            "website": "https://www.applovin.com/",
+            "icon": "APPLOVIN.png"
+        },
         "ARCaptcha": {
             "cats": [
                 16
@@ -14598,7 +14609,7 @@
                 "constructorio": ""
             },
             "scriptSrc": [
-                "\\.cnstrc.com\\.com/"
+                "\\.cnstrc\\.com/"
             ],
             "description": "Constructor.io is a site search and merchandising platform designed to help ecommerce.",
             "website": "https://constructor.io/",
@@ -31359,17 +31370,22 @@
         },
         "Intelligems": {
             "cats": [
-                74
+                74,
+                76,
+                100
             ],
-            "js": {
-                "webpackChunk_intelligems_shopify_plugin": ""
+            "cookies": {
+                "ig-location": ""
             },
             "scriptSrc": [
-                "cdn\\.intelligems\\.io/[\\w]+\\.js"
+                "cdn\\.intelligems\\.io"
             ],
-            "description": "Intelligems is a tool that facilitates profit optimization for ecommerce businesses by allowing easy testing of prices, discounts, and shipping rates with the aim of maximizing margins.",
-            "website": "https://intelligems.io",
-            "icon": "Intelligems.svg"
+            "implies": [
+                "Shopify"
+            ],
+            "description": "Intelligems is an experimentation platform that helps developers build and run A/B tests on websites.",
+            "website": "https://www.intelligems.io/",
+            "icon": "Intelligems.png"
         },
         "Intellimize": {
             "cats": [
@@ -43085,6 +43101,18 @@
             "website": "https://www.nosto.com/products/visual-ugc/",
             "icon": "Nosto.svg"
         },
+        "Nostra": {
+            "cats": [
+                92
+            ],
+            "js": {
+                "Nostra": "",
+                "NostraEventManager": ""
+            },
+            "description": "Nostra is a web performance optimisation solution.",
+            "website": "https://www.nostra.ai/",
+            "icon": "Nostra.png"
+        },
         "Notie": {
             "cats": [
                 59
@@ -43788,6 +43816,7 @@
             },
             "js": {
                 "okeReviewsWidgetOnInit": "",
+                "okeWidgetApi": "",
                 "okeWidgetControlInit": "",
                 "okendoReviews": ""
             },
@@ -49406,6 +49435,21 @@
             "description": "Presto Player is a WordPress plugin designed for embedding optimised video and audio on WordPress websites.",
             "website": "https://prestoplayer.com",
             "icon": "PrestoPlayer.svg"
+        },
+        "Pretty Damn Quick": {
+            "cats": [
+                74,
+                100
+            ],
+            "js": {
+                "initPDQscript": ""
+            },
+            "scriptSrc": [
+                "pdq-scripts\\.pdqprod\\.link"
+            ],
+            "description": "Pretty Damn Quick is a Shopify app for eCommerce brands to deliver personalized checkout experiences.",
+            "website": "https://www.prettydamnquick.com/",
+            "icon": "PrettyDamnQuick.png"
         },
         "Pretty Links": {
             "cats": [
