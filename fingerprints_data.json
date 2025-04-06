@@ -3238,6 +3238,21 @@
             "website": "https://apps.shopify.com/ali-reviews",
             "icon": "Alireviews.svg"
         },
+        "Alia": {
+            "cats": [
+                100,
+                110
+            ],
+            "js": {
+                "alia": ""
+            },
+            "implies": [
+                "Shopify"
+            ],
+            "description": "Alia is a Shopify app to design Email and SMS sign-up pop-up units",
+            "website": "https://www.alialearn.com/",
+            "icon": "Alia.png"
+        },
         "Alibaba Cloud CDN": {
             "cats": [
                 31
@@ -12670,17 +12685,17 @@
                 66
             ],
             "dom": {
-                "img[class*='civic-image']": {
+                "img[class~='civic-image']": {
                     "exists": ""
                 },
-                "img[class*='civictheme-image']": {
+                "img[class~='civictheme-image']": {
                     "exists": ""
                 },
-                "img[class*='ct-image']": {
+                "img[class~='ct-image']": {
                     "exists": ""
                 }
             },
-            "description": "CivicTheme is an open source, inclusive and component-based design system. It was created so governments and corporations can rapidly assemble modern, consistent and compliant digital experiences.",
+            "description": "CivicTheme is an open source, inclusive, and component-based design system. It was created so governments and corporations can rapidly assemble modern, consistent and compliant digital experiences.",
             "website": "https://www.civictheme.io/",
             "icon": "civictheme.png"
         },
@@ -17537,6 +17552,17 @@
             "website": "https://digify.shop",
             "icon": "DigiFi.svg"
         },
+        "Digioh": {
+            "cats": [
+                110
+            ],
+            "js": {
+                "DIGIOH_API": ""
+            },
+            "description": "Digioh is a lead generation and marketing company helping to convert clicks to customers known for it's email/sms sign-up units",
+            "website": "https://www.digioh.com/",
+            "icon": "Digioh.png"
+        },
         "Digismoothie Candy Rack": {
             "cats": [
                 100
@@ -19555,6 +19581,17 @@
             "description": "EdgeCast is a content delivery network (CDN) that accelerated and delivers static content to users around the world.",
             "website": "https://www.edgecast.com",
             "icon": "EdgeCast.png"
+        },
+        "Edgemesh": {
+            "cats": [
+                92
+            ],
+            "js": {
+                "edgemesh": ""
+            },
+            "description": "Edgemesh is web acceleration platform for e-commerce brands",
+            "website": "https://edgemesh.com/",
+            "icon": "Edgemesh.png"
         },
         "Edgio": {
             "cats": [
@@ -33834,6 +33871,19 @@
             "website": "https://www.klaviyo.com/solutions/customer-data-platform",
             "icon": "Klaviyo.svg"
         },
+        "Klaviyo Forms": {
+            "cats": [
+                110
+            ],
+            "dom": {
+                "div.klaviyo-form": {
+                    "exists": ""
+                }
+            },
+            "description": "Klaviyo Forms are used to capture Email and SMS sign-ups",
+            "website": "https://www.klaviyo.com/features/web-forms",
+            "icon": "Klaviyo.svg"
+        },
         "Klaviyo Reviews": {
             "cats": [
                 90
@@ -46225,6 +46275,26 @@
             "description": "Panda is a styling engine that generates styling primitives to author atomic CSS and recipes in a type-safe and readable manner.",
             "website": "https://panda-css.com/",
             "icon": "PandaCSS.svg"
+        },
+        "Pandectes": {
+            "cats": [
+                67,
+                100
+            ],
+            "cookies": {
+                "_pandectes_gdpr": ""
+            },
+            "scriptSrc": [
+                "gdpr-privacy-policy-assets\\.s3-us-west-2\\.amazonaws\\.com/",
+                "pandectes-core\\.js",
+                "s3\\.us-west-2\\.amazonaws\\.com/gdpr-privacy-policy-assets/"
+            ],
+            "implies": [
+                "Shopify"
+            ],
+            "description": "Pandectes is a cloud-based data privacy management compliance platform for Shopify stores, ensuring compliance with GDPR, CCPA/CPRA, VCDPA, APPI, PIPEDA, and PDPA regulations.",
+            "website": "https://pandectes.io",
+            "icon": "pandectes.svg"
         },
         "Pandectes GDPR Compliance": {
             "cats": [
@@ -65009,10 +65079,12 @@
                 }
             },
             "js": {
+                "Tapcart": "",
+                "tapcartParams": "",
                 "tapcartwebBanner": ""
             },
             "scriptSrc": [
-                "cdn\\.tapcart\\.com/"
+                "\\.tapcart\\.com/"
             ],
             "description": "Tapcart is a mobile commerce SaaS platform that integrates directly with Shopify.",
             "website": "https://tapcart.com",
