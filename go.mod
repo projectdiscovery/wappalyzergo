@@ -1,10 +1,11 @@
 module github.com/projectdiscovery/wappalyzergo
 
 go 1.21
+toolchain go1.24.1
 
 require (
 	github.com/stretchr/testify v1.10.0
-	golang.org/x/net v0.35.0
+	golang.org/x/net v0.39.0
 )
 
 require (
