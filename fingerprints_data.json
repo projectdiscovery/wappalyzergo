@@ -22028,6 +22028,18 @@
             "website": "https://www.fastcomet.com",
             "icon": "FastComet.png"
         },
+        "FastPixel": {
+            "cats": [
+                23,
+                87
+            ],
+            "html": [
+                "\u003clink[^\u003e]+href=\"https://cdn\\.fastpixel\\.io"
+            ],
+            "description": "FastPixel is a web performance and security service that provides caching, a content delivery network, web application firewall, and image optimization.",
+            "website": "https://fastpixel.io/",
+            "icon": "FastPixel.svg"
+        },
         "FastSpring": {
             "cats": [
                 6,
