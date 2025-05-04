@@ -7479,16 +7479,17 @@
         },
         "BerqWP": {
             "cats": [
+                87,
                 92
             ],
-            "js": {
-                "BerqWPcacheResource": "",
-                "berqwp_add_assets_browser_cache": "",
-                "berqwp_readyState": ""
+            "dom": {
+                "style[data-berqwp],script[data-berqwp]": {
+                    "exists": ""
+                }
             },
-            "description": "BerqWP is a speed optimization plugin designed to help websites pass the core web vitals assessment and improve overall speed scores for better performance.",
+            "description": "BerqWP is a WordPress performance optimization plugin.",
             "website": "https://berqwp.com/",
-            "icon": "BerqWP.svg"
+            "icon": "BerqWP.png"
         },
         "Bestie": {
             "cats": [
@@ -78901,6 +78902,16 @@
             "description": "jQuery Modal is an overlay dialog box or in other words, a popup window that is made to display on the top or 'overlayed' on the current page.",
             "website": "https://jquerymodal.com",
             "icon": "jQuery Modal.png"
+        },
+        "jQuery Popup Overlay": {
+            "cats": [
+                59
+            ],
+            "scriptSrc": [
+                "(\\d+\\.\\d+\\.\\d+)/jquery\\.popupoverlay\\.js\\;version:\\1"
+            ],
+            "description": "jQuery Popup Overlay is a responsive overlay which lets you create modal windows, tooltips, and more.",
+            "website": "https://www.npmjs.com/package/jquery-popup-overlay"
         },
         "jQuery Sparklines": {
             "cats": [
