@@ -71279,6 +71279,20 @@
             "website": "https://visely.io",
             "icon": "Visely.svg"
         },
+        "VisiOpt": {
+            "cats": [
+                74
+            ],
+            "js": {
+                "visiopt_code": ""
+            },
+            "scriptSrc": [
+                "visiopt\\.com"
+            ],
+            "description": "Visiopt™ is a powerful yet easy to use AI-driven Optimization System that enables you to manufacture your perfect customer at scale like a well oiled machine.",
+            "website": "https://visiopt.com",
+            "icon": "visiopt.png"
+        },
         "Visible Privacy": {
             "cats": [
                 67
