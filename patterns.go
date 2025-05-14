@@ -28,6 +28,8 @@ const (
 	verCap2Limited = `((?:\d{1,20}\.){1,20}\d{1,20})`
 )
 
+var engine = regexputil.EngineAuto
+
 // ParsePattern extracts information from a pattern, supporting both regex and simple patterns
 func ParsePattern(pattern string) (*ParsedPattern, error) {
 	parts := strings.Split(pattern, "\\;")
@@ -57,7 +59,7 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2Fill, verCap2Limited)
 
 			var err error
-			p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineAuto))
+			p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(engine))
 			if err != nil {
 				return nil, err
 			}
