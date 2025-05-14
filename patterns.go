@@ -2,15 +2,16 @@ package wappalyzer
 
 import (
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
+
+	regexputil "github.com/projectdiscovery/utils/regexp"
 )
 
 // ParsedPattern encapsulates a regular expression with
 // additional metadata for confidence and version extraction.
 type ParsedPattern struct {
-	regex *regexp.Regexp
+	regex *regexputil.Regexp
 
 	Confidence int
 	Version    string
@@ -56,7 +57,7 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2Fill, verCap2Limited)
 
 			var err error
-			p.regex, err = regexp.Compile("(?i)" + regexPattern)
+			p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineAuto))
 			if err != nil {
 				return nil, err
 			}
