@@ -3,7 +3,7 @@ module github.com/projectdiscovery/wappalyzergo
 go 1.25.0
 
 require (
-	github.com/projectdiscovery/utils v0.4.20-0.20250514092358-f3d4202f1345
+	github.com/projectdiscovery/utils v0.4.20-0.20250514122934-1a3982dbe21b
 	github.com/stretchr/testify v1.11.1
 	golang.org/x/net v0.52.0
 )
@@ -19,6 +19,6 @@ require (
 	github.com/tetratelabs/wazero v1.9.0 // indirect
 	github.com/wasilibs/go-re2 v1.10.0 // indirect
 	github.com/wasilibs/wazero-helpers v0.0.0-20240620070341-3dff1577cd52 // indirect
-	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/sys v0.42.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
