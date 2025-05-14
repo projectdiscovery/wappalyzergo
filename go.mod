@@ -2,8 +2,6 @@ module github.com/projectdiscovery/wappalyzergo
 
 go 1.23.0
 
-toolchain go1.24.3
-
 require (
 	github.com/projectdiscovery/utils v0.4.20-0.20250514092358-f3d4202f1345
 	github.com/stretchr/testify v1.10.0
