@@ -61,6 +61,9 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			var err error
 			if engine != regexputil.EngineAuto {
 				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(engine))
+				if err != nil {
+					return nil, err
+				}
 			} else {
 				// always try with re2 first, and then fallback to standard library
 				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineRE2))
