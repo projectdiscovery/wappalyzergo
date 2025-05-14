@@ -59,9 +59,17 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2Fill, verCap2Limited)
 
 			var err error
-			p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(engine))
-			if err != nil {
-				return nil, err
+			if engine != regexputil.EngineAuto {
+				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(engine))
+			} else {
+				// always try with re2 first, and then fallback to standard library
+				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineRE2))
+				if err != nil {
+					p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineStandard))
+					if err != nil {
+						return nil, err
+					}
+				}
 			}
 		} else {
 			keyValue := strings.SplitN(part, ":", 2)

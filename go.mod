@@ -3,8 +3,7 @@ module github.com/projectdiscovery/wappalyzergo
 go 1.23.0
 
 require (
-	github.com/dlclark/regexp2 v1.11.5
-	github.com/projectdiscovery/utils v0.4.20-0.20250514122934-1a3982dbe21b
+	github.com/projectdiscovery/utils v0.4.20-0.20250514143028-041df58cd869
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/net v0.40.0
 )
@@ -12,6 +11,7 @@ require (
 require (
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
+	github.com/dlclark/regexp2 v1.11.5 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.27 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect

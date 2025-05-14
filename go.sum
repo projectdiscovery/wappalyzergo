@@ -10,8 +10,8 @@ github.com/microcosm-cc/bluemonday v1.0.27 h1:MpEUotklkwCSLeH+Qdx1VJgNqLlpY2KXwX
 github.com/microcosm-cc/bluemonday v1.0.27/go.mod h1:jFi9vgW+H7c3V0lb6nR74Ib/DIB5OBs92Dimizgw2cA=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 h1:Jamvg5psRIccs7FGNTlIRMkT8wgtp5eCXdBlqhYGL6U=
 github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/projectdiscovery/utils v0.4.20-0.20250514122934-1a3982dbe21b h1:ZKaazXm8WVFPkVqRFLiJf84O+GBVjXk22gyAGoIs7U0=
-github.com/projectdiscovery/utils v0.4.20-0.20250514122934-1a3982dbe21b/go.mod h1:zGHEyiNVt1hekj7gELIGq3RnuE45lvN5K2pzbuECM9U=
+github.com/projectdiscovery/utils v0.4.20-0.20250514143028-041df58cd869 h1:oOdUfFp9M+Z5qVCulwYTiEFmBDKKPrexBbLqvvzA8kM=
+github.com/projectdiscovery/utils v0.4.20-0.20250514143028-041df58cd869/go.mod h1:zGHEyiNVt1hekj7gELIGq3RnuE45lvN5K2pzbuECM9U=
 github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d h1:hrujxIzL1woJ7AwssoOcM/tq5JjjG2yYOc8odClEiXA=
 github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d/go.mod h1:uugorj2VCxiV1x+LzaIdVa9b4S4qGAcH6cbhh4qVxOU=
 github.com/stretchr/testify v1.10.0 h1:Xv5erBjTwe/5IxqUQTdXv5kgmIvbHo3QQyRwhJsOfJA=
