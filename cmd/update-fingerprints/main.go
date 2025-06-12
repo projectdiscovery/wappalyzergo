@@ -65,6 +65,8 @@ type OutputFingerprint struct {
 	Website     string                            `json:"website,omitempty"`
 	CPE         string                            `json:"cpe,omitempty"`
 	Icon        string                            `json:"icon,omitempty"`
+	Vendor      string                            `json:"vendor,omitempty"`
+	Product     string                            `json:"product,omitempty"`
 }
 
 var fingerprintURLs = []string{
@@ -170,6 +172,11 @@ func normalizeFingerprints(fingerprints *Fingerprints) *OutputFingerprints {
 			Website:     fingerprint.Website,
 			CPE:         fingerprint.CPE,
 			Icon:        fingerprint.Icon,
+		}
+		if output.CPE != "" {
+			parts := strings.Split(output.CPE, ":")
+			output.Vendor = parts[3]
+			output.Product = parts[4]
 		}
 
 		for cookie, value := range fingerprint.Cookies {

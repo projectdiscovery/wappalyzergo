@@ -2,6 +2,7 @@ package wappalyzer
 
 import (
 	"fmt"
+	"strings"
 )
 
 // Fingerprints contains a map of fingerprints for tech detection
@@ -27,6 +28,8 @@ type Fingerprint struct {
 	Website     string                            `json:"website"`
 	CPE         string                            `json:"cpe"`
 	Icon        string                            `json:"icon"`
+	Vendor      string                            `json:"vendor"`
+	Product     string                            `json:"product"`
 }
 
 // CompiledFingerprints contains a map of fingerprints for tech detection
@@ -65,6 +68,10 @@ type CompiledFingerprint struct {
 	meta map[string][]*ParsedPattern
 	// cpe contains the cpe for a fingerpritn
 	cpe string
+	// vendor contains the vendor for a fingerprint
+	vendor string
+	// product contains the product for a fingerprint
+	product string
 }
 
 func (f *CompiledFingerprint) GetJSRules() map[string]*ParsedPattern {
@@ -119,6 +126,13 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		scriptSrc:   make([]*ParsedPattern, 0, len(fingerprint.ScriptSrc)),
 		meta:        make(map[string][]*ParsedPattern),
 		cpe:         fingerprint.CPE,
+	}
+
+	if compiled.cpe != "" {
+		parts := strings.Split(compiled.cpe, ":")
+		compiled.vendor = parts[3]
+		compiled.product = parts[4]
+
 	}
 
 	for dom, patterns := range fingerprint.Dom {
