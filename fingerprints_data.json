@@ -18814,7 +18814,7 @@
                 51
             ],
             "js": {
-                "SystemID": "^.*DIRECT.*$",
+                "SystemID": "^.*(?:DIRECT|EU_PRODUCTION).*$",
                 "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
             },
             "scriptSrc": [
