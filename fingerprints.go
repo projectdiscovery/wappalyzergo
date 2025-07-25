@@ -2,6 +2,7 @@ package wappalyzer
 
 import (
 	"fmt"
+	"sort"
 )
 
 // Fingerprints contains a map of fingerprints for tech detection
@@ -35,6 +36,19 @@ type CompiledFingerprints struct {
 	Apps map[string]*CompiledFingerprint
 }
 
+// MatchingField contains a name of the given field and a parsed pattern to match the field.
+type MatchingField struct {
+	FieldName string
+	Patterns  []*ParsedPattern
+}
+
+// ByFieldName implements sort.Interface on []MatchingField.
+type ByFieldName []*MatchingField
+
+func (a ByFieldName) Len() int           { return len(a) }
+func (a ByFieldName) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByFieldName) Less(i, j int) bool { return a[i].FieldName < a[j].FieldName }
+
 // CompiledFingerprint contains the compiled fingerprints from the tech json
 type CompiledFingerprint struct {
 	// cats contain categories that are implicit with this tech
@@ -48,13 +62,13 @@ type CompiledFingerprint struct {
 	// icon contains a Icon associated with the fingerprint
 	icon string
 	// cookies contains fingerprints for target cookies
-	cookies map[string]*ParsedPattern
+	cookies []*MatchingField
 	// js contains fingerprints for the js file
 	js map[string]*ParsedPattern
 	// dom contains fingerprints for the target dom
 	dom map[string]map[string]*ParsedPattern
 	// headers contains fingerprints for target headers
-	headers map[string]*ParsedPattern
+	headers []*MatchingField
 	// html contains fingerprints for the target HTML
 	html []*ParsedPattern
 	// script contains fingerprints for scripts
@@ -62,7 +76,7 @@ type CompiledFingerprint struct {
 	// scriptSrc contains fingerprints for script srcs
 	scriptSrc []*ParsedPattern
 	// meta contains fingerprints for meta tags
-	meta map[string][]*ParsedPattern
+	meta []*MatchingField
 	// cpe contains the cpe for a fingerpritn
 	cpe string
 }
@@ -111,13 +125,13 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		website:     fingerprint.Website,
 		icon:        fingerprint.Icon,
 		dom:         make(map[string]map[string]*ParsedPattern),
-		cookies:     make(map[string]*ParsedPattern),
+		cookies:     make([]*MatchingField, 0),
 		js:          make(map[string]*ParsedPattern),
-		headers:     make(map[string]*ParsedPattern),
+		headers:     make([]*MatchingField, 0),
 		html:        make([]*ParsedPattern, 0, len(fingerprint.HTML)),
 		script:      make([]*ParsedPattern, 0, len(fingerprint.Script)),
 		scriptSrc:   make([]*ParsedPattern, 0, len(fingerprint.ScriptSrc)),
-		meta:        make(map[string][]*ParsedPattern),
+		meta:        make([]*MatchingField, 0),
 		cpe:         fingerprint.CPE,
 	}
 
@@ -154,7 +168,10 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		if err != nil {
 			continue
 		}
-		compiled.cookies[header] = fingerprint
+		compiled.cookies = append(compiled.cookies, &MatchingField{
+			FieldName: header,
+			Patterns:  []*ParsedPattern{fingerprint},
+		})
 	}
 
 	for k, pattern := range fingerprint.JS {
@@ -170,7 +187,10 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		if err != nil {
 			continue
 		}
-		compiled.headers[header] = fingerprint
+		compiled.headers = append(compiled.headers, &MatchingField{
+			FieldName: header,
+			Patterns:  []*ParsedPattern{fingerprint},
+		})
 	}
 
 	for _, pattern := range fingerprint.HTML {
@@ -207,8 +227,17 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 			}
 			compiledList = append(compiledList, fingerprint)
 		}
-		compiled.meta[meta] = compiledList
+		compiled.meta = append(compiled.meta, &MatchingField{
+			FieldName: meta,
+			Patterns:  compiledList,
+		})
 	}
+
+	// Sort slices to ensure deterministic detection
+	sort.Sort(ByFieldName(compiled.headers))
+	sort.Sort(ByFieldName(compiled.cookies))
+	sort.Sort(ByFieldName(compiled.meta))
+
 	return compiled
 }
 
@@ -289,42 +318,11 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 		switch part {
 		case cookiesPart:
-			for data, pattern := range fingerprint.cookies {
-				if data != key {
+			for _, field := range fingerprint.cookies {
+				if field.FieldName != key {
 					continue
 				}
-
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
-					}
-					confidence = pattern.Confidence
-					break
-				}
-			}
-		case headersPart:
-			for data, pattern := range fingerprint.headers {
-				if data != key {
-					continue
-				}
-
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
-					}
-					confidence = pattern.Confidence
-					break
-				}
-			}
-		case metaPart:
-			for data, patterns := range fingerprint.meta {
-				if data != key {
-					continue
-				}
-
-				for _, pattern := range patterns {
+				for _, pattern := range field.Patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
 						if version == "" && versionString != "" {
@@ -333,6 +331,49 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 						confidence = pattern.Confidence
 						break
 					}
+				}
+				if matched {
+					break
+				}
+			}
+		case headersPart:
+			for _, field := range fingerprint.headers {
+				if field.FieldName != key {
+					continue
+				}
+
+				for _, pattern := range field.Patterns {
+					if valid, versionString := pattern.Evaluate(value); valid {
+						matched = true
+						if version == "" && versionString != "" {
+							version = versionString
+						}
+						confidence = pattern.Confidence
+						break
+					}
+				}
+				if matched {
+					break
+				}
+			}
+		case metaPart:
+			for _, field := range fingerprint.meta {
+				if field.FieldName != key {
+					continue
+				}
+
+				for _, pattern := range field.Patterns {
+					if valid, versionString := pattern.Evaluate(value); valid {
+						matched = true
+						if version == "" && versionString != "" {
+							version = versionString
+						}
+						confidence = pattern.Confidence
+						break
+					}
+				}
+				if matched {
+					break
 				}
 			}
 		}
@@ -371,47 +412,16 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 
 		switch part {
 		case cookiesPart:
-			for data, pattern := range fingerprint.cookies {
-				value, ok := keyValue[data]
+			for _, field := range fingerprint.cookies {
+				value, ok := keyValue[field.FieldName]
 				if !ok {
 					continue
 				}
-				if pattern == nil {
-					matched = true
-				}
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+				for _, pattern := range field.Patterns {
+					if pattern == nil {
+						matched = true
+						break
 					}
-					confidence = pattern.Confidence
-					break
-				}
-			}
-		case headersPart:
-			for data, pattern := range fingerprint.headers {
-				value, ok := keyValue[data]
-				if !ok {
-					continue
-				}
-
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
-					}
-					confidence = pattern.Confidence
-					break
-				}
-			}
-		case metaPart:
-			for data, patterns := range fingerprint.meta {
-				value, ok := keyValue[data]
-				if !ok {
-					continue
-				}
-
-				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
 						if version == "" && versionString != "" {
@@ -420,6 +430,51 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 						confidence = pattern.Confidence
 						break
 					}
+				}
+				if matched {
+					break
+				}
+			}
+		case headersPart:
+			for _, field := range fingerprint.headers {
+				value, ok := keyValue[field.FieldName]
+				if !ok {
+					continue
+				}
+
+				for _, pattern := range field.Patterns {
+					if valid, versionString := pattern.Evaluate(value); valid {
+						matched = true
+						if version == "" && versionString != "" {
+							version = versionString
+						}
+						confidence = pattern.Confidence
+						break
+					}
+				}
+				if matched {
+					break
+				}
+			}
+		case metaPart:
+			for _, field := range fingerprint.meta {
+				value, ok := keyValue[field.FieldName]
+				if !ok {
+					continue
+				}
+
+				for _, pattern := range field.Patterns {
+					if valid, versionString := pattern.Evaluate(value); valid {
+						matched = true
+						if version == "" && versionString != "" {
+							version = versionString
+						}
+						confidence = pattern.Confidence
+						break
+					}
+				}
+				if matched {
+					break
 				}
 			}
 		}
