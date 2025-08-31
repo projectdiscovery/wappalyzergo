@@ -82494,6 +82494,17 @@
             "website": "https://en.wikipedia.org/wiki/WebSocket",
             "icon": "WebSocket.svg"
         },
+        "WebSphere": {
+            "cats": [
+                22
+            ],
+            "cookies": {
+                "(?i)ltpatoken": ""
+            },
+            "website": "https://www.ibm.com/products/websphere-application-server",
+            "cpe": "cpe:2.3:a:ibm:websphere_application_server:-:*:*:*:*:*:*:*",
+            "icon": "websphere.svg"
+        },
         "WebToffee Stripe Payment Plugin for WooCommerce": {
             "cats": [
                 87
