@@ -42817,6 +42817,30 @@
             "website": "https://mahara.org",
             "icon": "Mahara.svg"
         },
+        "Maho": {
+            "cats": [
+                6,
+                1
+            ],
+            "cookies": {
+                "maho_session": ""
+            },
+            "scriptSrc": [
+                "js/maho-autocomplete\\.js",
+                "js/maho-captcha\\.js",
+                "js/maho-dialog\\.js",
+                "js/maho-load-on-intent\\.js",
+                "js/maho-passkey-tools\\.js",
+                "js/maho-tree\\.js"
+            ],
+            "implies": [
+                "MySQL",
+                "PHP"
+            ],
+            "description": "Maho is a modern, open-source ecommerce platform forked from OpenMage, offering enhanced developer experience while maintaining Magento 1 compatibility.",
+            "website": "https://mahocommerce.com",
+            "icon": "Maho.svg"
+        },
         "MailChimp": {
             "cats": [
                 32,
