@@ -65452,6 +65452,7 @@
                 }
             },
             "js": {
+                "ShopPay": "",
                 "ShopifyPay.apiHost": ""
             },
             "scriptSrc": [
@@ -65780,15 +65781,12 @@
                 "ShopifyCustomer": ""
             },
             "headers": {
+                "powered-by": "shopify",
                 "x-shopid": "\\;confidence:50",
                 "x-shopify-stage": ""
             },
             "scripts": [
                 "shopifytag"
-            ],
-            "scriptSrc": [
-                "cdn\\.shopify\\.com",
-                "sdks\\.shopifycdn\\.com"
             ],
             "meta": {
                 "shopify-checkout-api-token": [],
@@ -65806,7 +65804,8 @@
                 "ShopifyBuy": ""
             },
             "scriptSrc": [
-                "sdk\\. shopifycdn\\.com/buy-button/latest/"
+                "sdks\\.shopifycdn\\.com/buy-button/",
+                "sdks\\.shopifycdn\\.com/js-buy-sdk/"
             ],
             "description": "Shopify Buy Button is an app from Shopify which allows merchant to embed buy functionality for any product or collection into another website or blog.",
             "website": "https://apps.shopify.com/buy-button",
@@ -65875,6 +65874,17 @@
             ],
             "description": "Shopify Product reviews allows you to add a customer review feature to your products.",
             "website": "https://apps.shopify.com/product-reviews",
+            "icon": "Shopify.svg"
+        },
+        "Shopify Web Components": {
+            "cats": [
+                18
+            ],
+            "scriptSrc": [
+                "cdn\\.shopify\\.com/storefront/web-components\\.js"
+            ],
+            "description": "Storefront Web Components let you bring Shopify-powered commerce capabilities to any website.",
+            "website": "https://shopify.dev/docs/api/storefront-web-components",
             "icon": "Shopify.svg"
         },
         "Shopistry": {
@@ -76584,12 +76594,22 @@
                     "exists": ""
                 }
             },
+            "js": {
+                "troveDataLayer": "",
+                "troveGlobal": ""
+            },
             "headers": {
                 "x-trove-app-name": "",
                 "x-trove-country-code": "",
                 "x-trove-order-uuid": "",
                 "x-yerdle-app-name": ""
             },
+            "scriptSrc": [
+                "recurate-core\\.js",
+                "recurate-page\\.js",
+                "recurate-pdp\\.js",
+                "recurate-slider\\.js"
+            ],
             "description": "Trove (formerly Yerdle) builds white-label technology and end-to-end operations for ecommerce platforms.",
             "website": "https://trove.co",
             "icon": "trove.png"
@@ -76928,6 +76948,17 @@
             ],
             "description": "Turbolinks is a Rails feature, available as a gem and enabled by default in new Rails apps. It is intended to speed up navigating between pages of your application.",
             "website": "https://github.com/turbolinks/turbolinks"
+        },
+        "Turbopack": {
+            "cats": [
+                47
+            ],
+            "js": {
+                "TURBOPACK": ""
+            },
+            "description": "Turbopack is an open-source JavaScript module bundler.",
+            "website": "https://nextjs.org/docs/app/api-reference/turbopack",
+            "icon": "Turbopack.svg"
         },
         "TurfJS": {
             "cats": [
