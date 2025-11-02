@@ -3914,7 +3914,7 @@
                 "ALTCHA_WIDGET_ATTRS": ""
             },
             "scripts": [
-                ".*altcha\\.(org|js)"
+                "altcha\\.(org|js)"
             ],
             "description": "Altcha is a spam and abuse protection solution for websites and apps, offering a privacy-friendly Captcha and other tools designed with GDPR compliance to provide strong security while safeguarding user privacy.",
             "website": "https://altcha.org",
