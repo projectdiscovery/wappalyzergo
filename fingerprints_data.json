@@ -7883,6 +7883,19 @@
             "website": "https://thebase.in",
             "icon": "Base.svg"
         },
+        "Base44": {
+            "cats": [
+                1
+            ],
+            "meta": {
+                "apple-mobile-web-app-title": [
+                    "base44"
+                ]
+            },
+            "description": "Base44 is an AI-powered, no-code platform that lets users build functional web apps from natural language prompts instead of writing code.",
+            "website": "https://base44.com/",
+            "icon": "Base44.png"
+        },
         "BaseKit": {
             "cats": [
                 51
@@ -23099,6 +23112,17 @@
             "cpe": "cpe:2.3:a:emberjs:ember.js:*:*:*:*:*:*:*:*",
             "icon": "Ember.js.png"
         },
+        "Emergent": {
+            "cats": [
+                1
+            ],
+            "scriptSrc": [
+                "assets\\.emergent\\.sh"
+            ],
+            "description": "Emergent is an AI-powered, no-code platform that lets users build functional web apps from natural language prompts instead of writing code.",
+            "website": "https://app.emergent.sh/",
+            "icon": "Emergent.png"
+        },
         "Emojicom": {
             "cats": [
                 73
@@ -36939,6 +36963,7 @@
                 90
             ],
             "js": {
+                "jdgm": "",
                 "judgeme": ""
             },
             "scriptSrc": [
@@ -39578,6 +39603,20 @@
             "website": "https://layup.co.za",
             "icon": "LayUp.svg"
         },
+        "Layers": {
+            "cats": [
+                29
+            ],
+            "js": {
+                "Layers": ""
+            },
+            "implies": [
+                "Shopify"
+            ],
+            "description": "Layers is a site search and merchandising platform designed to help ecommerce.",
+            "website": "https://www.uselayers.com/",
+            "icon": "Layers.png"
+        },
         "Laylo": {
             "cats": [
                 53
@@ -41840,6 +41879,24 @@
             "description": "LottieFiles is an open-source animation file format that's tiny, high quality, interactive, and can be manipulated at runtime.",
             "website": "https://lottiefiles.com",
             "icon": "LottieFiles.svg"
+        },
+        "Lovable": {
+            "cats": [
+                1
+            ],
+            "dom": {
+                "link[href*='/lovable-uploads/']": {
+                    "exists": ""
+                }
+            },
+            "meta": {
+                "author": [
+                    "lovable"
+                ]
+            },
+            "description": "Lovable is an AI-powered, no-code platform that lets users build functional web apps from natural language prompts instead of writing code.",
+            "website": "https://lovable.dev/",
+            "icon": "Lovable.png"
         },
         "Loyalis": {
             "cats": [
@@ -44629,10 +44686,12 @@
                 6
             ],
             "cookies": {
+                "_mshops_ga": "",
+                "_mshops_ga_cid": "",
                 "_mshops_ga_gid": ""
             },
             "scriptSrc": [
-                "frontend-assets/mshops-web-home/vendor"
+                "frontend-assets/mshops-web-home/"
             ],
             "description": "Mercado Shops is an all-in-one ecommerce platform.",
             "website": "https://www.mercadoshops.com",
@@ -62167,6 +62226,17 @@
             "description": "Rumble is a Canadian video-streaming platform that presents itself as an alternative to YouTube.",
             "website": "https://rumble.com",
             "icon": "Rumble.svg"
+        },
+        "Rumvision": {
+            "cats": [
+                78
+            ],
+            "js": {
+                "rumv_config": ""
+            },
+            "description": "Rumvision is a front-end performance monitoring service",
+            "website": "https://www.rumvision.com/",
+            "icon": "Rumvision.png"
         },
         "RunKit": {
             "cats": [
