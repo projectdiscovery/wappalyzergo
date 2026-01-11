@@ -95011,7 +95011,8 @@
                 "x-pingback": "/xmlrpc\\.php$"
             },
             "html": [
-                "\u003clink rel=[\"']stylesheet[\"'] [^\u003e]+/wp-(?:content|includes)/",
+                "\u003clink [^\u003e]+/wp-(?:content|includes)/[^\u003e]+ rel=[\"']stylesheet[\"']",
+                "\u003clink [^\u003e]+rel=[\"']stylesheet[\"'] [^\u003e]+/wp-(?:content|includes)/",
                 "\u003clink[^\u003e]+s\\d+\\.wp\\.com"
             ],
             "scriptSrc": [
