@@ -8634,16 +8634,19 @@
                 66
             ],
             "dom": {
-                "div[data-base-ui-focusable]": {
+                "[id^='base-ui-'], [data-base-ui-navigation-menu-trigger]": {
                     "exists": ""
                 }
             },
             "scripts": [
-                "base-ui\\.com"
+                "base-ui\\.com/"
             ],
-            "description": "Base UI is an unstyled React component library that provides accessible, high-performance building blocks for creating user interfaces, emphasizing accessibility, performance, and developer experience.",
-            "website": "https://base-ui.com/react/overview/quick-start",
-            "icon": "BaseUI.svg"
+            "implies": [
+                "React"
+            ],
+            "description": "Unstyled UI components for building accessible web apps and design systems.",
+            "website": "https://base-ui.com/",
+            "icon": "base-ui.svg"
         },
         "Base44": {
             "cats": [
