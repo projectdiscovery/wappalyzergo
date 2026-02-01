@@ -71604,6 +71604,29 @@
             "website": "https://www.sanity.io",
             "icon": "Sanity.svg"
         },
+        "Sanity.io": {
+            "cats": [
+                1
+            ],
+            "dom": {
+                "img[src*='cdn.sanity.io'],img[srcset*='cdn.sanity.io'],video[src*='cdn.sanity.io'],source[src*='cdn.sanity.io'],source[srcset*='cdn.sanity.io'],track[src*='cdn.sanity.io']": {
+                    "attributes": {
+                        "src": "",
+                        "srcset": ""
+                    }
+                }
+            },
+            "headers": {
+                "content-security-policy": "cdn\\.sanity\\.io",
+                "x-sanity-shard": ""
+            },
+            "scriptSrc": [
+                "cdn\\.sanity\\.io"
+            ],
+            "description": "Sanity is a platform for structured content. It comes with an open-source, headless CMS that can be customized with Javascript, a real-time hosted data store and an asset delivery pipeline.",
+            "website": "https://www.sanity.io",
+            "icon": "Sanity.svg"
+        },
         "Sapo": {
             "cats": [
                 6
@@ -93071,6 +93094,9 @@
                     "exists": ""
                 }
             },
+            "headers": {
+                "upgrade": "websocket"
+            },
             "html": [
                 "\u003c(?:link|a)[^\u003e]+href=[\"']wss?://"
             ],
@@ -98628,6 +98654,17 @@
             "description": "A small, fast and rich-API browser/platform/engine detector for both browser and node.",
             "website": "https://opencollective.com/bowser"
         },
+        "bun": {
+            "cats": [
+                27
+            ],
+            "headers": {
+                "x-powered-by": "bun"
+            },
+            "description": "Bun is a fast JavaScript runtime compatible with Node.js and Deno.",
+            "website": "https://bun.sh",
+            "icon": "bun.svg"
+        },
         "bxSlider": {
             "cats": [
                 7,
@@ -100997,6 +101034,20 @@
             "description": "onpublix is a web content management system (CMS) platform for eBusinesses.",
             "website": "https://www.onpublix.de",
             "icon": "onpublix.svg"
+        },
+        "opentelemetry": {
+            "cats": [
+                10
+            ],
+            "js": {
+                "otel": ""
+            },
+            "scriptSrc": [
+                "opentelemetry.*\\.js"
+            ],
+            "description": "OpenTelemetry is a framework for observability, providing standardized APIs, libraries, and agents to collect telemetry data.",
+            "website": "https://opentelemetry.io",
+            "icon": "opentelemetry.svg"
         },
         "osCommerce": {
             "cats": [
