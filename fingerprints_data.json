@@ -47919,6 +47919,21 @@
             "website": "https://www.magazord.com.br",
             "icon": "Magazord.svg"
         },
+        "Mage-OS": {
+            "cats": [
+                6,
+                1
+            ],
+            "headers": {
+                "x-dist": "^mage-os$"
+            },
+            "implies": [
+                "Magento"
+            ],
+            "description": "Mage-OS is an independent, community-driven ecommerce platform built on Magento Open Source.",
+            "website": "https://mage-os.org",
+            "icon": "Mage-OS.svg"
+        },
         "MageMail": {
             "cats": [
                 75
