@@ -218,38 +218,38 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
-		var version string
-		confidence := 100
+		var confidences []int
+		var versions []string
 
 		switch part {
 		case jsPart:
 			for _, pattern := range fingerprint.js {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case scriptPart:
 			for _, pattern := range fingerprint.scriptSrc {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case htmlPart:
 			for _, pattern := range fingerprint.html {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		}
@@ -257,6 +257,12 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 		// If no match, continue with the next fingerprint
 		if !matched {
 			continue
+		}
+
+		version := Lowest(versions)
+		confidence := 100
+		if len(confidences) > 0 {
+			confidence = Max(confidences)
 		}
 
 		// Append the technologies as well as implied ones
@@ -284,8 +290,8 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
-		var version string
-		confidence := 100
+		var confidences []int
+		var versions []string
 
 		switch part {
 		case cookiesPart:
@@ -296,11 +302,10 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
-					break
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case headersPart:
@@ -311,11 +316,10 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
-					break
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case metaPart:
@@ -327,11 +331,10 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						if version == "" && versionString != "" {
-							version = versionString
+						if versionString != "" {
+							versions = append(versions, versionString)
 						}
-						confidence = pattern.Confidence
-						break
+						confidences = append(confidences, pattern.Confidence)
 					}
 				}
 			}
@@ -340,6 +343,12 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 		// If no match, continue with the next fingerprint
 		if !matched {
 			continue
+		}
+
+		version := Lowest(versions)
+		confidence := 100
+		if len(confidences) > 0 {
+			confidence = Max(confidences)
 		}
 
 		technologies = append(technologies, matchPartResult{
@@ -366,8 +375,8 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 	var technologies []matchPartResult
 
 	for app, fingerprint := range f.Apps {
-		var version string
-		confidence := 100
+		var confidences []int
+		var versions []string
 
 		switch part {
 		case cookiesPart:
@@ -381,11 +390,10 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				}
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
-					break
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case headersPart:
@@ -397,11 +405,10 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
-						version = versionString
+					if versionString != "" {
+						versions = append(versions, versionString)
 					}
-					confidence = pattern.Confidence
-					break
+					confidences = append(confidences, pattern.Confidence)
 				}
 			}
 		case metaPart:
@@ -414,11 +421,10 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						if version == "" && versionString != "" {
-							version = versionString
+						if versionString != "" {
+							versions = append(versions, versionString)
 						}
-						confidence = pattern.Confidence
-						break
+						confidences = append(confidences, pattern.Confidence)
 					}
 				}
 			}
@@ -427,6 +433,12 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 		// If no match, continue with the next fingerprint
 		if !matched {
 			continue
+		}
+
+		version := Lowest(versions)
+		confidence := 100
+		if len(confidences) > 0 {
+			confidence = Max(confidences)
 		}
 
 		technologies = append(technologies, matchPartResult{
@@ -452,6 +464,19 @@ func FormatAppVersion(app, version string) string {
 		return app
 	}
 	return fmt.Sprintf("%s:%s", app, version)
+}
+
+func Max(arr []int) int {
+	if len(arr) == 0 {
+		panic("Max requires at least one argument")
+	}
+	m := arr[0]
+	for _, v := range arr[1:] {
+		if v > m {
+			m = v
+		}
+	}
+	return m
 }
 
 // GetFingerprints returns the fingerprint string from wappalyzer
