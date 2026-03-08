@@ -65518,6 +65518,9 @@
             "dom": {
                 "img[src*='/modules/prestablog/themes/'], img[data-src*='/modules/prestablog/themes/']": {
                     "exists": ""
+                },
+                "link[href*='/modules/ps_']": {
+                    "exists": ""
                 }
             },
             "cookies": {
@@ -65534,9 +65537,13 @@
                 "powered-by": "^prestashop$"
             },
             "html": [
+                "\u003c!-- (?:/)?module [^|]+ \\|\\| presta-module\\.com --\u003e",
                 "\u003c!-- /block [a-z ]+ module (?:header|top)?\\s?--\u003e",
                 "\u003c!-- /module block [a-z ]+ --\u003e",
                 "powered by \u003ca\\s+[^\u003e]+\u003eprestashop"
+            ],
+            "scriptSrc": [
+                "/modules/ps_[a-z]+/"
             ],
             "meta": {
                 "generator": [
