@@ -1,23 +1,39 @@
-name: 🙏🏻 Lint Test
+name: 🔨 Tests
+
 on:
   push:
+    paths:
+      - '**.go'
+      - '**.mod'
   pull_request:
+    paths:
+      - '**.go'
+      - '**.mod'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   lint:
-    name: Lint Test
+    name: Lint
+    if: ${{ !endsWith(github.actor, '[bot]') }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v5
-      - name: Set up Go
-        uses: actions/setup-go@v6
-        with:
-          go-version: 1.21.x
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6.5.2
-        with:
-          version: latest
-          args: --timeout 5m
-          working-directory: .
+      - uses: actions/checkout@v6
+      - uses: projectdiscovery/actions/setup/go@v1
+      - uses: projectdiscovery/actions/golangci-lint/v2@v1
+
+  tests:
+    name: Tests
+    needs: [lint]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: projectdiscovery/actions/setup/go@v1
+      - run: go test ./...
