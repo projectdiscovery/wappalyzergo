@@ -1,10 +1,12 @@
-name: 🤖 dep auto merge
+name: 🤖 Auto Merge
 
 on:
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+  pull_request_review:
+    types: [submitted]
+  workflow_run:
+    workflows: ["♾️ Compatibility Checks"]
+    types:
+      - completed
 
 permissions:
   pull-requests: write
@@ -12,11 +14,11 @@ permissions:
   repository-projects: write
 
 jobs:
-  automerge:
+  auto-merge:
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           token: ${{ secrets.DEPENDABOT_PAT }}
 
