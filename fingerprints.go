@@ -219,37 +219,43 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 
 	for app, fingerprint := range f.Apps {
 		var version string
-		confidence := 100
+		var confidence int
 
 		switch part {
 		case jsPart:
 			for _, pattern := range fingerprint.js {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
 				}
 			}
 		case scriptPart:
 			for _, pattern := range fingerprint.scriptSrc {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
 				}
 			}
 		case htmlPart:
 			for _, pattern := range fingerprint.html {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
 				}
 			}
 		}
@@ -285,7 +291,7 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 	for app, fingerprint := range f.Apps {
 		var version string
-		confidence := 100
+		var confidence int
 
 		switch part {
 		case cookiesPart:
@@ -296,11 +302,12 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
-					break
 				}
 			}
 		case headersPart:
@@ -311,11 +318,12 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
-					break
 				}
 			}
 		case metaPart:
@@ -327,11 +335,12 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						if version == "" && versionString != "" {
+						if pattern.Confidence > confidence {
+							confidence = pattern.Confidence
+						}
+						if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 							version = versionString
 						}
-						confidence = pattern.Confidence
-						break
 					}
 				}
 			}
@@ -367,7 +376,7 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 
 	for app, fingerprint := range f.Apps {
 		var version string
-		confidence := 100
+		var confidence int
 
 		switch part {
 		case cookiesPart:
@@ -378,14 +387,16 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				}
 				if pattern == nil {
 					matched = true
+					continue
 				}
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
-					break
 				}
 			}
 		case headersPart:
@@ -397,11 +408,12 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 
 				if valid, versionString := pattern.Evaluate(value); valid {
 					matched = true
-					if version == "" && versionString != "" {
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 						version = versionString
 					}
-					confidence = pattern.Confidence
-					break
 				}
 			}
 		case metaPart:
@@ -414,11 +426,12 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
-						if version == "" && versionString != "" {
+						if pattern.Confidence > confidence {
+							confidence = pattern.Confidence
+						}
+						if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
 							version = versionString
 						}
-						confidence = pattern.Confidence
-						break
 					}
 				}
 			}
