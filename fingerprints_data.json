@@ -24472,6 +24472,17 @@
             "website": "https://dreamdata.io",
             "icon": "Dreamdata.svg"
         },
+        "DressOn": {
+            "cats": [
+                105
+            ],
+            "scriptSrc": [
+                "api\\.dresson\\.com\\.br/widget/"
+            ],
+            "description": "DressOn is an AI-powered virtual fitting room that lets online shoppers try on clothes digitally.",
+            "website": "https://dresson.com.br",
+            "icon": "DressOn.svg"
+        },
         "Drift": {
             "cats": [
                 52
@@ -98876,6 +98887,22 @@
             "description": "WURFL.js is JavaScript that detects device models of smartphones, tablets, smart TVs and game consoles accessing your website.",
             "website": "https://web.wurfl.io/",
             "icon": "Wurfl.png"
+        },
+        "Wx3": {
+            "cats": [
+                6
+            ],
+            "html": [
+                "\u003ca [^\u003e]*href=\"https://wx3\\.com\\.br\""
+            ],
+            "meta": {
+                "author": [
+                    "wx3"
+                ]
+            },
+            "description": "Wx3 is a Brazilian e-commerce platform for fashion and retail stores.",
+            "website": "https://wx3.com.br",
+            "icon": "Wx3.svg"
         },
         "Wyng": {
             "cats": [
