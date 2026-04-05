@@ -50837,7 +50837,7 @@
                 66
             ],
             "dom": {
-                "#data-marko-key, html[data-framework='marko']": {
+                "#data-marko-key, [data-marko-key], html[data-framework='marko']": {
                     "exists": ""
                 }
             },
@@ -56859,6 +56859,22 @@
             "description": "Normi is a Compliance Management Platform designed to ensure adherence to Quebec's C-25 regulation.",
             "website": "https://normi.ca",
             "icon": "Normi.svg"
+        },
+        "Norse Env": {
+            "cats": [
+                1
+            ],
+            "headers": {
+                "x-powered-by": "norse env"
+            },
+            "meta": {
+                "generator": [
+                    "norse env"
+                ]
+            },
+            "description": "Norse Env is a lightweight PHP CMS for content-driven websites, featuring a visual editor, media library, and custom admin URL.",
+            "website": "https://esim.pe",
+            "icon": "NorseEnv.png"
         },
         "NorthStar Civic": {
             "cats": [
@@ -81176,6 +81192,20 @@
             "description": "Sourcepoint is the data privacy software company for the digital marketing ecosystem.",
             "website": "https://sourcepoint.com",
             "icon": "Sourcepoint.svg"
+        },
+        "Sourcey": {
+            "cats": [
+                4,
+                57
+            ],
+            "meta": {
+                "generator": [
+                    "sourcey(?: ([\\d.]+))?\\;version:\\1"
+                ]
+            },
+            "description": "Sourcey is an open-source documentation platform and static site generator.",
+            "website": "https://sourcey.com",
+            "icon": "default.svg"
         },
         "Sovrn": {
             "cats": [
