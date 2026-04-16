@@ -104106,7 +104106,7 @@
                 "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
             },
             "scriptSrc": [
-                "/(\\d+\\.\\d+\\.\\d+)/jquery[/.-][^u]\\;version:\\1",
+                "/(\\d+\\.\\d+\\.\\d+)/jquery(?:\\.min)?\\.js\\;version:\\1",
                 "/jquery(?:-(\\d+\\.\\d+\\.\\d+))[/.-]\\;version:\\1",
                 "jquery"
             ],
