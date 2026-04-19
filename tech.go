@@ -248,15 +248,8 @@ func (s *Wappalyze) FingerprintWithTitle(headers map[string][]string, body []byt
 	return uniqueFingerprints.GetValues(), ""
 }
 
-// FingerprintWithInfo identifies technologies on a target,
-// based on the received response headers and body.
-// It also returns basic information about the technology, such as description
-// and website URL as well as icon.
-//
-// Body should not be mutated while this function is being called, or it may
-// lead to unexpected things.
-func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte) map[string]AppInfo {
-	apps := s.Fingerprint(headers, body)
+// EnrichWithInfo adds basic information about the technology to an existing map of parsed apps.
+func (s *Wappalyze) EnrichWithInfo(apps map[string]struct{}) map[string]AppInfo {
 	result := make(map[string]AppInfo, len(apps))
 
 	for app := range apps {
@@ -277,6 +270,18 @@ func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte
 	return result
 }
 
+// FingerprintWithInfo identifies technologies on a target,
+// based on the received response headers and body.
+// It also returns basic information about the technology, such as description
+// and website URL as well as icon.
+//
+// Body should not be mutated while this function is being called, or it may
+// lead to unexpected things.
+func (s *Wappalyze) FingerprintWithInfo(headers map[string][]string, body []byte) map[string]AppInfo {
+	apps := s.Fingerprint(headers, body)
+	return s.EnrichWithInfo(apps)
+}
+
 func AppInfoFromFingerprint(fingerprint *CompiledFingerprint) AppInfo {
 	categories := make([]string, 0, len(fingerprint.cats))
 	for _, cat := range fingerprint.cats {
@@ -293,13 +298,8 @@ func AppInfoFromFingerprint(fingerprint *CompiledFingerprint) AppInfo {
 	}
 }
 
-// FingerprintWithCats identifies technologies on a target,
-// based on the received response headers and body.
-// It also returns categories information about the technology, is there's any
-// Body should not be mutated while this function is being called, or it may
-// lead to unexpected things.
-func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte) map[string]CatsInfo {
-	apps := s.Fingerprint(headers, body)
+// EnrichWithCats adds categories information to an existing map of parsed apps.
+func (s *Wappalyze) EnrichWithCats(apps map[string]struct{}) map[string]CatsInfo {
 	result := make(map[string]CatsInfo, len(apps))
 
 	for app := range apps {
@@ -312,3 +312,14 @@ func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte
 
 	return result
 }
+
+// FingerprintWithCats identifies technologies on a target,
+// based on the received response headers and body.
+// It also returns categories information about the technology, is there's any
+// Body should not be mutated while this function is being called, or it may
+// lead to unexpected things.
+func (s *Wappalyze) FingerprintWithCats(headers map[string][]string, body []byte) map[string]CatsInfo {
+	apps := s.Fingerprint(headers, body)
+	return s.EnrichWithCats(apps)
+}
+
