@@ -72412,6 +72412,26 @@
             "website": "https://www.rocketspark.com",
             "icon": "Rocketspark.svg"
         },
+        "Rofofk": {
+            "cats": [
+                1,
+                6
+            ],
+            "js": {
+                "Rofofk": ""
+            },
+            "headers": {
+                "x-powered-by": "rofofk"
+            },
+            "meta": {
+                "generator": [
+                    "rofofk"
+                ]
+            },
+            "description": "Rofofk is an Arabic multi-tenant e-commerce SaaS platform.",
+            "website": "https://rofofk.com",
+            "icon": "Rofofk.svg"
+        },
         "Roistat": {
             "cats": [
                 10,
