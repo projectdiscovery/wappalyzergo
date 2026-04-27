@@ -460,6 +460,126 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 	return technologies
 }
 
+// matchJSGlobals matches javascript global variables (extracted headlessly)
+func (f *CompiledFingerprints) matchJSGlobals(globals map[string]string) []matchPartResult {
+	var matched bool
+	var technologies []matchPartResult
+
+	for app, fingerprint := range f.Apps {
+		var version string
+		var confidence int
+
+		for data, pattern := range fingerprint.js {
+			value, ok := globals[data]
+			if !ok {
+				continue
+			}
+
+			if valid, versionString := pattern.Evaluate(value); valid {
+				matched = true
+				if pattern.Confidence > confidence {
+					confidence = pattern.Confidence
+				}
+				if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
+					version = versionString
+				}
+			}
+		}
+
+		if !matched {
+			continue
+		}
+
+		technologies = append(technologies, matchPartResult{
+			application: app,
+			version:     version,
+			confidence:  confidence,
+		})
+		if len(fingerprint.implies) > 0 {
+			for _, implies := range fingerprint.implies {
+				technologies = append(technologies, matchPartResult{
+					application: implies,
+					confidence:  confidence,
+				})
+			}
+		}
+		matched = false
+	}
+	return technologies
+}
+
+// matchDOMSelectors matches DOM queries (extracted headlessly)
+func (f *CompiledFingerprints) matchDOMSelectors(domAttributes map[string]map[string]string) []matchPartResult {
+	var matched bool
+	var technologies []matchPartResult
+
+	for app, fingerprint := range f.Apps {
+		var version string
+		var confidence int
+
+		// fingerprint.dom is map[selector]map[attribute]*ParsedPattern
+		for selector, attrPatterns := range fingerprint.dom {
+			// extracted is the map of attributes for that selector found in the page
+			extractedAttributes, ok := domAttributes[selector]
+			if !ok || extractedAttributes == nil {
+				continue
+			}
+
+			var domMatched bool
+			for attr, pattern := range attrPatterns {
+				var attrValue string
+				if attr == "main" {
+					// "main" corresponds to "text" or "exists" mapping in compileFingerprint hook
+					if val, textOk := extractedAttributes["text"]; textOk {
+						attrValue = val
+					} else if val, existsOk := extractedAttributes["exists"]; existsOk {
+						attrValue = val
+					} else {
+						attrValue = ""
+					}
+				} else {
+					attrValue = extractedAttributes[attr]
+				}
+
+				if valid, versionString := pattern.Evaluate(attrValue); valid {
+					domMatched = true
+					if pattern.Confidence > confidence {
+						confidence = pattern.Confidence
+					}
+					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
+						version = versionString
+					}
+				}
+			}
+			
+			if domMatched {
+				matched = true
+			}
+		}
+
+		if !matched {
+			continue
+		}
+
+		technologies = append(technologies, matchPartResult{
+			application: app,
+			version:     version,
+			confidence:  confidence,
+		})
+		if len(fingerprint.implies) > 0 {
+			for _, implies := range fingerprint.implies {
+				technologies = append(technologies, matchPartResult{
+					application: implies,
+					confidence:  confidence,
+				})
+			}
+		}
+		matched = false
+	}
+	return technologies
+}
+
+
 func FormatAppVersion(app, version string) string {
 	if version == "" {
 		return app
