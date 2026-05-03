@@ -84202,6 +84202,22 @@
             "website": "https://super.so",
             "icon": "Super Builder.svg"
         },
+        "Super Page Cache": {
+            "cats": [
+                23,
+                87
+            ],
+            "headers": {
+                "x-wp-cf-super-cache-active": "",
+                "x-wp-spc-disk-cache": ""
+            },
+            "scriptSrc": [
+                "/wp-content/plugins/(?:wp-cloudflare-page-cache|wp-super-page-cache-pro)/"
+            ],
+            "description": "Super Page Cache is a static caching plugin for WordPress.",
+            "website": "https://themeisle.com/plugins/super-page-cache-pro/",
+            "icon": "super-page-cache.svg"
+        },
         "Super Socializer": {
             "cats": [
                 69,
