@@ -9469,11 +9469,11 @@
                 92
             ],
             "dom": {
-                "style[data-berqwp],script[data-berqwp]": {
+                "html.berqwp-premium": {
                     "exists": ""
                 }
             },
-            "description": "BerqWP is a WordPress performance optimization plugin.",
+            "description": "BerqWP is a All-in-One speed optimization plugin for WordPress.",
             "website": "https://berqwp.com/",
             "icon": "BerqWP.png"
         },
