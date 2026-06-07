@@ -30804,6 +30804,29 @@
             "website": "https://flowplayer.com",
             "icon": "Flowplayer.svg"
         },
+        "Fluent Forms": {
+            "cats": [
+                87,
+                110
+            ],
+            "dom": {
+                "form.frm-fluent-form": {
+                    "exists": ""
+                },
+                "input[name='__fluent_form_embded_post_id']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "fluentFormVars": ""
+            },
+            "scriptSrc": [
+                "/wp-content/plugins/fluentform/assets/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+            ],
+            "description": "Fluent Forms is a drag-and-drop form builder plugin for WordPress.",
+            "website": "https://fluentforms.com",
+            "icon": "Fluent Forms.svg"
+        },
         "Fluid Framework": {
             "cats": [
                 12
@@ -35579,6 +35602,18 @@
             "description": "Google analytics enhanced ecommerce is a plug-in which enables the measurement of user interactions with products on ecommerce websites.",
             "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce",
             "icon": "Google Analytics.svg"
+        },
+        "Google Analytics for WooCommerce": {
+            "cats": [
+                10,
+                87
+            ],
+            "scriptSrc": [
+                "/wp-content/plugins/woocommerce-google-analytics-integration/.+\\.js(?:\\?ver=(\\d+(?:\\.\\d+)+))?\\;version:\\1"
+            ],
+            "description": "Google Analytics for WooCommerce connects your store to your Google Analytics account for ecommerce and site analytics, providing valuable metrics on your store’s performance.",
+            "website": "https://woocommerce.com/products/woocommerce-google-analytics/",
+            "icon": "WooCommerceGA.png"
         },
         "Google App Engine": {
             "cats": [
@@ -43372,6 +43407,22 @@
             "description": "KMK is a company that offers ecommerce software technology in C2C, B2B, B2C areas.",
             "website": "https://www.kmk.net.tr",
             "icon": "KMK.svg"
+        },
+        "KOMERO": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "KOMERO": ""
+            },
+            "meta": {
+                "generator": [
+                    "^komero"
+                ]
+            },
+            "description": "Multi-tenant SaaS e-commerce platform.",
+            "website": "https://www.komero.ge",
+            "icon": "Komero.png"
         },
         "KPHP": {
             "cats": [
@@ -79413,6 +79464,18 @@
             "website": "https://sky-shop.pl",
             "icon": "Sky-Shop.svg"
         },
+        "SkyCMS by Netkoncept": {
+            "cats": [
+                1
+            ],
+            "cookies": {
+                "skycms_languageid": "",
+                "skycms_pagecounter": ""
+            },
+            "description": "Polish SaaS content-management platform developed by NETKONCEPT, primarily used by public administration websites and Public Information Bulletin (BIP) portals.",
+            "website": "https://www.netkoncept.com/86/63/technologia-skycms.html",
+            "icon": "SkyCMS_by_netkoncept.svg"
+        },
         "SkyGlue": {
             "cats": [
                 10
@@ -96253,6 +96316,16 @@
             "description": "Web4Realty is an all-in-one marketing and sales platform for real estate professionals.",
             "website": "https://web4realty.com",
             "icon": "Web4Realty.svg"
+        },
+        "WebAdministrator CMS": {
+            "cats": [
+                1
+            ],
+            "html": [
+                "\u003c!-- [\\d\\.]+ / webadministrator \\(\\d{2}.\\d{2}\\.\\d{4} \\d{2}:\\d{2}\\) //--\u003e"
+            ],
+            "description": "WebAdministrator CMS is a content management system used heavily by Polish public institutions.",
+            "website": "https://www.jskinternet.pl/jsk/oferta/webadministrator-cms/"
         },
         "WebAssembly": {
             "cats": [
