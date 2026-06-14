@@ -2757,6 +2757,33 @@
             "website": "https://www.advin.cz",
             "icon": "Advin.svg"
         },
+        "Adwos CMS": {
+            "cats": [
+                1,
+                6
+            ],
+            "html": [
+                "\u003cmeta[^\u003e]+name=\"adwos:powered-by\"",
+                "\u003cmeta[^\u003e]+property=\"og:site_name\"[^\u003e]+content=\"adwos cms\""
+            ],
+            "meta": {
+                "application-name": [
+                    "^adwos cms$"
+                ],
+                "generator": [
+                    "^adwos cms"
+                ]
+            },
+            "implies": [
+                "Go",
+                "Next.js",
+                "PostgreSQL",
+                "Redis"
+            ],
+            "description": "Adwos CMS is a turnkey CMS for classified ads, marketplaces and rental services. Go 1.24 backend + Next.js 16 frontend, PostgreSQL 16, Redis. Self-hosted, one-time license per domain.",
+            "website": "https://adwos.org",
+            "icon": "Adwos CMS.svg"
+        },
         "Adyen": {
             "cats": [
                 41
@@ -5044,6 +5071,21 @@
             "description": "Angular Material is a UI component library for Angular JS developers. Angular Material components assist in constructing attractive, consistent, and functional web pages and web applications.",
             "website": "https://material.angularjs.org",
             "icon": "AngularJS.svg"
+        },
+        "Angular Notitia": {
+            "cats": [
+                59,
+                66
+            ],
+            "js": {
+                "ngxNotitia": "(.+)\\;version:\\1"
+            },
+            "implies": [
+                "Angular"
+            ],
+            "description": "Easy, flexible toast notification library for Angular applications.",
+            "website": "https://ngx-notitia.vercel.app",
+            "icon": "AngularNotitia.svg"
         },
         "AngularDart": {
             "cats": [
@@ -17643,6 +17685,17 @@
             },
             "description": "Turnstile is Cloudflare's smart CAPTCHA alternative.",
             "website": "https://www.cloudflare.com/products/turnstile",
+            "icon": "CloudFlare.svg"
+        },
+        "Cloudflare Turnstile for WooCommerce": {
+            "cats": [
+                87
+            ],
+            "scriptSrc": [
+                "/wp-content/plugins/simple-cloudflare-turnstile/js/integrations/woocommerce\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+            ],
+            "description": "Cloudflare Turnstile Integration Plugin for WooCommerce adds Cloudflare Turnstile support to WooCommerce forms.",
+            "website": "https://wordpress.org/plugins/simple-cloudflare-turnstile/",
             "icon": "CloudFlare.svg"
         },
         "Cloudflare Workers": {
@@ -48380,6 +48433,14 @@
             "website": "https://lofty.com",
             "icon": "Lofty.svg"
         },
+        "LogMeIn": {
+            "cats": [
+                46
+            ],
+            "description": "LogMeIn (now part of GoTo) provides remote access, remote support, and identity and collaboration software for individuals and businesses.",
+            "website": "https://www.logmein.com",
+            "icon": "LogMeIn.svg"
+        },
         "LogRocket": {
             "cats": [
                 10
@@ -49479,6 +49540,29 @@
             "description": "MUI(formerly Material UI) is a simple and customisable component library to build faster, beautiful, and more accessible React applications.",
             "website": "https://mui.com",
             "icon": "MUI.svg"
+        },
+        "MVD Studio": {
+            "cats": [
+                1,
+                6
+            ],
+            "headers": {
+                "x-built-by": "mvd studio",
+                "x-generator": "mvd studio",
+                "x-powered-by": "mvd studio"
+            },
+            "meta": {
+                "generator": [
+                    "mvd studio"
+                ]
+            },
+            "implies": [
+                "Laravel",
+                "PHP"
+            ],
+            "description": "MVD Studio is a Laravel-based platform built by MVD Studio (Uruguay) for e-commerce stores and bespoke web applications.",
+            "website": "https://mvdstudio.com.uy",
+            "icon": "MVD Studio.svg"
         },
         "Maatoo": {
             "cats": [
@@ -93548,6 +93632,50 @@
             "website": "https://www.verseone.com",
             "icon": "VerseOne.svg"
         },
+        "VertaFlow Analytics": {
+            "cats": [
+                10
+            ],
+            "scriptSrc": [
+                "vertaflow\\.io/v1/pixel\\.js"
+            ],
+            "description": "VertaFlow Analytics is a lightweight, cookie-free, first-party analytics pixel that tracks pageviews, clicks, scroll depth, and UTM campaigns, sending events to VertaFlow CRM.",
+            "website": "https://vertaflow.io",
+            "icon": "VertaFlow.svg"
+        },
+        "VertaFlow Booking": {
+            "cats": [
+                72
+            ],
+            "scriptSrc": [
+                "vertaflow\\.io/v1/book\\.js"
+            ],
+            "description": "VertaFlow Booking is an embeddable appointment-scheduling widget that syncs bookings to VertaFlow CRM.",
+            "website": "https://vertaflow.io",
+            "icon": "VertaFlow.svg"
+        },
+        "VertaFlow Chat": {
+            "cats": [
+                52
+            ],
+            "scriptSrc": [
+                "vertaflow\\.io/v1/chat\\.js"
+            ],
+            "description": "VertaFlow Chat is a lightweight embeddable chat widget that routes messages to VertaFlow CRM tickets.",
+            "website": "https://vertaflow.io",
+            "icon": "VertaFlow.svg"
+        },
+        "VertaFlow Forms": {
+            "cats": [
+                110
+            ],
+            "scriptSrc": [
+                "vertaflow\\.io/v1/form\\.js"
+            ],
+            "description": "VertaFlow Forms is an embeddable lead-capture form widget that routes submissions to VertaFlow CRM.",
+            "website": "https://vertaflow.io",
+            "icon": "VertaFlow.svg"
+        },
         "Vertex": {
             "cats": [
                 80
@@ -98825,6 +98953,14 @@
             "description": "Workday is an enterprise cloud platform that provides solutions for finance, human resources, and business planning.",
             "website": "https://www.workday.com",
             "icon": "Workday.svg"
+        },
+        "Workplace by Meta": {
+            "cats": [
+                19
+            ],
+            "description": "Workplace was an enterprise collaboration and communication platform developed by Meta (formerly Facebook), used for messaging, news feeds, and groups within organisations.",
+            "website": "https://www.workplace.com",
+            "icon": "Workplace.svg"
         },
         "Workstand": {
             "cats": [
@@ -104850,6 +104986,28 @@
             "website": "https://code.google.com/p/modwsgi",
             "cpe": "cpe:2.3:a:modwsgi:mod_wsgi:*:*:*:*:*:*:*:*",
             "icon": "mod_wsgi.png"
+        },
+        "n8n": {
+            "cats": [
+                47
+            ],
+            "cookies": {
+                "n8n-auth": ""
+            },
+            "scripts": [
+                "n8n_debounce_multiplier",
+                "n8n_password_min_length"
+            ],
+            "meta": {
+                "n8n:config:rest-endpoint": [],
+                "n8n:config:sentry": []
+            },
+            "implies": [
+                "Node.js"
+            ],
+            "description": "n8n is a source-available workflow automation tool that allows you to connect various services and build automated workflows with a visual node-based editor.",
+            "website": "https://n8n.io",
+            "icon": "n8n.svg"
         },
         "nghttpx - HTTP/2 proxy": {
             "cats": [
