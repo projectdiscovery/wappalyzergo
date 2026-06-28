@@ -5381,6 +5381,14 @@
             "website": "https://www.anthology.com/products/lifecycle-engagement/alumni-and-advancement/anthology-encompass",
             "icon": "Anthology.svg"
         },
+        "Anthropic": {
+            "cats": [
+                112
+            ],
+            "description": "Anthropic is an AI safety company that develops Claude, a family of large language models, and provides an API for building AI-powered applications. The anthropic-domain-verification TXT record confirms domain ownership for Anthropic services.",
+            "website": "https://www.anthropic.com",
+            "icon": "Anthropic.svg"
+        },
         "AntiBot.Cloud": {
             "cats": [
                 16
@@ -21227,6 +21235,14 @@
             "description": "Curaytor is a digital marketing platform that provides online strategy, advertising, and lead generation solutions for businesses seeking to enhance their digital presence.",
             "website": "https://www.curaytor.com",
             "icon": "Curaytor.svg"
+        },
+        "Cursor": {
+            "cats": [
+                112
+            ],
+            "description": "Cursor is an AI-powered code editor (IDE) that uses large language models to generate, edit, and explain code. The cursor-domain-verification TXT record confirms domain ownership for Cursor services.",
+            "website": "https://www.cursor.com",
+            "icon": "Cursor.svg"
         },
         "Custobar": {
             "cats": [
@@ -43514,6 +43530,25 @@
             "website": "https://www.kqs.pl",
             "icon": "KQS.store.png"
         },
+        "KRT CDN": {
+            "cats": [
+                31
+            ],
+            "dom": {
+                "img[src*='cdn.krajtilak.in']": {
+                    "exists": ""
+                },
+                "link[href*='cdn.krajtilak.in']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "cdn\\.krajtilak\\.in"
+            ],
+            "description": "KRT CDN is a Content Delivery Network used for delivering assets securely and quickly.",
+            "website": "https://krajtilak.in",
+            "icon": "KRT CDN.svg"
+        },
         "KUKUI": {
             "cats": [
                 32
@@ -43688,6 +43723,20 @@
             "description": "Kakao platform provides various services such as Kakao Talk, Kakao Talk Channel, Kakao Story as well as Kakao Pay, Kakao Commerce, Kakao Page provided by the subsidiaries. Users can use all Kakao platform services with a united account called Kakao Account.",
             "website": "https://developers.kakao.com/product",
             "icon": "Kakao.svg"
+        },
+        "KaliCart Bridge": {
+            "cats": [
+                6
+            ],
+            "html": [
+                "\u003clink[^\u003e]+rel=[\"']kalicart-agent[\"'][^\u003e]*\u003e",
+                "wp-json\\/kalicart\\/v1\\/discovery"
+            ],
+            "implies": [
+                "WooCommerce"
+            ],
+            "description": "KaliCart Bridge is a WooCommerce plugin that exposes a structured REST API and MCP server, making the store catalog readable by AI agents and MCP clients.",
+            "website": "https://bridge.kalicart.com"
         },
         "Kalio": {
             "cats": [
@@ -97924,6 +97973,14 @@
             "website": "https://microsoft.com/windowsserver",
             "icon": "WindowsServer.png"
         },
+        "Windsurf": {
+            "cats": [
+                112
+            ],
+            "description": "Windsurf (formerly Codeium) is an AI-powered code editor (IDE) that uses large language models for code generation, completion, and agentic workflows. The windsurf-verification TXT record confirms domain ownership for Windsurf services.",
+            "website": "https://windsurf.com",
+            "icon": "Windsurf.svg"
+        },
         "WineDirect": {
             "cats": [
                 6
@@ -100964,6 +101021,14 @@
             ],
             "website": "https://zanox.com",
             "icon": "Zanox.png"
+        },
+        "Zapier": {
+            "cats": [
+                47
+            ],
+            "description": "Zapier is a workflow automation platform that connects apps and services to build automated workflows (Zaps) without code. The zapier-domain-verification-challenge TXT record confirms domain ownership for Zapier services.",
+            "website": "https://zapier.com",
+            "icon": "Zapier.svg"
         },
         "Zapiet": {
             "cats": [
