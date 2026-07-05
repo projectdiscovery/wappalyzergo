@@ -93681,6 +93681,31 @@
             "website": "https://www.verseone.com",
             "icon": "VerseOne.svg"
         },
+        "VertaFlow": {
+            "cats": [
+                5,
+                6,
+                32,
+                53,
+                108
+            ],
+            "dom": {
+                "script[src*=\"api.vertaflow.io/v1/pixel.js\"][data-site]": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "\u003cscript[^\u003e]+src=[\"']https://api\\.vertaflow\\.io/v1/pixel\\.js[\"'][^\u003e]*data-site=",
+                "powered by vertaflow",
+                "window\\.__tenant_config__="
+            ],
+            "scriptSrc": [
+                "api\\.vertaflow\\.io/v1/pixel\\.js"
+            ],
+            "description": "VertaFlow is a vertical CRM and commerce platform for small businesses, with client portals, payments, storefront widgets, online ordering, messaging, and industry-specific workflows.",
+            "website": "https://vertaflow.io",
+            "icon": "VertaFlow.svg"
+        },
         "VertaFlow Analytics": {
             "cats": [
                 10
