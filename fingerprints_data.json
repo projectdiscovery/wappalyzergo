@@ -14853,6 +14853,28 @@
             "website": "https://www.cartful.com",
             "icon": "Cartful.svg"
         },
+        "Cartline": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "Cartline.platform": "^Cartline$"
+            },
+            "headers": {
+                "x-cartline-platform": "cartline\\.pk"
+            },
+            "meta": {
+                "application-name": [
+                    "^cartline$"
+                ],
+                "generator": [
+                    "^cartline$"
+                ]
+            },
+            "description": "Cartline is a Pakistani ecommerce and WhatsApp-commerce platform for creating online stores with cart, checkout and order management. Part of the One Line commerce suite.",
+            "website": "https://cartline.pk",
+            "icon": "Cartline.svg"
+        },
         "Cartpanda": {
             "cats": [
                 6
