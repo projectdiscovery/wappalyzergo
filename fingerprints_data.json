@@ -103008,7 +103008,7 @@
                 "dcAPIKey": ""
             },
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?dc(?:\\.leaflet)?\\.js\\;version:\\1"
+                "(?:((?:\\d+\\.)+\\d+)\\/(?:dc\\/)?)?(?:/|-)dc(?:\\.leaflet)?\\.js\\;version:\\1"
             ],
             "description": "A multi-dimensional charting library built to work natively with crossfilter and rendered using d3.js",
             "website": "https://dc-js.github.io/dc.js/",
