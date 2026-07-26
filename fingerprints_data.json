@@ -86365,6 +86365,18 @@
             "website": "https://tanstack.com",
             "icon": "TanStack.svg"
         },
+        "TanStack Start": {
+            "cats": [
+                12,
+                18
+            ],
+            "js": {
+                "__TSS_START_OPTIONS__": ""
+            },
+            "description": "TanStack Start takes TanStack Router's typed route tree, URL state, loaders, and prefetching, then adds the server pieces: full-document SSR, streaming, server functions, server routes, and build output for the runtime you choose.",
+            "website": "https://tanstack.com/start",
+            "icon": "TanStack.svg"
+        },
         "Tangiblee": {
             "cats": [
                 105
