@@ -18782,6 +18782,22 @@
             "website": "https://commercio.com",
             "icon": "Commercio.svg"
         },
+        "Commercy": {
+            "cats": [
+                6
+            ],
+            "meta": {
+                "generator": [
+                    "^commercy$"
+                ]
+            },
+            "implies": [
+                "Next.js"
+            ],
+            "description": "Commercy is an Argentine commerce platform that combines an online store, point of sale, inventory and ARCA/AFIP electronic invoicing in a single system.",
+            "website": "https://commercy.com.ar",
+            "icon": "Commercy.svg"
+        },
         "Common Ground": {
             "cats": [
                 6
@@ -95378,6 +95394,26 @@
             "description": "WAR.PE is a platform designed to enhance the web experience by promoting user privacy and security.",
             "website": "https://war.pe",
             "icon": "WARPE.svg"
+        },
+        "WARP Performance": {
+            "cats": [
+                87,
+                92
+            ],
+            "dom": {
+                "script[data-src*='/wp-content/plugins/warp-performance/']": {
+                    "exists": ""
+                },
+                "script[src*='/wp-content/plugins/warp-performance/']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "/wp-content/plugins/warp-performance/"
+            ],
+            "description": "WARP Performance is a WordPress plugin that improves website performance through page caching, asset optimisation, lazy loading, and other speed-focused features.",
+            "website": "https://warpperformance.com",
+            "icon": "warp-performance.svg"
         },
         "WEBDEV": {
             "cats": [
