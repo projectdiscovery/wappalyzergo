@@ -80048,6 +80048,34 @@
             "website": "https://www.smartemailing.cz",
             "icon": "SmartEmailing.svg"
         },
+        "SmartFront": {
+            "cats": [
+                108,
+                6
+            ],
+            "dom": {
+                "[data-sf-shell-page-head]": {
+                    "exists": ""
+                },
+                "div#sf-tenant-css": {
+                    "exists": ""
+                },
+                "style#sf-theme-vars": {
+                    "exists": ""
+                }
+            },
+            "meta": {
+                "generator": [
+                    "^smartfront(?: ([\\d.]+))?$\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "Next.js"
+            ],
+            "description": "SmartFront is a multi-tenant headless storefront and admin platform that runs on top of an existing commerce backend such as Magento, Shopify, WooCommerce, Shopware, BigCommerce, PrestaShop, OpenCart, Sylius or Medusa, or on its own native commerce.",
+            "website": "https://smartfront.io",
+            "icon": "SmartFront.svg"
+        },
         "SmartHint": {
             "cats": [
                 76
@@ -93580,6 +93608,35 @@
             "description": "Vergic is a platform facilitating real-time online engagement between site owners, customer service agents, and individual customers, prospects, or visitors.",
             "website": "https://www.vergic.com",
             "icon": "Vergic.svg"
+        },
+        "Verificado": {
+            "cats": [
+                90,
+                5
+            ],
+            "dom": {
+                "#verificadoAIwidget": {
+                    "exists": ""
+                },
+                ".verificadoai-plp-rating": {
+                    "exists": ""
+                },
+                "html[data-verificado]": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "VerificadoAI.version": "^(.+)$\\;version:\\1",
+                "verificadoAIKeyId": "",
+                "verificadoAIUriBaseCdn": ""
+            },
+            "scriptSrc": [
+                "app\\.verificado\\.ai/js/widget/onsite-feedback-widget\\.js",
+                "cdn-mz-gj-vai\\.verificado\\.ai/(?:js/)?widget/"
+            ],
+            "description": "Verificado is a SaaS platform for collecting, moderating and publishing verified product and seller reviews on ecommerce sites.",
+            "website": "https://verificado.ai",
+            "icon": "Verificado.svg"
         },
         "Verifone 2Checkout": {
             "cats": [
