@@ -1070,6 +1070,9 @@
             "cats": [
                 68
             ],
+            "js": {
+                "accessWidget.config.footerHtml": ""
+            },
             "scripts": [
                 "www\\.accessiway\\.at"
             ],
@@ -2321,6 +2324,14 @@
             "description": "Adnymics is a platform that enables personalization in ecommerce by tailoring content, recommendations, and experiences to individual users based on their behavior and preferences.",
             "website": "https://adnymics.com",
             "icon": "Adnymics.svg"
+        },
+        "Adobe": {
+            "cats": [
+                19
+            ],
+            "description": "Adobe enterprise domain claim, used by the Adobe Admin Console to verify ownership of a domain for Adobe identity management.",
+            "website": "https://www.adobe.com",
+            "icon": "Adobe.svg"
         },
         "Adobe Analytics": {
             "cats": [
@@ -7193,6 +7204,14 @@
             "cpe": "cpe:2.3:a:atlassian:bitbucket:*:*:*:*:*:*:*:*",
             "icon": "Atlassian Bitbucket.svg"
         },
+        "Atlassian Cloud": {
+            "cats": [
+                47
+            ],
+            "description": "Atlassian Cloud is the hosted platform behind Atlassian products such as Jira, Confluence and Bitbucket.",
+            "website": "https://www.atlassian.com",
+            "icon": "Atlassian.svg"
+        },
         "Atlassian Confluence": {
             "cats": [
                 8
@@ -7641,6 +7660,14 @@
             "description": "Autoconf is a system designed for managing car dealership operations, including inventory, sales, and customer data.",
             "website": "https://autoconf.com.br",
             "icon": "Autoconf.svg"
+        },
+        "Autodesk": {
+            "cats": [
+                19
+            ],
+            "description": "Autodesk provides design, engineering and construction software.",
+            "website": "https://www.autodesk.com",
+            "icon": "Autodesk.svg"
         },
         "Autoketing": {
             "cats": [
@@ -12098,6 +12125,14 @@
             "website": "https://www.bowtie.ai",
             "icon": "Bowtie.png"
         },
+        "Box": {
+            "cats": [
+                95
+            ],
+            "description": "Box is a cloud content management and file sharing platform.",
+            "website": "https://www.box.com",
+            "icon": "Box.png"
+        },
         "Boxmode": {
             "cats": [
                 51
@@ -16339,6 +16374,14 @@
             "description": "Circie is an all-in-one community platform for businesses that brings together engaging courses, discussions, members, live streams, chat, events, and memberships.",
             "website": "https://circle.so",
             "icon": "Circle.svg"
+        },
+        "Cisco": {
+            "cats": [
+                37
+            ],
+            "description": "Cisco networking, collaboration and security services domain verification.",
+            "website": "https://www.cisco.com",
+            "icon": "Cisco.svg"
         },
         "Citizen Space": {
             "cats": [
@@ -26410,6 +26453,14 @@
             "website": "https://www.getelevar.com",
             "icon": "Elevar.svg"
         },
+        "ElevenLabs": {
+            "cats": [
+                112
+            ],
+            "description": "ElevenLabs provides AI speech synthesis and voice cloning services.",
+            "website": "https://elevenlabs.io",
+            "icon": "ElevenLabs.svg"
+        },
         "Eleventy": {
             "cats": [
                 57
@@ -29690,6 +29741,14 @@
             "website": "https://fieldd.co",
             "icon": "Fieldd.svg"
         },
+        "Figma": {
+            "cats": [
+                19
+            ],
+            "description": "Figma is a collaborative interface design and prototyping platform.",
+            "website": "https://www.figma.com",
+            "icon": "Figma.png"
+        },
         "Filamentphp": {
             "cats": [
                 47
@@ -30468,6 +30527,14 @@
             "description": "Flexbe is a website and landing page builder that allows users to create and design web pages without coding.",
             "website": "https://flexbe.com",
             "icon": "Flexbe.svg"
+        },
+        "Flexera": {
+            "cats": [
+                19
+            ],
+            "description": "Flexera provides IT asset management and software spend optimisation.",
+            "website": "https://www.flexera.com",
+            "icon": "Flexera.png"
         },
         "FlexiFunnels": {
             "cats": [
@@ -34849,6 +34916,14 @@
             "website": "https://www.globalshopex.com",
             "icon": "GlobalShopex.png"
         },
+        "GlobalSign": {
+            "cats": [
+                70
+            ],
+            "description": "GlobalSign is a certificate authority providing TLS, code signing and identity certificates.",
+            "website": "https://www.globalsign.com",
+            "icon": "GlobalSign.svg"
+        },
         "Globo Also Bought": {
             "cats": [
                 100
@@ -37228,6 +37303,14 @@
             "cpe": "cpe:2.3:h:hp:integrated_lights-out:*:*:*:*:*:*:*:*",
             "icon": "HP.svg"
         },
+        "HPE GreenLake": {
+            "cats": [
+                63
+            ],
+            "description": "HPE GreenLake is Hewlett Packard Enterprise's hybrid cloud platform delivering infrastructure as a service.",
+            "website": "https://www.hpe.com/us/en/greenlake.html",
+            "icon": "HPE GreenLake.svg"
+        },
         "HSTS": {
             "cats": [
                 16
@@ -37288,6 +37371,14 @@
             "description": "HTTP/3 is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web.",
             "website": "https://httpwg.org/",
             "icon": "HTTP3.svg"
+        },
+        "HackerOne": {
+            "cats": [
+                16
+            ],
+            "description": "HackerOne is a vulnerability disclosure and bug bounty platform.",
+            "website": "https://www.hackerone.com",
+            "icon": "HackerOne.svg"
         },
         "Haddock": {
             "cats": [
@@ -37642,6 +37733,14 @@
             "description": "HashThemes Total is the powerful and creative multipurpose WordPress theme.",
             "website": "https://hashthemes.com/wordpress-theme/total",
             "icon": "HashThemes.png"
+        },
+        "HashiCorp Cloud Platform": {
+            "cats": [
+                62
+            ],
+            "description": "HashiCorp Cloud Platform is the managed service offering for HashiCorp products such as Terraform, Vault, Consul and Boundary.",
+            "website": "https://www.hashicorp.com/cloud",
+            "icon": "HashiCorp.svg"
         },
         "Hashnode": {
             "cats": [
@@ -39891,6 +39990,14 @@
             "description": "Hyva Themes is a performance-optimised theme for Magento 2 which eliminated the third-party libraries and having only two dependencies Alpine.js and Tailwind CSS.",
             "website": "https://www.hyva.io/hyva-theme-license.html",
             "icon": "Hyva Themes.svg"
+        },
+        "IBM": {
+            "cats": [
+                19
+            ],
+            "description": "IBM enterprise domain claim, used by IBMid to verify ownership of a domain for IBM Cloud and IBM account management.",
+            "website": "https://www.ibm.com",
+            "icon": "IBM.svg"
         },
         "IBM Carbon Design System": {
             "cats": [
@@ -42489,6 +42596,14 @@
             "website": "https://www.jameda.de",
             "icon": "Jameda.svg"
         },
+        "Jamf": {
+            "cats": [
+                16
+            ],
+            "description": "Jamf is an Apple device management (MDM) and endpoint security platform.",
+            "website": "https://www.jamf.com",
+            "icon": "Jamf.svg"
+        },
         "Jarvis Analytics": {
             "cats": [
                 10
@@ -42669,6 +42784,14 @@
             "description": "Jenny is a customer service chatbot platform.",
             "website": "https://www.getjenny.com",
             "icon": "Jenny.svg"
+        },
+        "JetBrains": {
+            "cats": [
+                47
+            ],
+            "description": "JetBrains develops IDEs and developer tools including IntelliJ IDEA and TeamCity.",
+            "website": "https://www.jetbrains.com",
+            "icon": "JetBrains.png"
         },
         "JetEngine": {
             "cats": [
@@ -48113,6 +48236,14 @@
             "website": "https://www.liveperson.com",
             "icon": "LivePerson.png"
         },
+        "LiveRamp": {
+            "cats": [
+                97
+            ],
+            "description": "LiveRamp is an identity resolution and data collaboration platform.",
+            "website": "https://liveramp.com",
+            "icon": "LiveRamp.svg"
+        },
         "LiveRamp DPM": {
             "cats": [
                 36
@@ -48541,6 +48672,23 @@
             "description": "LogRocket is a logging and session replay platform that helps developers identify and troubleshoot issues in web applications by recording and replaying user sessions, along with capturing logs and user interactions in real-time.",
             "website": "https://logrocket.com",
             "icon": "LogRocket.svg"
+        },
+        "LogaTech": {
+            "cats": [
+                1,
+                51
+            ],
+            "headers": {
+                "x-powered-by": "^logatech$"
+            },
+            "meta": {
+                "generator": [
+                    "^logatech$"
+                ]
+            },
+            "description": "LogaTech is a web development company offering a platform used to build and manage multi-tenant CMS, CRM and e-commerce websites.",
+            "website": "https://logatech.net",
+            "icon": "LogaTech.png"
         },
         "Logaholic": {
             "cats": [
@@ -52302,6 +52450,14 @@
             "website": "https://messagemedia.com",
             "icon": "MessageMedia.svg"
         },
+        "Meta": {
+            "cats": [
+                19
+            ],
+            "description": "Meta domain verification, used by Meta Business to prove ownership of a domain for Facebook and Instagram business assets.",
+            "website": "https://about.meta.com",
+            "icon": "Meta.svg"
+        },
         "MetaMap": {
             "cats": [
                 69
@@ -53320,6 +53476,14 @@
             "website": "https://www.mirakl.com",
             "icon": "Mirakl.svg"
         },
+        "Miro": {
+            "cats": [
+                19
+            ],
+            "description": "Miro is a collaborative online whiteboard and visual workspace platform.",
+            "website": "https://miro.com",
+            "icon": "Miro.png"
+        },
         "Mirus": {
             "cats": [
                 62
@@ -54121,6 +54285,14 @@
             "website": "https://www.mongodb.org",
             "cpe": "cpe:2.3:a:mongodb:mongodb:*:*:*:*:*:*:*:*",
             "icon": "MongoDB.png"
+        },
+        "MongoDB Atlas": {
+            "cats": [
+                34
+            ],
+            "description": "MongoDB Atlas is MongoDB's managed multi-cloud database service.",
+            "website": "https://www.mongodb.com/atlas",
+            "icon": "MongoDB.svg"
         },
         "Mongrel": {
             "cats": [
@@ -58960,6 +59132,14 @@
             "cpe": "cpe:2.3:a:open-xchange:app_suite:*:*:*:*:*:*:*:*",
             "icon": "openxchange.svg"
         },
+        "OpenAI": {
+            "cats": [
+                112
+            ],
+            "description": "OpenAI provides the GPT family of models and the ChatGPT product line.",
+            "website": "https://openai.com",
+            "icon": "OpenAI.svg"
+        },
         "OpenBSD httpd": {
             "cats": [
                 22
@@ -61102,6 +61282,14 @@
             "website": "https://www.palbin.com",
             "icon": "Palbin.svg"
         },
+        "Palo Alto Networks": {
+            "cats": [
+                16
+            ],
+            "description": "Palo Alto Networks is a network and cloud security vendor.",
+            "website": "https://www.paloaltonetworks.com",
+            "icon": "Palo Alto Networks.svg"
+        },
         "Palo Alto Networks - GlobalProtect": {
             "cats": [
                 46
@@ -61332,6 +61520,14 @@
             "description": "Paraglide JS is a compiler-based i18n library that emits tree-shakable message functions for optimized localization workflows.",
             "website": "https://inlang.com/m/gerre34r/library-inlang-paraglideJs",
             "icon": "ParaglideJS.svg"
+        },
+        "Parallels": {
+            "cats": [
+                46
+            ],
+            "description": "Parallels provides virtualization and remote application delivery software, including Parallels Desktop and Parallels RAS.",
+            "website": "https://www.parallels.com",
+            "icon": "Parallels.png"
         },
         "ParcelPanel": {
             "cats": [
@@ -64561,6 +64757,22 @@
             "website": "https://www.pocus.com",
             "icon": "Pocus.svg"
         },
+        "Podbean": {
+            "cats": [
+                88
+            ],
+            "dom": {
+                "iframe[src*='podbean.com']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.podbean\\.com/"
+            ],
+            "description": "Podbean is a podcast hosting platform whose players and media are embedded on sites via podbean.com domains.",
+            "website": "https://podbean.com",
+            "icon": "Podbean.png"
+        },
         "Podia": {
             "cats": [
                 21,
@@ -65214,6 +65426,14 @@
             "description": "Postie is an all-in-one platform facilitating audience building, A/B testing, and campaign deployment.",
             "website": "https://postie.com",
             "icon": "Postie.svg"
+        },
+        "Postman": {
+            "cats": [
+                47
+            ],
+            "description": "Postman is an API development and testing platform.",
+            "website": "https://www.postman.com",
+            "icon": "PostmanAPIDocumentation.svg"
         },
         "Postman API Documentation": {
             "cats": [
@@ -79702,6 +79922,14 @@
             "website": "https://get.slaask.com",
             "icon": "Slaask.svg"
         },
+        "Slack": {
+            "cats": [
+                19
+            ],
+            "description": "Slack is a team messaging and collaboration platform.",
+            "website": "https://slack.com",
+            "icon": "Slack.svg"
+        },
         "Slapform": {
             "cats": [
                 110
@@ -80201,6 +80429,14 @@
             "description": "Smartpoint is a car dealer conversion optimization system that improves lead capture and sales performance through data-driven tools and customer engagement features.",
             "website": "https://smartpoint.pro",
             "icon": "SmartPoint.svg"
+        },
+        "Smartsheet": {
+            "cats": [
+                19
+            ],
+            "description": "Smartsheet is a work management and collaborative spreadsheet platform.",
+            "website": "https://www.smartsheet.com",
+            "icon": "Smartsheet.png"
         },
         "Smartstore": {
             "cats": [
@@ -90895,6 +91131,14 @@
             "website": "https://www.twilightcms.com",
             "icon": "Twilight CMS.png"
         },
+        "Twilio": {
+            "cats": [
+                47
+            ],
+            "description": "Twilio is a cloud communications platform providing SMS, voice, email and messaging APIs.",
+            "website": "https://www.twilio.com",
+            "icon": "Twilio.svg"
+        },
         "Twilio Authy": {
             "cats": [
                 69
@@ -91413,6 +91657,14 @@
             "description": "UXSniff is a UX analysis tool that automatically detects usability issues by analyzing user behavior, including layout shifts and rage clicks, to identify potential conversion problems early.",
             "website": "https://uxsniff.com",
             "icon": "UXSniff.svg"
+        },
+        "Uber": {
+            "cats": [
+                19
+            ],
+            "description": "Uber domain verification, used by Uber for Business to prove ownership of a company domain.",
+            "website": "https://www.uber.com",
+            "icon": "Uber.svg"
         },
         "Ubercart": {
             "cats": [
@@ -92869,6 +93121,14 @@
             "description": "VKUI is a set of React components with which you can create interfaces that are visually indistinguishable from our iOS and Android applications.",
             "website": "https://vkcom.github.io/VKUI",
             "icon": "vk.svg"
+        },
+        "VMware CloudHealth": {
+            "cats": [
+                19
+            ],
+            "description": "CloudHealth by VMware is a multi-cloud cost management and governance platform.",
+            "website": "https://www.vmware.com",
+            "icon": "VMware.png"
         },
         "VNN Sports": {
             "cats": [
@@ -98463,6 +98723,14 @@
             "website": "https://www.wix.com/freesitebuilder/tae-store",
             "icon": "Wix.svg"
         },
+        "Wiz": {
+            "cats": [
+                16
+            ],
+            "description": "Wiz is a cloud-native application protection platform (CNAPP).",
+            "website": "https://www.wiz.io",
+            "icon": "Wiz.png"
+        },
         "WizSoft": {
             "cats": [
                 29
@@ -100017,6 +100285,14 @@
             "description": "YachtSys is a booking management system.",
             "website": "https://www.yachtsys.com",
             "icon": "YachtSys.svg"
+        },
+        "Yahoo": {
+            "cats": [
+                19
+            ],
+            "description": "Yahoo domain verification, used to prove ownership of a domain to Yahoo services.",
+            "website": "https://www.yahoo.com",
+            "icon": "Yahoo.svg"
         },
         "Yahoo Advertising": {
             "cats": [
@@ -102186,6 +102462,14 @@
             ],
             "website": "https://www.zoodpay.com",
             "icon": "ZoodPay.png"
+        },
+        "Zoom": {
+            "cats": [
+                19
+            ],
+            "description": "Zoom is a video conferencing and collaboration platform.",
+            "website": "https://www.zoom.com",
+            "icon": "Zoom.png"
         },
         "Zoominfo": {
             "cats": [
