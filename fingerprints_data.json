@@ -2720,6 +2720,28 @@
             "website": "https://www.advancedcustomfields.com",
             "icon": "Advanced Custom Fields.png"
         },
+        "Adventive": {
+            "cats": [
+                36
+            ],
+            "dom": {
+                "iframe[src*=\"ads.adventive.com/\"]": {
+                    "exists": ""
+                },
+                "img[src*=\"ads.adventive.com/\"]": {
+                    "exists": ""
+                },
+                "script[src*=\"ads.adventive.com/\"]": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "ads\\.adventive\\.com/"
+            ],
+            "description": "Adventive is an ad-serving and rich-media advertising platform; its ad tags are served from ads.adventive.com.",
+            "website": "https://adventive.com",
+            "icon": "Adventive.png"
+        },
         "Advert Stream": {
             "cats": [
                 36
@@ -4595,6 +4617,14 @@
             "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
             "website": "https://pay.amazon.com",
             "icon": "Amazon Pay.svg"
+        },
+        "Amazon Route 53": {
+            "cats": [
+                88
+            ],
+            "description": "Amazon Route 53 is AWS's authoritative DNS service; domains using it are served by awsdns nameservers.",
+            "website": "https://aws.amazon.com/route53/",
+            "icon": "Amazon Web Services.svg"
         },
         "Amazon S3": {
             "cats": [
@@ -17721,6 +17751,14 @@
             ],
             "description": "Cloudflare Browser Insights is a tool that measures the performance of websites from the perspective of users.",
             "website": "https://www.cloudflare.com",
+            "icon": "CloudFlare.svg"
+        },
+        "Cloudflare DNS": {
+            "cats": [
+                88
+            ],
+            "description": "Cloudflare DNS is Cloudflare's authoritative DNS service; domains using it are served by *.ns.cloudflare.com nameservers.",
+            "website": "https://www.cloudflare.com/application-services/products/dns/",
             "icon": "CloudFlare.svg"
         },
         "Cloudflare Rocket Loader": {
@@ -32290,6 +32328,25 @@
             "website": "https://freetextbox.com",
             "icon": "FreeTextBox.png"
         },
+        "FreeWheel": {
+            "cats": [
+                36
+            ],
+            "dom": {
+                "iframe[src*=\"fwmrm.net\"]": {
+                    "exists": ""
+                },
+                "img[src*=\"fwmrm.net\"]": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "fwmrm\\.net"
+            ],
+            "description": "FreeWheel (Comcast) is a video ad-serving and ad-management platform whose ad/user-sync calls are made to FreeWheel ad servers such as fwmrm.net.",
+            "website": "https://www.freewheel.com",
+            "icon": "FreeWheel.png"
+        },
         "Freedom Farmers": {
             "cats": [
                 19
@@ -35853,6 +35910,14 @@
             "description": "Cloud CDN uses Google's global edge network to serve content closer to users.",
             "website": "https://cloud.google.com/cdn",
             "icon": "google-cloud-cdn.svg"
+        },
+        "Google Cloud DNS": {
+            "cats": [
+                88
+            ],
+            "description": "Google Cloud DNS is Google's authoritative DNS service; domains using it are served by ns-cloud-*.googledomains.com nameservers.",
+            "website": "https://cloud.google.com/dns",
+            "icon": "Google Cloud.svg"
         },
         "Google Cloud Load Balancing": {
             "cats": [
@@ -52564,6 +52629,25 @@
             "website": "https://metorik.com",
             "icon": "Metorik.svg"
         },
+        "Metricool": {
+            "cats": [
+                10
+            ],
+            "dom": {
+                "img[src*=\"tracker.metricool.com/\"]": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "beTracker": ""
+            },
+            "scriptSrc": [
+                "tracker\\.metricool\\.com/"
+            ],
+            "description": "Metricool is a social media management and analytics platform; its website tracker loads be.js from tracker.metricool.com and exposes the beTracker global.",
+            "website": "https://metricool.com",
+            "icon": "Metricool.png"
+        },
         "Metrics Key": {
             "cats": [
                 10
@@ -58337,6 +58421,25 @@
             "description": "Omacro is a platform focused on enhancing digital engagement by facilitating connections and increasing conversion rates.",
             "website": "https://omacro.com",
             "icon": "Omacro.svg"
+        },
+        "Omago": {
+            "cats": [
+                52
+            ],
+            "dom": {
+                "#omago-widget-button": {
+                    "exists": ""
+                },
+                "#omago-widget-container": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "app\\.omago\\.ai/widget\\.js"
+            ],
+            "description": "Omago is an AI customer-service assistant for business websites that answers visitor questions in the customer's own language, captures leads and hands conversations over to WhatsApp.",
+            "website": "https://omago.ai",
+            "icon": "Omago.svg"
         },
         "Omeda": {
             "cats": [
@@ -66238,6 +66341,25 @@
             "website": "https://www.printful.com/",
             "icon": "Printful.png"
         },
+        "Printify": {
+            "cats": [
+                6
+            ],
+            "dom": {
+                "img[src*=\"images-api.printify.com\"]": {
+                    "exists": ""
+                },
+                "img[src*=\"printify.com\"]": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "printify\\.com"
+            ],
+            "description": "Printify is a print-on-demand and dropshipping platform integrated into e-commerce stores that serves product assets from Printify domains.",
+            "website": "https://printify.com",
+            "icon": "Printify.png"
+        },
         "Printlane": {
             "cats": [
                 76
@@ -66907,6 +67029,14 @@
             "description": "Proposify is a proposal software that provides sales leaders with control and visibility over key stages of the sales process.",
             "website": "https://www.proposify.com",
             "icon": "Proposify.svg"
+        },
+        "Proserve": {
+            "cats": [
+                88
+            ],
+            "description": "Proserve is a Dutch managed-hosting group; hosted sites use its nameserver brands dn-s.nl, appserved.nl and firstfind.nl.",
+            "website": "https://proserve.nl",
+            "icon": "Proserve.png"
         },
         "Prospa": {
             "cats": [
@@ -84524,6 +84654,17 @@
             "website": "https://suitecrm.com",
             "icon": "SuiteCRM.svg"
         },
+        "SuiteDash": {
+            "cats": [
+                53
+            ],
+            "scriptSrc": [
+                "app\\.suitedash\\.com"
+            ],
+            "description": "SuiteDash is an all-in-one business/CRM and client portal platform whose portals and embedded forms are hosted on app.suitedash.com.",
+            "website": "https://suitedash.com",
+            "icon": "SuiteDash.png"
+        },
         "Suiteshare": {
             "cats": [
                 52
@@ -101548,6 +101689,20 @@
             "description": "ZeeMaps is a custom map generation service that enables users to create personalized maps with location markers, regions, and annotations.",
             "website": "https://www.zeemaps.com",
             "icon": "ZeeMaps.svg"
+        },
+        "Zeeg": {
+            "cats": [
+                72
+            ],
+            "js": {
+                "Zeeg": ""
+            },
+            "scriptSrc": [
+                "assets\\.zeeg\\.me/embed\\.min\\.js"
+            ],
+            "description": "Zeeg is an appointment-scheduling platform whose booking widgets are embedded via assets.zeeg.me.",
+            "website": "https://zeeg.me",
+            "icon": "Zeeg.png"
         },
         "Zeleris": {
             "cats": [
