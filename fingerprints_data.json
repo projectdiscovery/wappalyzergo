@@ -1,5 +1,15 @@
 {
     "apps": {
+        "10to8": {
+            "cats": [
+                72
+            ],
+            "html": [
+                "\u003ca [^\u003e]*id=\"tte[^\"]"
+            ],
+            "website": "https://10to8.com/",
+            "icon": "10to8.png"
+        },
         "11Sight": {
             "cats": [
                 52,
@@ -133,6 +143,16 @@
             "website": "https://www.34sp.com",
             "icon": "34SP.com.svg"
         },
+        "3Q": {
+            "cats": [
+                14
+            ],
+            "scripts": [
+                "3qsdn\\.com"
+            ],
+            "website": "https://3q.video",
+            "icon": "3Q.png"
+        },
         "4-Tell": {
             "cats": [
                 76
@@ -199,6 +219,16 @@
             "description": "4Partners CMS is a cloud-based solution designed for ecommerce shops.",
             "website": "https://4partners.io/en/4p-cms",
             "icon": "4Partners.svg"
+        },
+        "4w MarketPlace for Publishers": {
+            "cats": [
+                36
+            ],
+            "scripts": [
+                "cdn\\.feed\\.4wnet\\.com"
+            ],
+            "website": "http://www.4wmarketplace.com/",
+            "icon": "4wmarketplace.png"
         },
         "51.LA": {
             "cats": [
@@ -484,6 +514,16 @@
             "website": "https://abp.io/",
             "icon": "abp.svg"
         },
+        "ACTV8": {
+            "cats": [
+                36
+            ],
+            "js": {
+                "a8MpParams": ""
+            },
+            "website": "https://www.actv8me.com/",
+            "icon": "ACTV8.svg"
+        },
         "AD EBiS": {
             "cats": [
                 36,
@@ -556,6 +596,17 @@
             "description": "AI LOG is a marketing automation and fraud click prevention tool.",
             "website": "https://www.ai-log.biz/",
             "icon": "AI-LOG.svg"
+        },
+        "AIDEM Technologies": {
+            "cats": [
+                36
+            ],
+            "scripts": [
+                "//zero\\.aidemsrv\\.com/dist/prebid\\.js",
+                "stream\\.aidemsrv\\.com/lib/stream\\.js"
+            ],
+            "website": "https://www.aidem.com/",
+            "icon": "AIDEM Technologies.png"
         },
         "AIMEOS": {
             "cats": [
@@ -2041,6 +2092,16 @@
             "website": "https://co.addi.com/",
             "icon": "addi.png"
         },
+        "Addingwell SST": {
+            "cats": [
+                42
+            ],
+            "html": [
+                "\\.js\\?aw='.*?\\+.*?dl;"
+            ],
+            "website": "https://www.addingwell.com",
+            "icon": "Addingwell SST.png"
+        },
         "Addsearch": {
             "cats": [
                 29
@@ -2313,6 +2374,16 @@
             "description": "Adnegah is a digital marketing and internet advertising agency.",
             "website": "https://adnegah.net",
             "icon": "Adnegah.png"
+        },
+        "Adnuntius": {
+            "cats": [
+                36
+            ],
+            "scripts": [
+                "cdn\\.adnuntius\\.com/adn\\.js"
+            ],
+            "website": "https://adnuntius.com",
+            "icon": "Adnuntius.png"
         },
         "Adnymics": {
             "cats": [
@@ -2789,6 +2860,16 @@
             "description": "Advin is a provider of ecommerce solutions and tailored web information systems for clients.",
             "website": "https://www.advin.cz",
             "icon": "Advin.svg"
+        },
+        "Advisible": {
+            "cats": [
+                36
+            ],
+            "scripts": [
+                "//cdn\\.advisible\\.com"
+            ],
+            "website": "https://www.advisible.com",
+            "icon": "Advisible.png"
         },
         "Adwos CMS": {
             "cats": [
@@ -4316,6 +4397,17 @@
             "description": "AlternC is a set of software management on Linux shared hosting.",
             "website": "https://alternc.com",
             "icon": "AlternC.png"
+        },
+        "Altervista Platform": {
+            "cats": [
+                11,
+                88
+            ],
+            "html": [
+                "\u003ca href=\"http://www.altervista.org\"\u003ealtervista\u003c/a\u003e"
+            ],
+            "website": "https://altervista.com",
+            "icon": "Altervista Platform.png"
         },
         "Altis": {
             "cats": [
@@ -107224,6 +107316,16 @@
             "description": "youCMS is an enterprise content management system developed in Denmark, designed to support large-scale digital content organization and delivery.",
             "website": "https://www.youcms.eu",
             "icon": "youCMS.svg"
+        },
+        "|related| Natív Hirdetés Kft": {
+            "cats": [
+                36
+            ],
+            "scripts": [
+                "//related\\.hu"
+            ],
+            "website": "https://related.hu",
+            "icon": "related.png"
         }
     }
 }
