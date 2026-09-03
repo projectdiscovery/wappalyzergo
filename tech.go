@@ -12,6 +12,7 @@ import (
 type Wappalyze struct {
 	original     *Fingerprints
 	fingerprints *CompiledFingerprints
+	runtimeRules RuntimeRules
 }
 
 // New creates a new tech detection instance
@@ -71,6 +72,7 @@ func (s *Wappalyze) loadFingerprints() error {
 	for i, fingerprint := range fingerprintsStruct.Apps {
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
+	s.runtimeRules = compileRuntimeRules(s.fingerprints)
 	return nil
 }
 
@@ -116,6 +118,7 @@ func (s *Wappalyze) loadFingerprintsFromFile(filePath string, loadEmbedded, supe
 	for i, fingerprint := range s.original.Apps {
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
+	s.runtimeRules = compileRuntimeRules(s.fingerprints)
 
 	return nil
 }
@@ -127,7 +130,12 @@ func (s *Wappalyze) loadFingerprintsFromFile(filePath string, loadEmbedded, supe
 // lead to unexpected things.
 func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[string]struct{} {
 	uniqueFingerprints := NewUniqueFingerprints()
+	s.addPassiveFingerprints(uniqueFingerprints, headers, body)
 
+	return uniqueFingerprints.GetValues()
+}
+
+func (s *Wappalyze) addPassiveFingerprints(uniqueFingerprints UniqueFingerprints, headers map[string][]string, body []byte) {
 	// Lowercase everything that we have received to check
 	normalizedBody := bytes.ToLower(body)
 	normalizedHeaders := s.normalizeHeaders(headers)
@@ -151,7 +159,6 @@ func (s *Wappalyze) Fingerprint(headers map[string][]string, body []byte) map[st
 	for _, app := range bodyTech {
 		uniqueFingerprints.SetIfNotExists(app.application, app.version, app.confidence)
 	}
-	return uniqueFingerprints.GetValues()
 }
 
 type UniqueFingerprints struct {

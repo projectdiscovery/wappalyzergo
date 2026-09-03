@@ -36,7 +36,7 @@ func (s *Wappalyze) checkBody(body []byte) []matchPartResult {
 					// Check the script tags for script fingerprints
 					technologies = append(
 						technologies,
-						s.fingerprints.matchString(source, scriptPart)...,
+						s.fingerprints.matchString(source, scriptSrcPart)...,
 					)
 					continue
 				}
