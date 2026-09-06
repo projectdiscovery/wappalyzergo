@@ -16932,6 +16932,25 @@
             "website": "https://clearout.io",
             "icon": "Clearout.svg"
         },
+        "Clearpay": {
+            "cats": [
+                41,
+                91
+            ],
+            "js": {
+                "Clearpay": "",
+                "clearpay_js_snippet_version": "",
+                "clearpay_product": "",
+                "clearpay_shop_currency": ""
+            },
+            "scriptSrc": [
+                "\\.clearpay\\.co\\.uk/",
+                "static\\.afterpay\\.com/shopify-clearpay-javascript\\.js"
+            ],
+            "description": "Clearpay is the UK and EU brand of Afterpay, a buy-now-pay-later payment service that lets shoppers split purchases into interest-free instalments.",
+            "website": "https://www.clearpay.co.uk",
+            "icon": "Clearpay.png"
+        },
         "Clearstream": {
             "cats": [
                 52,
@@ -22128,6 +22147,22 @@
             "website": "https://dandomain.dk/webshop",
             "icon": "DanDomain.svg"
         },
+        "DanDomain email": {
+            "cats": [
+                75
+            ],
+            "description": "DanDomain email is the email hosting service provided by DanDomain, including webmail and Microsoft 365 plans.",
+            "website": "https://dandomain.dk/e-mail",
+            "icon": "DanDomain email.png"
+        },
+        "DanDomain hosting": {
+            "cats": [
+                88
+            ],
+            "description": "DanDomain hosting is a Danish web hosting and domain registration service, part of the team.blue group.",
+            "website": "https://dandomain.dk",
+            "icon": "DanDomain hosting.png"
+        },
         "Dancer": {
             "cats": [
                 18
@@ -26880,6 +26915,21 @@
             "description": "EmailJS is a cloud-based email delivery service that allows you to send emails directly from your client-side JavaScript code without the need for a server-side implementation.",
             "website": "https://www.emailjs.com",
             "icon": "EmailJS.svg"
+        },
+        "EmailOctopus": {
+            "cats": [
+                75
+            ],
+            "js": {
+                "emailOctopus": "",
+                "emailoctopus": ""
+            },
+            "scriptSrc": [
+                "emailoctopus\\.com/bundles"
+            ],
+            "description": "EmailOctopus is an email marketing and newsletter service whose signup forms are embedded on customer websites.",
+            "website": "https://emailoctopus.com",
+            "icon": "EmailOctopus.png"
         },
         "Emaileri": {
             "cats": [
@@ -34567,6 +34617,7 @@
                 "giosgWebpackJsonp": ""
             },
             "scripts": [
+                "giosg\\.com",
                 "service\\.giosg\\.com"
             ],
             "description": "Giosg is a live chat solution designed to support ecommerce platforms by enabling real-time customer communication and engagement.",
@@ -36130,6 +36181,22 @@
             "description": "Google Hosted Libraries is a stable, reliable, high-speed, globally available content distribution network for the most popular, open-source JavaScript libraries.",
             "website": "https://developers.google.com/speed/libraries",
             "icon": "Google Developers.svg"
+        },
+        "Google Looker Studio": {
+            "cats": [
+                10
+            ],
+            "dom": {
+                "iframe[src*='lookerstudio.google.com'], iframe[src*='datastudio.google.com']": {
+                    "exists": ""
+                }
+            },
+            "headers": {
+                "content-security-policy": "(?:lookerstudio|datastudio)\\.google\\.com"
+            },
+            "description": "Google Looker Studio (formerly Google Data Studio) is a free tool for creating and embedding interactive dashboards and reports.",
+            "website": "https://cloud.google.com/looker-studio",
+            "icon": "Google Looker Studio.png"
         },
         "Google Maps": {
             "cats": [
@@ -37708,6 +37775,21 @@
             "description": "Hapana is a gym and fitness studio management platform designed to streamline operations.",
             "website": "https://www.hapana.com",
             "icon": "Hapana.svg"
+        },
+        "Happierleads": {
+            "cats": [
+                10
+            ],
+            "js": {
+                "Happierleads": "",
+                "hlRunning": ""
+            },
+            "scriptSrc": [
+                "rest\\.happierleads\\.com"
+            ],
+            "description": "Happierleads is a B2B visitor-identification and lead-generation platform that reveals the companies visiting a website.",
+            "website": "https://www.happierleads.com",
+            "icon": "Happierleads.png"
         },
         "Happy Meal Prep": {
             "cats": [
@@ -40064,6 +40146,14 @@
             "description": "Hyperlane is a hosting platform for WordPress and Craft CMS websites.",
             "website": "https://hyperlane.co",
             "icon": "Hyperlane.svg"
+        },
+        "Hypernode": {
+            "cats": [
+                88
+            ],
+            "description": "Hypernode is a managed ecommerce hosting platform by Byte (Netherlands); hosted domains use ns*.hypernode.com nameservers or point at *.hypernode.io via CNAME.",
+            "website": "https://www.hypernode.com",
+            "icon": "Hypernode.png"
         },
         "Hyperspeed": {
             "cats": [
@@ -43202,6 +43292,20 @@
             "description": "JobBoardFire is a platform that provides software for managing job boards, connecting entrepreneurs and community members.",
             "website": "https://www.jobboardfire.com",
             "icon": "JobBoardFire.svg"
+        },
+        "Job Boardly": {
+            "cats": [
+                101
+            ],
+            "cookies": {
+                "_job_boardly_session": ""
+            },
+            "scriptSrc": [
+                "assets\\.jobboardly\\.com/"
+            ],
+            "description": "Job Boardly is a SaaS platform for creating and running hosted job boards without code.",
+            "website": "https://www.jobboardly.com",
+            "icon": "Job Boardly.png"
         },
         "JobAdder": {
             "cats": [
@@ -56014,6 +56118,13 @@
             "website": "https://www.nativo.com",
             "icon": "Nativo.png"
         },
+        "Natro": {
+            "cats": [
+                88
+            ],
+            "description": "Natro is a Turkish web hosting and domain registration provider; hosted domains use natrohost.com nameservers.",
+            "website": "https://www.natro.com"
+        },
         "Natural Intelligence": {
             "cats": [
                 96
@@ -65054,6 +65165,25 @@
             "website": "https://www.podpage.com",
             "icon": "Podpage.svg"
         },
+        "Podscribe": {
+            "cats": [
+                36
+            ],
+            "dom": {
+                "a[href*=\"app.podscribe.ai/\"]": {
+                    "exists": ""
+                },
+                "img[src*=\"podscribe.com/\"]": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "podscribe\\.(?:ai|com)/"
+            ],
+            "description": "Podscribe is an IAB-certified podcast and audio ad measurement platform; podcast sites link to their transcripts on app.podscribe.ai and advertiser sites load its attribution tags from podscribe hosts.",
+            "website": "https://podscribe.com",
+            "icon": "Podscribe.png"
+        },
         "Podsights": {
             "cats": [
                 36
@@ -68562,6 +68692,16 @@
             "website": "https://www.quantummetric.com/",
             "icon": "Quantummetric.png"
         },
+        "Quantyoo": {
+            "cats": [
+                76
+            ],
+            "html": [
+                "https://quantyoo\\.de"
+            ],
+            "website": "https://quantyoo.de",
+            "icon": "Quantyoo.png"
+        },
         "Quarto": {
             "cats": [
                 57
@@ -70586,6 +70726,20 @@
             "description": "Recop is a recruitment optimization system from Japan.",
             "website": "https://recop.jp",
             "icon": "Recop.svg"
+        },
+        "Recova": {
+            "cats": [
+                10
+            ],
+            "js": {
+                "recovaOrderTracking": ""
+            },
+            "scriptSrc": [
+                "api\\.recova\\.ai/recova_client(?:\\.min)?\\.js"
+            ],
+            "description": "Recova is an e-commerce conversion and cart-recovery tool that tracks shopper behavior to recover abandoned carts.",
+            "website": "https://recova.ai",
+            "icon": "Recova.png"
         },
         "RecoverMyCart": {
             "cats": [
@@ -75432,6 +75586,26 @@
             "website": "https://www.scorpion.co/",
             "icon": "Scorpion.svg"
         },
+        "Scrapive": {
+            "cats": [
+                32,
+                90,
+                5
+            ],
+            "js": {
+                "__SCRAPIVE_EMBED__": "",
+                "__SCRAPIVE_LOADED__": ""
+            },
+            "scripts": [
+                "window\\.__scrapive_loaded__"
+            ],
+            "scriptSrc": [
+                "scrapive\\.com/scrapive-[a-z-]+\\.iife\\.js"
+            ],
+            "description": "Scrapive is an on-site and WhatsApp marketing platform that provides sales and conversion optimization solutions for ecommerce websites.",
+            "website": "https://scrapive.com",
+            "icon": "Scrapive.png"
+        },
         "Screenfull.js": {
             "cats": [
                 59
@@ -78986,16 +79160,19 @@
             ],
             "dom": {
                 "a[href*='.simplybook.'][target='_blank']": {
-                    "attributes": {
-                        "href": "\\.simplybook\\.(?:asia|it|me)"
-                    }
+                    "exists": ""
+                },
+                "iframe[src*='.simplybook.it']": {
+                    "exists": ""
                 }
             },
             "js": {
+                "SimplybookWidget": "",
                 "configSoinSimplyPush": ""
             },
             "scriptSrc": [
-                "\\.simplybook\\.(?:asia|it|me)"
+                "\\.simplybook\\.(?:asia|it|me)",
+                "widget\\.simplybook\\.it"
             ],
             "description": "SimplyBook.me is an online appointment scheduling and booking software.",
             "website": "https://simplybook.me",
@@ -97495,6 +97672,14 @@
             "website": "https://webcool.vn",
             "icon": "WebcoolCMS.svg"
         },
+        "Webempresa": {
+            "cats": [
+                88
+            ],
+            "description": "Webempresa is a Spanish web hosting provider specialised in WordPress, WooCommerce and Joomla hosting.",
+            "website": "https://www.webempresa.com",
+            "icon": "Webempresa.png"
+        },
         "Webeo": {
             "cats": [
                 76
@@ -97641,6 +97826,26 @@
             "description": "Webim is a platform offering live chat service for website visitors, facilitating real-time communication between businesses and their online audience.",
             "website": "https://webim.ru",
             "icon": "Webim.svg"
+        },
+        "WebinarGeek": {
+            "cats": [
+                103
+            ],
+            "dom": {
+                "iframe[src*='webinargeek.com'], script[src*='embed.webinargeek.com']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "GeekEmbedLoaded": "",
+                "GeekEmbedStart": ""
+            },
+            "scriptSrc": [
+                "embed\\.webinargeek\\.com"
+            ],
+            "description": "WebinarGeek is a Dutch webinar platform for hosting, embedding and marketing live and automated webinars.",
+            "website": "https://www.webinargeek.com",
+            "icon": "WebinarGeek.svg"
         },
         "Webinaris": {
             "cats": [
@@ -99929,6 +100134,25 @@
             "description": "WysiBB very simple and functional open-source WYSIWYG BBCode editor based on jQuery.",
             "website": "https://wysibb.com",
             "icon": "WysiBB.svg"
+        },
+        "Wysistat": {
+            "cats": [
+                10
+            ],
+            "cookies": {
+                "wysistat": ""
+            },
+            "js": {
+                "_wsq": "",
+                "_wysistat": "",
+                "wysistat": ""
+            },
+            "scriptSrc": [
+                "www\\.wysistat\\.(?:com|net)/"
+            ],
+            "description": "Wysistat is a French web analytics and audience measurement service.",
+            "website": "https://www.wysistat.net",
+            "icon": "Wysistat.png"
         },
         "X-Cart": {
             "cats": [
@@ -103498,6 +103722,28 @@
             ],
             "description": "chroma.js is a small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.",
             "website": "https://www.vis4.net/chromajs/"
+        },
+        "cituro": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "iframe[src*='cituro.com']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "buildCituroOptions": "",
+                "cituroLoader": "",
+                "cituroOptions": "",
+                "cituroWidget": ""
+            },
+            "scriptSrc": [
+                "app\\.cituro\\.com/"
+            ],
+            "description": "cituro is a German online appointment-scheduling tool whose booking widget can be embedded on customer websites.",
+            "website": "https://www.cituro.com",
+            "icon": "cituro.png"
         },
         "clickio": {
             "cats": [
