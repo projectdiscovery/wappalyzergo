@@ -53,6 +53,8 @@ type CompiledFingerprint struct {
 	js map[string]*ParsedPattern
 	// dom contains fingerprints for the target dom
 	dom map[string]map[string]*ParsedPattern
+	// runtimeDOM preserves the DOM rule subtype needed for runtime collection.
+	runtimeDOM map[string]*compiledDOMRule
 	// headers contains fingerprints for target headers
 	headers map[string]*ParsedPattern
 	// html contains fingerprints for the target HTML
@@ -65,6 +67,13 @@ type CompiledFingerprint struct {
 	meta map[string][]*ParsedPattern
 	// cpe contains the cpe for a fingerpritn
 	cpe string
+}
+
+type compiledDOMRule struct {
+	exists     *ParsedPattern
+	text       *ParsedPattern
+	attributes map[string]*ParsedPattern
+	properties map[string]*ParsedPattern
 }
 
 func (f *CompiledFingerprint) GetJSRules() map[string]*ParsedPattern {
@@ -98,7 +107,7 @@ const (
 	jsPart
 	headersPart
 	htmlPart
-	scriptPart
+	scriptSrcPart
 	metaPart
 )
 
@@ -111,6 +120,7 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		website:     fingerprint.Website,
 		icon:        fingerprint.Icon,
 		dom:         make(map[string]map[string]*ParsedPattern),
+		runtimeDOM:  make(map[string]*compiledDOMRule),
 		cookies:     make(map[string]*ParsedPattern),
 		js:          make(map[string]*ParsedPattern),
 		headers:     make(map[string]*ParsedPattern),
@@ -121,32 +131,34 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 		cpe:         fingerprint.CPE,
 	}
 
-	for dom, patterns := range fingerprint.Dom {
-		compiled.dom[dom] = make(map[string]*ParsedPattern)
+	for selector, patterns := range fingerprint.Dom {
+		legacyRules := make(map[string]*ParsedPattern)
+		runtimeRule := &compiledDOMRule{
+			attributes: make(map[string]*ParsedPattern),
+			properties: make(map[string]*ParsedPattern),
+		}
 
-		for attr, value := range patterns {
-			switch attr {
-			case "exists", "text":
-				pattern, err := ParsePattern(value.(string))
-				if err != nil {
-					continue
-				}
-				compiled.dom[dom]["main"] = pattern
-			case "attributes":
-				attrMap, ok := value.(map[string]interface{})
-				if !ok {
-					continue
-				}
-				compiled.dom[dom] = make(map[string]*ParsedPattern)
-				for attrName, value := range attrMap {
-					pattern, err := ParsePattern(value.(string))
-					if err != nil {
-						continue
-					}
-					compiled.dom[dom][attrName] = pattern
-				}
+		if value, ok := patterns["exists"]; ok {
+			runtimeRule.exists = compileDOMPattern(value)
+			if runtimeRule.exists != nil {
+				legacyRules["main"] = runtimeRule.exists
 			}
 		}
+		if value, ok := patterns["text"]; ok {
+			runtimeRule.text = compileDOMPattern(value)
+			if runtimeRule.text != nil {
+				legacyRules["main"] = runtimeRule.text
+			}
+		}
+
+		runtimeRule.attributes = compileDOMPatternMap(patterns["attributes"])
+		for name, pattern := range runtimeRule.attributes {
+			legacyRules[name] = pattern
+		}
+		runtimeRule.properties = compileDOMPatternMap(patterns["properties"])
+
+		compiled.dom[selector] = legacyRules
+		compiled.runtimeDOM[selector] = runtimeRule
 	}
 
 	for header, pattern := range fingerprint.Cookies {
@@ -212,6 +224,41 @@ func compileFingerprint(fingerprint *Fingerprint) *CompiledFingerprint {
 	return compiled
 }
 
+func compileDOMPattern(value interface{}) *ParsedPattern {
+	pattern, ok := value.(string)
+	if !ok {
+		return nil
+	}
+
+	compiled, err := ParsePattern(pattern)
+	if err != nil {
+		return nil
+	}
+
+	return compiled
+}
+
+func compileDOMPatternMap(value interface{}) map[string]*ParsedPattern {
+	compiled := make(map[string]*ParsedPattern)
+
+	switch patterns := value.(type) {
+	case map[string]interface{}:
+		for name, pattern := range patterns {
+			if parsed := compileDOMPattern(pattern); parsed != nil {
+				compiled[name] = parsed
+			}
+		}
+	case map[string]string:
+		for name, pattern := range patterns {
+			if parsed := compileDOMPattern(pattern); parsed != nil {
+				compiled[name] = parsed
+			}
+		}
+	}
+
+	return compiled
+}
+
 // matchString matches a string for the fingerprints
 func (f *CompiledFingerprints) matchString(data string, part part) []matchPartResult {
 	var matched bool
@@ -234,7 +281,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 					}
 				}
 			}
-		case scriptPart:
+		case scriptSrcPart:
 			for _, pattern := range fingerprint.scriptSrc {
 				if valid, versionString := pattern.Evaluate(data); valid {
 					matched = true
