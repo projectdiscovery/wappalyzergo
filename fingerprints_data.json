@@ -78826,17 +78826,14 @@
             "cats": [
                 51
             ],
-            "js": {
-                "silex.getCurrentPage": ""
-            },
             "meta": {
                 "generator": [
                     "^silex v([\\d.]+)\\;version:\\1"
                 ]
             },
-            "description": "Silex is an open-source web-based website builder that allows users to create websites without writing code.",
+            "description": "Silex is a free and open source no-code website builder. It exports static websites and is also available as a desktop application.",
             "website": "https://www.silex.me",
-            "icon": "Silex.svg"
+            "icon": "Silex.png"
         },
         "Silktide": {
             "cats": [
