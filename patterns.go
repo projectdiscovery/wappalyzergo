@@ -2,15 +2,16 @@ package wappalyzer
 
 import (
 	"fmt"
-	"regexp"
 	"strconv"
 	"strings"
+
+	regexputil "github.com/projectdiscovery/utils/regexp"
 )
 
 // ParsedPattern encapsulates a regular expression with
 // additional metadata for confidence and version extraction.
 type ParsedPattern struct {
-	regex *regexp.Regexp
+	regex *regexputil.Regexp
 
 	Confidence int
 	Version    string
@@ -26,6 +27,8 @@ const (
 	verCap2Fill    = "__verCap2__"
 	verCap2Limited = `((?:\d{1,20}\.){1,20}\d{1,20})`
 )
+
+var engine = regexputil.EngineAuto
 
 // ParsePattern extracts information from a pattern, supporting both regex and simple patterns
 func ParsePattern(pattern string) (*ParsedPattern, error) {
@@ -47,8 +50,8 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2, verCap2Fill)
 
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
-			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
-			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,250}")
+			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,100}")
+			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,100}")
 			regexPattern = strings.ReplaceAll(regexPattern, "__escapedPlus__", "\\+")
 
 			// restore version capture groups
@@ -56,9 +59,20 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2Fill, verCap2Limited)
 
 			var err error
-			p.regex, err = regexp.Compile("(?i)" + regexPattern)
-			if err != nil {
-				return nil, err
+			if engine != regexputil.EngineAuto {
+				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(engine))
+				if err != nil {
+					return nil, err
+				}
+			} else {
+				// always try with re2 first, and then fallback to standard library
+				p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineRE2))
+				if err != nil {
+					p.regex, err = regexputil.Compile("(?i)"+regexPattern, regexputil.WithEngine(regexputil.EngineStandard))
+					if err != nil {
+						return nil, err
+					}
+				}
 			}
 		} else {
 			keyValue := strings.SplitN(part, ":", 2)
