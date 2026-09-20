@@ -2255,6 +2255,17 @@
             "website": "https://www.adloox.com",
             "icon": "Adloox.png"
         },
+        "Admatic": {
+            "cats": [
+                36
+            ],
+            "scriptSrc": [
+                "\\.admatic\\.com\\.tr/"
+            ],
+            "description": "Admatic is a Turkish advertising and supply-side platform (SSP) that serves ads via header bidding and programmatic exchanges.",
+            "website": "https://www.admatic.com.tr",
+            "icon": "Admatic.png"
+        },
         "AdminBuy": {
             "cats": [
                 1
@@ -6789,6 +6800,22 @@
             "description": "Artplayer.js is an HTML5 video player that supports customizable UI, subtitles, and plugins, offering a flexible and modern video playback solution.",
             "website": "https://artplayer.org",
             "icon": "Artplayer.js.svg"
+        },
+        "ArtsAI": {
+            "cats": [
+                36
+            ],
+            "dom": {
+                "img[src*=\"arttrk.com/pixel\"]": {
+                    "exists": ""
+                }
+            },
+            "html": [
+                "arttrk\\.com/pixel"
+            ],
+            "description": "ArtsAI is an AI-driven advertising attribution and measurement platform that tracks campaign performance via its arttrk.com pixel.",
+            "website": "https://artsai.com",
+            "icon": "ArtsAI.png"
         },
         "Aruba.it": {
             "cats": [
@@ -27280,6 +27307,25 @@
             "website": "https://www.enalyzer.com",
             "icon": "Enalyzer.svg"
         },
+        "Encharge": {
+            "cats": [
+                32,
+                75
+            ],
+            "cookies": {
+                "encheventsnippet": ""
+            },
+            "js": {
+                "EncTracking": "",
+                "EnchargeTracking": ""
+            },
+            "scriptSrc": [
+                "resources-app\\.encharge\\.io/(?:encharge-tracking|embed-production)"
+            ],
+            "description": "Encharge is a marketing automation platform that sends behavior-based emails and tracks website visitor activity.",
+            "website": "https://encharge.io",
+            "icon": "Encharge.png"
+        },
         "Endurance Page Cache": {
             "cats": [
                 87,
@@ -30727,6 +30773,29 @@
             "website": "https://flexifunnels.com",
             "icon": "FlexiFunnels.svg"
         },
+        "Flexmail": {
+            "cats": [
+                75,
+                32
+            ],
+            "dom": {
+                "form[action*=\"flexmail.eu\"]": {
+                    "exists": ""
+                },
+                "iframe[src*=\"flexmail.eu\"]": {
+                    "exists": ""
+                }
+            },
+            "headers": {
+                "content-security-policy": "(?:^|[^a-z])flexmail\\.eu"
+            },
+            "scriptSrc": [
+                "\\.flexmail\\.eu/"
+            ],
+            "description": "Flexmail is a Belgian email marketing platform offering campaign management, embeddable forms and surveys.",
+            "website": "https://flexmail.be",
+            "icon": "Flexmail.png"
+        },
         "Flexmls": {
             "cats": [
                 1
@@ -31281,6 +31350,16 @@
             "description": "Fly is a platform for running full stack apps and databases.",
             "website": "https://fly.io",
             "icon": "Fly.io.png"
+        },
+        "Flyads": {
+            "cats": [
+                36
+            ],
+            "cookies": {
+                "flyid": ""
+            },
+            "description": "Flyads is an ad network serving from fly.codes and displayfly.com hosts and setting the flyid cookie.",
+            "website": "https://displayfly.com"
         },
         "Flybook": {
             "cats": [
@@ -49321,6 +49400,17 @@
             "website": "https://lotlinx.com/",
             "icon": "LotLinx.svg"
         },
+        "Lotame": {
+            "cats": [
+                97,
+                36
+            ],
+            "scriptSrc": [
+                "\\.crwdcntrl\\.net/"
+            ],
+            "description": "Lotame is a data management platform (DMP) providing audience data collection, segmentation and identity solutions via its Crowd Control tag.",
+            "website": "https://www.lotame.com"
+        },
         "LottieFiles": {
             "cats": [
                 19
@@ -60340,6 +60430,28 @@
             "website": "https://www.orankl.com",
             "icon": "Orankl.png"
         },
+        "Orbit Commerce": {
+            "cats": [
+                6
+            ],
+            "js": {
+                "OrbitCommerce.platform": "^Orbit Commerce$"
+            },
+            "headers": {
+                "x-powered-by": "^orbit commerce$"
+            },
+            "meta": {
+                "generator": [
+                    "^orbit commerce$"
+                ]
+            },
+            "implies": [
+                "Next.js"
+            ],
+            "description": "Orbit Commerce is a hosted ecommerce platform from the UK with a drag-and-drop page builder, themes, payments, B2B selling and marketing tools.",
+            "website": "https://orbitcommerce.net",
+            "icon": "Orbit Commerce.svg"
+        },
         "Orbit Slider": {
             "cats": [
                 59
@@ -61169,6 +61281,13 @@
             "description": "PSPad is a feature-rich text editor designed for developers and professionals working with text, offering tools for coding, syntax highlighting, and project management.",
             "website": "https://www.pspad.com",
             "icon": "PSPad.svg"
+        },
+        "PTisp": {
+            "cats": [
+                88
+            ],
+            "description": "PTisp is a Portuguese hosting provider; hosted domains use mydnspt.net nameservers.",
+            "website": "https://ptisp.pt"
         },
         "PTminder": {
             "cats": [
@@ -62780,6 +62899,19 @@
             "description": "Peel is an open source shopping cart system.",
             "website": "https://www.peel.fr",
             "icon": "Peel.svg"
+        },
+        "Peer39": {
+            "cats": [
+                36
+            ],
+            "html": [
+                "tags\\.peer39\\.com"
+            ],
+            "scriptSrc": [
+                "\\.peer39\\.(?:com|net)/"
+            ],
+            "description": "Peer39 is a contextual page-quality and ad-intelligence service used pre-bid in programmatic advertising.",
+            "website": "https://www.peer39.com"
         },
         "PeerBoard": {
             "cats": [
@@ -64678,6 +64810,17 @@
                 "Vue.js"
             ],
             "description": "PlentyONE is a cloud-based ecommerce platform that provides ERP functionality, multichannel integration, and a built-in shop system.",
+            "website": "https://www.plentyone.com/product/online-shop",
+            "icon": "PlentyONE.svg"
+        },
+        "PlentyONE Shop": {
+            "cats": [
+                6
+            ],
+            "headers": {
+                "x-plenty-shop": "plentyone shop"
+            },
+            "description": "The official shop solution developed by PlentyONE. PlentyONE Shop is the new default Shop solution for PlentyONE online stores.",
             "website": "https://www.plentyone.com/product/online-shop",
             "icon": "PlentyONE.svg"
         },
@@ -67035,8 +67178,9 @@
                 59
             ],
             "scriptSrc": [
-                "(?:((?:\\d+\\.)+\\d+)\\/)?progressbar(?:\\.min)?\\.js\\;version:\\1",
-                "progressbar(?:\\.min)?\\.js(?:\\?v(?:er)?=((?:\\d+\\.)+\\d+))?\\;version:\\1"
+                "\\/progressbar\\.js@([\\d\\.]+)\\/dist\\/progressbar(?:\\.min)?\\.js\\;version:\\1",
+                "\\/progressbar\\.js\\/dist\\/progressbar(?:\\.min)?\\.js",
+                "cdnjs\\.cloudflare\\.com\\/ajax\\/libs\\/progressbar\\.js\\/([\\d\\.]+)\\/progressbar(?:\\.min)?\\.js\\;version:\\1"
             ],
             "description": "Responsive progress bars with animated SVG paths.",
             "website": "https://kimmobrunfeldt.github.io/progressbar.js/",
@@ -77032,6 +77176,14 @@
             "website": "https://sezzle.com/",
             "icon": "Sezzle.svg"
         },
+        "Sfera Networks": {
+            "cats": [
+                88
+            ],
+            "description": "Sfera Networks is an Italian hosting provider; hosted domains use sfera.net nameservers.",
+            "website": "https://www.sfera.net",
+            "icon": "Sfera Networks.png"
+        },
         "Shaka Player": {
             "cats": [
                 14
@@ -77760,6 +77912,35 @@
             "description": "ShopWired is a UK based, fully hosted ecommerce platform that is focused on the UK market.",
             "website": "https://www.shopwired.co.uk",
             "icon": "ShopWired.svg"
+        },
+        "ShopWise": {
+            "cats": [
+                6
+            ],
+            "dom": {
+                "link[href*='.myshopwise.now']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "__SHOPWISE__.name": "ShopWise",
+                "__SHOPWISE__.version": ""
+            },
+            "headers": {
+                "x-powered-by": "shopwise"
+            },
+            "meta": {
+                "generator": [
+                    "shopwise"
+                ]
+            },
+            "implies": [
+                "Node.js",
+                "Nuxt.js"
+            ],
+            "description": "ShopWise is a multi-tenant e-commerce platform for building online stores and marketplaces, with a hosted admin, theme editor, dropshipping and a built-in checkout.",
+            "website": "https://shopwise.now",
+            "icon": "ShopWise.svg"
         },
         "ShopX": {
             "cats": [
@@ -86211,6 +86392,17 @@
             "website": "https://tgtrack.ru",
             "icon": "TGTrack.svg"
         },
+        "THEADX": {
+            "cats": [
+                36
+            ],
+            "scriptSrc": [
+                "app\\.theadx\\.com/"
+            ],
+            "description": "THEADX is a Turkish advertising network and ad exchange that serves ad tags and tracking pixels via theadx.com.",
+            "website": "https://www.theadx.com",
+            "icon": "THEADX.png"
+        },
         "THG Ingenuity": {
             "cats": [
                 6
@@ -91170,6 +91362,14 @@
             "description": "Turf is a modular geospatial engine written in JavaScript.",
             "website": "https://turfjs.org/",
             "icon": "TurfJS.svg"
+        },
+        "Turhost": {
+            "cats": [
+                88
+            ],
+            "description": "Turhost is a Turkish hosting provider; hosted domains use turhost.com nameservers.",
+            "website": "https://www.turhost.com",
+            "icon": "Turhost.png"
         },
         "TuriTop": {
             "cats": [
@@ -104265,6 +104465,22 @@
             "website": "https://esputnik.com",
             "icon": "eSputnik.svg"
         },
+        "eStat Streaming": {
+            "cats": [
+                10
+            ],
+            "js": {
+                "_eStat_Whap_loaded": "",
+                "_eStat_Whap_loaded_func": "",
+                "eStat_PJS": ""
+            },
+            "scriptSrc": [
+                "(?:prof|w{1,2}|perso|playtime)\\.estat\\.com/"
+            ],
+            "description": "eStat Streaming is Médiamétrie's streaming audio/video audience measurement tag used by French radio, TV and media websites.",
+            "website": "https://www.mediametrie.fr",
+            "icon": "eStat Streaming.png"
+        },
         "eSyndiCat": {
             "cats": [
                 1
@@ -106536,8 +106752,8 @@
             "headers": {
                 "x-plenty-shop": "ceres"
             },
-            "description": "The official template plugin developed by plentymarkets. plentyShop LTS is the default template for plentymarkets online stores.",
-            "website": "https://www.plentymarkets.com/product/modules/online-shop/",
+            "description": "The plentyShop LTS plugin developed by PlentyONE. plentyShop LTS is the plugin based shop solution for PlentyONE. The predecessor to PlentyONE Shop",
+            "website": "https://www.plentyone.com/product/online-shop",
             "icon": "plentyShop LTS.svg"
         },
         "plentymarkets": {
@@ -106556,7 +106772,7 @@
                 ]
             },
             "description": "plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
-            "website": "https://www.plentymarkets.com/",
+            "website": "https://www.plentyone.com",
             "icon": "plentymarkets.svg"
         },
         "prettyPhoto": {
@@ -106889,6 +107105,23 @@
             "website": "https://stores.jp/ec/",
             "icon": "stores.jp.svg"
         },
+        "streaMonkey": {
+            "cats": [
+                103
+            ],
+            "js": {
+                "StreamPlayer": ""
+            },
+            "html": [
+                "\\.streamonkey\\.net/"
+            ],
+            "scriptSrc": [
+                "player\\.streamonkey\\.net/"
+            ],
+            "description": "streaMonkey is a German audio-streaming provider; sites embed its player from player.streamonkey.net and stream from frontend/edge streamonkey.net hosts.",
+            "website": "https://streamonkey.de",
+            "icon": "streaMonkey.png"
+        },
         "styled-components": {
             "cats": [
                 12,
@@ -106916,6 +107149,18 @@
             "description": "Styled components is a CSS-in-JS styling framework that uses tagged template literals in JavaScript.",
             "website": "https://styled-components.com",
             "icon": "styled-components.svg"
+        },
+        "teachworks": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "[id='teachworks-booking-button']": {
+                    "exists": ""
+                }
+            },
+            "website": "https://teachworks.com",
+            "icon": "teachworks.png"
         },
         "theCut": {
             "cats": [
