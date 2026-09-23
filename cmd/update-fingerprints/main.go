@@ -137,7 +137,9 @@ func gatherFingerprintsFromURL(URL string, fingerprints *Fingerprints) error {
 		return err
 	}
 	defer func() {
-		_ = resp.Body.Close()
+		if err := resp.Body.Close(); err != nil {
+			log.Printf("Failed to close response body: %v", err)
+		}
 	}()
 
 	data, err := io.ReadAll(resp.Body)
