@@ -45822,6 +45822,21 @@
             "website": "https://koken.me",
             "icon": "Koken.png"
         },
+        "Koko Analytics": {
+            "cats": [
+                10,
+                87
+            ],
+            "js": {
+                "koko_analytics": ""
+            },
+            "html": [
+                "\u003c!--\\s*koko analytics v([\\d.]+)[^\u003e]*--\u003e\\;version:\\1"
+            ],
+            "description": "Koko Analytics is a privacy-friendly analytics plugin for WordPress.",
+            "website": "https://www.kokoanalytics.com/",
+            "icon": "Koko Analytics.svg"
+        },
         "Kommand": {
             "cats": [
                 1
@@ -58854,7 +58869,7 @@
                 1
             ],
             "dom": {
-                "a[href*='a.cms.omniupdate.com/11/']": {
+                "a[href*='cms.omniupdate.com']": {
                     "exists": ""
                 }
             },
@@ -105558,7 +105573,7 @@
                 "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
             },
             "scriptSrc": [
-                "/(\\d+\\.\\d+\\.\\d+)/jquery[/.-][^u]\\;version:\\1",
+                "/(\\d+\\.\\d+\\.\\d+)/jquery(?:\\.slim)?(?:\\.min)?\\.js\\;version:\\1",
                 "/jquery(?:-(\\d+\\.\\d+\\.\\d+))[/.-]\\;version:\\1",
                 "jquery"
             ],
