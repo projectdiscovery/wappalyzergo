@@ -73,6 +73,7 @@ func (s *Wappalyze) loadFingerprints() error {
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
 	s.runtimeRules = compileRuntimeRules(s.fingerprints)
+	s.fingerprints.buildLiteralIndexes()
 	return nil
 }
 
@@ -119,6 +120,7 @@ func (s *Wappalyze) loadFingerprintsFromFile(filePath string, loadEmbedded, supe
 		s.fingerprints.Apps[i] = compileFingerprint(fingerprint)
 	}
 	s.runtimeRules = compileRuntimeRules(s.fingerprints)
+	s.fingerprints.buildLiteralIndexes()
 
 	return nil
 }
