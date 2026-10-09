@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"sort"
+	"strings"
 	"time"
 )
 
@@ -118,15 +119,20 @@ func (s *Wappalyze) FingerprintWithRuntime(
 }
 
 func (s *Wappalyze) mergeRuntimeEvidence(uniqueFingerprints UniqueFingerprints, evidence RuntimeEvidence) {
+	foldedScripts := make([]string, len(evidence.Scripts))
+	for i, script := range evidence.Scripts {
+		foldedScripts[i] = strings.ToLower(script)
+	}
+
 	for application, fingerprint := range s.fingerprints.Apps {
 		var confidence int
 		var version string
 
-		addMatch := func(pattern *ParsedPattern, value string) {
+		addMatch := func(pattern *ParsedPattern, value, folded string) {
 			if pattern == nil {
 				return
 			}
-			valid, detectedVersion := pattern.Evaluate(value)
+			valid, detectedVersion := pattern.evaluate(value, folded)
 			if !valid {
 				return
 			}
@@ -142,7 +148,7 @@ func (s *Wappalyze) mergeRuntimeEvidence(uniqueFingerprints UniqueFingerprints, 
 
 		for property, pattern := range fingerprint.js {
 			if value, ok := evidence.JavaScriptProperties[property]; ok {
-				addMatch(pattern, value)
+				addMatch(pattern, value, "")
 			}
 		}
 
@@ -152,31 +158,31 @@ func (s *Wappalyze) mergeRuntimeEvidence(uniqueFingerprints UniqueFingerprints, 
 				continue
 			}
 			if observed.Exists {
-				addMatch(rules.exists, "")
+				addMatch(rules.exists, "", "")
 			}
 			for _, value := range observed.Text {
 				if value != "" {
-					addMatch(rules.text, value)
+					addMatch(rules.text, value, "")
 				}
 			}
 			for name, pattern := range rules.attributes {
 				for _, value := range observed.Attributes[name] {
-					addMatch(pattern, value)
+					addMatch(pattern, value, "")
 				}
 			}
 			for name, pattern := range rules.properties {
 				for _, value := range observed.Properties[name] {
-					addMatch(pattern, value)
+					addMatch(pattern, value, "")
 				}
 			}
 		}
 
-		for _, script := range evidence.Scripts {
+		for i, script := range evidence.Scripts {
 			if script == "" {
 				continue
 			}
 			for _, pattern := range fingerprint.script {
-				addMatch(pattern, script)
+				addMatch(pattern, script, foldedScripts[i])
 			}
 		}
 

@@ -33,6 +33,9 @@ type Fingerprint struct {
 type CompiledFingerprints struct {
 	// Apps is organized as <name, fingerprint>
 	Apps map[string]*CompiledFingerprint
+	// htmlIndex and scriptIndex find patterns whose literals occur in one scan.
+	htmlIndex   *literalIndex
+	scriptIndex *scriptLiteralIndex
 }
 
 // CompiledFingerprint contains the compiled fingerprints from the tech json
@@ -259,8 +262,23 @@ func compileDOMPatternMap(value interface{}) map[string]*ParsedPattern {
 	return compiled
 }
 
-// matchString matches a string for the fingerprints
+// matchString matches an ASCII-lowercased string. checkBody passes the body
+// from bytes.ToLower, so this does not fold it again.
 func (f *CompiledFingerprints) matchString(data string, part part) []matchPartResult {
+	switch part {
+	case htmlPart:
+		if f.htmlIndex != nil {
+			return f.htmlIndex.match(data, data)
+		}
+	case scriptSrcPart:
+		if f.scriptIndex != nil {
+			return f.scriptIndex.match(data, data)
+		}
+	}
+	return f.matchStringScan(data, data, part)
+}
+
+func (f *CompiledFingerprints) matchStringScan(data, folded string, part part) []matchPartResult {
 	var matched bool
 	var technologies []matchPartResult
 
@@ -271,7 +289,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 		switch part {
 		case jsPart:
 			for _, pattern := range fingerprint.js {
-				if valid, versionString := pattern.Evaluate(data); valid {
+				if valid, versionString := pattern.evaluate(data, folded); valid {
 					matched = true
 					if pattern.Confidence > confidence {
 						confidence = pattern.Confidence
@@ -283,7 +301,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			}
 		case scriptSrcPart:
 			for _, pattern := range fingerprint.scriptSrc {
-				if valid, versionString := pattern.Evaluate(data); valid {
+				if valid, versionString := pattern.evaluate(data, folded); valid {
 					matched = true
 					if pattern.Confidence > confidence {
 						confidence = pattern.Confidence
@@ -295,7 +313,7 @@ func (f *CompiledFingerprints) matchString(data string, part part) []matchPartRe
 			}
 		case htmlPart:
 			for _, pattern := range fingerprint.html {
-				if valid, versionString := pattern.Evaluate(data); valid {
+				if valid, versionString := pattern.evaluate(data, folded); valid {
 					matched = true
 					if pattern.Confidence > confidence {
 						confidence = pattern.Confidence
