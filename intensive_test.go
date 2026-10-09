@@ -223,19 +223,22 @@ func sampleFingerprint(w *Wappalyze, headers map[string][]string, body []byte, n
 }
 
 func mixedHeaders(w *Wappalyze) map[string][]string {
+	// Keys are already lowercase. normalizeHeaders folds names, so a second
+	// "Content-Type" would overwrite this value in map iteration order.
 	headers := map[string][]string{
-		"Content-Type": {"text/html; charset=utf-8"},
+		"content-type": {"text/html; charset=utf-8"},
 	}
 	for _, fingerprint := range w.fingerprints.Apps {
 		for name, pattern := range fingerprint.headers {
-			if _, exists := headers[name]; exists || pattern == nil {
+			key := strings.ToLower(name)
+			if _, exists := headers[key]; exists || pattern == nil {
 				continue
 			}
 			value := "1"
 			if len(pattern.literals) > 0 && len(pattern.literals[0]) > 0 {
 				value = pattern.literals[0][0]
 			}
-			headers[name] = []string{value}
+			headers[key] = []string{value}
 			if len(headers) >= 24 {
 				return headers
 			}
