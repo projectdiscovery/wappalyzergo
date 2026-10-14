@@ -276,6 +276,66 @@ func TestLiteralPrefilter(t *testing.T) {
 	}
 }
 
+func TestLiteralPrefilterKeepsMatchingTargets(t *testing.T) {
+	tests := []struct {
+		name        string
+		pattern     string
+		target      string
+		expectedVer string
+	}{
+		{
+			name:        "literal before a capture that starts with digits",
+			pattern:     `^shopsite pro (\d+\.\d+)\;version:\1`,
+			target:      "ShopSite Pro 14.0",
+			expectedVer: "14.0",
+		},
+		{
+			name:    "alternation branch that ends with a character class",
+			pattern: `/(?:bundles/[^/]+|assets/javascripts|js)/offline\.min\.js`,
+			target:  "/bundles/app/offline.min.js",
+		},
+		{
+			name:    "alternation branch with an optional prefix",
+			pattern: `//(?:cas\.criteo\.com|(?:[^/]\.)?criteo\.net)/`,
+			target:  "//l.criteo.net/",
+		},
+		{
+			name:    "alternation the parser factors into an optional suffix",
+			pattern: `fonts\.(?:googleapis|google|gstatic)\.com`,
+			target:  "fonts.googleapis.com",
+		},
+		{
+			name:    "repeat between two short literals",
+			pattern: `ab(x*cd)`,
+			target:  "abxxcd",
+		},
+		{
+			name:    "repeated literal between two literals",
+			pattern: `ab(?:cd){1,}ef`,
+			target:  "abcdcdef",
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			p, err := ParsePattern(tt.pattern)
+			if err != nil {
+				t.Fatal("Failed to parse pattern:", err)
+			}
+			if !p.regex.MatchString(tt.target) {
+				t.Fatalf("regex %s does not match %q", p.regex, tt.target)
+			}
+			match, ver := p.Evaluate(tt.target)
+			if !match {
+				t.Fatalf("literals %q rejected %q", p.literals, tt.target)
+			}
+			if ver != tt.expectedVer {
+				t.Errorf("Expected version = %s, got %s", tt.expectedVer, ver)
+			}
+		})
+	}
+}
+
 func sameLiteralGroups(got, want [][]string) bool {
 	if len(got) != len(want) {
 		return false
