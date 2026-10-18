@@ -20260,6 +20260,25 @@
             "website": "https://www.cookieyes.com/",
             "icon": "cookieyes.svg"
         },
+        "CookieYes SDK": {
+            "cats": [
+                67
+            ],
+            "dom": {
+                "[data-cy-part='banner'] [data-cy-part='accept-all']": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "CookieYesSDK.version": "^(.+)$\\;version:\\1"
+            },
+            "implies": [
+                "CookieYes"
+            ],
+            "description": "CookieYes SDK is the npm package version of the CookieYes consent banner: a consent management SDK for websites.",
+            "website": "https://developers.cookieyes.com/",
+            "icon": "cookieyes.svg"
+        },
         "Cookiebot": {
             "cats": [
                 67
@@ -29009,6 +29028,32 @@
             "website": "https://fabric.inc",
             "icon": "Fabric.svg"
         },
+        "Face Age": {
+            "cats": [
+                59,
+                112
+            ],
+            "dom": {
+                ".faceAge-main-module": {
+                    "exists": ""
+                },
+                "iframe#FaceAge-module-iframe": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "FaceAge.prototype.render": ""
+            },
+            "scriptSrc": [
+                "cdn\\.jsdelivr\\.net/npm/face-age(?:/|$)",
+                "cdn\\.jsdelivr\\.net/npm/face-age@([\\d.]+)\\;version:\\1",
+                "unpkg\\.com/face-age(?:/|$)",
+                "unpkg\\.com/face-age@([\\d.]+)\\;version:\\1"
+            ],
+            "description": "Face Age is an AI-powered JavaScript SDK for facial skin analysis.",
+            "website": "https://getfaceage.com",
+            "icon": "FaceAge.svg"
+        },
         "Facebook Ads": {
             "cats": [
                 36
@@ -37682,6 +37727,34 @@
             "description": "HackerOne is a vulnerability disclosure and bug bounty platform.",
             "website": "https://www.hackerone.com",
             "icon": "HackerOne.svg"
+        },
+        "Hackle": {
+            "cats": [
+                74,
+                85,
+                10,
+                32,
+                53
+            ],
+            "js": {
+                "HACKLE_PRELOAD_CLIENT": "",
+                "Hackle": "",
+                "HacklePlugin": "",
+                "_hackle": "",
+                "_hackleCafe24App": "",
+                "hackleClient": ""
+            },
+            "html": [
+                "hackle_sdk_key"
+            ],
+            "scriptSrc": [
+                "@hackler/javascript-sdk",
+                "@hackler/javascript-sdk@([\\d.]+)/\\;version:\\1",
+                "\\.hackle\\.io/"
+            ],
+            "description": "Hackle is an experimentation and growth platform providing A/B testing, feature flags, product analytics, and behavioral messaging.",
+            "website": "https://hackle.io",
+            "icon": "Hackle.png"
         },
         "Haddock": {
             "cats": [
@@ -101777,6 +101850,22 @@
             "description": "YouCan Pay is a developed electronic payment platform that provides effective solutions for the payment gatways issue in ecommerce in Morocco.",
             "website": "https://youcanpay.com",
             "icon": "YouCan Pay.svg"
+        },
+        "YouDraw": {
+            "cats": [
+                6
+            ],
+            "headers": {
+                "x-generator": "^youdraw"
+            },
+            "meta": {
+                "generator": [
+                    "^youdraw"
+                ]
+            },
+            "description": "YouDraw is a Brazilian ecommerce and print-on-demand platform with hosted storefronts (YD Store).",
+            "website": "https://youdraw.com.br",
+            "icon": "YouDraw.png"
         },
         "YouLead": {
             "cats": [
