@@ -129,7 +129,7 @@ func patternLiterals(pattern string) [][]string {
 	if err != nil {
 		return nil
 	}
-	return selectiveLiterals(cover(re.Simplify()))
+	return selectiveLiterals(cover(re.Simplify()).groups)
 }
 
 // literalsPresent reports whether folded contains every literal of some group.
@@ -151,40 +151,58 @@ func groupPresent(folded string, group []string) bool {
 	return true
 }
 
+// literalCover is a necessary literal condition for a regexp node. When every
+// group is a single literal, head and tail report that each match starts or
+// ends with one of them, and exact that each match is one of them.
+type literalCover struct {
+	groups            [][]string
+	head, tail, exact bool
+}
+
 // cover returns a necessary literal condition for re.
-// A nil cover means this node proves no required literal.
-func cover(re *syntax.Regexp) [][]string {
+// Empty groups mean this node proves no required literal.
+func cover(re *syntax.Regexp) literalCover {
 	switch re.Op {
 	case syntax.OpLiteral:
 		if len(re.Rune) == 0 {
-			return nil
+			return literalCover{}
 		}
-		return asciiLiteralCover(string(re.Rune))
+		text := string(re.Rune)
+		groups := asciiLiteralCover(text)
+		whole := len(groups) == 1 && len(groups[0]) == 1 && len(groups[0][0]) == len(text)
+		return literalCover{groups: groups, head: whole, tail: whole, exact: whole}
 	case syntax.OpCapture, syntax.OpPlus:
 		if len(re.Sub) == 0 {
-			return nil
+			return literalCover{}
 		}
-		return cover(re.Sub[0])
+		sub := cover(re.Sub[0])
+		sub.exact = sub.exact && re.Op == syntax.OpCapture
+		return sub
 	case syntax.OpRepeat:
 		if re.Min == 0 || len(re.Sub) == 0 {
-			return nil
+			return literalCover{}
 		}
-		return cover(re.Sub[0])
+		sub := cover(re.Sub[0])
+		sub.exact = false
+		return sub
 	case syntax.OpConcat:
 		parts := flattenConcat(re, nil)
 		return coverConcat(parts)
 	case syntax.OpAlternate:
-		groups := make([][]string, 0, len(re.Sub))
+		out := literalCover{groups: make([][]string, 0, len(re.Sub)), head: true, tail: true, exact: true}
 		for _, sub := range re.Sub {
 			branch := cover(sub)
-			if len(branch) == 0 {
-				return nil
+			if len(branch.groups) == 0 {
+				return literalCover{}
 			}
-			groups = append(groups, branch...)
+			out.groups = append(out.groups, branch.groups...)
+			out.head = out.head && branch.head
+			out.tail = out.tail && branch.tail
+			out.exact = out.exact && branch.exact
 		}
-		return groups
+		return out
 	default:
-		return nil
+		return literalCover{}
 	}
 }
 
@@ -199,29 +217,35 @@ func flattenConcat(re *syntax.Regexp, dst []*syntax.Regexp) []*syntax.Regexp {
 }
 
 // coverConcat AND-combines required pieces. Adjacent single literals are
-// glued into one needle. A gap keeps both sides, since each is still required.
-func coverConcat(parts []*syntax.Regexp) [][]string {
-	var acc [][]string
-	adjacent := false
-	for _, part := range parts {
+// glued into one needle only when the left literal ends the text matched so
+// far and the right literal starts its part, so the glued text is in every
+// match. Otherwise both sides are kept, since each is still required.
+func coverConcat(parts []*syntax.Regexp) literalCover {
+	var acc literalCover
+	for i, part := range parts {
 		next := cover(part)
-		if len(next) == 0 {
-			adjacent = false
+		if len(next.groups) == 0 {
+			acc.tail, acc.exact = false, false
 			continue
 		}
-		if acc == nil {
+		if acc.groups == nil {
 			acc = next
-			adjacent = true
+			acc.head = next.head && i == 0
+			acc.exact = next.exact && i == 0
 			continue
 		}
-		if adjacent {
-			if glued, ok := glueLiterals(acc, next); ok {
-				acc = glued
+		if acc.tail && next.head {
+			if glued, ok := glueLiterals(acc.groups, next.groups); ok {
+				acc = literalCover{
+					groups: glued,
+					head:   acc.exact,
+					tail:   next.exact,
+					exact:  acc.exact && next.exact,
+				}
 				continue
 			}
 		}
-		acc = andLiterals(acc, next)
-		adjacent = true
+		acc = literalCover{groups: andLiterals(acc.groups, next.groups)}
 	}
 	return acc
 }
