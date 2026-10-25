@@ -7601,6 +7601,22 @@
             "website": "https://www.audiohook.com",
             "icon": "Audiohook.svg"
         },
+        "Audion": {
+            "cats": [
+                36
+            ],
+            "dom": {
+                "#audion360-podcast-player-init, .audion-reader": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "\\.360\\.audion\\.fm/"
+            ],
+            "description": "Audion is a digital audio advertising company; its Audion360 podcast player is embedded on publisher pages and loads from 360.audion.fm.",
+            "website": "https://www.audion.fm",
+            "icon": "Audion.png"
+        },
         "Auglio": {
             "cats": [
                 105
@@ -8086,6 +8102,19 @@
             "description": "Avanser allow you to track every call and enable your business to make better-informed decisions based on your phone calls.",
             "website": "https://www.avanser.com",
             "icon": "Avanser.svg"
+        },
+        "AvantisVideo": {
+            "cats": [
+                36
+            ],
+            "js": {
+                "avantisJS": ""
+            },
+            "scripts": [
+                "//cdn\\.avantisvideo\\.com"
+            ],
+            "website": "https://www.avantisvideo.com",
+            "icon": "AvantisVideo.png"
         },
         "Avasam": {
             "cats": [
@@ -11432,6 +11461,18 @@
             "description": "Bontii is a subscription module facilitating integration between webshop and payment solutions.",
             "website": "https://bontii.dk",
             "icon": "Bontii.svg"
+        },
+        "Book Like A Boss": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "a[href*='bookme.name']": {
+                    "exists": ""
+                }
+            },
+            "website": "https://www.booklikeaboss.com/",
+            "icon": "Book Like A Boss.png"
         },
         "Book N Pay": {
             "cats": [
@@ -17802,6 +17843,23 @@
             },
             "website": "https://cloudsuite.com",
             "icon": "CloudSuite.svg"
+        },
+        "Cloudbac": {
+            "cats": [
+                1,
+                51
+            ],
+            "headers": {
+                "x-powered-by": "^cloudbac$"
+            },
+            "meta": {
+                "generator": [
+                    "^cloudbac$"
+                ]
+            },
+            "description": "Cloudbac is a SaaS website builder and hosting platform for businesses.",
+            "website": "https://www.cloudbac.com",
+            "icon": "Cloudbac.svg"
         },
         "Cloudbeds": {
             "cats": [
@@ -36051,7 +36109,8 @@
                 "gtag\\([^)]+'(aw-)"
             ],
             "scriptSrc": [
-                "\\.googleadservices\\.com/pagead/conversion_async\\.js"
+                "\\.googleadservices\\.com/pagead/conversion_async\\.js",
+                "googletagmanager\\.com/gtag/js\\?id=aw-"
             ],
             "implies": [
                 "Google Ads"
@@ -80941,6 +81000,16 @@
             "website": "https://www.smartemailing.cz",
             "icon": "SmartEmailing.svg"
         },
+        "SmartFrame": {
+            "cats": [
+                95
+            ],
+            "html": [
+                "\u003clink rel=\"dns-prefetch\" href=\"//static\\.smartframe\\.io\""
+            ],
+            "website": "https://smartframe.io",
+            "icon": "SmartFrame.png"
+        },
         "SmartFront": {
             "cats": [
                 108,
@@ -81634,6 +81703,21 @@
             "website": "https://socedoagency.com",
             "icon": "Socedo.svg"
         },
+        "SociableKIT": {
+            "cats": [
+                5
+            ],
+            "html": [
+                "\u003ciframe[^\u003e]*src=[^\u003e]*widgets\\.sociablekit\\.com",
+                "\u003cimg[^\u003e]*src=[^\u003e]*images\\.sociablekit\\.com"
+            ],
+            "scriptSrc": [
+                "widgets\\.sociablekit\\.com"
+            ],
+            "description": "Sociable kit",
+            "website": "https://www.sociablekit.com/",
+            "icon": "SociableKIT.png"
+        },
         "Social Pinpoint": {
             "cats": [
                 1
@@ -82175,6 +82259,16 @@
             "description": "SonarQube is an open-source platform for the continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages.",
             "website": "https://www.sonarqube.org/",
             "icon": "sonar.png"
+        },
+        "Sonares": {
+            "cats": [
+                5
+            ],
+            "html": [
+                "\u003ciframe [^\u003e]*src=[^\u003e]*content\\.sonares\\.org/[^\"/]+"
+            ],
+            "website": "https://sonares.org/",
+            "icon": "Sonares.png"
         },
         "Sonetel Chat": {
             "cats": [
@@ -83348,6 +83442,18 @@
             "description": "Sprocket is an analytics and tracking system from Japan.",
             "website": "https://www.sprocket.bz",
             "icon": "Sprocket.svg"
+        },
+        "SproutStudio": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "iframe[src*='.sproutstudio.com']": {
+                    "exists": ""
+                }
+            },
+            "website": "https://getsproutstudio.com",
+            "icon": "SproutStudio.png"
         },
         "Spruce": {
             "cats": [
@@ -87589,6 +87695,18 @@
             "website": "https://www.taurosmedia.com",
             "icon": "TaurosMedia.svg"
         },
+        "Tave": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "iframe[src*='tave.com']": {
+                    "exists": ""
+                }
+            },
+            "website": "https://tave.com",
+            "icon": "Tave.png"
+        },
         "Tawk.to": {
             "cats": [
                 52
@@ -88062,6 +88180,11 @@
         "Terminalfour": {
             "cats": [
                 1
+            ],
+            "html": [
+                "\u003c[^\u003e]+/terminalfour/page/(?:section|content|directedit)",
+                "\u003c[^\u003e]+t4edit-page",
+                "\u003c[^\u003e]+terminalfour\\.net/"
             ],
             "meta": {
                 "generator": [
@@ -90507,6 +90630,16 @@
             "website": "https://www.traek.io",
             "icon": "Traek.svg"
         },
+        "Traffective": {
+            "cats": [
+                36
+            ],
+            "js": {
+                "traffectiveLib": ""
+            },
+            "website": "https://www.traffective.com",
+            "icon": "Traffective.png"
+        },
         "TrafficGuard": {
             "cats": [
                 16
@@ -91496,6 +91629,21 @@
             "description": "TutorCruncher is a tutoring management software.",
             "website": "https://tutorcruncher.com",
             "icon": "TutorCruncher.svg"
+        },
+        "Tutorbird": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "a[href*='.tutorbird.com']": {
+                    "exists": ""
+                },
+                "iframe[src*='.tutorbird.com']": {
+                    "exists": ""
+                }
+            },
+            "website": "https://tutorbird.com",
+            "icon": "Tutorbird.png"
         },
         "Twenty Eleven": {
             "cats": [
@@ -93966,6 +94114,18 @@
             "description": "Vagaro is a software platform that enables businesses to manage and book appointments online through a centralized scheduling system.",
             "website": "https://www.vagaro.com/pro/schedulicity",
             "icon": "Vagaro.svg"
+        },
+        "Valorsic Studio": {
+            "cats": [
+                59
+            ],
+            "dom": {
+                "[data-valorsic-studio]": {
+                    "exists": ""
+                }
+            },
+            "website": "https://valorsic.studio",
+            "icon": "Valorsic Studio.png"
         },
         "Valuad": {
             "cats": [
@@ -102498,6 +102658,25 @@
             "website": "https://www.zendesk.com/platform/conversations",
             "icon": "Zendesk.svg"
         },
+        "Zendesk Widget": {
+            "cats": [
+                5
+            ],
+            "dom": {
+                "script#ze-snippet": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "zEACLoaded": "",
+                "zEmbed": ""
+            },
+            "scriptSrc": [
+                "static\\.zdassets\\.com/ekr/snippet\\.js"
+            ],
+            "website": "https://developer.zendesk.com",
+            "icon": "Zendesk Widget.png"
+        },
         "Zenfolio": {
             "cats": [
                 7
@@ -103243,6 +103422,19 @@
             "website": "https://www.zoom.com",
             "icon": "Zoom.png"
         },
+        "Zoomd": {
+            "cats": [
+                36
+            ],
+            "js": {
+                "Zoomd": ""
+            },
+            "scripts": [
+                "sphereup\\.com/zoomd"
+            ],
+            "website": "https://zoomd.com",
+            "icon": "Zoomd.png"
+        },
         "Zoominfo": {
             "cats": [
                 10
@@ -103680,6 +103872,16 @@
             "website": "https://animejs.com/",
             "icon": "anime.js.svg"
         },
+        "audienzz": {
+            "cats": [
+                1
+            ],
+            "js": {
+                "audienzz": ""
+            },
+            "website": "https://audienzz.ch",
+            "icon": "audienzz.png"
+        },
         "augmented-ui": {
             "cats": [
                 66
@@ -103790,6 +103992,16 @@
             "description": "bdok is a cloud-based platform which provides the capability to create and manage online stores with no technical knowledge.",
             "website": "https://bdok.ir",
             "icon": "bdok.svg"
+        },
+        "bet365": {
+            "cats": [
+                19
+            ],
+            "html": [
+                "\u003ca [^\u003e]*href=['\"]http[s]?://www\\.bet365"
+            ],
+            "website": "https://www.bet365affiliates.com",
+            "icon": "bet365.png"
         },
         "biskoui": {
             "cats": [
