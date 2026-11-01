@@ -37804,11 +37804,11 @@
                 "hackleClient": ""
             },
             "html": [
-                "hackle_sdk_key"
+                "\u003cscript[^\u003e]*\u003e[^\u003c]*hackle_sdk_key"
             ],
             "scriptSrc": [
                 "@hackler/javascript-sdk",
-                "@hackler/javascript-sdk@([\\d.]+)/\\;version:\\1",
+                "@hackler/javascript-sdk@([\\d.]+)(?:/|[?#]|$)\\;version:\\1",
                 "\\.hackle\\.io/"
             ],
             "description": "Hackle is an experimentation and growth platform providing A/B testing, feature flags, product analytics, and behavioral messaging.",
