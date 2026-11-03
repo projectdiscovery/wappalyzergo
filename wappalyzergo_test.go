@@ -65,6 +65,19 @@ func TestBodyDetect(t *testing.T) {
 		require.Contains(t, matches, "PHP", "Could not get correct implied match")
 		require.Contains(t, matches, "Proximis Unified Commerce", "Could not get correct match")
 	})
+
+	t.Run("html-escaped-asterisk", func(t *testing.T) {
+		matches := wappalyzer.Fingerprint(map[string][]string{}, []byte(`<html>
+<head>
+<style>
+/*!
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ */
+</style>
+</head>
+</html>`))
+		require.Contains(t, matches, "Bootstrap:3.3.7", "Could not get correct match")
+	})
 }
 
 func TestUniqueFingerprints(t *testing.T) {

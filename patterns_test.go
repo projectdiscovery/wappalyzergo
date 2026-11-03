@@ -28,6 +28,12 @@ func TestParsePattern(t *testing.T) {
 			expectedConf:  50,
 		},
 		{
+			name:          "Escaped asterisk",
+			input:         "/\\*!\\s+\\* bootstrap v(\\d)",
+			expectedRegex: `(?i)/\*!\s{1,250}\* bootstrap v(\d)`,
+			expectedConf:  100,
+		},
+		{
 			name:          "With version",
 			input:         "jquery-([0-9.]+)\\.js\\;version:\\1",
 			expectedRegex: "(?i)jquery-([0-9.]{1,250})\\.js",
