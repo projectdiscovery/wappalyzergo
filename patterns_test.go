@@ -55,6 +55,12 @@ func TestParsePattern(t *testing.T) {
 			expectedConf:  100,
 			expectedVer:   "\\1",
 		},
+		{
+			name:          "Escaped asterisk is preserved",
+			input:         `<style>\s+/\*!\s+\* bootstrap v(\d\.\d\.\d)`,
+			expectedRegex: `(?i)<style>\s{1,250}/\*!\s{1,250}\* bootstrap v(\d\.\d\.\d)`,
+			expectedConf:  100,
+		},
 	}
 
 	for _, tt := range tests {

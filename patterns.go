@@ -57,9 +57,11 @@ func ParsePattern(pattern string) (*ParsedPattern, error) {
 			regexPattern = strings.ReplaceAll(regexPattern, verCap2, verCap2Fill)
 
 			regexPattern = strings.ReplaceAll(regexPattern, "\\+", "__escapedPlus__")
+			regexPattern = strings.ReplaceAll(regexPattern, "\\*", "__escapedAsterisk__")
 			regexPattern = strings.ReplaceAll(regexPattern, "+", "{1,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "*", "{0,250}")
 			regexPattern = strings.ReplaceAll(regexPattern, "__escapedPlus__", "\\+")
+			regexPattern = strings.ReplaceAll(regexPattern, "__escapedAsterisk__", "\\*")
 
 			// restore version capture groups
 			regexPattern = strings.ReplaceAll(regexPattern, verCap1Fill, verCap1Limited)
