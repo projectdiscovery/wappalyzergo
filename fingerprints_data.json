@@ -3678,10 +3678,6 @@
             "cats": [
                 62
             ],
-            "headers": {
-                "server": "^volt-adc$",
-                "x-volterra-location": ""
-            },
             "implies": [
                 "Akamai"
             ],
@@ -5093,7 +5089,7 @@
                 "analyzee._session": ""
             },
             "scriptSrc": [
-                "cdn\\.analyzee\\.io/sdk/(.*)\\.js"
+                "cdn\\.analyzee\\.io/sdk/.*\\.js"
             ],
             "description": "Analyzee is an analytics tool that allows you to gain insights into visitor behavior and optimise your website's user experience using heatmaps and other analytics features.",
             "website": "https://analyzee.io",
@@ -29246,8 +29242,12 @@
                 62
             ],
             "headers": {
+                "server": "^volt-(?:adc|cdn)$",
                 "x-volterra-location": ""
             },
+            "implies": [
+                "Envoy"
+            ],
             "description": "F5 Distributed Cloud Services is a SaaS platform providing security, networking, and application management to deploy, secure, and operate applications in cloud-native environments.",
             "website": "https://www.f5.com/products/distributed-cloud-services",
             "icon": "F5DistributedCloudServices.svg"
@@ -32033,8 +32033,8 @@
                 "___FONT_AWESOME___": ""
             },
             "scriptSrc": [
-                "(?:f|f)o(?:n|r)t-?(?:a|a)wesome(?:.*?([0-9a-fa-f]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
-                "\\.fontawesome\\.com/([0-9a-z]+).js"
+                "(?:f|f)o(?:n|r)t-?(?:a|a)wesome(?:.*?(?:[0-9a-fa-f]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
+                "\\.fontawesome\\.com/(?:[0-9a-z]+).js"
             ],
             "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
             "website": "https://fontawesome.com/",
@@ -33262,7 +33262,7 @@
                 }
             },
             "scripts": [
-                "x-frc-client\",\"js-(\\d+(\\.\\d+)+)\\;version:\\1"
+                "x-frc-client\",\"js-(\\d+(?:\\.\\d+)+)\\;version:\\1"
             ],
             "description": "Friendly Captcha is a proof-of-work based solution in which the user’s device does all the work.",
             "website": "https://friendlycaptcha.com",
@@ -36485,7 +36485,7 @@
                 "google_trackConversion": ""
             },
             "scripts": [
-                "gtag\\([^)]+'(aw-)"
+                "gtag\\([^)]+'aw-"
             ],
             "scriptSrc": [
                 "\\.googleadservices\\.com/pagead/conversion_async\\.js",
@@ -36826,7 +36826,7 @@
                 }
             },
             "scriptSrc": [
-                "pay\\.google\\.com/([a-z/]+)/pay\\.js"
+                "pay\\.google\\.com/[a-z/]+/pay\\.js"
             ],
             "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
             "website": "https://pay.google.com",
@@ -69170,6 +69170,27 @@
             "website": "https://www.qoreai.com",
             "icon": "QoreAI.svg"
         },
+        "Qorfechi": {
+            "cats": [
+                1,
+                6,
+                51
+            ],
+            "js": {
+                "Qorfechi.platform": "^Qorfechi$"
+            },
+            "headers": {
+                "x-powered-by": "^qorfechi$"
+            },
+            "meta": {
+                "generator": [
+                    "^qorfechi$"
+                ]
+            },
+            "description": "Qorfechi is a hosted website builder and CMS from Iran with online store, CRM, booking and online course modules.",
+            "website": "https://qorfechi.com",
+            "icon": "Qorfechi.svg"
+        },
         "Qpien": {
             "cats": [
                 52
@@ -76187,6 +76208,21 @@
             "website": "https://www.scheduleanyone.com",
             "icon": "ScheduleAnyone.svg"
         },
+        "Schedulicity": {
+            "cats": [
+                72
+            ],
+            "dom": {
+                "a[href*='schedulicity.com/scheduling/']": {
+                    "exists": ""
+                }
+            },
+            "scripts": [
+                "api\\.schedulicity\\.com"
+            ],
+            "website": "https://www.schedulicity.com",
+            "icon": "Schedulicity.png"
+        },
         "Schema App": {
             "cats": [
                 54
@@ -78355,6 +78391,28 @@
             "description": "ShopFactory is an all-in-one ecommerce platform that allows businesses to create and manage their online stores without the need for extensive technical expertise.",
             "website": "https://www.shopfactory.com",
             "icon": "ShopFactory.svg"
+        },
+        "ShopFast": {
+            "cats": [
+                6
+            ],
+            "dom": {
+                "a.sf-powered[href^='https://shopfa.st/']": {
+                    "exists": ""
+                },
+                "script#sf-skeletons[type='application/json']": {
+                    "exists": ""
+                }
+            },
+            "scriptSrc": [
+                "/_sf/runtime\\.[\\da-f]{12}\\.js"
+            ],
+            "meta": {
+                "sf:page-type": []
+            },
+            "description": "ShopFast is a hosted ecommerce platform for selling digital products, with customisable storefronts on shopfa.st subdomains or custom domains.",
+            "website": "https://shopfa.st",
+            "icon": "ShopFast.svg"
         },
         "ShopGate": {
             "cats": [
@@ -84760,6 +84818,19 @@
             "description": "Stenciljs is an open-source web component compiler that enables developers to create reusable, interoperable UI components that can work across different frameworks and platforms.",
             "website": "https://stenciljs.com",
             "icon": "Stencil.svg"
+        },
+        "Stencil (hellostencil.com)": {
+            "cats": [
+                51
+            ],
+            "meta": {
+                "generator": [
+                    "^stencil \\(hellostencil\\.com\\)$"
+                ]
+            },
+            "description": "Stencil is an AI app builder that creates, hosts and publishes web apps from a plain-language description.",
+            "website": "https://hellostencil.com",
+            "icon": "hellostencil.png"
         },
         "Stetic Analytics": {
             "cats": [
@@ -97951,6 +98022,26 @@
             "description": "Waste Connections is a provider of waste management solutions, offering trash collection, dumpster rental, and recycling services across the United States.",
             "website": "https://www.wasteconnections.com",
             "icon": "WasteConnections.svg"
+        },
+        "Watch Music Web API": {
+            "cats": [
+                19
+            ],
+            "dom": {
+                "html[data-watchmusic-web-api]": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "WatchMusicWebAPI.version": "^(.+)$\\;version:\\1"
+            },
+            "scriptSrc": [
+                "developers\\.watchmusic\\.app/sdk/v\\d+/web-api\\.js",
+                "sdk\\.watchmusic\\.app/web-api/v\\d+\\.js"
+            ],
+            "description": "Watch Music Web API endpoints return JSON metadata about music artists, albums, tracks and playlists from the Watch Music catalogue, and give OAuth 2.0 access to listener libraries and playback.",
+            "website": "https://developers.watchmusic.app",
+            "icon": "WatchMusic.svg"
         },
         "WatchThem": {
             "cats": [
