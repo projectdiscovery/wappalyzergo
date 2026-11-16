@@ -15,6 +15,9 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    groups:
+      github-actions:
+        patterns: ["*"]
 
   # Maintain dependencies for go modules
   - package-ecosystem: "gomod"
@@ -25,6 +28,12 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    groups:
+      projectdiscovery:
+        patterns: ["github.com/projectdiscovery/*"]
+      external:
+        patterns: ["*"]
+        exclude-patterns: ["github.com/projectdiscovery/*"]
 
   # Maintain dependencies for docker
   - package-ecosystem: "docker"
@@ -35,3 +44,6 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    groups:
+      docker:
+        patterns: ["*"]
