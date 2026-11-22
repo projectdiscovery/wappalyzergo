@@ -8063,6 +8063,22 @@
             "website": "https://www.theauxilia.com/",
             "icon": "Auxilia.svg"
         },
+        "Avacy": {
+            "cats": [
+                67
+            ],
+            "js": {
+                "AVACY": "",
+                "Avacy.version": "^(.+)$\\;version:\\1"
+            },
+            "scriptSrc": [
+                "\\.avacy-cdn\\.com/(?:current/dist/oil|v3/)",
+                "\\.avacy-cdn\\.com/v3/web/(\\d+\\.\\d+\\.\\d+)/\\;version:\\1"
+            ],
+            "description": "Avacy is a consent management platform (CMP) that helps websites collect and manage visitor consent for cookies and trackers under GDPR and the IAB TCF.",
+            "website": "https://avacysolution.com",
+            "icon": "Avacy.svg"
+        },
         "Avada AVASHIP": {
             "cats": [
                 100
@@ -20583,6 +20599,20 @@
             "website": "https://www.cookiehub.com",
             "icon": "CookieHub.png"
         },
+        "CookieOfficer": {
+            "cats": [
+                67
+            ],
+            "cookies": {
+                "co_consent": ""
+            },
+            "scriptSrc": [
+                "cdn\\.cookieofficer\\.com/s/co-"
+            ],
+            "description": "CookieOfficer is a consent management platform for websites with cookie scanning, automatic script blocking and Google Consent Mode v2 support.",
+            "website": "https://cookieofficer.com",
+            "icon": "CookieOfficer.svg"
+        },
         "CookieYes": {
             "cats": [
                 67
@@ -28756,6 +28786,25 @@
             "description": "Evvnt is a digital events marketing and management platform.",
             "website": "https://evvnt.com",
             "icon": "Evvnt.svg"
+        },
+        "ExaSpark": {
+            "cats": [
+                51,
+                112
+            ],
+            "dom": {
+                "a#spk-badge[data-spk-badge][href^='https://exaspark.ai/']": {
+                    "exists": ""
+                }
+            },
+            "meta": {
+                "generator": [
+                    "^exaspark$"
+                ]
+            },
+            "description": "ExaSpark is an AI app builder that builds, publishes and hosts websites and Android apps from a text prompt.",
+            "website": "https://exaspark.ai",
+            "icon": "ExaSpark.svg"
         },
         "ExactMetrics": {
             "cats": [
@@ -38995,6 +39044,30 @@
             "description": "HelpOnClick is a live chat and customer tracking platform designed to support real-time communication and monitor visitor interactions on websites.",
             "website": "https://helponclick.com",
             "icon": "HelpOnClick.svg"
+        },
+        "Helpvane": {
+            "cats": [
+                52
+            ],
+            "dom": {
+                "div[data-helpvane-widget]": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "HelpvaneWidget": ""
+            },
+            "scriptSrc": [
+                "helpvane\\.com/widget/widget\\.js"
+            ],
+            "meta": {
+                "generator": [
+                    "^helpvane$"
+                ]
+            },
+            "description": "Helpvane is an AI customer support chat widget and shopper assistant for websites and online stores.",
+            "website": "https://helpvane.com",
+            "icon": "Helpvane.svg"
         },
         "Helpwise": {
             "cats": [
@@ -50008,6 +50081,29 @@
             "website": "https://lovable.dev/",
             "icon": "Lovable.png"
         },
+        "LovedByAI": {
+            "cats": [
+                54,
+                87
+            ],
+            "dom": {
+                "script#geoguru-llm-tracking-js-after": {
+                    "exists": ""
+                },
+                "script#geoguru-llm-tracking-js-before": {
+                    "exists": ""
+                },
+                "style#geoguru-llm-link-styles-inline-css": {
+                    "exists": ""
+                }
+            },
+            "js": {
+                "geoguru_llm_tracking.proxyUrl": "/wp-json/geoguru/v1/llm-source-event"
+            },
+            "description": "LovedByAI is a WordPress plugin for AI search optimisation (generative engine optimisation) that adds structured data and tracks referral traffic from AI assistants.",
+            "website": "https://www.lovedby.ai",
+            "icon": "LovedByAI.png"
+        },
         "Lovi": {
             "cats": [
                 52
@@ -54711,6 +54807,20 @@
             "description": "Modal Forms is a tool that enhances your website by adding interactive pop-ups.",
             "website": "https://www.modalforms.com",
             "icon": "ModalForms.svg"
+        },
+        "Model Context Protocol": {
+            "cats": [
+                112
+            ],
+            "headers": {
+                "access-control-allow-headers": "\\bmcp-(?:session-id|protocol-version)\\b",
+                "access-control-expose-headers": "\\bmcp-(?:session-id|protocol-version)\\b",
+                "mcp-session-id": "",
+                "www-authenticate": "resource_metadata=\"https?://[^\"]+/\\.well-known/oauth-protected-resource/mcp/?\""
+            },
+            "description": "Model Context Protocol (MCP) is an open protocol that connects AI applications to external tools and data sources.",
+            "website": "https://modelcontextprotocol.io",
+            "icon": "Model Context Protocol.svg"
         },
         "Modelo": {
             "cats": [
@@ -74836,6 +74946,23 @@
             "website": "https://simgroep.nl/internet/portfolio-contentbeheer_41623/",
             "icon": "SIMsite.png"
         },
+        "SLAED CMS": {
+            "cats": [
+                1
+            ],
+            "meta": {
+                "generator": [
+                    "^(?:slaed cms(?: ([\\d.]+))?|open slaed)\\;version:\\1"
+                ],
+                "sl-token": []
+            },
+            "implies": [
+                "PHP"
+            ],
+            "description": "SLAED CMS is a free and open-source content management system written in PHP.",
+            "website": "https://slaed.net",
+            "icon": "SLAED CMS.svg"
+        },
         "SM Sold": {
             "cats": [
                 53
@@ -84831,6 +84958,34 @@
             "description": "Stencil is an AI app builder that creates, hosts and publishes web apps from a plain-language description.",
             "website": "https://hellostencil.com",
             "icon": "hellostencil.png"
+        },
+        "SterkCommerce": {
+            "cats": [
+                6,
+                1
+            ],
+            "cookies": {
+                "sterk_search_bucket": ""
+            },
+            "js": {
+                "SterkCommerce.name": "^SterkCommerce$",
+                "SterkCommerce.version": "^(.+)$\\;version:\\1"
+            },
+            "headers": {
+                "x-powered-by": "^sterkcommerce$"
+            },
+            "meta": {
+                "generator": [
+                    "^sterkcommerce(?: cloud)?(?: ([\\d.]+))?$\\;version:\\1"
+                ]
+            },
+            "implies": [
+                "Next.js",
+                "React"
+            ],
+            "description": "SterkCommerce is a headless e-commerce platform and CMS (Next.js storefront with Magento or custom backends) by Sterk Commerce.",
+            "website": "https://sterkcommerce.com",
+            "icon": "SterkCommerce.png"
         },
         "Stetic Analytics": {
             "cats": [
