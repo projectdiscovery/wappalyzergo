@@ -36,6 +36,8 @@ type CompiledFingerprints struct {
 	// htmlIndex and scriptIndex find patterns whose literals occur in one scan.
 	htmlIndex   *literalIndex
 	scriptIndex *scriptLiteralIndex
+	// keyIndexes find the apps with a cookie, header or meta pattern for a key.
+	keyIndexes map[part]map[string][]keyApp
 }
 
 // CompiledFingerprint contains the compiled fingerprints from the tech json
@@ -354,7 +356,8 @@ func (f *CompiledFingerprints) matchKeyValueString(key, value string, part part)
 	var matched bool
 	var technologies []matchPartResult
 
-	for app, fingerprint := range f.Apps {
+	for _, entry := range f.appsWithKey(part, key) {
+		app, fingerprint := entry.name, entry.fingerprint
 		var version string
 		var confidence int
 
@@ -439,56 +442,30 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 	var matched bool
 	var technologies []matchPartResult
 
-	for app, fingerprint := range f.Apps {
-		var version string
-		var confidence int
-
-		switch part {
-		case cookiesPart:
-			for data, pattern := range fingerprint.cookies {
-				value, ok := keyValue[data]
-				if !ok {
-					continue
-				}
-				if pattern == nil {
-					matched = true
-					continue
-				}
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if pattern.Confidence > confidence {
-						confidence = pattern.Confidence
-					}
-					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
-						version = versionString
-					}
-				}
+	index := f.keyIndex(part)
+	var buf [16]string
+	done := buf[:0]
+	for key := range keyValue {
+		for _, entry := range index[key] {
+			// Skip the app if an earlier key matched it.
+			if hasAnyKey(entry.fingerprint, part, done) {
+				continue
 			}
-		case headersPart:
-			for data, pattern := range fingerprint.headers {
-				value, ok := keyValue[data]
-				if !ok {
-					continue
-				}
+			app, fingerprint := entry.name, entry.fingerprint
+			var version string
+			var confidence int
 
-				if valid, versionString := pattern.Evaluate(value); valid {
-					matched = true
-					if pattern.Confidence > confidence {
-						confidence = pattern.Confidence
+			switch part {
+			case cookiesPart:
+				for data, pattern := range fingerprint.cookies {
+					value, ok := keyValue[data]
+					if !ok {
+						continue
 					}
-					if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
-						version = versionString
+					if pattern == nil {
+						matched = true
+						continue
 					}
-				}
-			}
-		case metaPart:
-			for data, patterns := range fingerprint.meta {
-				value, ok := keyValue[data]
-				if !ok {
-					continue
-				}
-
-				for _, pattern := range patterns {
 					if valid, versionString := pattern.Evaluate(value); valid {
 						matched = true
 						if pattern.Confidence > confidence {
@@ -499,28 +476,65 @@ func (f *CompiledFingerprints) matchMapString(keyValue map[string]string, part p
 						}
 					}
 				}
-			}
-		}
+			case headersPart:
+				for data, pattern := range fingerprint.headers {
+					value, ok := keyValue[data]
+					if !ok {
+						continue
+					}
 
-		// If no match, continue with the next fingerprint
-		if !matched {
-			continue
-		}
+					if valid, versionString := pattern.Evaluate(value); valid {
+						matched = true
+						if pattern.Confidence > confidence {
+							confidence = pattern.Confidence
+						}
+						if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
+							version = versionString
+						}
+					}
+				}
+			case metaPart:
+				for data, patterns := range fingerprint.meta {
+					value, ok := keyValue[data]
+					if !ok {
+						continue
+					}
 
-		technologies = append(technologies, matchPartResult{
-			application: app,
-			version:     version,
-			confidence:  confidence,
-		})
-		if len(fingerprint.implies) > 0 {
-			for _, implies := range fingerprint.implies {
-				technologies = append(technologies, matchPartResult{
-					application: implies,
-					confidence:  confidence,
-				})
+					for _, pattern := range patterns {
+						if valid, versionString := pattern.Evaluate(value); valid {
+							matched = true
+							if pattern.Confidence > confidence {
+								confidence = pattern.Confidence
+							}
+							if versionString != "" && (version == "" || isMoreSpecific(versionString, version)) {
+								version = versionString
+							}
+						}
+					}
+				}
 			}
+
+			// If no match, continue with the next fingerprint
+			if !matched {
+				continue
+			}
+
+			technologies = append(technologies, matchPartResult{
+				application: app,
+				version:     version,
+				confidence:  confidence,
+			})
+			if len(fingerprint.implies) > 0 {
+				for _, implies := range fingerprint.implies {
+					technologies = append(technologies, matchPartResult{
+						application: implies,
+						confidence:  confidence,
+					})
+				}
+			}
+			matched = false
 		}
-		matched = false
+		done = append(done, key)
 	}
 	return technologies
 }
