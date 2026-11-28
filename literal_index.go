@@ -24,6 +24,66 @@ func (f *CompiledFingerprints) buildLiteralIndexes() {
 		return fingerprint.html
 	})
 	f.scriptIndex = buildScriptIndex(f.Apps)
+	f.keyIndexes = buildKeyIndexes(f.Apps)
+}
+
+// keyApp is an app with a cookie, header or meta pattern for one key.
+type keyApp struct {
+	name        string
+	fingerprint *CompiledFingerprint
+}
+
+func buildKeyIndexes(apps map[string]*CompiledFingerprint) map[part]map[string][]keyApp {
+	indexes := map[part]map[string][]keyApp{
+		cookiesPart: {},
+		headersPart: {},
+		metaPart:    {},
+	}
+	for app, fingerprint := range apps {
+		entry := keyApp{name: app, fingerprint: fingerprint}
+		for key := range fingerprint.cookies {
+			indexes[cookiesPart][key] = append(indexes[cookiesPart][key], entry)
+		}
+		for key := range fingerprint.headers {
+			indexes[headersPart][key] = append(indexes[headersPart][key], entry)
+		}
+		for key := range fingerprint.meta {
+			indexes[metaPart][key] = append(indexes[metaPart][key], entry)
+		}
+	}
+	return indexes
+}
+
+// appsWithKey returns the apps with a pattern for key in part.
+func (f *CompiledFingerprints) appsWithKey(part part, key string) []keyApp {
+	return f.keyIndex(part)[key]
+}
+
+// keyIndex returns the index of part. It builds the index if New did not build it.
+func (f *CompiledFingerprints) keyIndex(part part) map[string][]keyApp {
+	if index, ok := f.keyIndexes[part]; ok {
+		return index
+	}
+	return buildKeyIndexes(f.Apps)[part]
+}
+
+// hasAnyKey reports whether the fingerprint has a pattern for one of keys in part.
+func hasAnyKey(fingerprint *CompiledFingerprint, part part, keys []string) bool {
+	for _, key := range keys {
+		var ok bool
+		switch part {
+		case cookiesPart:
+			_, ok = fingerprint.cookies[key]
+		case headersPart:
+			_, ok = fingerprint.headers[key]
+		case metaPart:
+			_, ok = fingerprint.meta[key]
+		}
+		if ok {
+			return true
+		}
+	}
+	return false
 }
 
 // scriptLiteralIndex buckets script URLs by the first three bytes of each
